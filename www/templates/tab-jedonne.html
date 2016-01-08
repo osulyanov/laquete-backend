@@ -1,0 +1,249 @@
+<!-- <ion-view view-title="Chats">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+    <img ng-src="images/hover-border.png" id="tab_chats">
+  </ion-content>
+</ion-view> -->
+
+
+<!-- <ion-view view-title="<i class='ion-cash>'></i>"> -->
+<ion-view view-title="<div class='logo'><img src='images/logo.png' class='img-responsive'></div> ">
+  <ion-content>
+    <!-- <header id="header">
+  <div class="container">
+    <a class="logo" href="#"><img src="images/logo.png" class="img-responsive" alt=""></a>
+  </div>
+</header> -->
+
+    <div class="mob-full-width container">
+      <div class="montant-holder">
+        <div class="donate-section">
+          <div class="donate-head">
+            <h2>Montant</h2>
+            <a href="">
+              <span class="close-box" ng-click="zero()">
+            <span class="ion-close" aria-hidden="true"></span>
+              </span>
+            </a>
+            <strong class="donte-number" id="amount">{{amount}}</strong>
+            <em class="euro">&euro;</em>
+          </div>
+          <ul class="donate-numbering">
+            <li>
+              <a href="" ng-click="add1()"><img src="images/one-number.png" class="img-number-1"></a>
+            </li>
+            <li class="two-number">
+              <a href="" ng-click="add2()"><img src="images/two-number.png" class="img-number-2"></a>
+            </li>
+            <li class="five-number">
+              <a href="" ng-click="add5()"><img src="images/five-number.png" class="img-number-5"></a>
+            </li>
+            <li class="ten-number">
+              <a href="" ng-click="add10()"><img src="images/ten-number.png" class="img-number-10"></a>
+            </li>
+            <li>
+              <a href="" ng-click="add20()"><img src="images/twenty-number.png" class="img-number-20"></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="charch-area">
+          <h2>Paroisse</h2>
+          <div id="demo">
+            <div class="donate-head" ng-hide="user_has_fav_churches">
+              <a href="" class="close-box" ng-click="addFavChurch()">
+                <i class="ion-plus"></i>
+              </a>
+              <strong class="donte-number">Ajouter une paroisse</strong>
+            </div>
+
+            <div id="page" ng-cloak ng-swipe-left="showMenu = true" ng-show="user_has_fav_churches">
+              <div class="" ng-swipe-right="next($event)" ng-swipe-left="prev($event)">
+                <!-- <ul class="paroisse-section" id="paroisse-section"> -->
+
+                <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+                  <ion-slide ng-repeat="church in churchArray" class="item-holder">
+
+                    <a href="" ng-click="img(church, $index)">
+                      <div class="image-xs" ng-hide="church.isActive">
+                        <img ng-src="images/1.png" class="img-responsive">
+                      </div>
+                      <div class="image-xs" ng-show="church.isActive">
+                        <img ng-src="images/1-hover.png" class="img-responsive">
+                      </div>
+                      <!-- <p ng-hide="church.isActive" ng-style="{color:'#6bb246'}">{{church.name}}</p>
+                  <p ng-show="church.isActive" ng-style="{color:'#916153'}">{{church.name}}</p> -->
+                    </a>
+                    <a href="" ng-click="img(church, $index)">
+                      <div class="image-xs" ng-hide="church.isActive">
+                        <img ng-src="images/1.png" class="img-responsive">
+                      </div>
+                      <div class="image-xs" ng-show="church.isActive">
+                        <img ng-src="images/1-hover.png" class="img-responsive">
+                      </div>
+                      <!-- <p ng-hide="church.isActive" ng-style="{color:'#6bb246'}">{{church.name}}</p>
+                  <p ng-show="church.isActive" ng-style="{color:'#916153'}">{{church.name}}</p> -->
+                    </a>
+                    <a href="" ng-click="img(church, $index)">
+                      <div class="image-xs" ng-hide="church.isActive">
+                        <img ng-src="images/1.png" class="img-responsive">
+                      </div>
+                      <div class="image-xs" ng-show="church.isActive">
+                        <img ng-src="images/1-hover.png" class="img-responsive">
+                      </div>
+                      <!-- <p ng-hide="church.isActive" ng-style="{color:'#6bb246'}">{{church.name}}</p>
+                  <p ng-show="church.isActive" ng-style="{color:'#916153'}">{{church.name}}</p> -->
+                    </a>
+                  </ion-slide>
+                  <!-- <ion-slide>
+                  <div ><h1>YELLOW</h1></div>
+                  <div ><h1>YELLOW</h1></div>
+                  <div ><h1>YELLOW</h1></div>
+                </ion-slide>
+                <ion-slide>
+                  <div ><h1>PINK</h1></div>
+                  <div ><h1>PINK</h1></div>
+                  <div ><h1>PINK</h1></div>
+                </ion-slide> -->
+                </ion-slide-box>
+                <!-- <li ng-repeat="church in churchesRow" class="item">
+                <a href="" ng-click="img(church, $index)" ng-if="church.picto == 1">
+                  <div class="image-xs" ng-hide="church.isActive">
+                    <img ng-src="images/1.png" class="img-responsive">
+                  </div>
+                  <div class="image-xs" ng-show="church.isActive">
+                    <img ng-src="images/1-hover.png" class="img-responsive">
+                  </div>
+                  <p ng-hide="church.isActive" ng-style="{color:'#6bb246'}">{{church.name}}</p>
+                  <p ng-show="church.isActive" ng-style="{color:'#916153'}">{{church.name}}</p>
+                </a>
+                <a href="" ng-click="img(church, $index)" ng-if="church.picto == 2">
+                  <div class="image-xs" ng-hide="church.isActive">
+                    <img ng-src="images/2.png" class="img-responsive">
+                  </div>
+                  <div class="image-xs" ng-show="church.isActive">
+                    <img ng-src="images/2-hover.png" class="img-responsive">
+                  </div>
+                  <p ng-hide="church.isActive" ng-style="{color:'#6bb246'}">{{church.name}}</p>
+                  <p ng-show="church.isActive" ng-style="{color:'#916153'}">{{church.name}}</p>
+                </a>
+                <a href="" ng-click="img(church, $index)" ng-if="church.picto == 3">
+                  <div class="image-xs" ng-hide="church.isActive">
+                    <img ng-src="images/3.png" class="img-responsive">
+                  </div>
+                  <div class="image-xs" ng-show="church.isActive">
+                    <img ng-src="images/3-hover.png" class="img-responsive">
+                  </div>
+                  <p ng-hide="church.isActive" ng-style="{color:'#6bb246'}">{{church.name}}</p>
+                  <p ng-show="church.isActive" ng-style="{color:'#916153'}">{{church.name}}</p>
+                </a>
+                <a href="" ng-click="img(church, $index)" ng-if="church.picto == 4">
+                  <div class="image-xs" ng-hide="church.isActive">
+                    <img ng-src="images/4.png" class="img-responsive">
+                  </div>
+                  <div class="image-xs" ng-show="church.isActive">
+                    <img ng-src="images/4-hover.png" class="img-responsive">
+                  </div>
+                  <p ng-hide="church.isActive" ng-style="{color:'#6bb246'}">{{church.name}}</p>
+                  <p ng-show="church.isActive" ng-style="{color:'#916153'}">{{church.name}}</p>
+                </a>
+                <a href="" ng-click="img(church, $index)" ng-if="church.picto == 5">
+                  <div class="image-xs" ng-hide="church.isActive">
+                    <img ng-src="images/5.png" class="img-responsive">
+                  </div>
+                  <div class="image-xs" ng-show="church.isActive">
+                    <img ng-src="images/5-hover.png" class="img-responsive">
+                  </div>
+                  <p ng-hide="church.isActive" ng-style="{color:'#6bb246'}">{{church.name}}</p>
+                  <p ng-show="church.isActive" ng-style="{color:'#916153'}">{{church.name}}</p>
+                </a>
+                <a href="" ng-click="img(church, $index)" ng-if="church.picto == 6">
+                  <div class="image-xs" ng-hide="church.isActive">
+                    <img ng-src="images/6.png" class="img-responsive">
+                  </div>
+                  <div class="image-xs" ng-show="church.isActive">
+                    <img ng-src="images/6-hover.png" class="img-responsive">
+                  </div>
+                  <p ng-hide="church.isActive" ng-style="{color:'#6bb246'}">{{church.name}}</p>
+                  <p ng-show="church.isActive" ng-style="{color:'#916153'}">{{church.name}}</p>
+                </a>
+                <a href="" ng-click="img(church, $index)" ng-if="church.picto == 7">
+                  <div class="image-xs" ng-hide="church.isActive">
+                    <img ng-src="images/7.png" class="img-responsive">
+                  </div>
+                  <div class="image-xs" ng-show="church.isActive">
+                    <img ng-src="images/7-hover.png" class="img-responsive">
+                  </div>
+                  <p ng-hide="church.isActive" ng-style="{color:'#6bb246'}">{{church.name}}</p>
+                  <p ng-show="church.isActive" ng-style="{color:'#916153'}">{{church.name}}</p>
+                </a>
+                <a href="" ng-click="img(church, $index)" ng-if="church.picto == 8">
+                  <div class="image-xs" ng-hide="church.isActive">
+                    <img ng-src="images/8.png" class="img-responsive">
+                  </div>
+                  <div class="image-xs" ng-show="church.isActive">
+                    <img ng-src="images/8-hover.png" class="img-responsive">
+                  </div>
+                  <p ng-hide="church.isActive" ng-style="{color:'#6bb246'}">{{church.name}}</p>
+                  <p ng-show="church.isActive" ng-style="{color:'#916153'}">{{church.name}}</p>
+                </a>
+                <a href="" ng-click="img(church, $index)" ng-if="church.picto == 9">
+                  <div class="image-xs" ng-hide="church.isActive">
+                    <img ng-src="images/9.png" class="img-responsive">
+                  </div>
+                  <div class="image-xs" ng-show="church.isActive">
+                    <img ng-src="images/9-hover.png" class="img-responsive">
+                  </div>
+                  <p ng-hide="church.isActive" ng-style="{color:'#6bb246'}">{{church.name}}</p>
+                  <p ng-show="church.isActive" ng-style="{color:'#916153'}">{{church.name}}</p>
+                </a>
+              </li> -->
+                <!-- </ul> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="type-de-don">
+          <h2>Type DE DON</h2>
+          <div class="don-btns-area">
+            <button type="button" class="btn-don btn active" ng-click="quete()" id="quete">Quête</button>
+            <button type="button" class="btn-devier btn" ng-click="devier()" id="devier">Denier</button>
+          </div>
+          <div class="modal-holder">
+            <script type="text/ng-template" id="myModalContent.html">
+              <div class="modal-donate">
+                <button class="close" type="button" ng-click="close_popup()"><span aria-hidden="true">&times;</span></button>
+                <div class="modal-body">
+                  <h2><span>{{response}}</span></h2>
+                </div>
+              </div>div>
+            </script>
+            <button type="button" class="btn-donne btn btn-primary" ng-click="donate()" id="jondonne">Je donne</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- <footer id="footer">
+  <div class="container">
+    <ul id="navigation">
+      <li ><a href="" ng-click="postsearch()">Mes églises</a></li>
+      <li class="icon-2"><a href="" ng-click="rpayments()">Don régulier</a></li>
+      <li class="icon-3 active"><a href="" ng-click="montant()">Je Donne</a></li>
+      <li class="icon-4"><a href="" ng-click="historique()">Historique</a></li>
+      <li class="icon-5"><a href="" ng-click="settings()">Mon compte</a></li>
+    </ul>
+  </div>
+</footer>  -->
+  </ion-content>
+</ion-view>

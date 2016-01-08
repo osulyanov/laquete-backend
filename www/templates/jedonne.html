@@ -1,0 +1,225 @@
+<ion-nav-bar class="bar-stable">
+  <ion-nav-back-button>
+  </ion-nav-back-button>
+  <ion-nav-title side="center">
+    <img src="images/logo.png" class="title-img">
+  </ion-nav-title>
+</ion-nav-bar>
+
+<ion-view class="je-donne-bg">
+  <ion-content scroll="false">
+    <div class="wrapper">
+      <div class="montant-holder">
+        <div class="donate-section">
+          <h2>Montant</h2>
+          <div class="ammount-holder">
+            <span class="close-box" ng-click="zero()">
+              <span class="ion-close" aria-hidden="true"></span>
+            </span>
+            <strong class="donte-number">{{amount}}</strong>
+            <em class="euro">&euro;</em>
+          </div>
+          <ul class="donate-numbering">
+            <li>
+              <a href="" ng-click="add1()"><img src="images/one-number.png" class="img-responsive"></a>
+            </li>
+            <li class="two-number">
+              <a href="" ng-click="add2()"><img src="images/two-number.png" class="img-responsive"></a>
+            </li>
+            <li class="five-number">
+              <a href="" ng-click="add5()"><img src="images/five-number.png" class="img-responsive"></a>
+            </li>
+            <li class="ten-number">
+              <a href="" ng-click="add10()"><img src="images/ten-number.png" class="img-responsive"></a>
+            </li>
+            <li>
+              <a href="" ng-click="add20()"><img src="images/twenty-number.png" class="img-responsive"></a>
+            </li>
+          </ul>
+        </div>
+        <div class="charch-area">
+          <h2>{{church_title}}</h2>
+          <ion-slide-box on-slide-changed="slideHasChanged($index)" class="paroisse-section" show-pager="false" ng-show="quete_donate && user_has_fav_churches">
+            <ion-slide ng-repeat="church in fav_churches" ng-show="user_has_fav_churches">
+              <li ng-if="church[0].id > 0">
+                <a href="" ng-click="select_church($index, 0 ,church[0].id)">
+                  <div class="image-xs">
+                    <img ng-src="{{church[0].picto}}" class="image-no-hover img-responsive">
+                    <!-- <img ng-src="{{church[0].picto_hover}}" class="image-hover img-responsive"> -->
+                    <p>{{church[0].name | limitTo:9}}</p>
+                  </div>
+                </a>
+              </li>
+              <li ng-if="church[1].id > 0">
+                <a href="" ng-click="select_church($index, 1 ,church[1].id)">
+                  <div class="image-sm">
+                    <img ng-src="{{church[1].picto}}" class="image-no-hover img-responsive">
+                    <!-- <img ng-src="{{church[1].picto_hover}}" class="image-hover img-responsive"> -->
+                    <p>{{church[1].name | limitTo:9}}</p>
+                  </div>
+                </a>
+              </li>
+              <li ng-if="church[2].id > 0">
+                <a href="" ng-click="select_church($index, 2 ,church[2].id)">
+                  <div class="image-lg" ng-hide="church[2].is_selected">
+                    <img ng-src="{{church[2].picto}}" class=" img-responsive">
+                    <p ng-click="img(2,3)">{{church[2].name | limitTo:9}}</p>
+                  </div>
+                  <div class="image-lg" ng-show="church[2].is_selected">
+                    <img ng-src="{{church[2].picto_hover}}" class=" img-responsive">
+                    <p ng-click="img(2,3)"><font color="#916153">{{church[2].name  | limitTo:9}}</font></p>
+                  </div>
+                </a>
+              </li>
+              <li ng-if="church[3].id > 0">
+                <a href="#" ng-click="select_church($index, 3 ,church[3].id)">
+                  <div class="image-sm">
+                    <img ng-src="{{church[3].picto}}" class="image-no-hover img-responsive">
+                    <!-- <img ng-src="{{church[3].picto_hover}}" class="image-hover img-responsive"> -->
+                    <p>{{church[3].name | limitTo:9}}</p>
+                  </div>
+                </a>
+              </li>
+              <li ng-if="church[4].id > 0">
+                <a href="#" ng-click="select_church($index, 4 ,church[4].id)">
+                  <div class="image-xs">
+                    <img ng-src="{{church[4].picto}}" class="image-no-hover img-responsive">
+                    <!-- <img ng-src="{{church[4].picto_hover}}" class="image-hover img-responsive" > -->
+                    <p>{{church[4].name | limitTo:9}}</p>
+                  </div>
+                </a>
+              </li>
+            </ion-slide>
+          </ion-slide-box>
+          <div class="paroisse-section" ng-show="!quete_donate && !diocese_search && user_has_fav_churches">
+            <input type="text" class="col col-80 col-offset-10" ng-model="zipcode" placeholder="postcode" ng-required>
+            <br>
+            <button type="submit" class="btn-profile-save btn btn-default" id="profile" ng-click="diocese_search_btn(zipcode)">Valider</button>
+          </div>
+          <!--          div starts here diocese_search -->
+          <div class="paroisse-section" ng-show="!quete_donate && diocese_search && user_has_fav_churches">
+            <!--
+            <div ng-class="diocese_search_active ? 'church-infor active' : 'church-infor'" ng-click="diocese_search_activate()">
+              <div class="col-md-3 col-xs-3">
+                <img ng-src="images/1-hover.png" class="img-responsive" alt="image">
+
+              </div>
+              <div class="col-sm-9 col-xs-9">
+                <span class="title">Church Name</span>
+                <span>Xhuech zip</span>
+              </div>
+              <span class="church_close" ng-click="cancel_diocese()"><i class="ion-android-close"></i></span>
+            </div>
+            -->
+            <div ng-class="diocese_search_active ? 'church-searched active' : 'church-searched'">
+              <p ng-show="!has_searched_churches"> Il n'est pas encore possible de donner à ce diocèse</p>
+              <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false" ng-show="has_searched_churches">
+                <ion-slide ng-repeat="church in searched_churches" style="width: 330px;">
+                  <li ng-if="church[0].id > 0">
+                    <a href="" ng-click="select_diocese($index, 0 ,church[0].id)">
+                      <div class="image-xs">
+<!--                        <img ng-src="{{church[0].picto}}" class="image-no-hover img-responsive">-->
+                        <p class="image-no-hover img-responsive">{{church[0].post_code}}</p>
+                        <!-- <img ng-src="{{church[0].picto_hover}}" class="image-hover img-responsive"> -->
+                        <p>{{church[0].name | limitTo:9}}</p>
+
+                      </div>
+                    </a>
+                  </li>
+                  <li ng-if="church[1].id > 0">
+                    <a href="" ng-click="select_diocese($index, 1 ,church[1].id)">
+                      <div class="image-sm">
+                      <p class="image-no-hover img-responsive">{{church[1].post_code}}</p>
+<!--                        <img ng-src="{{church[1].picto}}" class="image-no-hover img-responsive">-->
+                        <!-- <img ng-src="{{church[1].picto_hover}}" class="image-hover img-responsive"> -->
+                        <p>{{church[1].name | limitTo:9}}</p>
+
+                      </div>
+                    </a>
+                  </li>
+
+                  <li ng-if="church[2].id > 0">
+<!--                   <a href="" ng-click="select_diocese($index, 0 ,church[0].id)">-->
+                    <a href="" >
+                      <div class="image-lg" ng-hide="church[2].is_selected">
+                      <p class="img-responsive">{{church[2].post_code}}</p>
+<!--                        <img ng-src="{{church[2].picto}}" class=" img-responsive">-->
+                        <p ng-click="img(2,3)">{{church[2].name | limitTo:9}}</p>
+                      </div>
+                      <div class="image-lg" ng-show="church[2].is_selected">
+                        <p class="img-responsive"><font color="#916153">{{church[2].post_code}}</font></p>
+<!--                        <img ng-src="{{church[2].picto_hover}}" class=" img-responsive">-->
+                        <p ng-click="img(2,3)"><font color="#916153">{{church[2].name  | limitTo:9}}</font></p>
+
+                      </div>
+                    </a>
+                  </li>
+                  <li ng-if="church[3].id > 0">
+                    <a href="#" ng-click="select_diocese($index, 3 ,church[3].id)">
+                      <div class="image-sm">
+                        <p class="image-no-hover img-responsive">{{church[3].post_code}}</p>
+<!--                        <img ng-src="{{church[3].picto}}" class="image-no-hover img-responsive">-->
+                        <!-- <img ng-src="{{church[3].picto_hover}}" class="image-hover img-responsive"> -->
+                        <p>{{church[3].name | limitTo:9}}</p>
+
+                      </div>
+                    </a>
+                  </li>
+                  <li ng-if="church[4].id > 0">
+                    <a href="#" ng-click="select_diocese($index, 4 ,church[4].id)">
+                      <div class="image-xs">
+                      <p class="image-no-hover img-responsive">{{church[4].post_code}}</p>
+<!--                        <img ng-src="{{church[4].picto}}" class="image-no-hover img-responsive">-->
+                        <!-- <img ng-src="{{church[4].picto_hover}}" class="image-hover img-responsive" > -->
+                        <p>{{church[4].name | limitTo:9}}</p>
+
+                      </div>
+                    </a>
+                  </li>
+                </ion-slide>
+
+              </ion-slide-box>
+
+              <span class="church_close" ng-click="cancel_diocese()"><i class="ion-android-close"></i></span>
+            </div>
+
+          </div>
+
+          <div class="paroisse-section" ng-show="!user_has_fav_churches">
+            <div class="church-infor" ng-click="goto_add_fav()">
+              <div class="col-md-3 col-xs-3">
+                <i class="ion-android-add"></i>
+              </div>
+              <div class="col-sm-9 col-xs-9">
+                <span class="title">Ajouter une paroisse</span>
+                <span>Chuech zip</span>
+              </div>
+              <!--              <span class="church_close" ng-click="cancel_diocese()"><i class="ion-android-close"></i></span>-->
+            </div>
+
+          </div>
+        </div>
+        <div class="type-de-don">
+          <h2>Type DE DON</h2>
+          <div class="don-btns-area">
+            <button type="button" class="btn-don  btn btn-primary active" ng-show="quete_donate">
+              <img src="images/quete-icon-hover.png" class="img-responsive"> Quete
+            </button>
+            <button type="button" class="btn-don" ng-hide="quete_donate" ng-click="quete()">
+              <img src="images/quete-icon.png" class="img-responsive"> Quete
+            </button>
+            <button type="button" class="btn-devier btn btn-primary active" ng-hide="quete_donate">
+              <img src="images/devier-icon-hover.png" class="img-responsive"> Denier
+            </button>
+            <button type="button" class="btn-devier btn" ng-show="quete_donate" ng-click="devier()">
+              <img src="images/devier-icon.png" class="img-responsive"> Denier
+            </button>
+          </div>
+          <button type="button" class="btn-donne btn btn-primary btn-lg" id="btn_donate" ng-click="one_time_donate()" ng-disabled="btn_donate_dis">
+            Je donne
+          </button>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

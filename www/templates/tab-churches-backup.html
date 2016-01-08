@@ -1,0 +1,75 @@
+<ion-nav-bar class="bar-stable">
+	<ion-nav-back-button>
+	</ion-nav-back-button>
+
+	<ion-nav-title>
+			Churches
+		</ion-nav-title>
+</ion-nav-bar>
+<ion-view class="history-bg">
+	<ion-content >
+	<div class="padding churches-padding">
+		<div class="bg-green">
+			<input type="radio" name="searchtype" id="PostVille" ng-click="searchType('PostVille')" value="Code postal ou ville" checked="true"/>
+			<label for = "PostVille">&nbsp;&nbsp;Code postal ou ville</label>
+
+			<input type="radio" name="searchtype" id="Chercher" ng-click="searchType('Chercher')" value="Chercher"/>
+			<label for = "Chercher">&nbsp;&nbsp;Chercher</label>
+
+			<input type="radio" name="searchtype" id="Geolocalisation" ng-click="searchType('Geolocalisation')" value="Géolocalisation" />
+			<label for = "Geolocalisation">&nbsp;&nbsp;Géolocalisation</label><br>
+		</div>
+
+		<div ng-show="PostVille" >
+		<input type="radio" name="search" id="Postal" ng-click="check(false)" value="Code postal" checked="checked"/>
+		<label for = "Postal">&nbsp;&nbsp;Code postal</label>
+		<input type="radio" name="search" id="NearChurches" ng-click="check(true)" value="Chercher"/>
+		<label for = "NearChurches">&nbsp;&nbsp;Ville</label><br>
+
+
+		<input class="form-control" type="text"  value="Search" ng-model="query" placeholder="Filter...">
+
+		<ul class="listing" ng-hide="searchbytown" >
+			<li ng-repeat="church in all_churches  | filter: { 'zip': query } | orderBy: 'zip'">
+				<div class="col-sm-2 col-xs-2">
+					<div class="image-holder">
+						<img ng-src="{{church.picto}}" class="img-responsive" alt="image">
+					</div>
+				</div>
+				<div class="col-sm-6 col-xs-6">
+					<a class="title">{{church.name}}</a>
+					<span>{{church.zip}}</span>
+				</div>
+				<div class="col-sm-3 col-xs-2">
+					<span class="donate-price" ng-hide="church.favorite">
+						<i class="glyphicon glyphicon-heart-empty" ng-click="makeFavorite(church)"></i>
+					</span>
+					<span class="donate-price" ng-show="church.favorite"><i class="glyphicon glyphicon-heart"></i></span>
+				</div>
+			</li>
+		</ul>
+
+
+		<ul class="listing" ng-show="searchbytown">
+			<li ng-repeat="church in all_churches  | filter: { 'city': query } | orderBy: 'city' " class="row">
+				<div class="col-sm-2 col-xs-2">
+					<div class="image-holder">
+						<img ng-src="{{church.picto}}" class="img-responsive" alt="image">
+					</div>
+				</div>
+				<div class="col-sm-6 col-xs-6">
+					<a class="title">{{church.name}}</a>
+					<span>{{church.city}}</span>
+				</div>
+				<div class="col-sm-3 col-xs-2">
+					<span class="donate-price" ng-hide="church.favorite">
+						<i class="glyphicon glyphicon-heart-empty" ng-click="makeFavorite(church)"></i>
+					</span>
+					<span class="donate-price" ng-show="church.favorite"><i class="glyphicon glyphicon-heart"></i></span>
+				</div>
+			</li>
+		</ul>
+</div>
+</div>
+	</ion-content>
+</ion-view>

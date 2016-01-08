@@ -1,0 +1,44 @@
+<ion-nav-bar class="bar-stable">
+  <ion-nav-back-button>
+  </ion-nav-back-button>
+  <ion-nav-buttons side="right">
+    <button class="button button-clear" ng-click="refresh()" ng-show="is_history">
+      <i class="icon ion-loop my-icon"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-title>
+    History
+  </ion-nav-title>
+</ion-nav-bar>
+
+<ion-view class="history-bg">
+  <ion-content scroll="false" has-navbar="true">
+<ion-scroll class="scroll-rlist">
+      <ion-list >
+      <ion-item class="listing" ng-repeat="donation in donations" type="item-text-wrap" href="#">
+          <li>
+            <div class="col-sm-2 col-xs-2">
+              <div class="image-holder">
+                <img ng-src="images/2.png" class="img-responsive" alt="image">
+              </div>
+            </div>
+            <div class="col-sm-6 col-xs-6">
+              <a class="title">Name</a>
+              <img ng-src="images/donation.png" class="donation-img img-responsive" alt="image"><span> 3 Times</span>
+              <p>After Every Month: <i class="ion-social-euro-outline"></i> 12 </p>
+            </div>
+            <div class="col-sm-3 col-xs-2">
+               <a href="#"class="list-btn-modifier" >Modifier</a>
+            </div>
+          </li>
+        </ion-item>
+      </ion-list>
+    </ion-scroll>
+<center>
+
+<button type="button" style="margin-top: 10px; background-color: #5ab43d;border-color: #5ab43d;font-size: 20px;" class="btn btn-primary" id="btn_donate" ng-click="showPopup()" ng-disabled="btn_donate_dis">
+            <i class="ion-ios-plus-outline" ></i>
+          </button>
+          </center>
+  </ion-content>
+</ion-view>

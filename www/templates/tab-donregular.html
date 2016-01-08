@@ -1,0 +1,57 @@
+<ion-nav-bar class="bar-stable">
+  <ion-nav-back-button>
+  </ion-nav-back-button>
+  <ion-nav-buttons side="right">
+    <button class="button button-clear" ng-click="refresh()" ng-show="is_history">
+      <i class="icon ion-loop my-icon"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-title>
+    Vos dons programmés
+  </ion-nav-title>
+</ion-nav-bar>
+
+<ion-view class="history-bg">
+  <ion-content scroll="false" has-navbar="true">
+    <ion-scroll class="scroll-rlist">
+      <ion-list>
+        <ion-item class="listing" ng-repeat="donation in donations" type="item-text-wrap"  ng-click="edit_recurring(donation)">
+          <li>
+            <div class="col-sm-2 col-xs-2">
+              <div class="image-holder">
+                <img ng-src="images/2.png" class="img-responsive" alt="image">
+              </div>
+            </div>
+            <div class="col-sm-6 col-xs-6">
+              <a class="title">{{donation.church_name}}</a>
+              <img ng-src="images/donation.png" class="donation-img img-responsive" alt="image"><span> {{donation.count}} Times</span>
+
+              <p ng-switch="donation.frequency">
+               <span ng-switch-when="daily">Don quotidien:</span>
+                <span ng-switch-when="weekly">Don hebdomadaire:</span>
+                <span ng-switch-when="monthly">Don mensuel:</span>
+                <span ng-switch-when="bimonthly">Don quinze jours:</span>
+
+                <span ng-switch-when="biannualy">Don semestrielle:</span>
+                <span ng-switch-when="annualy">Don annuel:</span>
+                <ANY ng-switch-default>...</ANY>
+                <i class="ion-social-euro-outline"></i> {{donation.amount}} </p>
+
+
+              <!--              <p>Donate {{donation.frequency}}: <i class="ion-social-euro-outline"></i> {{donation.amount}} </p>-->
+            </div>
+            <div class="col-sm-3 col-xs-2">
+              <a  class="list-btn-modifier" >Modifier</a>
+            </div>
+          </li>
+        </ion-item>
+      </ion-list>
+    </ion-scroll>
+    <center>
+
+      <button type="button" style="margin-top: 10px; background-color: #5ab43d;border-color: #5ab43d;font-size: 20px;" class="btn btn-primary" id="btn_donate" ng-click="add_recurring()">
+        <i class="ion-ios-plus-outline"></i>
+      </button>
+    </center>
+  </ion-content>
+</ion-view>

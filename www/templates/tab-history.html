@@ -1,0 +1,117 @@
+<ion-nav-bar class="bar-stable">
+  <ion-nav-back-button>
+  </ion-nav-back-button>
+  <ion-nav-buttons side="right">
+    <button class="button button-clear" ng-click="refresh()" ng-show="is_history">
+      <i class="icon ion-loop my-icon"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-title>
+    History
+  </ion-nav-title>
+</ion-nav-bar>
+
+<ion-view class="history-bg">
+  <ion-content scroll="false" has-navbar="true">
+
+
+    <!-- <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list> -->
+    <!-- <header id="header" class="header">
+    <div class="container">
+       <a class="logo" href="#">Historique</a>
+    </div>
+</header> -->
+
+    <!-- <div class="main-scroll">
+  <div class="container">
+ -->
+    <!-- <header id="header"  data-role="header" data-position="fixed">
+    <div class="container">
+      <a class="logo" href="#"><span>History</span></a>
+      <a class="logo" href="#"><img src="images/logo.png" class="img-responsive" alt=""></a>
+    </div>
+  </header> -->
+    <ion-scroll class="scroll-history" id="scroll-history">
+      <ion-list ng-show="user_has_donate">
+        <ion-item class="listing" ng-repeat="donation in donations" type="item-text-wrap" href="#">
+          <li>
+            <div class="col-sm-2 col-xs-2">
+              <div class="image-holder" ng-if="donation.picto == 1 && donation.church_id != null">
+                <img src="images/1.png" class="img-responsive" alt="image">
+              </div>
+              <div class="image-holder" ng-if="donation.picto == 2 && donation.church_id != null">
+                <img src="images/2.png" class="img-responsive" alt="image">
+              </div>
+              <div class="image-holder" ng-if="donation.picto == 3 && donation.church_id != null">
+                <img src="images/3.png" class="img-responsive" alt="image">
+              </div>
+              <div class="image-holder" ng-if="donation.picto == 4 && donation.church_id != null">
+                <img src="images/4.png" class="img-responsive" alt="image">
+              </div>
+              <div class="image-holder" ng-if="donation.picto == 5 && donation.church_id != null">
+                <img src="images/5.png" class="img-responsive" alt="image">
+              </div>
+              <div class="image-holder" ng-if="donation.picto == 6 && donation.church_id != null">
+                <img src="images/6.png" class="img-responsive" alt="image">
+              </div>
+              <div class="image-holder" ng-if="donation.picto == 7 && donation.church_id != null">
+                <img src="images/7.png" class="img-responsive" alt="image">
+              </div>
+              <div class="image-holder" ng-if="donation.picto == 8 && donation.church_id != null">
+                <img src="images/8.png" class="img-responsive" alt="image">
+              </div>
+              <div class="image-holder" ng-if="donation.picto == 9 && donation.church_id != null">
+                <img src="images/9.png" class="img-responsive" alt="image">
+              </div>
+              <div class="image-holder" ng-if="donation.church_id == null">
+                <span>{{donation.dioce_zipcode}}</span>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xs-6">
+              <a class="title" href="#" ng-if="donation.church_id != null">{{donation.church_name}}</a>
+              <a class="title" href="#" ng-if="donation.church_id == null">{{donation.dioce_name}}</a>
+              <span>{{donation.donation_date | date:'EEEE, MMMM d, y'}}</span>
+            </div>
+            <div class="col-sm-3 col-xs-3">
+              <strong class="donate-price timer" >€ {{donation.amount}}<span class="clock" ng-show="{{donation.recuring}}"></span></strong>
+
+            </div>
+            <!-- span  -->
+
+          </li>
+        </ion-item>
+      </ion-list>
+    </ion-scroll>
+    <!--
+    <div class="container" id="form-history">
+        <label>Dons du mois: 200$</label><br>
+        <label>Don moyen par mois: 100$</label>
+    </div>
+-->
+    <!-- </div>
+</div> -->
+    <!-- <footer id="footer">
+    <div class="container">
+      <ul id="navigation">
+        <li ><a href="" ng-click="postsearch()">Mes églises</a></li>
+      <li class="icon-2"><a href="" ng-click="rpayments()">Don régulier</a></li>
+      <li class="icon-3"><a href="" ng-click="montant()">Je Donne</a></li>
+      <li class="icon-4 active"><a href="" ng-click="historique()">Historique</a></li>
+      <li class="icon-5"><a href="" ng-click="settings()">Mon compte</a></li>
+      </ul>
+    </div>
+</footer> -->
+
+  </ion-content>
+</ion-view>

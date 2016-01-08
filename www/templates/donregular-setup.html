@@ -1,0 +1,76 @@
+<ion-nav-bar class="bar-stable">
+  <ion-nav-buttons side="left">
+    <button class="button button-clear" ng-click="back()" ng-if="platform == 'android'">
+      <i class="ion-android-arrow-back"></i>
+    </button>
+    <button class="button button-clear" ng-click="back()" ng-if="platform == 'ios'">
+      <i class="ion-ios-arrow-back"></i> Back
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-title>
+    <font ng-style="create_setup && {'font-size':'65%'} ">{{title}}</font>
+  </ion-nav-title>
+</ion-nav-bar>
+
+<ion-view class="je-donne-bg">
+  <ion-content scroll="false">
+
+    <div class="wrapper">
+      <div class="montant-holder recurring-payment">
+        <!--        <h3>Vous souhaitez programmer un don pour ne jamais manquer la quête?</h3>-->
+
+        <form class="recurring-payment-form" name="userForm" ng-submit="setup_rec()" novalidate>
+          <div class="form-group" ng-class="{ 'her-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+            <label>Votre église</label>
+            <!--
+            <select class="item item-input item-select dropdwon_payment" ng-options="church.name for church in all_fav_churches track by church.id">
+              <option value="" selected>--Please select Church--</option>
+           <option ng-repeat="church in all_fav_churches" value="{{church.id}}" >{{church.name}}</option>
+            </select>
+-->
+            <!--
+         <select name="degree" class="form-control" ng-model="selecteddegree" ng-options="degree.degree_name for degree in degrees track by degree.degree_code" >
+           <option value="" > Select Degree </option>
+          </select>
+-->
+            <select name="church" class="form-control" ng-model="selected_church" ng-options="church.name for church in all_fav_churches track by church.id" ng-change="select_church(selected_church)" ng-disabled="!create_setup" ng-required="true">
+              <option value="" id="0" selected> Please select a church </option>
+            </select>
+          </div>
+          <div class="form-group" ng-class="{ 'has-error' : userForm.amount.$invalid && !userForm.amount.$pristine }">
+            <label>Le montant</label>
+            <input type="number" ng-disabled="mydisabled" name="amount" class="form-control" ng-model="donation.amount" placeholder="Amount" required>
+            <p ng-show="userForm.amount.$invalid && !userForm.amount.$pristine" class="help-block">Please enter a valid number</p>
+          </div>
+          <div class="form-group" ng-class="{'her-error' : userForm.frequency.$invalid && !userForm.frequency.$pristine }">
+            <label>La fréquence du don</label>
+            <select class="item item-input item-select dropdwon_payment" ng-model="donation.frequency" ng-change="select_freq(donation.frequency)" ng-required="true">
+              <option value="daily">Don quotidien</option>
+
+              <option value="weekly">Don hebdomadaire</option>
+              <option value="bimonthly">Don quinze jours</option>
+
+              <option value="monthly">Don mensuel</option>
+              <!--
+              <option value="biannualy">Don semestrielle</option>
+              <option value="annualy">Don annuel</option>
+-->
+            </select>
+          </div>
+          <div class="type-de-don">
+
+            <button ng-show="!create_setup" type="submit" style="width: 35vw;" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid">
+              Modifier
+            </button>
+            <button type="submit" ng-show="create_setup" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid">
+              Valider
+            </button>
+          </div>
+        </form>
+        <button ng-show="!create_setup" ng-click="delete_rec()" type="submit" style="width: 35vw;" class="pull-left btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid">
+          effacer
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

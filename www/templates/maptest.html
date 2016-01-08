@@ -1,0 +1,14 @@
+<ion-view>
+<ion-content scroll="false" data-tap-disabled="true">
+<div >
+
+	<map zoom="12" center="[40.74, -74.18]" >
+		<marker ng-repeat="p in positions" position="{{p}}" on-click="showInfoWindow(event, map ,$index)"></marker>
+		<!-- <info-window id="marker-info">
+			<p>Hi, my lat/lng is [[this.getPosition()]]</p>
+			<a href="login"></a>
+		</info-window> -->
+	</map>
+</div>
+</ion-content>
+</ion-view>

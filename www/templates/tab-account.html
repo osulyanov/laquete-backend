@@ -1,0 +1,103 @@
+<ion-nav-bar class="bar-stable">
+  <ion-nav-back-button>
+  </ion-nav-back-button>
+
+  <ion-nav-title>
+    Settings
+  </ion-nav-title>
+</ion-nav-bar>
+<ion-view view-title="Profile" class="login-bg">
+  <ion-content>
+
+
+    <div class="container">
+      <div class="account-holder">
+        <ul class="account-list">
+          <li ng-click="nav_profile()">
+            <a class="ion-android-arrow-forward" href="" > Mes coordonnées</a>
+          </li>
+          <li ng-click="nav_payment()">
+            <a class="ion-android-arrow-forward" href="" > Mes coordonnées bancaires</a>
+          </li>
+          <li ng-click="nav_receipt()">
+            <a class="ion-android-arrow-forward" href="" > Demander un reçu ﬁscal</a>
+          </li>
+          <li ng-click="nav_about_us()">
+            <a class="ion-android-arrow-forward" href="" > Qui sommes-nous</a>
+          </li>
+<!--
+
+      <li >
+        <a class="ion-android-arrow-forward" href="" ng-click="logout()"> Logout</a>
+      </li>
+-->
+
+        </ul>
+      </div>
+    </div>
+
+    <!-- <header id="header"  data-role="header" data-position="fixed">
+    <div class="container">
+        <a class="logo" href="#"><span>History</span></a>
+        <a class="logo" href="#"><img src="images/logo.png" class="img-responsive" alt=""></a>
+    </div>
+</header> -->
+    <!--
+<div id="main">
+    <div class="container">
+        <div class="sign-in profile" >
+            <button  class="btn btn-primary" style="float: right;" ng-click="edit_profile()" >Edit</button></br>
+
+            <form   class="profile-form" name="userForm" ng-submit="profoliosubmit()" novalidate>
+                <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" ng-disabled="isDisabled" ng-model="user.name" ng-required="true">
+                    <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Name is required.</p>
+                </div>
+
+                 USERNAME
+                <div class="form-group" ng-class="{ 'has-error' : userForm.subname.$invalid && !userForm.subname.$pristine }">
+                    <label>Sur Name</label>
+                    <input type="text" name="subname" class="form-control" ng-model="user.subname" ng-minlength="3" ng-maxlength="20" ng-disabled="isDisabled">
+                    <p ng-show="userForm.subname.$error.minlength" class="help-block">Surname is too short.</p>
+                    <p ng-show="userForm.subname.$error.maxlength" class="help-block">Surname is too long.</p>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                    <label>* Email</label>
+                    <input type="email" name="email" class="form-control" ng-model="user.email" ng-disabled="true" ng-required="true">
+                    <p ng-show="userForm.email.$error.required" class="help-block">Email is required</p>
+                    <p ng-show="userForm.email.$error.email" class="help-block">Enter a valid email.</p>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+                    <label ng-show="isDisabled">Password</label>
+                    <label ng-hide="isDisabled">* Password</label>
+                    <input type="password"  name="password"  ng-model="user.password"class="form-control" placeholder="Old Password" ng-disabled="isDisabled" ng-required="true" ng-minlength="6">
+                    <p ng-show="userForm.password.$error.minlength" class="help-block">Enter a valid Password.</p>
+                    <p ng-show="userForm.password.$error.required" class="help-block">Password is required</p>
+                </div>
+                <div ng-show="isEditable" class="form-group" ng-class="{ 'has-error' : userForm.conf_password.$invalid && !userForm.conf_password.$pristine }">
+                    <label>New Password</label>
+                    <input type="password"  name="conf_password"  ng-model="user.conf_password"class="form-control" placeholder="New Password" ng-disabled="isDisabled">
+                    <p ng-show="userForm.conf_password.$invalid && !userForm.conf_password.$pristine" class="help-block">Enter a valid Password.</p>
+                </div>
+                <button ng-show="isEditable" type="submit" class="btn-profile-save btn btn-primary" ng-disabled="userForm.$invalid">Save</button>
+            </form>
+            <button  class="btn btn-primary" style="float: right;" ng-click="logout()" >Logout</button></br>
+        </div>
+    </div>
+</div>
+-->
+    <!-- <footer id="footer">
+    <div class="container">
+        <ul id="navigation">
+            <li ><a href="" ng-click="postsearch()">Mes églises</a></li>
+            <li class="icon-2"><a href="" ng-click="rpayments()">Don régulier</a></li>
+            <li class="icon-3"><a href="" ng-click="montant()">Je Donne</a></li>
+            <li class="icon-4"><a href="" ng-click="historique()">Historique</a></li>
+            <li class="icon-5 active"><a href="" ng-click="settings()">Mon compte</a></li>
+        </ul>
+    </div>
+</footer>  -->
+
+  </ion-content>
+</ion-view>
