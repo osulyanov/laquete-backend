@@ -6,7 +6,8 @@
     "bootstrap": "~3.3.5"
   },
   "dependencies": {
+    "angular-stripe": "~4.2.8",
     "ionic-datepicker": "~0.9.0",
-    "angular-stripe": "~4.2.8"
+    "Swiper": "swiper#~3.2.7"
   }
 }
