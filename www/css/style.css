@@ -847,7 +847,7 @@ margin-top: 1.6vh;
     padding: 0;
   }
   ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-    margin-top: -1.9vh;
+    margin-top: -1.5vh;
     background: url('../images/hover-border-mob.png') no-repeat 50% 0;
   }
   ion-tabs.tabs-color-active-positive .tab-item.tab-item-active .icon {
@@ -926,5 +926,65 @@ margin-top: 1.6vh;
   .platform-android .bar.bar-stable .title {
     padding: 0.7vh 0;
     overflow: inherit;
-  }
+  }  
+}
+
+/*
+@media (min-height: 1280px) and (max-width: 800px) {
+	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+		background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+		margin-top: -1.3vh;
+		padding-top: 1.8vh;
+	}
+}*/
+
+@media (max-height: 568px) and (max-width: 384px) {
+	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+		background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;
+		margin-top: -1.8vh;		
+	}
+}
+
+@media (min-height: 960px) and (max-width: 600px) {
+	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+		background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+		margin-top: -1.8vh;		
+	}
+}
+
+@media (min-height: 1024px) and (max-width: 600px) {
+	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+		background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+		margin-top: -1.7vh;		
+	}
+}
+
+@media (min-height: 480px) and (max-width: 320px) {
+	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+		background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;
+		margin-top: -2.0vh !important;		
+	}
+}
+
+@media (min-height: 479px) and (max-width: 320px){
+	@media (max-height: 480) and (min-width: 319px){
+		ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+			background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;
+			margin-top: -2.2vh !important;		
+		}
+	} 	
+}
+
+@media (min-height: 1024px) and (min-width: 768px) {
+	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+		background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+		margin-top: -1.7vh;		
+	}
+}
+
+@media (min-height: 1024px) and (min-width: 800px) {
+	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+		background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+		margin-top: -1.3vh;		
+	}
 }

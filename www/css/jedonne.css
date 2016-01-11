@@ -1,63 +1,4 @@
 
-.swiper-container {
-  max-width: 600px !important;
-  width: 80% !important;
-  min-width: 300px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.swiper-slide:not(.swiper-slide-next) {
-  margin-top: 4vh !important;
-
-}
-
-.swiper-slide-next {
-  margin-top: 0px !important;
-
-}
-
-.swiper-slide-next div {
-  font-size: 2vh !important;
-  line-height: 2.3vh !important;
-  display: inline-block !important;
-  vertical-align: bottom !important;
-
-}
-
-.swiper-slide-next div img {
-
-  height: 12.54vh !important;
-  display: block !important;
-  margin: 0 auto !important;
-
-}
-
-.swiper-slide-next div p{
-  color: #916153;
-  font-weight: bold;
-}
-
-/*.swiper-slide-next div p {*/
-/*color: #916153 !important;*/
-/*}*/
-
-
-.swiper-slide:not(.swiper-slide-next) div {
-  font-size:1.65vh !important;
-  line-height: 2vh !important;
-  display: inline-block !important;
-  vertical-align: bottom !important;
-
-}
-
-.swiper-slide:not(.swiper-slide-next) div img{
-  height: 7.26vh !important;
-  display: block !important;
-  margin: 0px auto 1.32vh !important;
-
-}
-
 @font-face {
     font-family: 'billabongregular';
     src: url('../fonts/billabong.eot');
@@ -187,12 +128,15 @@ i.customIconSound:before {
   color: #916153 !important;
  }
 ion-tabs.tabs-color-active-positive .tab-item{
+	
   color: #bab5a3;
   text-decoration: none;
 }
 .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active .icon {
   margin-top: 1.99vh !important;
 }
+
+
 .tabs-striped .tab-item.tab-item-active {
   border-width: 0px 0 0 0;
   /*border-color: red;
@@ -208,10 +152,7 @@ ion-tabs.tabs-color-active-positive .tab-item{
   background-image: none;
 
 }
-.tabs-icon-top > .tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-bottom > .tabs .tab-item, .tabs-icon-bottom.tabs .tab-item {
-  padding-top: 1.2vh;
-}
-ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+.tabs-icon-top > .tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-bottom > .tabs .tab-item, .tabs-icon-bottom.tabs .tab-item {	
   padding-top: 1.2vh;
 }
 .tab-item {
@@ -231,6 +172,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 .donate-section {
   padding: 1.65vh 0 0;
   margin-bottom: 0vh;
+  font-family: Museo Sans Rounded !important;
 }
 .platform-ios .donate-section {
   margin-bottom: 6vh;
@@ -269,7 +211,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 }
 .ammount-holder {
   height: 4.96vh;
-  margin-bottom: 3.95vh;
+  margin-bottom: 3.95vh;  
 }
 .container {
     padding-right: 9px;
@@ -295,7 +237,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 }
 .donate-numbering li {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: top; 
 }
 
 .donate-numbering li:nth-child(1){
@@ -391,7 +333,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   line-height: 2vh;
   display: inline-block;
   vertical-align: bottom;
-  /*margin-left:*/
+  margin-left:
 }
 .paroisse-section .image-sm img{
   height: 7.26vh;
@@ -429,14 +371,15 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   color: #6bb246;
   background: none ;
   font-size: 2.3vh;
-  height: 5.7vh;
+  height: 5.7vh;  
   padding-right: 0px !important;
-  padding-top: 0.9vh;
+  padding-top: 1.1vh;
   padding-bottom: 1.32vh;
   padding-left: 1.5vw;
   width: 32vw;
-  border: 2px solid  !important;
+  border: transparent 0.55vw solid !important;
   vertical-align: top !important;
+  line-height: 3vh !important;
 }
 
 .btn-don{
@@ -449,6 +392,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   height: 3.5vh;
   width: 6vw;
   margin-left: 1vw;
+  line-height: 3.5vh !important;
 }
 .btn-don img{
 	float: left;
@@ -460,7 +404,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 
 .btn-primary.active:hover{
   background: none ;
-  border:2px solid #916153 !important;
+  border:0.55vw solid #916153 !important;
   color: #916153;
 }
 .image-hover {
@@ -472,7 +416,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 .btn-devier:active:focus,
 .btn-devier:active:hover {
   background: none ;
-  border:2px solid #916153  !important;
+  border:0.55vw solid #916153  !important;
   outline: none ;
   color: #916153 ;
   box-shadow: none ;
@@ -489,7 +433,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 .btn-don:active:focus,
 .btn-don:active:hover {
   background: none;
-  border:2px solid #916153 !important;
+  border: 0.55vw solid #916153 !important;
   outline: none;
   color: #916153;
   box-shadow: none;
@@ -510,7 +454,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   border:none;
   text-align: center;
   width: 55vw;
-  border-radius: 1.5vw;
+  border-radius: 1.5vw;  
 }
 .btn-donne.active,
 .btn-donne:active,
@@ -533,7 +477,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 }
 .modal-backdrop {
       z-index: 3;
-    /*background-color: none;*/
+    background-color: none;
 }
 .modal-donate .modal-body {
     padding: 4vh 4vw;
@@ -642,7 +586,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   width: 100%;
   /*font-size: 0.99vw;*/
   font-size: 2vh;
-  line-height: 1.2vh;
+  line-height: 1.2hv;
   text-align: center;
 }
 #navigation>li {
