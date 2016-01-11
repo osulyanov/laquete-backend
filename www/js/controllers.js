@@ -973,13 +973,15 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
         preventClicks: true,
       });
 
+
+
       $scope.slideClicked = function(clickedIndex) {
         var activeIndex = $scope.swiper.activeIndex;
         console.log("clicked index = " + clickedIndex)
         console.log("active index = " + activeIndex)
         if (clickedIndex > activeIndex) {
           $scope.swiper.slideNext(true,300);
-        } else {
+        } else if (clickedIndex < activeIndex){
           $scope.swiper.slidePrev(true,300)
         }
       }
@@ -997,6 +999,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       $scope.swiper.on('slideChangeStart', function () {
         $scope.choseChurch($scope.swiper.activeIndex);
         $timeout(function() {$scope.$digest();})
+
       });
     }
 
