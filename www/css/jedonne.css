@@ -33,6 +33,11 @@
 
 }
 
+.swiper-slide-next div p{
+  color: #916153;
+  font-weight: bold;
+}
+
 /*.swiper-slide-next div p {*/
 /*color: #916153 !important;*/
 /*}*/

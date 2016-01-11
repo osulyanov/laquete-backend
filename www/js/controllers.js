@@ -970,10 +970,19 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
         loop: false,
         slidesPerView: 3,
         spaceBetween: 30,
-        preventClicks: true
-
+        preventClicks: true,
       });
 
+      $scope.slideClicked = function(clickedIndex) {
+        var activeIndex = $scope.swiper.activeIndex;
+        console.log("clicked index = " + clickedIndex)
+        console.log("active index = " + activeIndex)
+        if (clickedIndex > activeIndex) {
+          $scope.swiper.slideNext(true,300);
+        } else {
+          $scope.swiper.slidePrev(true,300)
+        }
+      }
 
       $scope.choseChurch = function(arg) {
         if ($scope.fav_churches.length > 0) {
@@ -987,6 +996,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
       $scope.swiper.on('slideChangeStart', function () {
         $scope.choseChurch($scope.swiper.activeIndex);
+        $timeout(function() {$scope.$digest();})
       });
     }
 

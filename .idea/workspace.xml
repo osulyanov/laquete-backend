@@ -2,70 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="762ddcf2-e0df-4152-bba2-60f90accc66b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular-ui/angular-ui-router.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular-ui/angular-ui-router.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-animate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-animate.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-resource.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-resource.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-sanitize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-sanitize.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/version.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.eot" afterPath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.ttf" afterPath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.woff" afterPath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_action-sheet.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_action-sheet.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_animations.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_animations.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_backdrop.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_backdrop.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_badge.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_badge.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_bar.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_bar.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_button-bar.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_button-bar.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_button.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_button.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_checkbox.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_checkbox.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_form.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_form.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_grid.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_grid.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_items.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_items.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_list.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_list.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_loading.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_loading.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_menu.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_menu.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_mixins.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_mixins.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_modal.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_modal.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_platform.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_platform.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_popover.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_popover.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_popup.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_popup.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_progress.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_progress.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_radio.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_radio.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_range.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_range.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_refresher.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_refresher.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_scaffolding.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_scaffolding.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_select.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_select.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_slide-box.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_slide-box.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_spinner.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_spinner.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_tabs.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_tabs.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_toggle.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_toggle.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_transitions.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_transitions.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_type.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_type.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_util.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_util.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_variables.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_variables.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.min.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.min.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/css/ionic.css" afterPath="$PROJECT_DIR$/www/lib/ionic/css/ionic.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/css/ionic.min.css" afterPath="$PROJECT_DIR$/www/lib/ionic/css/ionic.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic.min.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/ionic.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/ionic.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.svg" afterPath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/jedonne.css" afterPath="$PROJECT_DIR$/www/css/jedonne.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/jedonne.html" afterPath="$PROJECT_DIR$/www/templates/jedonne.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laquete.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,8 +60,8 @@
       <file leaf-file-name="jedonne.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/jedonne.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.4444447">
-              <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
+            <state vertical-scroll-proportion="-11.111111">
+              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -129,7 +70,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.0">
+            <state vertical-scroll-proportion="-1.25">
               <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
               <folding />
             </state>
@@ -139,8 +80,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5576923">
-              <caret line="985" column="7" selection-start-line="985" selection-start-column="7" selection-end-line="985" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.525641">
+              <caret line="982" column="43" selection-start-line="982" selection-start-column="43" selection-end-line="982" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -149,8 +90,8 @@
       <file leaf-file-name="jedonne.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/jedonne.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.254902">
-              <caret line="53" column="62" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="62" />
+            <state vertical-scroll-proportion="-4.7058825">
+              <caret line="49" column="136" selection-start-line="49" selection-start-column="136" selection-end-line="49" selection-end-column="136" />
               <folding />
             </state>
           </provider>
@@ -164,9 +105,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/css/jedonne.css" />
         <option value="$PROJECT_DIR$/www/templates/jedonne.html" />
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/controllers.js" />
       </list>
     </option>
@@ -229,6 +170,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laquete" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laquete" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laquete" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laquete" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="platforms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -242,6 +211,40 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="editor.config.accepted" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JsTestDriver-test-runner" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -266,6 +269,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -274,10 +279,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -304,30 +307,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/jedonne.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.254902">
-          <caret line="53" column="62" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/jedonne.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4444447">
-          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.0">
-          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.0">
@@ -336,10 +315,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/jedonne.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.111111">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/jedonne.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.7058825">
+          <caret line="49" column="136" selection-start-line="49" selection-start-column="136" selection-end-line="49" selection-end-column="136" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5576923">
-          <caret line="985" column="7" selection-start-line="985" selection-start-column="7" selection-end-line="985" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.525641">
+          <caret line="982" column="43" selection-start-line="982" selection-start-column="43" selection-end-line="982" selection-end-column="43" />
           <folding />
         </state>
       </provider>
