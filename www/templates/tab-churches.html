@@ -59,8 +59,12 @@
         <label for = "Postal">&nbsp;&nbsp;Code postal</label>
         <input type="radio" name="search" id="NearChurches" ng-click="check(true)" value="Chercher"/>
         <label for = "NearChurches">&nbsp;&nbsp;Ville</label><br>
-        <input class="form-control" type="text"  value="Search" ng-model="query" placeholder="Filter...">
-        <div class="scroll-list-small">
+<!--        <input class="form-control" name="query" type="text"  value="Search" ng-model="query" placeholder="Filter..." ng-blur="hide_keyboard()">-->
+        <div class="item item-input item-icon-right" style="background:white;">
+          <input type="text" name="query" ng-model="query"  placeholder="Filter..." >
+          <font size="5px"><i class="ion-ios-close-outline" ng-show="query.length" style="margin-right: 5px;" ng-click="query = ''; hide_keyboard()"></i></font>
+        </div>
+         <div class="scroll-list-small">
           <ul class="listing" ng-hide="searchbytown" >
             <scroll direction="y">
               <li ng-repeat="church in all_churches  | filter: { 'zip': query } | orderBy: 'zip'">
@@ -115,7 +119,14 @@
         <input type="radio" name="search_fav" id="NearChurchesFav" ng-click="check_fav(true)" value="Chercher"/>
         <label for = "NearChurchesFav">&nbsp;&nbsp;Ville</label><br>
 
-        <input class="form-control" type="text"  value="Search" ng-model="query_fav" placeholder="Filter...">
+<!--
+        <input class="" type="text"  value="Search" name="query_fav" ng-model="query_fav" placeholder="Filter..." ng-blur="hide_keyboard()">
+        <button  class="input-button button button-icon ion-android-close" ng-click="clearSearch()"></button>
+-->
+        <div class="item item-input item-icon-right" style="background:white;">
+          <input type="text" name="query_fav" ng-model="query_fav"  placeholder="Filter..." >
+          <font size="5px"><i class="ion-ios-close-outline" ng-show="query_fav.length" style="margin-right: 5px;" ng-click="query_fav = ''; hide_keyboard()"></i></font>
+        </div>
         <div class="scroll-list-small">
         <ul class="listing" ng-hide="searchbytown_fav" >
           <scroll direction="y">

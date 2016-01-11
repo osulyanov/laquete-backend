@@ -183,7 +183,7 @@ i.customIconSound:before {
 .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active{
   background: url('../images/hover-border.png') no-repeat 50% 0 !important;
   margin: 0px;
-  margin-top: -1.99vh !important;
+  margin-top: -1.45vh !important;
   color: #916153 !important;
   text-decoration: none;
 }
@@ -303,7 +303,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 }
 
 .donate-numbering li:nth-child(1){
-	margin-right: 3vw;;
+  margin-right: 3vw;;
 }
 .donate-numbering li img {
   height: 7.6vh;
@@ -325,12 +325,12 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   height: 9.26vh;
 }
 .charch-area{
-	margin-top: -3vh;
-	font-family: Museo Sans Rounded;
+  margin-top: -3vh;
+  font-family: Museo Sans Rounded;
 }
 
 .type-de-dom{
-	margin-top: -4vh;
+  margin-top: -4vh;
 }
 
 .charch-area h2 {
@@ -354,7 +354,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   margin: 0 8.3vw;
 }
 .paroisse-section li:nth-child(1){
-	margin: 0 0.3vw;
+  margin: 0 0.3vw;
 }
 .paroisse-section  li a {
   color: #6bb246;
@@ -382,7 +382,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   line-height: 0vh;
       display: inline-block;
     vertical-align: bottom;
-	float: left;
+  float: left;
 }
 .paroisse-section .image-xs img{
   height: 0vh;
@@ -420,8 +420,8 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   display: none !important;
 }
 .type-de-don {
-	margin-top: -5vh;
-	font-family: Museo Sans Rounded;
+  margin-top: -5vh;
+  font-family: Museo Sans Rounded;
 }
 .type-de-don h2 {
   margin-bottom: 2.3vh;
@@ -444,22 +444,22 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 }
 
 .btn-don{
-	margin: 0px;
-	margin-right: 5vw;
+  margin: 0px;
+  margin-right: 5vw;
 }
 
 .btn-devier img {
-	float: left;
+  float: left;
   height: 3.5vh;
   width: 6vw;
   margin-left: 1vw;
 }
 .btn-don img{
-	float: left;
-	height: 2vh;
+  float: left;
+  height: 2vh;
     width: 6vw;
-	margin-top: 0.8vh;
-	margin-left: 1vw;
+  margin-top: 0.8vh;
+  margin-left: 1vw;
 }
 
 .btn-primary.active:hover{

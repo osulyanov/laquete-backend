@@ -1,8 +1,15 @@
 /* ionic tabs badge start */
+.button.button-icon.input-button {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  color: #bbb;
+}
 
 .tab-item .badge {
   top: 3px !important;
 }
+
 
 .tab-item.tab-item-active .badge {
   top: 12px !important;
@@ -229,9 +236,12 @@ body {
 }
 
 .btn-laquete {
-  position: absolute;
+/*
+  position: inherit;
   right: 24%;
   bottom: 9%;
+*/
+  margin: 94% auto 0;
   background: #5ab43d !important;
   font-size: 18px;
   padding: 12px 18px;
@@ -926,65 +936,65 @@ margin-top: 1.6vh;
   .platform-android .bar.bar-stable .title {
     padding: 0.7vh 0;
     overflow: inherit;
-  }  
+  }
 }
 
 /*
 @media (min-height: 1280px) and (max-width: 800px) {
-	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-		background: url('../images/hover-border.png') no-repeat 50% 0 !important;
-		margin-top: -1.3vh;
-		padding-top: 1.8vh;
-	}
+  ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+    background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+    margin-top: -1.3vh;
+    padding-top: 1.8vh;
+  }
 }*/
 
 @media (max-height: 568px) and (max-width: 384px) {
-	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-		background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;
-		margin-top: -1.8vh;		
-	}
+  ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+    background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;
+    margin-top: -1.8vh;
+  }
 }
 
 @media (min-height: 960px) and (max-width: 600px) {
-	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-		background: url('../images/hover-border.png') no-repeat 50% 0 !important;
-		margin-top: -1.8vh;		
-	}
+  ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+    background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+    margin-top: -1.8vh;
+  }
 }
 
 @media (min-height: 1024px) and (max-width: 600px) {
-	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-		background: url('../images/hover-border.png') no-repeat 50% 0 !important;
-		margin-top: -1.7vh;		
-	}
+  ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+    background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+    margin-top: -1.7vh;
+  }
 }
 
 @media (min-height: 480px) and (max-width: 320px) {
-	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-		background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;
-		margin-top: -2.0vh !important;		
-	}
+  ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+    background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;
+    margin-top: -2.0vh !important;
+  }
 }
 
 @media (min-height: 479px) and (max-width: 320px){
-	@media (max-height: 480) and (min-width: 319px){
-		ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-			background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;
-			margin-top: -2.2vh !important;		
-		}
-	} 	
+  @media (max-height: 480) and (min-width: 319px){
+    ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+      background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;
+      margin-top: -2.2vh !important;
+    }
+  }
 }
 
 @media (min-height: 1024px) and (min-width: 768px) {
-	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-		background: url('../images/hover-border.png') no-repeat 50% 0 !important;
-		margin-top: -1.7vh;		
-	}
+  ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+    background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+    margin-top: -1.7vh;
+  }
 }
 
 @media (min-height: 1024px) and (min-width: 800px) {
-	ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-		background: url('../images/hover-border.png') no-repeat 50% 0 !important;
-		margin-top: -1.3vh;		
-	}
+  ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+    background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+    margin-top: -1.3vh;
+  }
 }
