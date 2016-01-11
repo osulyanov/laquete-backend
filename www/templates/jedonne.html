@@ -55,7 +55,7 @@
                       <img  ng-switch-default ng-src="{{church.picto}}" class="image-no-hover img-responsive">
                       <!-- <img ng-src="{{church[0].picto_hover}}" class="image-hover img-responsive"> -->
                       <p ng-switch-when="true">{{church.name}}</p>
-                      <png-switch-default>{{church.name | limitTo:9}}</png-switch-default>
+                      <p ng-switch-default>{{church.name | limitTo:9}}</p switch-default>
                     </div>
                   </a>
                 </li>
