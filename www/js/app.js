@@ -30,9 +30,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       cordova.plugins.Keyboard.disableScroll(false);
 
     }
-    if (window.StatusBar) {
+
+    $rootScope.iosdevice = false;
+    var checkiOS = function iOS() {
+
+      var iDevices = [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
+      ];
+
+      while (iDevices.length) {
+        if (navigator.platform === iDevices.pop()){ $rootScope.iosdevice = true; return true; }
+      }
+      $rootScope.iosdevice = false;
+      return false;
+    }
+
+    checkiOS();
+
+    if (window.StatusBar && checkiOS()) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleLightContent();
+      StatusBar.styleDefault();
+      StatusBar.hide();
     }
 
     document.addEventListener("offline", onOffline, false);

@@ -972,7 +972,26 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
   })
   .controller('jedonneCtrl', function ($scope, API, $ionicHistory, $rootScope, $location, $ionicSlideBoxDelegate, $ionicPopup, $timeout, $ionicLoading, Helper) {
 
+    $scope.checkiOS = function iOS() {
+
+      var iDevices = [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
+      ];
+
+      while (iDevices.length) {
+        if (navigator.platform === iDevices.pop()){ return true; }
+      }
+
+      return false;
+    }
+
     var startSwiper = function () {
+
       if ($scope.swiper != null) {
         console.log("not null")
         $scope.swiper.destroy(true, true)
