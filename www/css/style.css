@@ -48,7 +48,9 @@
   font-style: normal;
 }
 
-
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+  padding-top: 0px !important;
+}
 
 
 .top-ios ion-header-bar{

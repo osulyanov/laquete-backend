@@ -3,7 +3,7 @@
 
 .swiper-container {
   max-width: 600px !important;
-  width: 80% !important;
+  width: 100% !important;
   min-width: 300px !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -42,7 +42,7 @@
 .swiper-slide-next div p{
   color: #916153;
   font-weight: bold;
-  font-size: 10px !important;
+  font-size: 11px !important;
   line-height: 1 !important;
   height: 2em !important;
   overflow: hidden;

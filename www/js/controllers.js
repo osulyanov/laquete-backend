@@ -999,7 +999,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       $scope.swiper = new Swiper('.swiper-container', {
         loop: false,
         slidesPerView: 3,
-        spaceBetween: 30,
+        spaceBetween: 0,
         preventClicks: true,
       });
 
