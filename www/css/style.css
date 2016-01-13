@@ -1,5 +1,56 @@
 /* ionic tabs badge start */
 
+@font-face {
+  font-family: 'billabongregular';
+  src: url('../fonts/billabong.eot');
+  src: url('../fonts/billabong.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/billabong.woff2') format('woff2'),
+    url('../fonts/billabong.woff') format('woff'),
+  url('../fonts/billabong.ttf') format('truetype'),
+  url('../fonts/billabong.svg#billabongregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Museo Sans Rounded-300';
+  src: url('../fonts/MuseoSansRounded-300.eot');
+  src: url('../fonts/MuseoSansRounded-300.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/MuseoSansRounded-300.woff2') format('woff2'),
+    url('../fonts/MuseoSansRounded-300.woff') format('woff'),
+  url('../fonts/MuseoSansRounded-300.ttf') format('truetype'),
+  url('../fonts/MuseoSansRounded-300.svg#MuseoSansRounded-300') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Museo Sans Rounded-700';
+  src: url('../fonts/MuseoSansRounded-700.eot');
+  src: url('../fonts/MuseoSansRounded-700.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/MuseoSansRounded-700.woff2') format('woff2'),
+    url('../fonts/MuseoSansRounded-700.woff') format('woff'),
+  url('../fonts/MuseoSansRounded-700.ttf') format('truetype'),
+  url('../fonts/MuseoSansRounded-700.svg#MuseoSansRounded-700') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Copperplate Gothic Bold';
+  src: url('../fonts/Copperplate Gothic Bold.eot');
+  src: url('../fonts/Copperplate Gothic Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Copperplate Gothic Bold.woff2') format('woff2'),
+    url('../fonts/Copperplate Gothic Bold.woff') format('woff'),
+  url('../fonts/Copperplate Gothic Bold.ttf') format('truetype'),
+  url('../fonts/Copperplate Gothic Bold.svg#CopperplateGothic-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
 .top-ios ion-header-bar{
   top:-25px !important;
 }
@@ -251,6 +302,8 @@ body {
   border: none;
   min-width: 30vh;
   border-radius: 5px;
+font-family: "Museo Sans Rounded-700" !important;
+
 }
 
 
