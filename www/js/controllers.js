@@ -1327,8 +1327,38 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     //  console.log("After church_first_index: " + church_first_index + " church_second_index: " + church_second_index);
     //};
     //
+    $scope.money = {
+      'one':false,
+      'two':false,
+      'five':false,
+      'ten':false,
+      'twenty':false
+    }
+
+    $scope.makeBrownMoney = function(arg) {
+      for (var key in $scope.money) {
+        if ($scope.money.hasOwnProperty(key)) {
+          if (new String(key).valueOf() == new String(arg).valueOf()) {
+            //
+            console.log('lolol');
+          } else {
+            $scope.money[key]= false;
+          }
+        }
+        $scope.money[arg] = true;
+      }
+
+      console.log("one = " + $scope.money['one'])
+      console.log("two = " + $scope.money['two'])
+      console.log("five = " + $scope.money['five'])
+      console.log("ten = " + $scope.money['ten'])
+      console.log("twenty = " + $scope.money['twenty'])
+    }
 
     $scope.add1 = function () {
+
+      $scope.makeBrownMoney('one');
+
       if ($scope.amount == 0 && ($scope.selected_church_id != -1 || $scope.selected_dioce_id != -1)) {
         $scope.btn_donate_dis = false;
       }
@@ -1339,6 +1369,9 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       $("#amount").text($scope.amount);
     };
     $scope.add2 = function () {
+
+      $scope.makeBrownMoney('two');
+
       if ($scope.amount == 0 && ($scope.selected_church_id != -1 || $scope.selected_dioce_id != -1)) {
         $scope.btn_donate_dis = false;
       }
@@ -1347,6 +1380,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       console.log("after adding 2: " + $scope.amount);
     };
     $scope.add5 = function () {
+      $scope.makeBrownMoney('five');
       if ($scope.amount == 0 && ($scope.selected_church_id != -1 || $scope.selected_dioce_id != -1)) {
         $scope.btn_donate_dis = false;
       }
@@ -1354,6 +1388,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       $("#amount").text($scope.amount);
     };
     $scope.add10 = function () {
+      $scope.makeBrownMoney('ten');
       if ($scope.amount == 0 && ($scope.selected_church_id != -1 || $scope.selected_dioce_id != -1)) {
         $scope.btn_donate_dis = false;
       }
@@ -1361,6 +1396,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       $("#amount").text($scope.amount);
     };
     $scope.add20 = function () {
+      $scope.makeBrownMoney('twenty');
       if ($scope.amount == 0 && ($scope.selected_church_id != -1 || $scope.selected_dioce_id != -1)) {
         $scope.btn_donate_dis = false;
       }

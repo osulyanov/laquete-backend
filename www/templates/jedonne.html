@@ -21,19 +21,34 @@
           </div>
           <ul class="donate-numbering">
             <li>
-              <a href="" ng-click="add1()"><img src="images/one-number.png" class="img-responsive"></a>
+              <a href="" ng-click="add1()" ng-switch="money['one']">
+                <img ng-switch-when="true" src="images/one-number-brown.png" class="img-responsive">
+                <img ng-switch-default src="images/one-number.png" class="img-responsive">
+              </a>
             </li>
-            <li class="two-number">
-              <a href="" ng-click="add2()"><img src="images/two-number.png" class="img-responsive"></a>
+            <li class="two-number" >
+              <a href="" ng-click="add2()" ng-switch="money['two']">
+                <img ng-switch-when="true" src="images/two-number-brown.png" class="img-responsive">
+                <img ng-switch-default src="images/two-number.png" class="img-responsive">
+              </a>
             </li>
-            <li class="five-number">
-              <a href="" ng-click="add5()"><img src="images/five-number.png" class="img-responsive"></a>
+            <li class="five-number" >
+              <a href="" ng-click="add5()" ng-switch="money['five']">
+                <img ng-switch-when="true" src="images/five-number-brown.png" class="img-responsive">
+                <img ng-switch-default src="images/five-number.png" class="img-responsive">
+              </a>
             </li>
-            <li class="ten-number">
-              <a href="" ng-click="add10()"><img src="images/ten-number.png" class="img-responsive"></a>
+            <li class="ten-number" >
+              <a href="" ng-click="add10()" ng-switch="money['ten']">
+                <img ng-switch-when="true" src="images/ten-number-brown.png" class="img-responsive">
+                <img ng-switch-default src="images/ten-number.png" class="img-responsive">
+              </a>
             </li>
             <li>
-              <a href="" ng-click="add20()"><img src="images/twenty-number.png" class="img-responsive"></a>
+              <a href="" ng-click="add20()" ng-switch="money['twenty']">
+                <img ng-switch-when="true" src="images/twenty-number-brown.png" class="img-responsive">
+                <img ng-switch-default src="images/twenty-number.png" class="img-responsive">
+              </a>
             </li>
           </ul>
         </div>
