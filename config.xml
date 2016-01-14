@@ -27,6 +27,9 @@
   <feature name="Storage">
     <param name="android-package" value="org.apache.cordova.Storage"/>
   </feature>
+  <feature name="Geolocation">
+    <param name="ios-package" value="CDVLocation" />
+  </feature>
   <platform name="android">
     <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
     <icon src="resources/android/icon/drawable-mdpi-icon.png" density="mdpi"/>

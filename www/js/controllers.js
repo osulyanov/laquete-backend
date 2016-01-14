@@ -513,7 +513,30 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
 
   })
-  .controller('ReceiptCtrl', function ($scope, $location, $ionicHistory, API) {
+  .controller('ReceiptCtrl', function ($scope, $location, $ionicHistory, API,$ionicPopup, $timeout) {
+
+    $scope.getInfo = function() {
+      var myPopup = $ionicPopup.show({
+        templateUrl: 'templates/getInfoPopup.html',
+        cssClass: 'my-custom-popup',
+        title: '',
+        subTitle: '',
+        scope: $scope,
+        buttons: [
+          {
+            text: '<b>Ok</b>',
+            type: 'button button-clear button-positive btn-donne btn-primary btn-getInfo-Ok',
+            onTap: function (e) {
+              myPopup.close();
+            }
+          }
+        ]
+      });
+      setTimeout( function() {
+        $('.btn-getInfo-Ok').hide().show(0);
+      }, 1000)
+    }
+
     $scope.btn_text = "Obtenir mon reçu";
     $scope.platform = API.currentPlatform();
     $scope.back = function () {
@@ -972,6 +995,10 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
   })
   .controller('jedonneCtrl', function ($scope, API, $ionicHistory, $rootScope, $location, $ionicSlideBoxDelegate, $ionicPopup, $timeout, $ionicLoading, Helper) {
 
+    $scope.addChurch = function() {
+      $location.path("/main/churches");
+    }
+
     $scope.checkiOS = function iOS() {
 
       var iDevices = [
@@ -1176,7 +1203,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }
     };
     /* POP_UP starts */
-    $scope.showPopup = function () {
+      $scope.showPopup = function () {
 
 
       $scope.data = {};

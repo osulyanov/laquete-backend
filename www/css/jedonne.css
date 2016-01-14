@@ -543,7 +543,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 }
 .my-custom-popup .popup {
   background: url('../images/modal-bg.png') no-repeat;
-  background-size: 99%;
+  background-size: 100% 100%;
   width: 70vw;
   height: 70vh;
 }
@@ -552,16 +552,31 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   border-bottom: 0px solid #eee;
   text-align: right;
 }
+
+.my-custom-popup .popup-body {
+  padding: 0px 0px;
+  border-bottom: 0px solid #eee;
+  text-align: right;
+  font-family: "Museo Sans Rounded-300" !important;
+  padding: 10px;
+  text-align: center;
+  color: #916153 !important;
+  height:100%;
+}
+
 .my-custom-popup .popup-buttons {
   display: block;
   padding: 0px 0px;
   float: right;
 }
-.my-custom-popup .button.button-positive.button-clear{
-  color: #916153 !important;
+.my-custom-popup .button.button-positive.button-clear {
+  color: #916153 ;
   display: block;
-  margin-top: 5vh;
   margin: 0 auto;
+  margin-bottom:10px !important;
+  border-radius:10px;
+  font-family: "Museo Sans Rounded-300" !important;
+  font-size: 14px;
 }
 .my-custom-popup .popup-buttons .button-clear {
   color: #5ab43d;
@@ -670,6 +685,17 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 #navigation>li>a>img {
   height: 4.62vh;
   margin:0 auto 0.5vh;
+}
+
+.btn-getInfo-Ok {
+  color:white !important;
+  margin: 0  auto !important;
+  height:50px;
+  bottom:0;
+  position:fixed;
+  width:50px;
+  left: 0;
+  right: 0;
 }
 
 .my-custom-popup .popup-buttons .btn_close {

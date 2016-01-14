@@ -8,8 +8,13 @@
     <button class="button button-clear" ng-click="back()" ng-if="platform == 'android'">
       <i class="ion-android-arrow-back"></i>
     </button>
-    <button class="button button-clear" ng-click="back()" ng-if="platform == 'ios'">
+    <button class="button button-clear" ng-click="back()">
       <i class="ion-ios-arrow-back"></i> Back
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button id="btn-info" class="button button-clear" ng-click="getInfo()">
+      <img src="images/info.png" />
     </button>
   </ion-nav-buttons>
 
@@ -19,7 +24,7 @@
 </ion-nav-bar>
 <ion-view view-title="" class="login-bg">
   <ion-content>
-<div class="container">
+<div class="container" id="abcd">
   <div class="account-holder">
     <form   class="profile-form" name="userForm" ng-submit="profoliosubmit()" novalidate>
 <!--

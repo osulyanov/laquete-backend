@@ -1,5 +1,19 @@
 /* ionic tabs badge start */
 
+#btn-info {
+  width: 30px;
+  height: 30px;
+  /*margin-right:15px !important;*/
+
+}
+
+#btn-info img {
+  height: 24px;
+  width: 24px;
+  right: 5px;
+  vertical-align: middle;
+}
+
 @font-face {
   font-family: 'billabongregular';
   src: url('../fonts/billabong.eot');
@@ -784,6 +798,7 @@ font-family: "Museo Sans Rounded-700" !important;
 
 
 /* Tutorial Pages */
+
 
 .tutorial-1-bg {
   height: 100vh;
