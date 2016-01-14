@@ -1248,8 +1248,8 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
         $scope.btn_donate_dis = true;
       });
       $timeout(function () {
-        //myPopup.close(); //close the popup after 3 seconds for some reason
-      }, 10000);
+        myPopup.close(); //close the popup after 3 seconds for some reason
+      }, 3000);
     };
     // A confirm dialog
     $scope.showConfirm = function () {
