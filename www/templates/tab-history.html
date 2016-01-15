@@ -39,8 +39,8 @@
     </div>
   </header> -->
     <ion-scroll class="scroll-history" id="scroll-history">
-      <ion-list >
-        <ion-item class="listing" ng-repeat="donation in donations" type="item-text-wrap" href="">
+      <ion-list ng-show="user_has_donate">
+        <ion-item class="listing" ng-repeat="donation in donations" type="item-text-wrap" href="#">
           <li>
             <div class="col-sm-2 col-xs-2 text-center">
               <div class="image-holder" ng-if="donation.picto == 1 && donation.church_id != null">
@@ -75,8 +75,8 @@
               </div>
             </div>
             <div class="col-sm-6 col-xs-6 history-font">
-              <a class="title" href="" ng-if="donation.church_id != null">{{donation.church_name}}</a>
-              <a class="title" href="" ng-if="donation.church_id == null">{{donation.dioce_name}}</a>
+              <a class="title" href="" ng-if="donation.church_id != null" style="overflow:hidden">{{donation.church_name}}</a>
+              <a class="title" href="" ng-if="donation.church_id == null" style="overflow:hidden">{{donation.dioce_name}}</a>
               <span>{{donation.donation_date | date:'EEEE, MMMM d, y'}}</span>
             </div>
             <div class="col-sm-3 col-xs-3">
