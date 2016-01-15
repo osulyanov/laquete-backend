@@ -1216,39 +1216,15 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
       $scope.data = {};
       // An elaborate, custom popup
-      var myPopup = $ionicPopup.show({
-        template: '',
-        cssClass: 'my-custom-popup',
-        title: '',
-        subTitle: '',
-        scope: $scope,
-        buttons: [
-          {
-            text: '<b><i class="ion-close"></b>',
-            type: 'btn_close',
-            onTap: function (e) {
-              if (!$scope.data.wifi) {
-                //don't allow the user to close unless he enters wifi password
-                // e.preventDefault();
-              } else {
-                return $scope.data.wifi;
-              }
-            }
-          },
-          {
-            text: '<b>Sincere Remorse</b>',
-            type: 'button button-clear button-positive',
-            onTap: function (e) {
-              if (!$scope.data.wifi) {
-                //don't allow the user to close unless he enters wifi password
-                e.preventDefault();
-              } else {
-                return $scope.data.wifi;
-              }
-            }
-          }
-        ]
-      });
+        var myPopup = $ionicPopup.show({
+          template: '',
+          cssClass: 'my-custom-popup-after-donation',
+          title: '',
+          subTitle: '',
+          scope: $scope,
+
+
+        });
       myPopup.then(function (res) {
         console.log('Tapped!', res);
         $scope.selected_church_id = -1;

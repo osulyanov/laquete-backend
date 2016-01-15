@@ -541,6 +541,24 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   padding: 4vh 4vw;
   height: 41vh;
 }
+
+
+
+.my-custom-popup-after-donation .popup {
+  background: url('../images/after_donation.png') ;
+  background-size: contain ;
+  background-repeat: no-repeat;
+  background-position: center;
+  width:70vw;
+  height:70vh;
+}
+
+.my-custom-popup-after-donation .popup-head {
+  padding: 0px 0px;
+  border-bottom: 0px solid #eee;
+  text-align: right;
+}
+
 .my-custom-popup .popup {
   background: url('../images/modal-bg.png') no-repeat;
   background-size: 100% 100%;
