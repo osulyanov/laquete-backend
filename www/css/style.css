@@ -1,15 +1,11 @@
 /* ionic tabs badge start */
 
-.history-font a{
-  font-family: "Museo Sans Rounded-700" !important;
-}
-
-.history-font {
-  font-family: "Museo Sans Rounded-700" !important;
-}
-
-.history-font span {
+.museo-normal {
   font-family: "Museo Sans Rounded-300" !important;
+}
+
+.museo-bold {
+  font-family: "Museo Sans Rounded-700" !important;
 }
 
 #btn-info {

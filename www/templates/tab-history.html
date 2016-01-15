@@ -75,12 +75,12 @@
               </div>
             </div>
             <div class="col-sm-6 col-xs-6 history-font">
-              <a class="title" href="" ng-if="donation.church_id != null" style="overflow:hidden">{{donation.church_name}}</a>
-              <a class="title" href="" ng-if="donation.church_id == null" style="overflow:hidden">{{donation.dioce_name}}</a>
-              <span>{{donation.donation_date | date:'EEEE, MMMM d, y'}}</span>
+              <a class="title museo-bold" href="" ng-if="donation.church_id != null" style="overflow:hidden">{{donation.church_name}}</a>
+              <a class="title museo-bold" href="" ng-if="donation.church_id == null" style="overflow:hidden">{{donation.dioce_name}}</a>
+              <span class="museo-normal">{{donation.donation_date | date:'EEEE, MMMM d, y'}}</span>
             </div>
             <div class="col-sm-3 col-xs-3">
-              <strong class="donate-price timer history-font">€ {{donation.amount}}<span class="clock" ng-show="{{donation.recuring}}"></span></strong>
+              <strong class="donate-price timer museo-bold">€ {{donation.amount}}<span class="clock" ng-show="{{donation.recuring}}"></span></strong>
 
             </div>
             <!-- span  -->
