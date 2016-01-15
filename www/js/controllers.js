@@ -1047,21 +1047,14 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
         if ($scope.fav_churches.length > 0) {
           $scope.fav_churches[arg]['is_selected'] = true;
           $scope.selected_church_id = $scope.fav_churches[arg]['id'];
-          //console.log("activeIndex = " + (arg))
-          //console.log("selected_church_id = " + $scope.selected_church_id)
-          //console.log("seelcted church name  = " + $scope.fav_churches[arg]['name'])
+          console.log("activeIndex = " + (arg))
+          console.log("selected_church_id = " + $scope.selected_church_id)
+          console.log("seelcted church name  = " + $scope.fav_churches[arg]['name'])
         }
       }
 
       $scope.swiper.on('slideChangeStart', function () {
-        if ($scope.swiper.activeIndex == $scope.fav_churches.length - 1) {
-          $scope.swiper.lockSwipeToNext()
-        } else {
-          $scope.swiper.unlockSwipeToNext()
-        } if ($scope.swiper.activeIndex == $scope.fav_churches.length) {
-          console.log("on plus")
-          $scope.swiper.slidePrev(true, 300)
-        } else {
+        if ($scope.fav_churches.length != $scope.swiper.activeIndex) {
           $scope.choseChurch($scope.swiper.activeIndex);
         }
         $timeout(function () {
