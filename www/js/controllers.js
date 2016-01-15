@@ -1791,7 +1791,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }, 3000);
     });
   })
-  .controller('AccountCtrl', function ($scope, $ionicHistory, $rootScope, $location, Helper, $state) {
+  .controller('AccountCtrl', function ($scope, $ionicHistory, $rootScope, $location, Helper, $state, $stateParams) {
     $scope.$on('$ionicView.enter', function (e) {
       $rootScope.is_history = false;
     });
@@ -1833,7 +1833,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
         inherit: false,
         notify: true
       });
-      $location.path('/home');
+      $state.go('home');
       //      Helper.clearCachedViewz(function () {
       //        console.log("Inside callback clearCache");
       //        $location.path('/home');
