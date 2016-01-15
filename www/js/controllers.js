@@ -1705,6 +1705,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
 .controller('HomeCtrl', function ($scope, $location, $rootScope) {
 
+
     //    var body = document.getElementsByTagName("body")[0];
     //    console.log("Inside HomeCtrl: " + body.id);
     //    body.id = "HomeCtrl";
@@ -1783,6 +1784,12 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }
       // $location.path( "/history" );
     };
+
+    $scope.$on('$ionicView.enter', function (e) {
+      setTimeout( function() {
+        $scope.login();
+      }, 3000);
+    });
   })
   .controller('AccountCtrl', function ($scope, $ionicHistory, $rootScope, $location, Helper, $state) {
     $scope.$on('$ionicView.enter', function (e) {
