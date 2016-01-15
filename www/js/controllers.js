@@ -1060,9 +1060,10 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
           $scope.swiper.unlockSwipeToNext()
         } if ($scope.swiper.activeIndex == $scope.fav_churches.length) {
           console.log("on plus")
-          $scope.slideClicked($scope.fav_churches.length);
+          $scope.swiper.slidePrev(true, 300)
+        } else {
+          $scope.choseChurch($scope.swiper.activeIndex);
         }
-        $scope.choseChurch($scope.swiper.activeIndex);
         $timeout(function () {
           $scope.$digest();
         })
@@ -1322,7 +1323,6 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     $scope.makeBrownMoney = function(arg) {
       $scope.money[arg] = true;
       setTimeout(function() {
-        console.log('digested')
         $scope.money[arg] = false;
         $timeout(function() {
           $scope.$digest();
