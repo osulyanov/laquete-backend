@@ -2098,43 +2098,49 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       var user_token = window.localStorage.getItem("user_token");
       var get_params = "user_token=" + user_token + "&user_email=" + user_email;
 
-      // $scope.donations = [];
-      $rootScope.showLoading("Loading Data...");
+      $scope.donations = [{
+        "picto":1,
+        "church_id":99,
+        "church_name":"sfdbsdmxcvbmcxbvmxc",
+        "dioce_name":"dsfbsdbcvxnmbnvm",
+        "amount":881
+      }];
+      //$rootScope.showLoading("Loading Data...");
 
-      var promise = API.get(API.url() + 'donations/by_user?' + get_params);
-      promise.then(
-        function (data) {
-          $rootScope.hideLoading();
-          if (data["error"] == "You need to sign in or sign up before continuing.") {
-            console.log("Delete history and logout");
-            Helper.clearCachedViews(function () {
-              $location.path("/home");
-            });
-
-          }
-          if (data) {
-
-            $scope.donations = [];
-            $scope.donations = data;
-            $scope.user_has_donate = true;
-            // $scope.donations = data;
-            if (data.length > 0) {
-              $scope.user_has_donate = true;
-              for (var i = $scope.donations.length - 1; i >= 0; i--) {
-                $scope.donations[i]["donation_date"] = data[i]["updated_at"];
-
-                //              amount: 90
-                //              church_name: "Centre Jean XXIII"
-                //              created_at: "2015-12-08T11:35:04.767Z"
-                //              picto: 2
-                //              updated_at: "2015-12-08T11:35:04.767Z"
-                console.log($scope.donations[i]["donation_date"]);
-              }
-            }
-          } else {
-            console.log('Inside error');
-          }
-        });
+      //var promise = API.get(API.url() + 'donations/by_user?' + get_params);
+      //promise.then(
+      //  function (data) {
+      //    $rootScope.hideLoading();
+      //    if (data["error"] == "You need to sign in or sign up before continuing.") {
+      //      console.log("Delete history and logout");
+      //      Helper.clearCachedViews(function () {
+      //        $location.path("/home");
+      //      });
+      //
+      //    }
+      //    if (data) {
+      //
+      //      $scope.donations = [];
+      //      $scope.donations = data;
+      //      $scope.user_has_donate = true;
+      //      // $scope.donations = data;
+      //      if (data.length > 0) {
+      //        $scope.user_has_donate = true;
+      //        for (var i = $scope.donations.length - 1; i >= 0; i--) {
+      //          $scope.donations[i]["donation_date"] = data[i]["updated_at"];
+      //
+      //          //              amount: 90
+      //          //              church_name: "Centre Jean XXIII"
+      //          //              created_at: "2015-12-08T11:35:04.767Z"
+      //          //              picto: 2
+      //          //              updated_at: "2015-12-08T11:35:04.767Z"
+      //          console.log($scope.donations[i]["donation_date"]);
+      //        }
+      //      }
+      //    } else {
+      //      console.log('Inside error');
+      //    }
+      //  });
     };
 
     $scope.user_has_donate = false;

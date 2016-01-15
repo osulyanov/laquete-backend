@@ -56,13 +56,13 @@
           <h2>{{church_title}}</h2>
 
 
-          <div class="swiper-container paroisse-section" >
+          <div class="swiper-container paroisse-section" ng-show="quete_donate">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper " >
               <!-- Slides -->
-              <div class="swiper-slide swiper-no-swiping" ></div>
+              <div class="swiper-slide" ng-show="user_has_fav_churches"></div>
 
-              <div class="swiper-slide "  ng-repeat="church in fav_churches" ng-show="user_has_fav_churches" ng-click="slideClicked($index)">
+              <div class="swiper-slide" ng-repeat="church in fav_churches" ng-show="user_has_fav_churches" ng-click="slideClicked($index)">
                 <li ng-if="church.id > 0">
                   <a href="" >
                     <div class="image-sm" ng-switch="$index == swiper.activeIndex">
@@ -75,11 +75,11 @@
                   </a>
                 </li>
               </div>
-              <!--<div class="swiper-slide swiper-no-swiping" ng-show="!user_has_fav_churches"></div>-->
+              <div class="swiper-slide" ng-show="!user_has_fav_churches"></div>
               <div class="swiper-slide" ng-click="addChurch()">
                 <li>
                   <a href="" >
-                    <div class="image-sm" >
+                    <div class="image-sm" ng-switch="$index == swiper.activeIndex">
                       <img src="images/plus.png" class="image-no-hover img-responsive">
                     </div>
                   </a>
@@ -238,19 +238,19 @@
 
           </div>
 
-          <!--<div class="paroisse-section" ng-show="!user_has_fav_churches">-->
-            <!--<div class="church-infor" ng-click="goto_add_fav()">-->
-              <!--<div class="col-md-3 col-xs-3">-->
-                <!--<i class="ion-android-add"></i>-->
-              <!--</div>-->
-              <!--<div class="col-sm-9 col-xs-9">-->
-                <!--<span class="title">Ajouter une paroisse</span>-->
-                <!--<span>Chuech zip</span>-->
-              <!--</div>-->
-              <!--&lt;!&ndash;              <span class="church_close" ng-click="cancel_diocese()"><i class="ion-android-close"></i></span>&ndash;&gt;-->
-            <!--</div>-->
+          <div class="paroisse-section" ng-show="!user_has_fav_churches">
+            <div class="church-infor" ng-click="goto_add_fav()">
+              <div class="col-md-3 col-xs-3">
+                <i class="ion-android-add"></i>
+              </div>
+              <div class="col-sm-9 col-xs-9">
+                <span class="title">Ajouter une paroisse</span>
+                <span>Chuech zip</span>
+              </div>
+              <!--              <span class="church_close" ng-click="cancel_diocese()"><i class="ion-android-close"></i></span>-->
+            </div>
 
-          <!--</div>-->
+          </div>
         </div>
         <div class="type-de-don">
           <h2>Type DE DON</h2>
