@@ -1047,13 +1047,21 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
         if ($scope.fav_churches.length > 0) {
           $scope.fav_churches[arg]['is_selected'] = true;
           $scope.selected_church_id = $scope.fav_churches[arg]['id'];
-          console.log("activeIndex = " + (arg))
-          console.log("selected_church_id = " + $scope.selected_church_id)
-          console.log("seelcted church name  = " + $scope.fav_churches[arg]['name'])
+          //console.log("activeIndex = " + (arg))
+          //console.log("selected_church_id = " + $scope.selected_church_id)
+          //console.log("seelcted church name  = " + $scope.fav_churches[arg]['name'])
         }
       }
 
       $scope.swiper.on('slideChangeStart', function () {
+        //if ($scope.swiper.activeIndex == $scope.fav_churches.length - 1) {
+        //  $scope.swiper.lockSwipeToNext()
+        //} else {
+        //  $scope.swiper.unlockSwipeToNext()
+        //} if ($scope.swiper.activeIndex == $scope.fav_churches.length) {
+        //  console.log("on plus")
+        //  $scope.swiper.slidePrev(true,300);
+        //}
         $scope.choseChurch($scope.swiper.activeIndex);
         $timeout(function () {
           $scope.$digest();
@@ -1346,6 +1354,27 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
           }
         }
         $scope.money[arg] = true;
+
+        var onSuccess = function(position) {
+          console.log("success geo")
+          alert('Latitude: '          + position.coords.latitude          + '\n' +
+            'Longitude: '         + position.coords.longitude         + '\n' +
+            'Altitude: '          + position.coords.altitude          + '\n' +
+            'Accuracy: '          + position.coords.accuracy          + '\n' +
+            'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+            'Heading: '           + position.coords.heading           + '\n' +
+            'Speed: '             + position.coords.speed             + '\n' +
+            'Timestamp: '         + position.timestamp                + '\n');
+        };
+
+// onError Callback receives a PositionError object
+//
+        var onError = function(error) {
+          alert('code: '    + error.code    + '\n' +
+            'message: ' + error.message + '\n');
+        }
+
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
       }
 
       console.log("one = " + $scope.money['one'])

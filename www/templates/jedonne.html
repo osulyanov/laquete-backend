@@ -60,9 +60,9 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper " >
               <!-- Slides -->
-              <div class="swiper-slide" ng-show="user_has_fav_churches"></div>
+              <div class="swiper-slide swiper-no-swiping" ng-show="user_has_fav_churches"></div>
 
-              <div class="swiper-slide" ng-repeat="church in fav_churches" ng-show="user_has_fav_churches" ng-click="slideClicked($index)">
+              <div class="swiper-slide"  ng-repeat="church in fav_churches" ng-show="user_has_fav_churches" ng-click="slideClicked($index)">
                 <li ng-if="church.id > 0">
                   <a href="" >
                     <div class="image-sm" ng-switch="$index == swiper.activeIndex">
@@ -75,11 +75,11 @@
                   </a>
                 </li>
               </div>
-              <div class="swiper-slide" ng-show="!user_has_fav_churches"></div>
-              <div class="swiper-slide" ng-click="addChurch()">
+              <div class="swiper-slide swiper-no-swiping" ng-show="!user_has_fav_churches"></div>
+              <div class="swiper-slide swiper-no-swiping" ng-click="addChurch()">
                 <li>
                   <a href="" >
-                    <div class="image-sm" ng-switch="$index == swiper.activeIndex">
+                    <div class="image-sm" >
                       <img src="images/plus.png" class="image-no-hover img-responsive">
                     </div>
                   </a>
