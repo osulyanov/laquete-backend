@@ -39,7 +39,7 @@
           </div>
           <div class="form-group" ng-class="{ 'has-error' : userForm.amount.$invalid && !userForm.amount.$pristine }">
             <label>Le montant</label>
-            <input type="number" ng-disabled="mydisabled" name="amount" class="form-control" ng-model="donation.amount" placeholder="Amount" required>
+            <input type="number" ng-disabled="mydisabled" name="amount" class="form-control " ng-model="donation.amount" placeholder="Amount" required>
             <p ng-show="userForm.amount.$invalid && !userForm.amount.$pristine" class="help-block">Please enter a valid number</p>
           </div>
           <div class="form-group" ng-class="{'her-error' : userForm.frequency.$invalid && !userForm.frequency.$pristine }">
