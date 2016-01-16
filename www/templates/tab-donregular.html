@@ -14,14 +14,16 @@
         <ion-item class="listing" ng-repeat="donation in donations" type="item-text-wrap"  ng-click="edit_recurring(donation)">
           <li>
             <div class="col-sm-2 col-xs-2">
-              <div class="image-holder">
+              <div class="image-holder" ng-if="donation.dioce_name == null">
                 <img ng-src="images/2.png" class="img-responsive" alt="image">
+              </div>
+              <div class="image-holder" ng-if="donation.dioce_name != null">
+                <span class="ng-binding">{{donation.dioce_post_code}}</span>
               </div>
             </div>
             <div class="col-sm-6 col-xs-6">
-              <a class="title">{{donation.church_name}}</a>
+              <a class="title">{{donation.dioce_name ? donation.dioce_name : donation.church_name}}</a>
               <img ng-src="images/donation.png" class="donation-img img-responsive" alt="image"><span> {{donation.count}} Times</span>
-
               <p ng-switch="donation.frequency">
                <span ng-switch-when="daily">Don quotidien:</span>
                 <span ng-switch-when="weekly">Don hebdomadaire:</span>
@@ -45,8 +47,11 @@
     </ion-scroll>
     <center>
 
-      <button type="button" style="margin-top: 10px; background-color: #5ab43d;border-color: #5ab43d;font-size: 20px;" class="btn btn-primary" id="btn_donate" ng-click="add_recurring()">
-        <i class="ion-ios-plus-outline"></i>
+      <button type="button" style="margin-top: 10px; background-color: #5ab43d;border-color: #5ab43d;font-size: 20px;" class="btn btn-primary" id="btn_donate" ng-click="add_recurring(true)">
+        <i class="ion-ios-plus-outline"></i> Denier
+      </button>
+      <button type="button" style="margin-top: 10px; background-color: #5ab43d;border-color: #5ab43d;font-size: 20px;" class="btn btn-primary" id="btn_donate" ng-click="add_recurring(false)">
+        <i class="ion-ios-plus-outline"></i> Quête
       </button>
     </center>
   </ion-content>

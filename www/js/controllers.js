@@ -1502,11 +1502,20 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
 .controller('RecurSetupCtrl', function ($scope, API, $ionicHistory, $rootScope, $location, $ionicLoading, Helper) {
     $scope.platform = API.currentPlatform();
+    $scope.modified = false;
+    $scope.validated = false;
+    $scope.rpayment_id = 0;
+    $scope.to_dioce = $location.search().to_dioce;
     $scope.back = function () {
       $ionicHistory.goBack();
     };
 
     $scope.$on('$ionicView.enter', function (e) {
+
+      $scope.modified = false;
+      $scope.validated = false;
+      $scope.rpayment_id = 0;
+      $scope.to_dioce = $location.search().to_dioce;
 
       $scope.donation = Helper.getSharedDonation();
       $scope.create_setup = false;
@@ -1585,12 +1594,27 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     $scope.setup_rec = function () {
       $rootScope.showLoading("Loading Data...");
       console.log("amount: " + $scope.donation.amount + " church_id: " + $scope.donation.church_id + " frqu: " + $scope.donation.frequency)
-      var set_url = "";
-      if ($scope.create_setup == false) {
-        set_url = API.url() + 'rpayments/recurring?amount=' + $scope.donation.amount + "&church_id=" + $scope.donation.church_id + "&frequency=" + $scope.donation.frequency + "&" + API.token_params() + "&id=" + $scope.donation.id;
+
+      if ($scope.to_dioce) {
+        $scope.donation.frequency = "monthly";
+
       } else {
-        set_url = API.url() + 'rpayments/recurring?amount=' + $scope.donation.amount + "&church_id=" + $scope.church.id + "&frequency=" + $scope.donation.frequency + "&" + API.token_params();
+        $scope.donation.frequency = "weekly";
+
       }
+
+      var set_url = "";
+      if ($scope.modified == true && $scope.rpayment_id != 0) {
+        set_url = API.url() + 'rpayments/validate_recurring?id=' + $scope.rpayment_id;
+      } else {
+        if ($scope.create_setup == false) {
+          set_url = API.url() + 'rpayments/recurring?amount=' + $scope.donation.amount + "&church_id=" + $scope.donation.church_id + "&frequency=" + $scope.donation.frequency + "&" + API.token_params() + "&id=" + $scope.donation.id;
+        } else {
+          set_url = API.url() + 'rpayments/recurring?amount=' + $scope.donation.amount + "&church_id=" + $scope.church.id + "&frequency=" + $scope.donation.frequency + "&" + API.token_params();
+        }
+
+      }
+
       console.log(set_url);
 
       var promise = API.get(set_url);
@@ -1606,7 +1630,15 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
             }
             console.log("set Data: " + data);
-            $ionicHistory.goBack();
+
+            if ($scope.modified == false) {
+              $scope.modified = true;
+              $scope.rpayment_id = data["id"];
+
+            } else {
+              $scope.validated = true;
+            }
+            // $ionicHistory.goBack();
           } else {
             console.log('Inside error');
           }
@@ -1628,7 +1660,8 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
               });
             }
             console.log("set Data: " + data);
-            $ionicHistory.goBack();
+            $location.path('/main/donregular');
+            // $ionicHistory.goBack();
           } else {
             console.log('Inside error');
           }
@@ -1673,13 +1706,13 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     });
 
 
-    $scope.add_recurring = function () {
+    $scope.add_recurring = function (to_dioce) {
       console.log("Inside goto setup");
       Helper.setSharedDonation(null);
       $ionicHistory.nextViewOptions({
         disableBack: false
       });
-      $location.path('/setup');
+      $location.path('/setup').search({to_dioce: to_dioce});
     };
     $scope.edit_recurring = function (donation) {
       $ionicHistory.nextViewOptions({
@@ -1687,7 +1720,11 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       });
       console.log("Inside goto setup");
       Helper.setSharedDonation(donation);
-      $location.path('/setup');
+      to_dioce = false;
+      if (donation.frequency == 'monthly') {
+        to_dioce = true;
+      }
+      $location.path('/setup').search({to_dioce: to_dioce});;
     };
 
 
