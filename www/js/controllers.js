@@ -619,8 +619,8 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
   function successCallback(position) {
 
-    $scope.user_lat = 48.5149019; //position.coords.latitude;
-    $scope.user_long = 1.8341628; //position.coords.longitude;
+    $scope.user_lat = position.coords.latitude; // 48.5149019;
+    $scope.user_long = position.coords.longitude; // 1.8341628;
     var userLocation = $scope.user_lat + ', ' + $scope.user_long;
     console.log("You are found here: " + userLocation);
     $rootScope.showLoading("Please wait...");
