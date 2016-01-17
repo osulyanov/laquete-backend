@@ -206,8 +206,10 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }
     );
   };
-  Helper.OneTimeDonateDioce = function (amount, dioce_id, callback) {
-    var get_churches = API.get(API.url() + "rpayments/denier_charge?amount=" + amount + "&dioce_id=" + dioce_id + "&" + API.token_params());
+  Helper.OneTimeDonateDioce = function (amount, church_id, callback) {
+  // Helper.OneTimeDonateDioce = function (amount, dioce_id, callback) {
+    // var get_churches = API.get(API.url() + "rpayments/denier_charge?amount=" + amount + "&dioce_id=" + dioce_id + "&" + API.token_params());
+    var get_churches = API.get(API.url() + "rpayments/denier_charge?amount=" + amount + "&church_id=" + church_id + "&" + API.token_params());
     get_churches.then(
       function (data) {
         if (data) {
@@ -617,8 +619,8 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
   function successCallback(position) {
 
-    $scope.user_lat = position.coords.latitude;
-    $scope.user_long = position.coords.longitude;
+    $scope.user_lat = 48.5149019; //position.coords.latitude;
+    $scope.user_long = 1.8341628; //position.coords.longitude;
     var userLocation = $scope.user_lat + ', ' + $scope.user_long;
     console.log("You are found here: " + userLocation);
     $rootScope.showLoading("Please wait...");
@@ -1128,7 +1130,8 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       console.log("church_id: " + $scope.selected_church_id);
       console.log("amount: " + $scope.amount);
       $rootScope.showLoading("Please wait...");
-      if ($scope.selected_church_id != -1) {
+      if ($scope.donation_type == 'quete') {
+      // if ($scope.selected_church_id != -1) {
 
 
         Helper.OneTimeDonate($scope.amount, $scope.selected_church_id, function (data) {
@@ -1167,7 +1170,8 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
           }
         })
       } else {
-        Helper.OneTimeDonateDioce($scope.amount, $scope.selected_dioce_id, function (data) {
+        // Helper.OneTimeDonateDioce($scope.amount, $scope.selected_dioce_id, function (data) {
+        Helper.OneTimeDonateDioce($scope.amount, $scope.selected_church_id, function (data) {
           console.log(data);
           $rootScope.hideLoading();
           if (data["error"] == "You need to sign in or sign up before continuing.") {
@@ -1205,9 +1209,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }
     };
     /* POP_UP starts */
-      $scope.showPopup = function () {
-
-
+    $scope.showPopup = function () {
       $scope.data = {};
       // An elaborate, custom popup
         var myPopup = $ionicPopup.show({
@@ -1221,7 +1223,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
         });
       myPopup.then(function (res) {
         console.log('Tapped!', res);
-        $scope.selected_church_id = -1;
+        // $scope.selected_church_id = -1;
         $scope.amount = 0;
         $scope.btn_donate_dis = true;
       });
