@@ -1553,14 +1553,12 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       } else {
         console.log("donation: " + $scope.donation);
         $scope.title = "Modifiez votre don";
-        $scope.all_fav_churches = [];
-        $scope.all_fav_churches = [{
+
+        $scope.selected_church = {
           'name': $scope.donation.church_name,
           'id': $scope.donation.church_id,
           'favorite': true
-        }];
-
-        $scope.selected_church = $scope.all_fav_churches[0];
+        };
       }
     })
 
