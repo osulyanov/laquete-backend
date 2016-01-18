@@ -1492,8 +1492,6 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       $scope.quete_donate = false;
       console.log("Img devier clicked");
       $scope.church_title = "Diocèse"
-      $scope.btn_donate_dis = true;
-
     };
 
     $scope.addFavChurch = function () {
