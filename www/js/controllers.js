@@ -774,7 +774,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
   $scope.callGetChurches = function () {
     //Helper.getSharedChurches(function(data){
-    //$rootScope.showLoading("Loading Data...");
+    //$rootScope.showLoading("Chargement...");
     Helper.GetAllChurchesFromServer(function (data) {
       //$rootScope.hideLoading();
       setChurches(data);
@@ -1070,7 +1070,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       console.log("view entered")
       $scope.user_has_fav_churches = false;
       $scope.fav_churches = [];
-      $rootScope.showLoading("Loading Data...");
+      $rootScope.showLoading("Chargement...");
       Helper.GetFavChurchesFromServer(function (data) {
         $rootScope.hideLoading();
         if (data) {
@@ -1520,7 +1520,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       $scope.donation = Helper.getSharedDonation();
       $scope.create_setup = false;
       if ($scope.donation == null) {
-        $rootScope.showLoading("Loading Data...");
+        $rootScope.showLoading("Chargement...");
         $scope.title = "programmer un don de ne jamais manquer la quête?";
         $scope.create_setup = true;
         Helper.GetFavChurchesFromServer(function (data) {
@@ -1590,7 +1590,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     };
 
     $scope.setup_rec = function () {
-      $rootScope.showLoading("Loading Data...");
+      $rootScope.showLoading("Chargement...");
       console.log("amount: " + $scope.donation.amount + " church_id: " + $scope.donation.church_id + " frqu: " + $scope.donation.frequency)
 
       if ($scope.to_dioce) {
@@ -1644,7 +1644,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     };
 
     $scope.delete_rec = function () {
-      $rootScope.showLoading("Loading Data...");
+      $rootScope.showLoading("Chargement...");
 
       var promise = API.get(API.url() + 'rpayments/del_rec?' + API.token_params() + "&id=" + $scope.donation.id);
       promise.then(
@@ -1672,7 +1672,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     $scope.donations = [];
     $scope.$on('$ionicView.enter', function (e) {
       // $scope.donations = [];
-      $rootScope.showLoading("Loading Data...");
+      $rootScope.showLoading("Chargement...");
 
       var promise = API.get(API.url() + 'donations/by_user_rec?' + API.token_params());
       promise.then(
@@ -2143,7 +2143,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       var get_params = "user_token=" + user_token + "&user_email=" + user_email;
 
       // $scope.donations = [];
-      $rootScope.showLoading("Loading Data...");
+      $rootScope.showLoading("Chargement...");
 
       var promise = API.get(API.url() + 'donations/by_user?' + get_params);
       promise.then(

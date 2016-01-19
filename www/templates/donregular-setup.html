@@ -4,11 +4,11 @@
       <i class="ion-android-arrow-back"></i>
     </button>
     <button class="button button-clear" ng-click="back()" ng-if="platform == 'ios'">
-      <i class="ion-ios-arrow-back"></i> Back
+      <i class="ion-ios-arrow-back"></i> Retour
     </button>
   </ion-nav-buttons>
   <ion-nav-title>
-    <font ng-style="create_setup && {'font-size':'65%'} ">{{title}}</font>
+    Don régulier
   </ion-nav-title>
 </ion-nav-bar>
 
@@ -21,10 +21,10 @@
 
         <form class="recurring-payment-form" name="userForm" ng-submit="setup_rec()" novalidate>
           <div class="form-group" ng-class="{ 'her-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-            <label ng-if="!to_dioce">Quête (hebdomadiare)</label>
+            <label ng-if="!to_dioce">Quête (hebdomadaire)</label>
             <label ng-if="to_dioce">Denier (mensuel)</label>
             <br>
-            <label>Église</label>
+            <label>Église</label>
             <!--
             <select class="item item-input item-select dropdwon_payment" ng-options="church.name for church in all_fav_churches track by church.id">
               <option value="" selected>--Please select Church--</option>
@@ -37,17 +37,18 @@
           </select>
 -->
             <select name="church" class="form-control" ng-model="selected_church" ng-options="church.name for church in all_fav_churches track by church.id" ng-change="select_church(selected_church)" ng-disabled="!create_setup || validated" ng-required="true" ng-if="create_setup">
-              <option value="" id="0" selected> Please select a church </option>
+              <option value="" id="0" selected> Choisissez une église </option>
             </select>
             <input type="text" ng-if="!create_setup" class="form-control" ng-model="selected_church.name" disabled>
           </div>
           <div class="form-group" ng-class="{ 'has-error' : userForm.amount.$invalid && !userForm.amount.$pristine }">
-            <label>Le montant</label>
-            <input type="number"  ng-disabled="mydisabled || validated" name="amount" class="form-control" ng-model="donation.amount" placeholder="Amount" required>
-            <p ng-show="donation.amount && isNaN(donation.amount)" class="help-block">Please enter a valid number</p>
+            <label>Montant</label>
+            <input ng-if="!to_dioce" type="number"  ng-disabled="mydisabled || validated" name="amount" class="form-control" ng-model="donation.amount" placeholder="4" required>
+            <input ng-if="to_dioce" type="number"  ng-disabled="mydisabled || validated" name="amount" class="form-control" ng-model="donation.amount" placeholder="40" required>
+            <p ng-show="donation.amount && isNaN(donation.amount)" class="help-block">Veuillez entrer un chiffre valide.</p>
           </div>
           <div class="form-group hidden" ng-class="{'her-error' : userForm.frequency.$invalid && !userForm.frequency.$pristine }">
-            <label>La fréquence du don</label>
+            <label>La fréquence du don</label>
             <select class="item item-input item-select dropdwon_payment" ng-model="donation.frequency" ng-change="select_freq(donation.frequency)">
               <option value="daily">Don quotidien</option>
 

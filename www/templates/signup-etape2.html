@@ -4,7 +4,7 @@
       <i class="ion-android-arrow-back"></i>
     </button>
     <button class="button button-clear" ng-click="back()" ng-if="platform == 'ios'">
-      <i class="ion-ios-arrow-back"></i> Back
+      <i class="ion-ios-arrow-back"></i> Retour
     </button>
   </ion-nav-buttons>
   <ion-nav-title>
@@ -34,27 +34,27 @@
               <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
             </div>
             <div class="form-group" ng-class="{ 'has-error' : userForm.cc_number.$invalid && !userForm.cc_number.$pristine && !userForm.cc_number.$error.required }">
-              <label>Card Numebr</label>
+              <label>Numéro de carte</label>
               <input type="number" name="cc_number" class="form-control" ng-model="user.cc_number" ng-required="true">
-              <p ng-show="userForm.cc_number.$invalid && !userForm.cc_number.$pristine && !userForm.cc_number.$error.required" class="help-block">Enter a valid Credit Card Number.</p>
-              <p class="help-block" ng-show="userForm.cc_number.$error.required && !userForm.cc_number.$pristine">This Field is Required</p>
+              <p ng-show="userForm.cc_number.$invalid && !userForm.cc_number.$pristine && !userForm.cc_number.$error.required" class="help-block">Entrez un numéro valide.</p>
+              <p class="help-block" ng-show="userForm.cc_number.$error.required && !userForm.cc_number.$pristine">Ce champ est requis.</p>
             </div>
             <div class="form-group" ng-class="{ 'has-error' : userForm.cc_exp_date.$invalid && !userForm.cc_exp_date.$pristine }">
-              <label>Expired date</label>
+              <label>Date d'expiration</label>
               <input type="date" name="cc_exp_date" class="form-control" ng-model="user.cc_exp_date" ng-required="true">
-              <p ng-show="userForm.cc_exp_date.$invalid && !userForm.cc_exp_date.$pristine && !userForm.cc_exp_date.$error.required" class="help-block">Enter a valid Expiration date.</p>
-              <p class="help-block" ng-show="userForm.cc_exp_date.$error.required && !userForm.cc_exp_date.$pristine">This Field is Required</p>
+              <p ng-show="userForm.cc_exp_date.$invalid && !userForm.cc_exp_date.$pristine && !userForm.cc_exp_date.$error.required" class="help-block">Entrez une date d'expiration valide.</p>
+              <p class="help-block" ng-show="userForm.cc_exp_date.$error.required && !userForm.cc_exp_date.$pristine">Ce champ est requis.</p>
             </div>
 
             <div class="form-group" ng-class="{ 'has-error' : userForm.cc_cvc.$invalid && !userForm.cc_cvc.$pristine && !userForm.cc_cvc.$error.required }">
-              <label>Card CVC</label>
+              <label>CVC</label>
               <input type="number" name="cc_cvc" class="form-control" ng-model="user.cc_cvc" ng-required="true">
-              <p ng-show="userForm.cc_cvc.$invalid && !userForm.cc_cvc.$pristine && !userForm.cc_cvc.$error.required" class="help-block">Enter a valid CVC.</p>
-              <p class="help-block" ng-show="userForm.cc_cvc.$error.required && !userForm.cc_cvc.$pristine">This Field is Required</p>
+              <p ng-show="userForm.cc_cvc.$invalid && !userForm.cc_cvc.$pristine && !userForm.cc_cvc.$error.required" class="help-block">CVC incorrect.</p>
+              <p class="help-block" ng-show="userForm.cc_cvc.$error.required && !userForm.cc_cvc.$pristine">Ce champ est requis</p>
             </div>
 
 
-            <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="add_card()">Continue</button>
+            <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="add_card()">Suivant</button>
             <!--<button  class="btn btn-primary col col-50 col-offset-25" ng-click="continue()">Plus tard</button>-->
           </form>
         </div>

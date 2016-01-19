@@ -3,7 +3,7 @@
   </ion-nav-back-button>
 
   <ion-nav-title>
-    Churches
+    Mes églises
   </ion-nav-title>
 </ion-nav-bar>
 <ion-view class="history-bg">
@@ -12,31 +12,31 @@
     <div class="padding churches-padding">
       <!--	Area for ma_paroisses selected-->
       <div class="button-bar" ng-show="ma_paroisses">
-        <a class="button bg-green" ng-click="ma_paroisse()"><font size="2">Ma paroisse</font></a>
-        <a class="button bg-white" ng-click="autres_paroisses()"><font size="2">Mes autres paroisses</font></a>
+        <a class="button bg-green" ng-click="ma_paroisse()"><font size="2">Mon église</font></a>
+        <a class="button bg-white" ng-click="autres_paroisses()"><font size="2">Mes autres églises</font></a>
       </div>
       <!--		Area for ma_paroisses unselected-->
       <div class="button-bar" ng-hide="ma_paroisses">
-        <a class="button bg-white" ng-click="ma_paroisse()"><font size="2">Ma paroisse</font></a>
-        <a class="button bg-green" ng-click="autres_paroisses()"><font size="2">Mes autres paroisses</font></a>
+        <a class="button bg-white" ng-click="ma_paroisse()"><font size="2">Mon église</font></a>
+        <a class="button bg-green" ng-click="autres_paroisses()"><font size="2">Mes autres églises</font></a>
       </div>
 
       <!--		ma_paroisses selected radio buttons for geo and manual search-->
       <div class="bg-green" ng-show="ma_paroisses && !main_church_added">
         <input type="radio" name="searchtype" id="Chercher" ng-click="searchType('Chercher')" value="Chercher" checked="true"/>
-        <label for = "Chercher">&nbsp;&nbsp;Géolocalisation</label>
+        <label for = "Chercher">&nbsp;&nbsp;Géolocalisation</label>
 
         <input type="radio" name="searchtype" id="PostVille" ng-click="searchType('PostVille')" value="Code postal ou ville" />
-        <label for = "PostVille">&nbsp;&nbsp;Manual Search</label>
+        <label for = "PostVille">&nbsp;&nbsp;Recherche Manuelle</label>
       </div>
 
       <!--		ma_paroisses unselected radio buttons for geo and manual search-->
       <div class="bg-green" ng-hide="ma_paroisses">
         <input type="radio" name="search_type_fav" id="ChercherFav" ng-click="searchTypeFav('ChercherFav')" value="Chercher" checked="true"/>
-        <label for = "ChercherFav">&nbsp;&nbsp;Géolocalisation</label>
+        <label for = "ChercherFav">&nbsp;&nbsp;Géolocalisation</label>
 
         <input type="radio" name="search_type_fav" id="PostVilleFav" ng-click="searchTypeFav('PostVilleFav')" value="Code postal ou ville" />
-        <label for = "PostVilleFav">&nbsp;&nbsp;Manual Search</label>
+        <label for = "PostVilleFav">&nbsp;&nbsp;Recherche Manuelle</label>
       </div>
       <!--ma_paroisses selected radio buttons for geo selected search-->
       <div ng-show="!PostVille && ma_paroisses && !main_church_added" >

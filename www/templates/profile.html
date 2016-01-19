@@ -9,12 +9,12 @@
       <i class="ion-android-arrow-back"></i>
     </button>
     <button class="button button-clear" ng-click="back()" ng-if="platform == 'ios'">
-      <i class="ion-ios-arrow-back"></i> Back
+      <i class="ion-ios-arrow-back"></i> Retour
     </button>
   </ion-nav-buttons>
 
   <ion-nav-title>
-    Mes coordonnées
+    Mes coordonnées
   </ion-nav-title>
 </ion-nav-bar>
 <ion-view view-title="" class="login-bg">
@@ -25,20 +25,20 @@
   <div class="account-holder">
     <form   class="profile-form" name="userForm" ng-submit="profoliosubmit()" novalidate>
       <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
-          <label>Name</label>
+          <label>Nom</label>
           <input type="text" ng-disabled="mydisabled" name="name" class="form-control" ng-model="user.name" required>
-          <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
+          <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Votre nom est requis.</p>
       </div>
       <div class="form-group" ng-class="{ 'has-error' : userForm.surname.$invalid && !userForm.surname.$pristine }">
-        <label>Surname</label>
-        <input type="text" ng-disabled="mydisabled" name="surname" class="form-control" ng-model="user.surname" placeholder="Sur Nmae" required>
-        <p ng-show="userForm.surname.$error.minlength" class="help-block">Surname is too short.</p>
-        <p ng-show="userForm.surname.$error.maxlength" class="help-block">Surname is too long.</p>
+        <label>Nom de famille</label>
+        <input type="text" ng-disabled="mydisabled" name="surname" class="form-control" ng-model="user.surname" required>
+        <p ng-show="userForm.surname.$error.minlength" class="help-block">Le nom de famille est trop long.</p>
+        <p ng-show="userForm.surname.$error.maxlength" class="help-block">Le nom de famille est trop long.</p>
       </div>
       <div class="form-group" ng-class="{ 'her-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-        <label>Email address</label>
+        <label>Adresse email</label>
         <input type="email" ng-disabled="mydisabled" name="email" class="form-control" ng-model="user.email" placeholder="Email">
-          <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+          <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Adresse email.</p>
       </div>
       <button type="submit" class="btn-profile-save btn btn-default" id="profile"  ng-click="profile_btn()">{{btn_text}}</button>
     </form>
