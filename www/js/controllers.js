@@ -1868,7 +1868,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
         inherit: false,
         notify: true
       });
-      $state.go('home');
+      $state.go('login');
       //      Helper.clearCachedViewz(function () {
       //        console.log("Inside callback clearCache");
       //        $location.path('/home');
@@ -1921,6 +1921,8 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       $scope.user = {};
       $scope.user.email = "";
       $scope.user.pwd = "";
+      $scope.no_password = false;
+      $scope.error = "";
     });
     $ionicHistory.nextViewOptions({
       disableBack: true
@@ -1944,6 +1946,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     $scope.user.email = "";
     $scope.user.pwd = "";
     $scope.error = "";
+    $scope.no_password = false;
 
     $scope.submitForm = function () {
       console.log("Inside login");
@@ -1952,6 +1955,12 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       var pwd = $scope.user.pwd;
       console.log(email);
       console.log(pwd);
+      if (pwd) {
+        $scope.no_password = false;
+      } else {
+        $scope.no_password = true;
+        return false;
+      }
       $rootScope.showLoading("Please wait...");
       // $scope.error = "inside submit";
 
