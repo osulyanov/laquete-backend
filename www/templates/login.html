@@ -10,20 +10,20 @@
             <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
               <label class="">Email</label>
               <input type="email" name="email" class="form-control" ng-model="user.email">
-              <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block ">Enter a valid email.</p>
+              <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block ">Entrez un email valide.</p>
             </div>
             <!-- PASSWORD -->
             <div class="form-group" ng-class="{ 'has-error' : userForm.pwd.$invalid && !userForm.pwd.$pristine }">
               <label class=" ">Mot de passe</label>
               <input type="password" name="pwd" class="form-control" ng-model="user.pwd" ng-required="true" ng-minlength="6">
-              <p ng-show="no_password" class="help-block ">Enter a password</p>
-              <p ng-show="userForm.pwd.$error.minlength" class="help-block ">Minimum password length: 6</p>
+              <p ng-show="no_password" class="help-block ">Entrez un mot de passe</p>
+              <p ng-show="userForm.pwd.$error.minlength" class="help-block ">Au moins 6 caractères.</p>
             </div>
             <span class=""><font color="red ">{{error}}</font></span>
             <br>
-            <button type="submit" class="btn btn-primary " ng-disabled="userForm.$invalid">s'identifier</button>
+            <button type="submit" class="btn btn-primary " ng-disabled="userForm.$invalid">S'identifier</button>
           </form>
-            <button type="button" style="margin-top: -32px;" class="pull-right sign-in-btn btn btn-primary " ng-click="signup()">signer2</button>
+            <button type="button" style="margin-top: -32px;" class="pull-right sign-in-btn btn btn-primary " ng-click="signup()">S'inscrire</button>
         </div>
       </div>
     </div>

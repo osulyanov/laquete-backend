@@ -476,7 +476,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     $scope.profile_btn = function () {
       //      $scope.mydisabled = !$scope.mydisabled;
       if (!$scope.mydisabled) {
-        $rootScope.showLoading("Please wait");
+        $rootScope.showLoading("Veuillez patienter");
         var get_card = API.get(API.url() + "rpayments/update_cardinfo?card_number=" + $scope.user.card_no + "&card_code=" + $scope.user.ccv + "&exp_date=" + $scope.datepickerObject.inputDate + API.token_params());
         get_card.then(
           function (data) {
@@ -614,7 +614,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
   });
   $scope.nearChurches = [];
   $scope.has_near_churches = false;
-  $scope.no_near_church_msg = "No near churches Found";
+  $scope.no_near_church_msg = "Pas d'église à proximité";
 
 
   function successCallback(position) {
@@ -623,7 +623,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     $scope.user_long = position.coords.longitude; // 1.8341628;
     var userLocation = $scope.user_lat + ', ' + $scope.user_long;
     console.log("You are found here: " + userLocation);
-    $rootScope.showLoading("Please wait...");
+    $rootScope.showLoading("Veuillez patienter...");
     Helper.getNearChurches($scope.user_lat, $scope.user_long, function (data) {
       $rootScope.hideLoading();
       console.log("with location: " + data.length);
@@ -851,7 +851,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
   };
 
   $scope.addMainChurch = function (obj) {
-    $rootScope.showLoading("Please wait...");
+    $rootScope.showLoading("Veuillez patienter...");
     console.log(obj);
     var promise;
     promise = API.get(API.url() + 'users/main_church', {
@@ -1129,7 +1129,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     $scope.one_time_donate = function () {
       console.log("church_id: " + $scope.selected_church_id);
       console.log("amount: " + $scope.amount);
-      $rootScope.showLoading("Please wait...");
+      $rootScope.showLoading("Veuillez patienter...");
       if ($scope.donation_type == 'quete') {
       // if ($scope.selected_church_id != -1) {
 
@@ -1961,7 +1961,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
         $scope.no_password = true;
         return false;
       }
-      $rootScope.showLoading("Please wait...");
+      $rootScope.showLoading("Veuillez patienter...");
       // $scope.error = "inside submit";
 
       var promise = API.login(API.url() + 'sessions?user_email=' + email + '&user_password=' + pwd);
@@ -2021,7 +2021,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       var name = $scope.user.name;
       // $scope.error = "inside submit";
       // var url = 'http://localhost:3000/api/v1/';
-      $rootScope.showLoading("Please wait...");
+      $rootScope.showLoading("Veuillez patienter...");
 
       var promise = API.get(API.url() + 'registrations?user_email=' + email + '&user_password=' + pwd + '&name=' + name + '&surname=' + surname);
       promise.then(
@@ -2070,7 +2070,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     $scope.user.cc_ccv = null;
     $scope.user.cc_exp_date = null;
     $scope.add_card = function () {
-      $rootScope.showLoading("Please wait");
+      $rootScope.showLoading("Veuillez patienter");
       var cc_number = $scope.user.cc_number;
       var cc_ccv = $scope.user.cc_cvc;
       var cc_exp_date = $scope.user.cc_exp_date;
