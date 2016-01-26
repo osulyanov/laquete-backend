@@ -21,53 +21,20 @@
         <a class="button bg-green" ng-click="autres_paroisses()"><font size="2">Mes autres églises</font></a>
       </div>
 
-      <!--		ma_paroisses selected radio buttons for geo and manual search-->
-      <div class="bg-green" ng-show="ma_paroisses && !main_church_added">
-        <input type="radio" name="searchtype" id="Chercher" ng-click="searchType('Chercher')" value="Chercher" checked="true"/>
-        <label for = "Chercher">&nbsp;&nbsp;Géolocalisation</label>
-
-        <input type="radio" name="searchtype" id="PostVille" ng-click="searchType('PostVille')" value="Code postal ou ville" />
-        <label for = "PostVille">&nbsp;&nbsp;Recherche Manuelle</label>
-      </div>
-
-      <!--		ma_paroisses unselected radio buttons for geo and manual search-->
-      <div class="bg-green" ng-hide="ma_paroisses">
-        <input type="radio" name="search_type_fav" id="ChercherFav" ng-click="searchTypeFav('ChercherFav')" value="Chercher" checked="true"/>
-        <label for = "ChercherFav">&nbsp;&nbsp;Géolocalisation</label>
-
-        <input type="radio" name="search_type_fav" id="PostVilleFav" ng-click="searchTypeFav('PostVilleFav')" value="Code postal ou ville" />
-        <label for = "PostVilleFav">&nbsp;&nbsp;Recherche Manuelle</label>
-      </div>
-      <!--ma_paroisses selected radio buttons for geo selected search-->
-      <div ng-show="!PostVille && ma_paroisses && !main_church_added" >
-        <input type="radio" name="list_or_map" id="Carte" ng-click="list_map(true)" value="Carte" checked="checked"/>
-        <label for = "Carte">&nbsp;&nbsp;Carte</label>
-        <input type="radio" name="list_or_map" id="Liste" ng-click="list_map(false)" value="Liste"/>
-        <label for = "Liste">&nbsp;&nbsp;Liste</label><br>
-      </div>
-      <!--		ma_paroisses unselected radio buttons for geo selected search-->
-      <div ng-show="!PostVilleFav && !ma_paroisses" >
-        <input type="radio" name="list_or_map_fav" id="CarteFav" ng-click="list_map_fav(true)" value="Carte" checked="checked"/>
-        <label for = "CarteFav">&nbsp;&nbsp;Carte</label>
-        <input type="radio" name="list_or_map_fav" id="ListeFav" ng-click="list_map_fav(false)" value="Liste"/>
-        <label for = "ListeFav">&nbsp;&nbsp;Liste</label><br>
-      </div>
-
       <!--		ma_paroisses selected radio buttons for postville selected search-->
-      <div ng-show="PostVille && ma_paroisses && !main_church_added" >
-        <input type="radio" name="search" id="Postal" ng-click="check(false)" value="Code postal" checked="checked"/>
-        <label for = "Postal">&nbsp;&nbsp;Code postal</label>
-        <input type="radio" name="search" id="NearChurches" ng-click="check(true)" value="Chercher"/>
-        <label for = "NearChurches">&nbsp;&nbsp;Ville</label><br>
+      <div ng-show="ma_paroisses && !main_church_added" >
 <!--        <input class="form-control" name="query" type="text"  value="Search" ng-model="query" placeholder="Filter..." ng-blur="hide_keyboard()">-->
         <div class="item item-input item-icon-right" style="background:white;">
-          <input type="text" name="query" ng-model="query"  placeholder="Filter..." >
+          <input type="text" name="query" ng-model="query"  placeholder="Filter..." ng-focus="searchType('PostVille')" ng-blur="searchType('Chercher')">
           <font size="5px"><i class="ion-ios-close-outline" ng-show="query.length" style="margin-right: 5px;" ng-click="query = ''; hide_keyboard()"></i></font>
         </div>
+      </div>
+
+      <div ng-show="PostVille && ma_paroisses && !main_church_added" >
          <div class="scroll-list-small">
-          <ul class="listing" ng-hide="searchbytown" >
+          <ul class="listing">
             <scroll direction="y">
-              <li ng-repeat="church in all_churches  | filter: { 'zip': query } | orderBy: 'zip'">
+              <li ng-repeat="church in all_churches  | filterChurch:query | orderBy: 'zip'">
                 <div class="col-sm-2 col-xs-2">
                   <div class="image-holder">
                     <img ng-src="{{church.picto}}" class="img-responsive" alt="image">
@@ -75,7 +42,7 @@
                 </div>
                 <div class="col-sm-6 col-xs-6">
                   <a class="title">{{church.name}}</a>
-                  <span>{{church.zip}}</span>
+                  <span>{{church.zip ? church.zip : ''}} {{church.city!='null' ? church.city : ''}}</span>
                 </div>
                 <div class="col-sm-3 col-xs-2">
                   <span class="donate-price" ng-if="church.id == main_church_id">
@@ -88,49 +55,22 @@
               </li>
             </scroll>
           </ul>
-
-
-          <ul class="listing" ng-show="searchbytown">
-            <li ng-repeat="church in all_churches  | filter: { 'city': query } | orderBy: 'city' " class="row">
-              <div class="col-sm-2 col-xs-2">
-                <div class="image-holder">
-                  <img ng-src="{{church.picto}}" class="img-responsive" alt="image">
-                </div>
-              </div>
-              <div class="col-sm-6 col-xs-6">
-                <a class="title">{{church.name}}</a>
-                <span>{{church.city}}</span>
-              </div>
-              <div class="col-sm-3 col-xs-2">
-                <span class="donate-price" ng-if="church.id == main_church_id">
-                  <font color="#B39E83"><i class="glyphicon glyphicon-heart"></i></font>
-                </span>
-                <span class="donate-price" ng-if="church.id != main_church_id"><i class="glyphicon glyphicon-heart-empty" ng-click="addMainChurch(church)"></i></span>
-              </div>
-            </li>
-          </ul>
         </div>
       </div>
 
       <!--		ma_paroisses unselected radio buttons for postville selected search-->
-      <div ng-show="PostVilleFav && !ma_paroisses" >
-        <input type="radio" name="search_fav" id="PostalFav" ng-click="check_fav(false)" value="Code postal" checked="checked"/>
-        <label for = "PostalFav">&nbsp;&nbsp;Code postal</label>
-        <input type="radio" name="search_fav" id="NearChurchesFav" ng-click="check_fav(true)" value="Chercher"/>
-        <label for = "NearChurchesFav">&nbsp;&nbsp;Ville</label><br>
-
-<!--
-        <input class="" type="text"  value="Search" name="query_fav" ng-model="query_fav" placeholder="Filter..." ng-blur="hide_keyboard()">
-        <button  class="input-button button button-icon ion-android-close" ng-click="clearSearch()"></button>
--->
+      <div ng-show="!ma_paroisses" >
         <div class="item item-input item-icon-right" style="background:white;">
-          <input type="text" name="query_fav" ng-model="query_fav"  placeholder="Filter..." >
+          <input type="text" name="query_fav" ng-model="query_fav"  placeholder="Filter..." ng-focus="searchTypeFav('PostVilleFav')" ng-blur="searchTypeFav('ChercherFav')">
           <font size="5px"><i class="ion-ios-close-outline" ng-show="query_fav.length" style="margin-right: 5px;" ng-click="query_fav = ''; hide_keyboard()"></i></font>
         </div>
+      </div>
+
+      <div ng-show="PostVilleFav && !ma_paroisses" >
         <div class="scroll-list-small">
-        <ul class="listing" ng-hide="searchbytown_fav" >
+        <ul class="listing" >
           <scroll direction="y">
-            <li ng-repeat="church in all_churches  | filter: { 'zip': query_fav } | orderBy: 'zip'">
+            <li ng-repeat="church in all_churches | filterChurch:query_fav | orderBy: 'zip'">
               <div class="col-sm-2 col-xs-2">
                 <div class="image-holder">
                   <img ng-src="{{church.picto}}" class="img-responsive" alt="image">
@@ -138,7 +78,7 @@
               </div>
               <div class="col-sm-6 col-xs-6">
                 <a class="title">{{church.name}}</a>
-                <span>{{church.zip}}</span>
+                <span>{{church.zip}} {{church.city}}</span>
               </div>
               <div class="col-sm-3 col-xs-2">
               <span class="donate-price" ng-if="church.id == main_church_id">
@@ -151,30 +91,6 @@
               </div>
             </li>
           </scroll>
-        </ul>
-
-
-        <ul class="listing" ng-show="searchbytown_fav" >
-          <li ng-repeat="church in all_churches  | filter: { 'city': query_fav } | orderBy: 'city' " class="row">
-            <div class="col-sm-2 col-xs-2">
-              <div class="image-holder">
-                <img ng-src="{{church.picto}}" class="img-responsive" alt="image">
-              </div>
-            </div>
-            <div class="col-sm-6 col-xs-6">
-              <a class="title">{{church.name}}</a>
-              <span>{{church.city}}</span>
-            </div>
-            <div class="col-sm-3 col-xs-2">
-             <span class="donate-price" ng-if="church.id == main_church_id">
-               <font color="#B39E83"><i class="glyphicon glyphicon-heart"></i></font>
-              </span>
-              <span class="donate-price" ng-if="church.id != main_church_id && !church.favorite">
-                <i class="glyphicon glyphicon-heart-empty" ng-click="makeFavorite(church)"></i>
-              </span>
-              <span class="donate-price" ng-if="church.id != main_church_id && church.favorite"><i class="glyphicon glyphicon-heart" ng-click="makeFavorite(church)"></i></span>
-            </div>
-          </li>
         </ul>
         </div>
       </div>

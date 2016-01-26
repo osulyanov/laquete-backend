@@ -7,7 +7,22 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       token_params = "user_token=" + user_token + "&user_email=" + user_email;
   })
 
-
+.filter('filterChurch', function() {
+    return function(churches, query) {
+      if (churches == undefined)
+        return [];
+      var results = [];
+      if (!query)
+        results = churches;
+      else {
+        $.each(churches, function(i, item) {
+          if (item.zip.indexOf(query) > -1 || item.city.indexOf(query) > -1)
+            results.push(item);
+        });
+      }
+      return results;
+    }
+  })
 .service('Helper', function (API, $ionicHistory) {
   var Helper = this;
   Helper.sharedObject = {};
@@ -619,8 +634,8 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
   function successCallback(position) {
 
-    $scope.user_lat = position.coords.latitude; // 48.5149019;
-    $scope.user_long = position.coords.longitude; // 1.8341628;
+    $scope.user_lat = position.coords.latitude; //48.5149019;
+    $scope.user_long = position.coords.longitude; //1.8341628;
     var userLocation = $scope.user_lat + ', ' + $scope.user_long;
     console.log("You are found here: " + userLocation);
     $rootScope.showLoading("Veuillez patienter...");
@@ -650,7 +665,6 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     console.log("Location could not be found");
   }
   var infoWindow = null;
-
 
   $scope.hide_keyboard = function () {
     console.log("hide");
