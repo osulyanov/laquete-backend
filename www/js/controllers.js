@@ -1616,16 +1616,16 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }
 
       var set_url = "";
-      if ($scope.modified == true && $scope.rpayment_id != 0) {
-        set_url = API.url() + 'rpayments/validate_recurring?id=' + $scope.rpayment_id;
-      } else {
+      //if ($scope.modified == true && $scope.rpayment_id != 0) {
+      //  set_url = API.url() + 'rpayments/validate_recurring?id=' + $scope.rpayment_id;
+      //} else {
         if ($scope.create_setup == false) {
           set_url = API.url() + 'rpayments/recurring?amount=' + $scope.donation.amount + "&church_id=" + $scope.donation.church_id + "&frequency=" + $scope.donation.frequency + "&" + API.token_params() + "&id=" + $scope.donation.id;
         } else {
           set_url = API.url() + 'rpayments/recurring?amount=' + $scope.donation.amount + "&church_id=" + $scope.church.id + "&frequency=" + $scope.donation.frequency + "&" + API.token_params();
         }
 
-      }
+      //}
 
       console.log(set_url);
 
@@ -1643,14 +1643,16 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
             }
             console.log("set Data: " + data);
 
-            if ($scope.modified == false) {
-              $scope.modified = true;
-              $scope.rpayment_id = data["id"];
-
-            } else {
-              $scope.validated = true;
-            }
+            //if ($scope.modified == false) {
+            //  $scope.modified = true;
+            //  $scope.rpayment_id = data["id"];
+            //
+            //} else {
+            //  $scope.validated = true;
+            //}
             // $ionicHistory.goBack();
+
+            $location.path('/main/donregular');
           } else {
             console.log('Inside error');
           }
