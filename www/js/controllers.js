@@ -16,7 +16,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
         results = churches;
       else {
         $.each(churches, function(i, item) {
-          if (item.zip.indexOf(query) > -1 || item.city.indexOf(query) > -1)
+          if ((item.zip ? item.zip : '').toUpperCase().indexOf(query.toUpperCase()) > -1 || (item.city ? item.city : '').toUpperCase().indexOf(query.toUpperCase()) > -1)
             results.push(item);
         });
       }
