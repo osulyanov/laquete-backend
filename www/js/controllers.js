@@ -1209,6 +1209,28 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }
     };
     /* POP_UP starts */
+    // $scope.showPopup = function () {
+    //   $scope.data = {};
+    //   // An elaborate, custom popup
+    //     var myPopup = $ionicPopup.show({
+    //       template: '',
+    //       cssClass: 'my-custom-popup-after-donation',
+    //       title: '',
+    //       subTitle: '',
+    //       scope: $scope,
+
+
+    //     });
+    //   myPopup.then(function (res) {
+    //     console.log('Tapped!', res);
+    //     // $scope.selected_church_id = -1;
+    //     $scope.amount = 0;
+    //     $scope.btn_donate_dis = true;
+    //   });
+    //   $timeout(function () {
+    //     myPopup.close(); //close the popup after 3 seconds for some reason
+    //   }, 3000);
+    // };
     $scope.showPopup = function () {
       $scope.data = {};
       // An elaborate, custom popup
@@ -1218,19 +1240,27 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
           title: '',
           subTitle: '',
           scope: $scope,
-
-
+        buttons: [
+          {
+            text: '<b>Retour</b>',
+            type: 'button button-clear button-positive btn-primary btn-pop-Back',
+            onTap: function (e) {
+              myPopup.close();
+            }
+          }
+        ]
         });
-      myPopup.then(function (res) {
+        myPopup.then(function (res) {
         console.log('Tapped!', res);
         // $scope.selected_church_id = -1;
         $scope.amount = 0;
         $scope.btn_donate_dis = true;
       });
-      $timeout(function () {
-        myPopup.close(); //close the popup after 3 seconds for some reason
-      }, 3000);
+      setTimeout( function() {
+        $('.btn-getInfo-Ok').hide().show(0);
+      }, 1000)
     };
+
     // A confirm dialog
     $scope.showConfirm = function () {
       var confirmPopup = $ionicPopup.confirm({
@@ -1337,6 +1367,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       $scope.amount += 1;
       console.log("after adding 1: " + $scope.amount + " selected_church_id" + $scope.selected_church_id);
       $("#amount").text($scope.amount);
+      $scope.colorStyle = {"color" : "#5ab43d"}
     };
     $scope.add2 = function () {
 
@@ -1347,6 +1378,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }
       $scope.amount += 2;
       $("#amount").text($scope.amount);
+      $scope.colorStyle = {"color" : "#5ab43d"}
       console.log("after adding 2: " + $scope.amount);
     };
     $scope.add5 = function () {
@@ -1356,6 +1388,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }
       $scope.amount += 5;
       $("#amount").text($scope.amount);
+      $scope.colorStyle = {"color" : "#5ab43d"}
     };
     $scope.add10 = function () {
       $scope.makeBrownMoney('ten');
@@ -1364,6 +1397,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }
       $scope.amount += 10;
       $("#amount").text($scope.amount);
+      $scope.colorStyle = {"color" : "#5ab43d"}
     };
     $scope.add20 = function () {
       $scope.makeBrownMoney('twenty');
@@ -1372,6 +1406,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }
       $scope.amount += 20;
       $("#amount").text($scope.amount);
+      $scope.colorStyle = {"color" : "#5ab43d"}
     };
     $scope.zero = function () {
       if ($scope.amount != 0) {
@@ -1379,15 +1414,17 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }
       $scope.amount = 0;
       $("#amount").text($scope.amount);
+      $scope.colorStyle = {"color" : "#916153"}
       console.log("after clicked 0: " + $scope.amount);
     };
-
     $scope.quete_donate = true;
     $scope.quete = function () {
       console.log("Img quete clicked");
+    
       $scope.donation_type = "quete";
       $scope.quete_donate = true;
       $scope.church_title = "Paroisse";
+      // $scope.churchStyle = {"color":"#5ab43d"};
     };
     $scope.diocese_search = false;
     /* vairables for testing */
@@ -1492,6 +1529,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       $scope.quete_donate = false;
       console.log("Img devier clicked");
       $scope.church_title = "Diocèse"
+      $scope.typededonStyle = {"color":"#916153"};
     };
 
     $scope.addFavChurch = function () {
@@ -1568,7 +1606,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       },
       {
         "degree_code": "GR",
-        "degree_name": "Non Degree Undergraduate unun dfsfsdfsdfsdfsdfsdfs"
+        "degree_name": "Non Degree Undergraduate"
       }
     ];
 

@@ -32,11 +32,11 @@
       <form name="userForm" ng-submit="submitForm()" novalidate>
 
         <!-- NAME -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+        <!-- <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
             <label class="">Prénom</label>
             <input type="text" name="name" class="form-control " ng-model="user.name" required>
             <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block ">Le nom est requis.</p>
-        </div>
+        </div> -->
 
         <!-- SURNAME -->
         <div class="form-group" ng-class="{ 'has-error' : userForm.surname.$invalid && !userForm.surname.$pristine }">

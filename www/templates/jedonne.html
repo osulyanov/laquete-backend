@@ -2,7 +2,7 @@
   <ion-nav-back-button>
   </ion-nav-back-button>
   <ion-nav-title side="center" style="top:80px !important;">
-    <img src="images/logo.png" class="title-img">
+    <img src="images/homelogo.png" class="title-img">
   </ion-nav-title>
 </ion-nav-bar>
 
@@ -16,7 +16,7 @@
             <span class="close-box" ng-click="zero()">
               <span class="ion-close" aria-hidden="true"></span>
             </span>
-            <strong class="donte-number">{{amount}}</strong>
+            <strong class="donte-number" ng-style="colorStyle">{{amount}}</strong>
             <em class="euro">&euro;</em>
           </div>
           <ul class="donate-numbering">
@@ -53,8 +53,7 @@
           </ul>
         </div>
         <div class="charch-area">
-          <h2>{{church_title}}</h2>
-
+          <h2 ng-style="churchStyle">{{church_title}}</h2>
 
           <div class="swiper-container paroisse-section">
             <!-- Additional required wrapper -->
@@ -70,7 +69,7 @@
                       <img  ng-switch-default ng-src="{{church.picto}}" class="image-no-hover img-responsive">
                       <!-- <img ng-src="{{church[0].picto_hover}}" class="image-hover img-responsive"> -->
                       <p ng-switch-when="true">{{church.name}}</p>
-                      <p ng-switch-default>{{church.name | limitTo:9}}</p>
+                      <p style="color:#916153;" ng-switch-default>{{church.name | limitTo:9}}</p>
                     </div>
                   </a>
                 </li>
@@ -260,7 +259,7 @@
           <h2>Type DE DON</h2>
           <div class="don-btns-area">
             <button type="button" class="btn-don  btn btn-primary active" ng-show="quete_donate">
-              <img src="images/quete-icon-hover.png" class="img-responsive"> Quête
+              <img src="images/quete-icon-hover.png" class="img-responsive">Quête
             </button>
             <button type="button" class="btn-don" ng-hide="quete_donate" ng-click="quete()">
               <img src="images/quete-icon.png" class="img-responsive"> Quête
@@ -269,9 +268,9 @@
               <img src="images/devier-icon-hover.png" class="img-responsive"> Denier
             </button>
             <button type="button" class="btn-devier btn" ng-show="quete_donate" ng-click="devier()">
-              <img src="images/devier-icon.png" class="img-responsive"> Denier
+              <img src="images/devier-icon.png" class="img-responsive">Denier
             </button>
-          </div>
+          </div>       
           <button type="button" class="btn-donne btn btn-primary btn-lg" id="btn_donate" ng-click="one_time_donate()" ng-disabled="btn_donate_dis">
             Je donne
           </button>

@@ -151,7 +151,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 .bar.bar-stable .title {
   color: #fff;
   font-size: 3.5vh;
-  padding: 0vh 0;
+  padding: 4vh 0;
   overflow: inherit;
 }
 
@@ -465,7 +465,7 @@ font-family: "Museo Sans Rounded-700" !important;
   padding: 8px 5px;
   position: relative;
   margin: 0 26px;
-  color: #5ab43d;
+  color: #916153;
 }
 
 .church-infor.active {
@@ -722,6 +722,7 @@ font-family: "Museo Sans Rounded-700" !important;
 
 .bar-stable .button.button-clear {
   color: #fff;
+  padding:1.8vh;
 }
 
 .bar {
@@ -939,7 +940,7 @@ margin-top: 1.6vh;
   }
   ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
     margin-top: -1.5vh;
-    background: url('../images/hover-border-mob.png') no-repeat 50% 0;
+    /*background: url('../images/hover-border-mob.png') no-repeat 50% 0;*/
   }
   ion-tabs.tabs-color-active-positive .tab-item.tab-item-active .icon {
     margin-top: 1.9vh;
@@ -961,7 +962,7 @@ margin-top: 1.6vh;
   }
   .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
     margin-top: -1.4vh;
-    background: url('../images/hover-border-mob.png') no-repeat 50% 0;
+    /*background: url('../images/hover-border-mob.png') no-repeat 50% 0;*/
   }
   .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active .icon {
     margin-top: 1.4vh;
@@ -977,7 +978,7 @@ margin-top: 1.6vh;
 @media (max-height: 640tabpx) and (max-width: 320px) {
   .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
     margin-top: -1.3vh;
-    background: url('../images/hover-border-400.png') no-repeat 50% 0;
+    /*background: url('../images/hover-border-400.png') no-repeat 50% 0;*/
   }
   .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active .icon {
     margin-top: 1.3vh;
@@ -987,7 +988,7 @@ margin-top: 1.6vh;
 @media (max-height: 480px) and (max-width: 320px) {
   .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
     margin-top: -1.5vh;
-    background: url('../images/hover-border-400.png') no-repeat 50% 0;
+    /*background: url('../images/hover-border-400.png') no-repeat 50% 0;*/
   }
   .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active .icon {
     margin-top: 1.5vh;
@@ -1001,21 +1002,21 @@ margin-top: 1.6vh;
 
 @media (max-height: 1024px) {
   .platform-ios .bar.bar-stable .title {
-    padding: 0.0vh 0;
+    padding: 2.0vh 0;
     overflow: inherit;
   }
 }
 
 @media (max-height: 736px) {
   .platform-ios .bar.bar-stable .title {
-    padding: 0.7vh 0;
+    padding: 1.7vh 0;
     overflow: inherit;
   }
 }
 
 @media (max-height: 960px) {
   .platform-android .bar.bar-stable .title {
-    padding: 0.7vh 0;
+    padding: 1.7vh 0;
     overflow: inherit;
   }
 }
@@ -1031,28 +1032,28 @@ margin-top: 1.6vh;
 
 @media (max-height: 568px) and (max-width: 384px) {
   ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-    background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;
+    /*background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;*/
     margin-top: -1.8vh;
   }
 }
 
 @media (min-height: 960px) and (max-width: 600px) {
   ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-    background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+    /*background: url('../images/hover-border.png') no-repeat 50% 0 !important;*/
     margin-top: -1.8vh;
   }
 }
 
 @media (min-height: 1024px) and (max-width: 600px) {
   ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-    background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+    /*background: url('../images/hover-border.png') no-repeat 50% 0 !important;*/
     margin-top: -1.7vh;
   }
 }
 
 @media (min-height: 480px) and (max-width: 320px) {
   ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-    background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;
+    /*background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;*/
     margin-top: -2.0vh !important;
   }
 }
@@ -1060,7 +1061,7 @@ margin-top: 1.6vh;
 @media (min-height: 479px) and (max-width: 320px){
   @media (max-height: 480) and (min-width: 319px){
     ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-      background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;
+      /*background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;*/
       margin-top: -2.2vh !important;
     }
   }
@@ -1068,14 +1069,14 @@ margin-top: 1.6vh;
 
 @media (min-height: 1024px) and (min-width: 768px) {
   ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-    background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+    /*background: url('../images/hover-border.png') no-repeat 50% 0 !important;*/
     margin-top: -1.7vh;
   }
 }
 
 @media (min-height: 1024px) and (min-width: 800px) {
   ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-    background: url('../images/hover-border.png') no-repeat 50% 0 !important;
+    /*background: url('../images/hover-border.png') no-repeat 50% 0 !important;*/
     margin-top: -1.3vh;
   }
 }

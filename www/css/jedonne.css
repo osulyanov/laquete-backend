@@ -40,7 +40,7 @@
 }
 
 .swiper-slide-next div p{
-  color: #916153;
+  color: #5ab43d;
   font-weight: bold;
   font-size: 11px !important;
   line-height: 1 !important;
@@ -178,7 +178,7 @@ i.customIconSound:before {
 .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active{
   background: url('../images/hover-border.png') no-repeat 50% 0 !important;
   margin: 0px;
-  margin-top: -1.45vh !important;
+  margin-top: -1.9vh !important;
   color: #916153 !important;
   text-decoration: none;
 }
@@ -248,9 +248,9 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 }
 .close-box {
   color: #5ab43d;
-  border: 0.3vh solid #5ab43d;
-  border-radius: 5px;
-  font-size: 1.95vh;
+/*  border: 0.3vh solid #5ab43d;
+  border-radius: 5px;*/
+  font-size: 3vh;
   height: 3vh;
   padding: 0.2vh 0.4vh 0.2vh 0.7vh;
   margin-right: 5vw;
@@ -291,7 +291,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   padding: 0;
   list-style: none;
   text-align: center;
-  padding-top: 3vh;
+  padding-top: 0vh;
 }
 .donate-numbering li {
   display: inline-block;
@@ -363,7 +363,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 .paroisse-section  li.active .image-hover,
 .paroisse-section  li:hover .image-hover{
   display: block !important;
-  color: #916153;
+  color: #6bb246;
 }
 .paroisse-section .image-hover {
   display: block !important;
@@ -397,7 +397,6 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   height: 7.26vh;
   display: block;
   margin: 0 auto 1.32vh;
-
 }
 .paroisse-section .image-lg {
   font-size: 2.4vh;
@@ -427,7 +426,6 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 }
 .btn-devier,
 .btn-don {
-  color: #6bb246;
   background: none ;
   font-size: 2.3vh;
   height: 5.7vh;
@@ -461,8 +459,8 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 
 .btn-primary.active:hover{
   background: none ;
-  border:2px solid #916153 !important;
-  color: #916153;
+  border:2px solid #6bb246 !important;
+  color: #6bb246;
 }
 .image-hover {
   display: none;
@@ -473,9 +471,9 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 .btn-devier:active:focus,
 .btn-devier:active:hover {
   background: none ;
-  border:2px solid #916153  !important;
+  border:2px solid #6bb246  !important;
   outline: none ;
-  color: #916153 ;
+  color: #6bb246 ;
   box-shadow: none ;
 }
 
@@ -490,9 +488,10 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 .btn-don:active:focus,
 .btn-don:active:hover {
   background: none;
-  border:2px solid #916153 !important;
+  border:2px solid #6bb246 !important;
   outline: none;
-  color: #916153;
+/*  color: #916153;*/
+  color:#6bb246;
   box-shadow: none;
 }
 
@@ -546,11 +545,12 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 
 .my-custom-popup-after-donation .popup {
   background: url('../images/after_donation.png') ;
-  background-size: contain ;
+  background-size: cover ;
   background-repeat: no-repeat;
   background-position: center;
-  width:70vw;
-  height:70vh;
+  background-attachment: fixed;
+  width:100vw;
+  height:100vh;
 }
 
 .my-custom-popup-after-donation .popup-head {
@@ -714,6 +714,15 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   width:50px;
   left: 0;
   right: 0;
+}
+
+.btn-pop-Back{
+  color:white !important;
+  margin: 0  auto !important;
+  height:40px;
+  position:fixed;
+  width:80px;
+  left: 0;
 }
 
 .my-custom-popup .popup-buttons .btn_close {
