@@ -7,7 +7,22 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       token_params = "user_token=" + user_token + "&user_email=" + user_email;
   })
 
-
+.filter('filterChurch', function() {
+    return function(churches, query) {
+      if (churches == undefined)
+        return [];
+      var results = [];
+      if (!query)
+        results = churches;
+      else {
+        $.each(churches, function(i, item) {
+          if ((item.zip ? item.zip : '').toUpperCase().indexOf(query.toUpperCase()) > -1 || (item.city ? item.city : '').toUpperCase().indexOf(query.toUpperCase()) > -1)
+            results.push(item);
+        });
+      }
+      return results;
+    }
+  })
 .service('Helper', function (API, $ionicHistory) {
   var Helper = this;
   Helper.sharedObject = {};
@@ -619,8 +634,8 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
   function successCallback(position) {
 
-    $scope.user_lat = position.coords.latitude; // 48.5149019;
-    $scope.user_long = position.coords.longitude; // 1.8341628;
+    $scope.user_lat = position.coords.latitude; //48.5149019;
+    $scope.user_long = position.coords.longitude; //1.8341628;
     var userLocation = $scope.user_lat + ', ' + $scope.user_long;
     console.log("You are found here: " + userLocation);
     $rootScope.showLoading("Veuillez patienter...");
@@ -650,7 +665,6 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     console.log("Location could not be found");
   }
   var infoWindow = null;
-
 
   $scope.hide_keyboard = function () {
     console.log("hide");
@@ -1640,16 +1654,16 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }
 
       var set_url = "";
-      if ($scope.modified == true && $scope.rpayment_id != 0) {
-        set_url = API.url() + 'rpayments/validate_recurring?id=' + $scope.rpayment_id;
-      } else {
+      //if ($scope.modified == true && $scope.rpayment_id != 0) {
+      //  set_url = API.url() + 'rpayments/validate_recurring?id=' + $scope.rpayment_id;
+      //} else {
         if ($scope.create_setup == false) {
           set_url = API.url() + 'rpayments/recurring?amount=' + $scope.donation.amount + "&church_id=" + $scope.donation.church_id + "&frequency=" + $scope.donation.frequency + "&" + API.token_params() + "&id=" + $scope.donation.id;
         } else {
           set_url = API.url() + 'rpayments/recurring?amount=' + $scope.donation.amount + "&church_id=" + $scope.church.id + "&frequency=" + $scope.donation.frequency + "&" + API.token_params();
         }
 
-      }
+      //}
 
       console.log(set_url);
 
@@ -1667,14 +1681,16 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
             }
             console.log("set Data: " + data);
 
-            if ($scope.modified == false) {
-              $scope.modified = true;
-              $scope.rpayment_id = data["id"];
-
-            } else {
-              $scope.validated = true;
-            }
+            //if ($scope.modified == false) {
+            //  $scope.modified = true;
+            //  $scope.rpayment_id = data["id"];
+            //
+            //} else {
+            //  $scope.validated = true;
+            //}
             // $ionicHistory.goBack();
+
+            $location.path('/main/donregular');
           } else {
             console.log('Inside error');
           }

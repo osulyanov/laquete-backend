@@ -15,15 +15,14 @@
           <li>
             <div class="col-sm-2 col-xs-2">
               <div class="image-holder" ng-if="donation.dioce_name == null">
-                <img ng-src="images/2.png" class="img-responsive" alt="image">
+                <img src="images/quete-icon.png" class="img-responsive" style="height: 5.5vh;">
               </div>
               <div class="image-holder" ng-if="donation.dioce_name != null">
-                <span class="ng-binding">{{donation.dioce_post_code}}</span>
+                <img src="images/devier-icon.png" class="img-responsive" style="height: 6.5vh;">
               </div>
             </div>
-            <div class="col-sm-6 col-xs-6">
-              <a class="title">{{donation.dioce_name ? donation.dioce_name : donation.church_name}}</a>
-              <img ng-src="images/donation.png" class="donation-img img-responsive" alt="image"><span> {{donation.count}} fois</span>
+            <div class="col-sm-6 col-xs-7">
+              <span class="twolines title" style="white-space: normal;">{{donation.dioce_name ? 'Diocèse de ' + donation.dioce_name : donation.church_name}}</span>
               <p ng-switch="donation.frequency">
                <span ng-switch-when="daily">Don quotidien:</span>
                 <span ng-switch-when="weekly">Don hebdomadaire:</span>
@@ -39,7 +38,7 @@
               <!--              <p>Donate {{donation.frequency}}: <i class="ion-social-euro-outline"></i> {{donation.amount}} </p>-->
             </div>
             <div class="col-sm-3 col-xs-2">
-              <a  class="list-btn-modifier" >Modifier</a>
+              <img ng-src="images/donation.png" class="donation-img img-responsive" alt="image">
             </div>
           </li>
         </ion-item>
