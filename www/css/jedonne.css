@@ -177,7 +177,7 @@ i.customIconSound:before {
 }
 .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active{
   background: url('../images/hover-border.png') no-repeat 50% 0 !important;
-  margin: 0px;
+  background-size: auto;
   margin-top: -1.9vh !important;
   color: #916153 !important;
   text-decoration: none;
@@ -321,7 +321,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   height: 9.26vh;
 }
 .charch-area{
-  margin-top: -3vh;
+  margin-top: 1vh;
   font-family: "Museo Sans Rounded-300" !important;
 }
 
@@ -441,6 +441,13 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 .btn-don{
   margin: 0px;
   margin-right: 5vw;
+  color: #916153;
+}
+
+.btn-devier{
+  margin: 0px;
+  margin-right: 5vw;
+  color: #916153;
 }
 
 .btn-devier img {
@@ -490,7 +497,6 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   background: none;
   border:2px solid #6bb246 !important;
   outline: none;
-/*  color: #916153;*/
   color:#6bb246;
   box-shadow: none;
 }
@@ -545,10 +551,9 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 
 .my-custom-popup-after-donation .popup {
   background: url('../images/after_donation.png') ;
-  background-size: cover ;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
   width:100vw;
   height:100vh;
 }
@@ -719,9 +724,9 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 .btn-pop-Back{
   color:white !important;
   margin: 0  auto !important;
-  height:40px;
+  height:50px;
   position:fixed;
-  width:80px;
+  width:50px;
   left: 0;
 }
 

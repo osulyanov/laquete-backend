@@ -17,7 +17,7 @@
               <span class="ion-close" aria-hidden="true"></span>
             </span>
             <strong class="donte-number" ng-style="colorStyle">{{amount}}</strong>
-            <em class="euro">&euro;</em>
+            <em class="euro" ng-style="colorStyle">&euro;</em>
           </div>
           <ul class="donate-numbering">
             <li>
@@ -267,7 +267,7 @@
             <button type="button" class="btn-devier btn btn-primary active" ng-hide="quete_donate">
               <img src="images/devier-icon-hover.png" class="img-responsive"> Denier
             </button>
-            <button type="button" class="btn-devier btn" ng-show="quete_donate" ng-click="devier()">
+            <button type="button" class="btn-devier" ng-show="quete_donate" ng-click="devier()">
               <img src="images/devier-icon.png" class="img-responsive">Denier
             </button>
           </div>       

@@ -10,15 +10,15 @@
 
 
 #btn-info {
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   /*margin-right:15px !important;*/
 
 }
 
 #btn-info img {
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  width: 20px;
   right: 5px;
   vertical-align: middle;
 }
@@ -138,7 +138,11 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   background: #f4eed8;
   background-size: 100% 100%;
 }
-
+.after-donation{
+  height: 100vh;
+  background: url('../images/after_donation.png') no-repeat;
+  background-size: cover;
+}
 .bar-stable {
   background: #5ab43d !important;
   background-size: 100% 100%;
@@ -722,7 +726,7 @@ font-family: "Museo Sans Rounded-700" !important;
 
 .bar-stable .button.button-clear {
   color: #fff;
-  padding:1.8vh;
+  padding:1.2vh;
 }
 
 .bar {

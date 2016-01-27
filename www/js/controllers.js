@@ -1245,6 +1245,18 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     //     myPopup.close(); //close the popup after 3 seconds for some reason
     //   }, 3000);
     // };
+
+
+    // $.scope.showPopup = function(){
+    //   $ionicHistory.nextViewOptions({
+    //     disableBack: false
+    //   });
+    //   $location.path('/after_donation');      
+    // };
+
+
+
+
     $scope.showPopup = function () {
       $scope.data = {};
       // An elaborate, custom popup
@@ -1256,7 +1268,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
           scope: $scope,
         buttons: [
           {
-            text: '<b>Retour</b>',
+            text: '<b>&#9746</b>',
             type: 'button button-clear button-positive btn-primary btn-pop-Back',
             onTap: function (e) {
               myPopup.close();
@@ -1992,10 +2004,6 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       });
       $location.path('/signup');
     };
-
-
-
-
     $scope.user = {};
     $scope.user.email = "";
     $scope.user.pwd = "";
