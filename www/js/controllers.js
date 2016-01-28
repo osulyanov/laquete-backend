@@ -664,6 +664,16 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     $scope.no_near_church_msg = "Location could not be reached";
     console.log("Location could not be found");
   }
+
+  $scope.setCenterToCurrent = function() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        map.setCenter(initialLocation);
+      });
+    }
+  };
+
   var infoWindow = null;
 
   $scope.hide_keyboard = function () {
@@ -1251,7 +1261,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     //   $ionicHistory.nextViewOptions({
     //     disableBack: false
     //   });
-    //   $location.path('/after_donation');      
+    //   $location.path('/after_donation');
     // };
 
 
@@ -1446,7 +1456,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     $scope.quete_donate = true;
     $scope.quete = function () {
       console.log("Img quete clicked");
-    
+
       $scope.donation_type = "quete";
       $scope.quete_donate = true;
       $scope.church_title = "Paroisse";

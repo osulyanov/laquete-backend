@@ -43,8 +43,13 @@
           </div>
           <div class="form-group" ng-class="{ 'has-error' : userForm.amount.$invalid && !userForm.amount.$pristine }">
             <label>Montant</label>
+<<<<<<< HEAD
             <input ng-if="!to_dioce" type="number"  ng-disabled="mydisabled || validated" name="amount" class="form-control" ng-model="donation.amount" placeholder="ex : 4" required>
             <input ng-if="to_dioce" type="number"  ng-disabled="mydisabled || validated" name="amount" class="form-control" ng-model="donation.amount" placeholder="ex : 40" required>
+=======
+            <input ng-if="!to_dioce" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Please enter valid amount." ng-disabled="mydisabled || validated" name="amount" class="form-control" ng-model="donation.amount" placeholder="4" required>
+            <input ng-if="to_dioce" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Please enter valid amount." ng-disabled="mydisabled || validated" name="amount" class="form-control" ng-model="donation.amount" placeholder="40" required>
+>>>>>>> 3c2b15a6a912bb42c2a37c743458ce115f24e741
             <p ng-show="donation.amount && isNaN(donation.amount)" class="help-block">Veuillez entrer un chiffre valide.</p>
           </div>
           <div class="form-group hidden" ng-class="{'her-error' : userForm.frequency.$invalid && !userForm.frequency.$pristine }">
@@ -67,8 +72,8 @@
             <button ng-show="!modified && !create_setup" type="submit" style="width: 35vw;" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid">
               Modifier
             </button>
-            <button type="submit" ng-show="!modified && create_setup" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid">
-              Créer
+            <button type="submit" ng-show="!modified && create_setup" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid" style="width: 100%;">
+              Programmer un don régulier
             </button>
             <button type="submit" ng-show="modified" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid || validated">
               Valider
@@ -79,7 +84,7 @@
             <button type="submit" ng-show="create_setup" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid">
               Créer
             </button>
- -->          
+ -->
           </div>
         </form>
         <button ng-show="!create_setup" ng-click="delete_rec()" type="submit" style="width: 35vw;" class="pull-left btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid">

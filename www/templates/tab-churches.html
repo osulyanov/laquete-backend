@@ -7,7 +7,7 @@
   </ion-nav-title>
 </ion-nav-bar>
 <ion-view class="history-bg">
-  <ion-content data-tap-disabled="true" scroll="false" >
+  <ion-content data-tap-disabled="false" scroll="false" >
 
     <div class="padding churches-padding">
       <!--	Area for ma_paroisses selected-->
@@ -30,33 +30,31 @@
         </div>
       </div>
 
-      <div ng-show="PostVille && ma_paroisses && !main_church_added" >
-         <div class="scroll-list-small">
-          <ul class="listing">
-            <scroll direction="y">
-              <li ng-repeat="church in all_churches  | filterChurch:query | orderBy: 'zip'">
-                <div class="col-sm-2 col-xs-2">
-                  <div class="image-holder">
-                    <img ng-src="{{church.picto}}" class="img-responsive" alt="image">
-                  </div>
+      <ion-scroll ng-show="PostVille && ma_paroisses && !main_church_added" class="scroll-list-small">
+        <ion-list class="listing">
+          <ion-item class="listing" ng-repeat="church in all_churches  | filterChurch:query | orderBy: 'zip'" type="item-text-wrap" >
+            <li>
+              <div class="col-sm-2 col-xs-2">
+                <div class="image-holder">
+                  <img ng-src="{{church.picto}}" class="img-responsive" alt="image">
                 </div>
-                <div class="col-sm-6 col-xs-6">
-                  <a class="title">{{church.name}}</a>
-                  <span>{{church.zip ? church.zip : ''}} {{church.city!='null' ? church.city : ''}}</span>
-                </div>
-                <div class="col-sm-3 col-xs-2">
+              </div>
+              <div class="col-sm-6 col-xs-7">
+                <a class="twolines title">{{church.name}}</a>
+                <span class="oneline-ellipsis">{{church.zip ? church.zip : ''}} {{church.city!='null' ? church.city : ''}}</span>
+              </div>
+              <div class="col-sm-3 col-xs-1">
                   <span class="donate-price" ng-if="church.id == main_church_id">
                     <font color="#B39E83"><i class="glyphicon glyphicon-heart"></i></font>
                   </span>
                   <span class="donate-price" ng-if="church.id != main_church_id">
                     <i class="glyphicon glyphicon-heart-empty" ng-click="addMainChurch(church)"></i>
                   </span>
-                </div>
-              </li>
-            </scroll>
-          </ul>
-        </div>
-      </div>
+              </div>
+            </li>
+          </ion-item>
+        </ion-list>
+      </ion-scroll>
 
       <!--		ma_paroisses unselected radio buttons for postville selected search-->
       <div ng-show="!ma_paroisses" >
@@ -66,34 +64,32 @@
         </div>
       </div>
 
-      <div ng-show="PostVilleFav && !ma_paroisses" >
-        <div class="scroll-list-small">
-        <ul class="listing" >
-          <scroll direction="y">
-            <li ng-repeat="church in all_churches | filterChurch:query_fav | orderBy: 'zip'">
-              <div class="col-sm-2 col-xs-2">
-                <div class="image-holder">
-                  <img ng-src="{{church.picto}}" class="img-responsive" alt="image">
-                </div>
+      <ion-scroll ng-show="PostVilleFav && !ma_paroisses" class="scroll-list-small">
+        <ion-list class="listing">
+          <ion-item class="listing" ng-repeat="church in all_churches | filterChurch:query_fav | orderBy: 'zip'" type="item-text-wrap" >
+            <li>
+            <div class="col-sm-2 col-xs-2">
+              <div class="image-holder">
+                <img ng-src="{{church.picto}}" class="img-responsive" alt="image">
               </div>
-              <div class="col-sm-6 col-xs-6">
-                <a class="title">{{church.name}}</a>
-                <span>{{church.zip}} {{church.city}}</span>
-              </div>
-              <div class="col-sm-3 col-xs-2">
+            </div>
+            <div class="col-sm-6 col-xs-7">
+              <a class="twolines title">{{church.name}}</a>
+              <span class="oneline-ellipsis">{{church.zip}} {{church.city}}</span>
+            </div>
+            <div class="col-sm-3 col-xs-1">
               <span class="donate-price" ng-if="church.id == main_church_id">
                <font color="#B39E83"><i class="glyphicon glyphicon-heart"></i></font>
               </span>
                 <span class="donate-price" ng-if="church.id != main_church_id && !church.favorite">
                   <i class="glyphicon glyphicon-heart-empty" ng-click="makeFavorite(church)"></i>
                 </span>
-                <span class="donate-price" ng-if="church.id != main_church_id && church.favorite"><i class="glyphicon glyphicon-heart" ng-click="makeFavorite(church)"></i></span>
-              </div>
+              <span class="donate-price" ng-if="church.id != main_church_id && church.favorite"><i class="glyphicon glyphicon-heart" ng-click="makeFavorite(church)"></i></span>
+            </div>
             </li>
-          </scroll>
-        </ul>
-        </div>
-      </div>
+          </ion-item>
+        </ion-list>
+      </ion-scroll>
 
       <!--		Main church div-->
       <div ng-show="main_church_added && ma_paroisses" class="church-details">
@@ -115,7 +111,7 @@
       <!--		carte selected with geo search -->
 <!--      <div id="map" data-tap-disabled="true"></div>-->
 
-      <map street-view-control="false" zoom-control="false" map-type-control="false" zoom="12" center="[48.5149019, 1.8341628]" id="map" ng-show="(ma_paroisses && !PostVille && is_map && !main_church_added) || (!ma_paroisses && !PostVilleFav && is_map_fav)">
+      <map street-view-control="true" zoom-control="true" map-type-control="true" zoom="12" center="[48.5149019, 1.8341628]" id="map" ng-show="(ma_paroisses && !PostVille && is_map && !main_church_added) || (!ma_paroisses && !PostVilleFav && is_map_fav)">
 <!--         <map zoom="12" center="current-location" id="map">-->
         <marker ng-repeat="church in nearChurches" position="[{{church.latitude}},{{church.longitude}}]" on-click="showInfoWindow(event, map ,$index)"></marker>
 <!--        <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>-->
