@@ -12,7 +12,7 @@
     <div class="padding churches-padding">
       <!--	Area for ma_paroisses selected-->
       <div class="button-bar" ng-show="ma_paroisses">
-        <a class="button bg-green" ng-click="ma_paroisse()"><font size="2">Mon église</font></a>
+        <a class="button bg-green" ng-click="ma_paroisse()"><font size="2">Ma Paroisse</font></a>
         <a class="button bg-white" ng-click="autres_paroisses()"><font size="2">Mes autres églises</font></a>
       </div>
       <!--		Area for ma_paroisses unselected-->
@@ -25,7 +25,7 @@
       <div ng-show="ma_paroisses && !main_church_added" >
 <!--        <input class="form-control" name="query" type="text"  value="Search" ng-model="query" placeholder="Filter..." ng-blur="hide_keyboard()">-->
         <div class="item item-input item-icon-right" style="background:white;">
-          <input type="text" name="query" ng-model="query"  placeholder="Filter..." ng-focus="searchType('PostVille')" ng-blur="searchType('Chercher')">
+          <input type="text" name="query" ng-model="query"  placeholder="Ville, code postal" ng-focus="searchType('PostVille')" ng-blur="searchType('Chercher')">
           <font size="5px"><i class="ion-ios-close-outline" ng-show="query.length" style="margin-right: 5px;" ng-click="query = ''; hide_keyboard()"></i></font>
         </div>
       </div>

@@ -45,7 +45,7 @@
             <label>Montant</label>
 
             <input ng-if="!to_dioce" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Please enter valid amount." ng-disabled="mydisabled || validated" name="amount" class="form-control" ng-model="donation.amount" placeholder="ex : 4" required>
-            <input ng-if="to_dioce" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Please enter valid amount." ng-disabled="mydisabled || validated" name="amount" class="form-control" ng-model="donation.amount" placeholder="ex : 40" required
+            <input ng-if="to_dioce" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Please enter valid amount." ng-disabled="mydisabled || validated" name="amount" class="form-control" ng-model="donation.amount" placeholder="ex : 40" required>
 
             <p ng-show="donation.amount && isNaN(donation.amount)" class="help-block">Veuillez entrer un chiffre valide.</p>
           </div>

@@ -27,7 +27,7 @@
 		<label for = "NearChurches">&nbsp;&nbsp;Ville</label><br>
 
 
-		<input class="form-control" type="text"  value="Search" ng-model="query" placeholder="Filter...">
+		<input class="form-control" type="text"  value="Search" ng-model="query" placeholder="Ville, code postal...">
 
 		<ul class="listing" ng-hide="searchbytown" >
 			<li ng-repeat="church in all_churches  | filter: { 'zip': query } | orderBy: 'zip'">
