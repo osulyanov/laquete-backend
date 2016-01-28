@@ -177,7 +177,8 @@ i.customIconSound:before {
 }
 .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active{
   background: url('../images/hover-border.png') no-repeat 50% 0 !important;
-  background-size: auto;
+  background-size: contain;
+  width:100%;
   margin-top: -1.9vh !important;
   color: #916153 !important;
   text-decoration: none;
