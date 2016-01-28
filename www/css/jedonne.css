@@ -459,9 +459,9 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 }
 .btn-don img{
   float: left;
-  height: 2vh;
+  height: 3vh;
   width: 6vw;
-  margin-top: 0.8vh;
+  /*margin-top: 0.8vh;*/
   margin-left: 1vw;
 }
 

@@ -43,41 +43,47 @@
         <ion-item class="listing" ng-repeat="donation in donations" type="item-text-wrap" href="#">
           <li>
             <div class="col-sm-2 col-xs-2 text-center">
-              <div class="image-holder" ng-if="donation.picto == 1 && donation.church_id != null">
-                <img src="images/1.png" class="img-responsive" alt="image">
+              <!--<div class="image-holder" ng-if="donation.picto == 1 && donation.church_id != null">-->
+                <!--<img src="images/1.png" class="img-responsive" alt="image">-->
+              <!--</div>-->
+              <!--<div class="image-holder" ng-if="donation.picto == 2 && donation.church_id != null">-->
+                <!--<img src="images/2.png" class="img-responsive" alt="image">-->
+              <!--</div>-->
+              <!--<div class="image-holder" ng-if="donation.picto == 3 && donation.church_id != null">-->
+                <!--<img src="images/3.png" class="img-responsive" alt="image">-->
+              <!--</div>-->
+              <!--<div class="image-holder" ng-if="donation.picto == 4 && donation.church_id != null">-->
+                <!--<img src="images/4.png" class="img-responsive" alt="image">-->
+              <!--</div>-->
+              <!--<div class="image-holder" ng-if="donation.picto == 5 && donation.church_id != null">-->
+                <!--<img src="images/5.png" class="img-responsive" alt="image">-->
+              <!--</div>-->
+              <!--<div class="image-holder" ng-if="donation.picto == 6 && donation.church_id != null">-->
+                <!--<img src="images/6.png" class="img-responsive" alt="image">-->
+              <!--</div>-->
+              <!--<div class="image-holder" ng-if="donation.picto == 7 && donation.church_id != null">-->
+                <!--<img src="images/7.png" class="img-responsive" alt="image">-->
+              <!--</div>-->
+              <!--<div class="image-holder" ng-if="donation.picto == 8 && donation.church_id != null">-->
+                <!--<img src="images/8.png" class="img-responsive" alt="image">-->
+              <!--</div>-->
+              <!--<div class="image-holder" ng-if="donation.picto == 9 && donation.church_id != null">-->
+                <!--<img src="images/9.png" class="img-responsive" alt="image">-->
+              <!--</div>-->
+              <!--<div class="image-holder" ng-if="donation.church_id == null">-->
+                <!--<span>{{donation.dioce_zipcode}}</span>-->
+              <!--</div>-->
+              <div class="image-holder" ng-if="donation.dioce_name == null">
+                <img src="images/quete-icon-hover.png" class="img-responsive list-picto-quete">
               </div>
-              <div class="image-holder" ng-if="donation.picto == 2 && donation.church_id != null">
-                <img src="images/2.png" class="img-responsive" alt="image">
-              </div>
-              <div class="image-holder" ng-if="donation.picto == 3 && donation.church_id != null">
-                <img src="images/3.png" class="img-responsive" alt="image">
-              </div>
-              <div class="image-holder" ng-if="donation.picto == 4 && donation.church_id != null">
-                <img src="images/4.png" class="img-responsive" alt="image">
-              </div>
-              <div class="image-holder" ng-if="donation.picto == 5 && donation.church_id != null">
-                <img src="images/5.png" class="img-responsive" alt="image">
-              </div>
-              <div class="image-holder" ng-if="donation.picto == 6 && donation.church_id != null">
-                <img src="images/6.png" class="img-responsive" alt="image">
-              </div>
-              <div class="image-holder" ng-if="donation.picto == 7 && donation.church_id != null">
-                <img src="images/7.png" class="img-responsive" alt="image">
-              </div>
-              <div class="image-holder" ng-if="donation.picto == 8 && donation.church_id != null">
-                <img src="images/8.png" class="img-responsive" alt="image">
-              </div>
-              <div class="image-holder" ng-if="donation.picto == 9 && donation.church_id != null">
-                <img src="images/9.png" class="img-responsive" alt="image">
-              </div>
-              <div class="image-holder" ng-if="donation.church_id == null">
-                <span>{{donation.dioce_zipcode}}</span>
+              <div class="image-holder" ng-if="donation.dioce_name != null">
+                <img src="images/devier-icon-hover.png" class="img-responsive list-picto-devier">
               </div>
             </div>
             <div class="col-sm-6 col-xs-6 history-font">
-              <a class="title museo-bold" href="" ng-if="donation.church_id != null" style="overflow:hidden">{{donation.church_name}}</a>
-              <a class="title museo-bold" href="" ng-if="donation.church_id == null" style="overflow:hidden">{{donation.dioce_name}}</a>
-              <span class="museo-normal">{{donation.donation_date | date:'EEEE, MMMM d, y'}}</span>
+              <a class="twolines title museo-bold" href="" ng-if="donation.church_id != null" style="overflow:hidden">{{donation.church_name}}</a>
+              <a class="twolines title museo-bold" href="" ng-if="donation.church_id == null" style="overflow:hidden">{{'Diocèse de ' + donation.dioce_name}}</a>
+              <span class="museo-normal">{{donation.donation_date | date:'dd/MM/yyyy'}}</span>
             </div>
             <div class="col-sm-3 col-xs-3">
               <strong class="donate-price timer museo-bold">€ {{donation.amount}}<span class="clock" ng-show="{{donation.recuring}}"></span></strong>

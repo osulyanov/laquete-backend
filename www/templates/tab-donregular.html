@@ -15,14 +15,14 @@
           <li>
             <div class="col-sm-2 col-xs-2">
               <div class="image-holder" ng-if="donation.dioce_name == null">
-                <img src="images/quete-icon-hover.png" class="img-responsive" style="height: 5.5vh;">
+                <img src="images/quete-icon-hover.png" class="img-responsive list-picto-quete">
               </div>
               <div class="image-holder" ng-if="donation.dioce_name != null">
-                <img src="images/devier-icon-hover.png" class="img-responsive" style="height: 6.5vh;">
+                <img src="images/devier-icon-hover.png" class="img-responsive list-picto-devier">
               </div>
             </div>
             <div class="col-sm-6 col-xs-7">
-              <span class="twolines title" style="white-space: normal;">{{donation.dioce_name ? 'Diocèse de ' + donation.dioce_name : donation.church_name}}</span>
+              <span class="twolines title">{{donation.dioce_name ? 'Diocèse de ' + donation.dioce_name : donation.church_name}}</span>
               <p ng-switch="donation.frequency">
                <span ng-switch-when="daily">Don quotidien:</span>
                 <span ng-switch-when="weekly">Don hebdomadaire:</span>
