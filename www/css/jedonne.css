@@ -473,11 +473,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 .image-hover {
   display: none;
 }
-.btn-devier.active,
-.btn-devier:focus,
-.btn-devier:hover,
-.btn-devier:active:focus,
-.btn-devier:active:hover {
+.btn-devier.active {
   background: none ;
   border:2px solid #6bb246  !important;
   outline: none ;
@@ -489,12 +485,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   margin: 0 auto 3.3vh;
 }
 
-.btn-don.active,
-.btn-don:active,
-.btn-don:focus,
-.btn-don:hover,
-.btn-don:active:focus,
-.btn-don:active:hover {
+.btn-don.active {
   background: none;
   border:2px solid #6bb246 !important;
   outline: none;
