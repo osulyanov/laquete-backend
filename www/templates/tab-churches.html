@@ -90,10 +90,10 @@
 
       <div ng-show="!ma_paroisses && !InFavList" >
         <div class="item item-input item-icon-right" style="background:white;">
-          <span class="back-to-fav-list" id="back-to-fav-list" ng-click="backToFavList()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
+          <span class="back-to-fav-list" ng-click="backToFavList()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
           <input type="text" name="query_fav" ng-model="query_fav"  placeholder="Filter..." ng-focus="queryFocusFav(true, query_fav)" ng-blur="queryFocusFav(false, query_fav)" id="query_fav_id">
           <!--<input type="text" name="query_fav" ng-model="query_fav"  placeholder="Filter..." ng-focus="searchTypeFav('PostVilleFav')" ng-blur="searchTypeFav('ChercherFav')">-->
-          <font size="5px"><i class="ion-ios-close-outline" ng-show="query_fav.length" style="margin-right: 5px;" ng-click="query_fav = ''; hide_keyboard()"></i></font>
+          <font size="5px"><i class="ion-ios-close-outline" ng-show="query_fav.length" style="margin-right: 5px;" ng-click="query_fav = ''; hide_keyboard_fav()"></i></font>
         </div>
       </div>
 

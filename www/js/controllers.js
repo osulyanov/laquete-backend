@@ -684,12 +684,38 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     }
     $scope.query = "";
     $scope.query_fav = "";
-    document.getElementById('query_fav_id').blur();
-    document.getElementById('back-to-fav-list').focus();
+    $scope.PostVille = false;
+    $scope.Chercher = true;
+
+  }
+
+  $scope.hide_keyboard_fav = function () {
+    console.log("hide");
+    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard && "ios" == API.currentPlatform()) {
+      console.log("hidekeyboard")
+      cordova.plugins.Keyboard.close();
+    }
+    $scope.query = "";
+    $scope.query_fav = "";
     $scope.PostVilleFav = false;
     $scope.ChercherFav = true;
 
   }
+
+  window.addEventListener('native.keyboardshow', keyboardShowHandler);
+
+  function keyboardShowHandler(e){
+    if ((!$scope.ma_paroisses && $scope.ChercherFav) || ($scope.ma_paroisses && $scope.Chercher)) {
+      cordova.plugins.Keyboard.close();
+    }
+  }
+
+  window.addEventListener('keyboardWillShow', function () {
+    // Describe your logic which will be run each time when keyboard is about to be shown.
+    if ($scope.ChercherFav) {
+      cordova.plugins.Keyboard.close();
+    }
+  });
   $scope.showInfoWindow = function (event, evtMap, index) {
     if (infoWindow == null) {
       infoWindow = new google.maps.InfoWindow({
