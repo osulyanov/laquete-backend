@@ -531,12 +531,18 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   overflow: inherit;
 }
 .modal-backdrop {
-  z-index: 3;
+  z-index: 2;
   /*background-color: none;*/
 }
 .modal-donate .modal-body {
   padding: 4vh 4vw;
   height: 41vh;
+}
+.modal-content {
+  width: 50vw;
+}
+.modal-content p {
+  text-align: center;
 }
 
 

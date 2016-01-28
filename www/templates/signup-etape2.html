@@ -28,11 +28,11 @@
           </div>
           <form name="userForm" ng-submit="submitForm()" novalidate>
 
-            <div class="form-group" ng-class="{ 'her-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-              <label for="email">Stripe Email</label>
-              <input type="email" id="email" ng-disabled="mydisabled" name="email" class="form-control" ng-model="user.email" placeholder="Email">
-              <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
-            </div>
+            <!--<div class="form-group" ng-class="{ 'her-error' : userForm.email.$invalid && !userForm.email.$pristine }">-->
+              <!--<label for="email">Stripe Email</label>-->
+              <!--<input type="email" id="email" ng-disabled="mydisabled" name="email" class="form-control" ng-model="user.email" placeholder="Email">-->
+              <!--<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>-->
+            <!--</div>-->
             <div class="form-group" ng-class="{ 'has-error' : userForm.cc_number.$invalid && !userForm.cc_number.$pristine && !userForm.cc_number.$error.required }">
               <label>Numéro de carte</label>
               <input type="number" name="cc_number" class="form-control" ng-model="user.cc_number" ng-required="true">
@@ -54,7 +54,8 @@
             </div>
 
 
-            <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="add_card()">Suivant</button>
+            <button type="submit" class="btn btn-primary" ng-click="skip_card()">sauter</button>
+            <button type="button" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="add_card()">Suivant</button>
             <!--<button  class="btn btn-primary col col-50 col-offset-25" ng-click="continue()">Plus tard</button>-->
           </form>
         </div>

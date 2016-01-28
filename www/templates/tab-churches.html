@@ -25,7 +25,9 @@
       <div ng-show="ma_paroisses && !main_church_added" >
 <!--        <input class="form-control" name="query" type="text"  value="Search" ng-model="query" placeholder="Filter..." ng-blur="hide_keyboard()">-->
         <div class="item item-input item-icon-right" style="background:white;">
-          <input type="text" name="query" ng-model="query"  placeholder="Ville, code postal" ng-focus="searchType('PostVille')" ng-blur="searchType('Chercher')">
+          <span class="back-to-fav-list" ng-click="back_from_edit_main_church()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
+          <input type="text" name="query" ng-model="query"  placeholder="Ville, code postal" ng-focus="queryFocus(true, query)" ng-blur="queryFocus(false, query)">
+          <!--<input type="text" name="query" ng-model="query"  placeholder="Filter..." ng-focus="searchType('PostVille')" ng-blur="searchType('Chercher')">-->
           <font size="5px"><i class="ion-ios-close-outline" ng-show="query.length" style="margin-right: 5px;" ng-click="query = ''; hide_keyboard()"></i></font>
         </div>
       </div>
@@ -57,16 +59,47 @@
       </ion-scroll>
 
       <!--		ma_paroisses unselected radio buttons for postville selected search-->
-      <div ng-show="!ma_paroisses" >
+      <ion-scroll ng-show="!ma_paroisses && InFavList" class="scroll-list-small">
+        <ion-list class="listing">
+          <ion-item class="listing" ng-repeat="church in fav_churches" type="item-text-wrap" >
+            <li>
+              <div class="col-sm-2 col-xs-2">
+                <div class="image-holder">
+                  <img ng-src="{{church.picto}}" class="img-responsive" alt="image">
+                </div>
+              </div>
+              <div class="col-sm-6 col-xs-7">
+                <a class="twolines title">{{church.name}}</a>
+                <span class="oneline-ellipsis">{{church.zip}} {{church.city}}</span>
+              </div>
+              <div class="col-sm-3 col-xs-1">
+              <span class="donate-price" ng-if="church.id == main_church_id">
+               <font color="#B39E83"><i class="glyphicon glyphicon-heart"></i></font>
+              </span>
+                <span class="donate-price" ng-if="church.id != main_church_id"><i class="glyphicon glyphicon-heart" ng-click="makeFavorite(church)"></i></span>
+              </div>
+            </li>
+          </ion-item>
+        </ion-list>
+      </ion-scroll>
+
+      <span class="default-plus" ng-show="!ma_paroisses && InFavList" ng-click="goToChooseFav()" ><i class="glyphicon glyphicon-plus"></i></span>
+      <!--<button ng-show="!ma_paroisses && InFavList" ng-click="goToChooseFav()" type="button" style="width: 15vw;" class="pull-left btn-setup btn btn-primary">-->
+        <!--<img src="images/plus-brown.png" class="img-responsive">-->
+      <!--</button>-->
+
+      <div ng-show="!ma_paroisses && !InFavList" >
         <div class="item item-input item-icon-right" style="background:white;">
-          <input type="text" name="query_fav" ng-model="query_fav"  placeholder="Filter..." ng-focus="searchTypeFav('PostVilleFav')" ng-blur="searchTypeFav('ChercherFav')">
+          <span class="back-to-fav-list" ng-click="backToFavList()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
+          <input type="text" name="query_fav" ng-model="query_fav"  placeholder="Filter..." ng-focus="queryFocusFav(true, query_fav)" ng-blur="queryFocusFav(false, query_fav)">
+          <!--<input type="text" name="query_fav" ng-model="query_fav"  placeholder="Filter..." ng-focus="searchTypeFav('PostVilleFav')" ng-blur="searchTypeFav('ChercherFav')">-->
           <font size="5px"><i class="ion-ios-close-outline" ng-show="query_fav.length" style="margin-right: 5px;" ng-click="query_fav = ''; hide_keyboard()"></i></font>
         </div>
       </div>
 
-      <ion-scroll ng-show="PostVilleFav && !ma_paroisses" class="scroll-list-small">
+      <ion-scroll ng-show="PostVilleFav && !ma_paroisses && !InFavList" class="scroll-list-small">
         <ion-list class="listing">
-          <ion-item class="listing" ng-repeat="church in all_churches | filterChurch:query_fav | orderBy: 'zip'" type="item-text-wrap" >
+          <ion-item class="listing" ng-repeat="church in all_churches | filterChurch:query_fav" type="item-text-wrap" >
             <li>
             <div class="col-sm-2 col-xs-2">
               <div class="image-holder">
@@ -111,7 +144,7 @@
       <!--		carte selected with geo search -->
 <!--      <div id="map" data-tap-disabled="true"></div>-->
 
-      <map street-view-control="false" zoom-control="false" map-type-control="false" zoom="12" center="[48.5149019, 1.8341628]" id="map" ng-show="(ma_paroisses && !PostVille && is_map && !main_church_added) || (!ma_paroisses && !PostVilleFav && is_map_fav)">
+      <map street-view-control="false" zoom-control="false" map-type-control="false" zoom="12" center="[48.5149019, 1.8341628]" id="map" ng-show="(ma_paroisses && !PostVille && is_map && !main_church_added) || (!ma_paroisses && !PostVilleFav && is_map_fav && !InFavList)">
 <!--         <map zoom="12" center="current-location" id="map">-->
         <marker ng-repeat="church in nearChurches" position="[{{church.latitude}},{{church.longitude}}]" on-click="showInfoWindow(event, map ,$index)"></marker>
 <!--        <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>-->

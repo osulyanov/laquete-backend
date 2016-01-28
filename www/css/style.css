@@ -632,6 +632,11 @@ font-family: "Museo Sans Rounded-700" !important;
   /*overflow-y: auto;*/
 }
 
+.scroll-list-fav-churches {
+  height: 60vh;
+  /*overflow-y: auto;*/
+}
+
 .item {
   background: none;
   /*border-bottom: 1px solid #dad5c5 !important;*/
@@ -689,6 +694,31 @@ font-family: "Museo Sans Rounded-700" !important;
   line-height: 27px;
 }
 
+
+.default-plus {
+  color: #916153;
+  font-size: 24px;
+  line-height: 27px;
+  float: right;
+  margin-right: 2vw;
+  margin-top: 2vw;
+}
+
+.back-to-fav-list {
+  color: #916153;
+  font-size: 24px;
+  line-height: 27px;
+  margin-right: 10px;
+}
+
+.icon-flipped {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+}
+
+
 .listing .col-sm-2,
 .listing .col-sm-3,
 .listing .col-sm-6 {
@@ -743,7 +773,7 @@ font-family: "Museo Sans Rounded-700" !important;
 }
 
 .scroll-rlist {
-  height: 72vh;
+  height: 70vh;
   margin-top: 7vh;
 }
 

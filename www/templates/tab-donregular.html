@@ -11,9 +11,9 @@
   <ion-content scroll="false" has-navbar="true">
     <ion-scroll class="scroll-rlist">
       <ion-list>
-        <ion-item class="listing" ng-repeat="donation in donations" type="item-text-wrap"  ng-click="edit_recurring(donation)">
+        <ion-item class="listing" ng-repeat="donation in donations" type="item-text-wrap" >
           <li>
-            <div class="col-sm-2 col-xs-2">
+            <div class="col-sm-2 col-xs-2" ng-click="edit_recurring(donation)">
               <div class="image-holder" ng-if="donation.dioce_name == null">
                 <img src="images/quete-icon-hover.png" class="img-responsive list-picto-quete">
               </div>
@@ -21,7 +21,7 @@
                 <img src="images/devier-icon-hover.png" class="img-responsive list-picto-devier">
               </div>
             </div>
-            <div class="col-sm-6 col-xs-7">
+            <div class="col-sm-6 col-xs-7" ng-click="edit_recurring(donation)">
               <span class="twolines title">{{donation.dioce_name ? 'Diocèse de ' + donation.dioce_name : donation.church_name}}</span>
               <p ng-switch="donation.frequency">
                <span ng-switch-when="daily">Don quotidien:</span>
@@ -38,7 +38,7 @@
               <!--              <p>Donate {{donation.frequency}}: <i class="ion-social-euro-outline"></i> {{donation.amount}} </p>-->
             </div>
             <div class="col-sm-3 col-xs-2">
-              <img ng-src="images/donation.png" class="donation-img img-responsive" alt="image">
+              <a  data-toggle="modal" data-target="#myModal"><img ng-src="images/donation.png" class="donation-img img-responsive" alt="image" ng-click="openModal(donation)"></a>
             </div>
           </li>
         </ion-item>
@@ -53,5 +53,55 @@
         <i class="ion-ios-plus-outline"></i> Quête
       </button>
     </center>
+
+      <!--<div class="modal-holder" ng-show="showDateModal">-->
+        <!--&lt;!&ndash;<script type="text/ng-template" id="myModalContent.html">&ndash;&gt;-->
+          <!--<div class="modal-donate">-->
+            <!--<button class="close" type="button" ng-click="closeModal()"><span aria-hidden="true">&times;</span></button>-->
+            <!--<div class="modal-body">-->
+              <!--<h2><span>{{currentDonation.donation_date | date:'dd/MM/yyyy'}}</span></h2>-->
+            <!--</div>-->
+          <!--</div>-->
+      <!--</div>-->
+
+    <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Donation Date</h4>
+          </div>
+          <div class="modal-body">
+            <p>{{currentDonation.donation_date | date:'dd/MM/yyyy'}}</p>
+          </div>
+          <!--<div class="modal-footer">-->
+            <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
+
+    <!--<script id="date-modal.html" type="text/ng-template">-->
+      <!--<div class="modal">-->
+        <!--<ion-header-bar>-->
+          <!--<h1 class="title">Donation Date</h1>-->
+        <!--</ion-header-bar>-->
+        <!--<ion-content>-->
+          <!--<div class="list">-->
+            <!--<label class="item item-input">-->
+              <!--<p>{{currentDonation.donation_date | date:'dd/MM/yyyy'}}</p>-->
+            <!--</label>-->
+          <!--</div>-->
+          <!--<button class="button button-full button-energized" ng-click="closeModal()">Close</button>-->
+        <!--</ion-content>-->
+      <!--</div>-->
+    <!--</script>-->
+
+
   </ion-content>
 </ion-view>
