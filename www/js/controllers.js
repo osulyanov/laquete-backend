@@ -684,6 +684,11 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     }
     $scope.query = "";
     $scope.query_fav = "";
+    document.getElementById('query_fav_id').blur();
+    document.getElementById('back-to-fav-list').focus();
+    $scope.PostVilleFav = false;
+    $scope.ChercherFav = true;
+
   }
   $scope.showInfoWindow = function (event, evtMap, index) {
     if (infoWindow == null) {
