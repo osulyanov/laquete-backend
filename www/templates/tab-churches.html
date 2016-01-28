@@ -111,7 +111,7 @@
       <!--		carte selected with geo search -->
 <!--      <div id="map" data-tap-disabled="true"></div>-->
 
-      <map street-view-control="true" zoom-control="true" map-type-control="true" zoom="12" center="[48.5149019, 1.8341628]" id="map" ng-show="(ma_paroisses && !PostVille && is_map && !main_church_added) || (!ma_paroisses && !PostVilleFav && is_map_fav)">
+      <map street-view-control="false" zoom-control="false" map-type-control="false" zoom="12" center="[48.5149019, 1.8341628]" id="map" ng-show="(ma_paroisses && !PostVille && is_map && !main_church_added) || (!ma_paroisses && !PostVilleFav && is_map_fav)">
 <!--         <map zoom="12" center="current-location" id="map">-->
         <marker ng-repeat="church in nearChurches" position="[{{church.latitude}},{{church.longitude}}]" on-click="showInfoWindow(event, map ,$index)"></marker>
 <!--        <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>-->
