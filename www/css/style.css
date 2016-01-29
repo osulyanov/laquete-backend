@@ -4,7 +4,7 @@
 bottom: 8%;
     right: 5%;
 
-    
+
 }
 
 .museo-normal, .form-control {
@@ -635,7 +635,7 @@ font-family: "Museo Sans Rounded-700" !important;
 }
 
 .scroll-list-small {
-  height: 65vh;
+  height: 61vh;
   /*overflow-y: auto;*/
 }
 
@@ -708,7 +708,7 @@ font-family: "Museo Sans Rounded-700" !important;
   line-height: 27px;
   float: right;
   margin-right: 2vw;
-  margin-top: 2vw;
+  margin-top: 6vw;
 }
 
 .back-to-fav-list {

@@ -2,6 +2,7 @@ angular.module('starter.services', [])
 
   .factory('API', function($http, $q, $rootScope, $ionicLoading) {
   // Might use a resource here that returns a JSON array
+  //var url = 'http://192.168.110.130:3000/api/v1/';
   var url = 'https://laquete.herokuapp.com/api/v1/';
   var url_local = 'http://localhost:3000/api/v1/';
   var url_base = 'http://laquete.herokuapp.com/';

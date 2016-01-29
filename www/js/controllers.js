@@ -577,8 +577,8 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
   $scope.current_location= function(){
   $scope.positions = [];
-    
-    
+
+
     $ionicLoading.show({
       template: 'Loading...'
     });
@@ -618,32 +618,6 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
   });
 
   $scope.ma_paroisses = false;
-
-  //  $scope.initialize = function() {
-  //    var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
-  //
-  //    var mapOptions = {
-  //      center: myLatlng,
-  //      zoom: 16,
-  //      mapTypeId: google.maps.MapTypeId.ROADMAP
-  //    };
-  //    var map = new google.maps.Map(document.getElementById("map"),
-  //        mapOptions);
-  //
-  //
-  //    var marker = new google.maps.Marker({
-  //      position: myLatlng,
-  //      map: map,
-  //      title: 'Uluru (Ayers Rock)'
-  //    });
-  //
-  //    google.maps.event.addListener(marker, 'click', function() {
-  //      infowindow.open(map,marker);
-  //    });
-  //
-  //    $scope.map = map;
-  //  }
-  //  //google.maps.event.addDomListener(window, 'load', initialize);
 
   $scope.user_lat = -1;
   $scope.user_long = -1;
@@ -708,9 +682,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
   var infoWindow = null;
 
   $scope.hide_keyboard = function () {
-    console.log("hide");
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      console.log("hidekeyboard")
       cordova.plugins.Keyboard.close();
     }
 
@@ -724,24 +696,16 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
   }
 
   $scope.hide_keyboard_fav = function () {
-    console.log("hide");
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      console.log("hidekeyboard")
       cordova.plugins.Keyboard.close();
     }
-    //if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard && "ios" == API.currentPlatform()) {
-    //  console.log("hidekeyboard")
-    //  cordova.plugins.Keyboard.close();
-    //}
 
-    //$scope.query = "";
     $scope.query_fav = "";
     $scope.PostVilleFav = false;
     $scope.ChercherFav = true;
     document.getElementById('query_fav_id').value = '';
     document.getElementById('query_fav_id').blur();
     document.getElementById('tab-fav-churches').focus();
-
   }
 
   window.addEventListener('native.keyboardshow', keyboardShowHandler);
@@ -905,34 +869,6 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     if (focused) {
       $scope.PostVille = true;
       $scope.Chercher = false;
-
-    } else {
-      if (query) {
-        $scope.PostVille = true;
-        $scope.Chercher = false;
-      } else {
-        $scope.PostVille = false;
-        $scope.Chercher = true;
-      }
-    }
-  };
-
-  $scope.searchType = function (search) {
-    if (search == "PostVille") {
-      console.log("PostVille");
-      $scope.PostVille = true;
-      $scope.Chercher = false;
-      $scope.Geolocalisation = false;
-    } else if (search == "Chercher") {
-      console.log("Chercher");
-      $scope.PostVille = false;
-      $scope.Chercher = true;
-      $scope.Geolocalisation = false;
-    } else if (search == "Geolocalisation") {
-      console.log("Geolocalisation");
-      $scope.PostVille = false;
-      $scope.Chercher = false;
-      $scope.Geolocalisation = true;
     }
   };
 
@@ -945,34 +881,6 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     if (focused) {
       $scope.PostVilleFav = true;
       $scope.ChercherFav = false;
-
-    } else {
-      if (query) {
-        $scope.PostVilleFav = true;
-        $scope.ChercherFav = false;
-      } else {
-        $scope.PostVilleFav = false;
-        $scope.ChercherFav = true;
-      }
-    }
-  };
-
-  $scope.searchTypeFav = function (search) {
-    if (search == "PostVilleFav") {
-      console.log("PostVilleFav");
-      $scope.PostVilleFav = true;
-      $scope.ChercherFav = false;
-      $scope.GeolocalisationFav = false;
-    } else if (search == "ChercherFav") {
-      console.log("ChercherFav");
-      $scope.PostVilleFav = false;
-      $scope.ChercherFav = true;
-      $scope.GeolocalisationFav = false;
-    } else if (search == "GeolocalisationFav") {
-      console.log("GeolocalisationFav");
-      $scope.PostVilleFav = false;
-      $scope.ChercherFav = false;
-      $scope.GeolocalisationFav = true;
     }
   };
 

@@ -26,8 +26,7 @@
 <!--        <input class="form-control" name="query" type="text"  value="Search" ng-model="query" placeholder="Filter..." ng-blur="hide_keyboard()">-->
         <div class="item item-input item-icon-right" style="background:white;">
           <span class="back-to-fav-list"  id="back-to-main-list" ng-click="back_from_edit_main_church()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
-          <input type="text" name="query" id="query-id" ng-model="query"  placeholder="Ville, code postal" ng-focus="queryFocus(true, query)" ng-blur="queryFocus(false, query)">
-          <!--<input type="text" name="query" ng-model="query"  placeholder="Filter..." ng-focus="searchType('PostVille')" ng-blur="searchType('Chercher')">-->
+          <input type="text" name="query" id="query_id" ng-model="query"  placeholder="Ville, code postal" ng-focus="queryFocus(true, query)">
           <font size="5px"><i class="ion-ios-close-outline" ng-show="query.length" style="margin-right: 5px;" ng-click="hide_keyboard()"></i></font>
         </div>
       </div>
@@ -84,15 +83,11 @@
       </ion-scroll>
 
       <span class="default-plus" ng-show="!ma_paroisses && InFavList" ng-click="goToChooseFav()" ><i class="glyphicon glyphicon-plus"></i></span>
-      <!--<button ng-show="!ma_paroisses && InFavList" ng-click="goToChooseFav()" type="button" style="width: 15vw;" class="pull-left btn-setup btn btn-primary">-->
-        <!--<img src="images/plus-brown.png" class="img-responsive">-->
-      <!--</button>-->
 
       <div ng-show="!ma_paroisses && !InFavList" >
         <div class="item item-input item-icon-right" style="background:white;">
           <span class="back-to-fav-list" id="back-to-fav-list" ng-click="backToFavList()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
-          <input type="text" name="query_fav" id="query_fav_id" ng-model="query_fav"  placeholder="Filter..." ng-focus="queryFocusFav(true, query_fav)" ng-blur="queryFocusFav(false, query_fav)" id="query_fav_id">
-          <!--<input type="text" name="query_fav" ng-model="query_fav"  placeholder="Filter..." ng-focus="searchTypeFav('PostVilleFav')" ng-blur="searchTypeFav('ChercherFav')">-->
+          <input type="text" name="query_fav" id="query_fav_id" ng-model="query_fav"  placeholder="Filter..." ng-focus="queryFocusFav(true, query_fav)" id="query_fav_id">
           <font size="5px"><i class="ion-ios-close-outline" ng-show="query_fav.length" style="margin-right: 5px;" ng-click="hide_keyboard_fav()"></i></font>
         </div>
       </div>
