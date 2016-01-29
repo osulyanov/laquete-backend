@@ -1,4 +1,11 @@
 /* ionic tabs badge start */
+#current_location{
+    position:absolute;
+bottom: 8%;
+    right: 5%;
+
+    
+}
 
 .museo-normal, .form-control {
   font-family: "Museo Sans Rounded-300" !important;

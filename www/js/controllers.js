@@ -564,6 +564,37 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       $location.path('/notification');
     };
   })
+.controller('Cur_geo', function($scope, $ionicLoading) {
+
+  $scope.positions = [{
+    lat: 0,
+    lng: 0
+  }];
+
+  $scope.$on('mapInitialized', function(event, map) {
+    $scope.map = map;
+  });
+
+  $scope.current_location= function(){
+  $scope.positions = [];
+    
+    
+    $ionicLoading.show({
+      template: 'Loading...'
+    });
+
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      $scope.positions.push({lat: pos.k,lng: pos.B});
+      console.log(pos);
+      $scope.map.setCenter(pos);
+      $ionicLoading.hide();
+    });
+
+  };
+
+})
 
 .controller('NotifyCtrl', function ($scope, $location, $ionicHistory, $ionicPlatform, API) {
   $scope.back = function () {
