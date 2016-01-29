@@ -53,6 +53,9 @@
               <p class="help-block" ng-show="userForm.cc_cvc.$error.required && !userForm.cc_cvc.$pristine">Ce champ est requis</p>
             </div>
 
+            <div class="has-error">
+              <p class="help-block" ng-show="error">{{error}}</p>
+            </div>
 
             <button type="submit" class="btn btn-primary" ng-click="skip_card()">sauter</button>
             <button type="button" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="add_card()">Suivant</button>

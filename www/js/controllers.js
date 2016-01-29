@@ -2193,10 +2193,17 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     };
   })
   .controller('SignupE2Ctrl', function ($scope, $location, API, Helper, $rootScope, $ionicHistory) {
+    $scope.error = '';
     $scope.platform = API.currentPlatform();
-    $scope.$on('$ionicView.enter', function (e) {
 
+    var init = function() {
+      $scope.error = '';
+    };
+
+    $scope.$on('$ionicView.enter', function (e) {
+      init();
     });
+
     $scope.back = function () {
       $ionicHistory.goBack();
     };
@@ -2228,9 +2235,10 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
           }
           if (data == true) {
+            init();
             $location.path('/main/jedonne');
           } else {
-            $scope.error = 'Email or password is wrong';
+            $scope.error = data.error;
             // $scope.error = "Email already exists";
           }
         }
