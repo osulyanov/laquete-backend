@@ -709,27 +709,38 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
   $scope.hide_keyboard = function () {
     console.log("hide");
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard && "ios" == API.currentPlatform()) {
+    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       console.log("hidekeyboard")
       cordova.plugins.Keyboard.close();
     }
+
     $scope.query = "";
-    $scope.query_fav = "";
     $scope.PostVille = false;
     $scope.Chercher = true;
+    document.getElementById('query_id').value = '';
+    document.getElementById('query_id').blur();
+    document.getElementById('tab-churches').focus();
 
   }
 
   $scope.hide_keyboard_fav = function () {
     console.log("hide");
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard && "ios" == API.currentPlatform()) {
+    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       console.log("hidekeyboard")
       cordova.plugins.Keyboard.close();
     }
-    $scope.query = "";
+    //if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard && "ios" == API.currentPlatform()) {
+    //  console.log("hidekeyboard")
+    //  cordova.plugins.Keyboard.close();
+    //}
+
+    //$scope.query = "";
     $scope.query_fav = "";
     $scope.PostVilleFav = false;
     $scope.ChercherFav = true;
+    document.getElementById('query_fav_id').value = '';
+    document.getElementById('query_fav_id').blur();
+    document.getElementById('tab-fav-churches').focus();
 
   }
 

@@ -12,23 +12,23 @@
     <div class="padding churches-padding">
       <!--	Area for ma_paroisses selected-->
       <div class="button-bar" ng-show="ma_paroisses">
-        <a class="button bg-green" ng-click="ma_paroisse()"><font size="2">Ma Paroisse</font></a>
+        <a class="button bg-green" id="tab-churches" ng-click="ma_paroisse()"><font size="2">Ma Paroisse</font></a>
         <a class="button bg-white" ng-click="autres_paroisses()"><font size="2">Mes autres églises</font></a>
       </div>
       <!--		Area for ma_paroisses unselected-->
       <div class="button-bar" ng-hide="ma_paroisses">
         <a class="button bg-white" ng-click="ma_paroisse()"><font size="2">Mon église</font></a>
-        <a class="button bg-green" ng-click="autres_paroisses()"><font size="2">Mes autres églises</font></a>
+        <a class="button bg-green" id="tab-fav-churches" ng-click="autres_paroisses()"><font size="2">Mes autres églises</font></a>
       </div>
 
       <!--		ma_paroisses selected radio buttons for postville selected search-->
       <div ng-show="ma_paroisses && !main_church_added" >
 <!--        <input class="form-control" name="query" type="text"  value="Search" ng-model="query" placeholder="Filter..." ng-blur="hide_keyboard()">-->
         <div class="item item-input item-icon-right" style="background:white;">
-          <span class="back-to-fav-list" ng-click="back_from_edit_main_church()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
-          <input type="text" name="query" ng-model="query"  placeholder="Ville, code postal" ng-focus="queryFocus(true, query)" ng-blur="queryFocus(false, query)">
+          <span class="back-to-fav-list"  id="back-to-main-list" ng-click="back_from_edit_main_church()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
+          <input type="text" name="query" id="query-id" ng-model="query"  placeholder="Ville, code postal" ng-focus="queryFocus(true, query)" ng-blur="queryFocus(false, query)">
           <!--<input type="text" name="query" ng-model="query"  placeholder="Filter..." ng-focus="searchType('PostVille')" ng-blur="searchType('Chercher')">-->
-          <font size="5px"><i class="ion-ios-close-outline" ng-show="query.length" style="margin-right: 5px;" ng-click="query = ''; hide_keyboard()"></i></font>
+          <font size="5px"><i class="ion-ios-close-outline" ng-show="query.length" style="margin-right: 5px;" ng-click="hide_keyboard()"></i></font>
         </div>
       </div>
 
@@ -90,10 +90,10 @@
 
       <div ng-show="!ma_paroisses && !InFavList" >
         <div class="item item-input item-icon-right" style="background:white;">
-          <span class="back-to-fav-list" ng-click="backToFavList()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
-          <input type="text" name="query_fav" ng-model="query_fav"  placeholder="Filter..." ng-focus="queryFocusFav(true, query_fav)" ng-blur="queryFocusFav(false, query_fav)" id="query_fav_id">
+          <span class="back-to-fav-list" id="back-to-fav-list" ng-click="backToFavList()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
+          <input type="text" name="query_fav" id="query_fav_id" ng-model="query_fav"  placeholder="Filter..." ng-focus="queryFocusFav(true, query_fav)" ng-blur="queryFocusFav(false, query_fav)" id="query_fav_id">
           <!--<input type="text" name="query_fav" ng-model="query_fav"  placeholder="Filter..." ng-focus="searchTypeFav('PostVilleFav')" ng-blur="searchTypeFav('ChercherFav')">-->
-          <font size="5px"><i class="ion-ios-close-outline" ng-show="query_fav.length" style="margin-right: 5px;" ng-click="query_fav = ''; hide_keyboard_fav()"></i></font>
+          <font size="5px"><i class="ion-ios-close-outline" ng-show="query_fav.length" style="margin-right: 5px;" ng-click="hide_keyboard_fav()"></i></font>
         </div>
       </div>
 
