@@ -617,6 +617,10 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
   });
 
+  $scope.$on('mapInitialized', function(event, map) {
+    $scope.map = map;
+  });
+
   $scope.ma_paroisses = false;
 
   $scope.user_lat = -1;
@@ -795,6 +799,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
   $scope.ma_paroisse = function () {
     console.log("ma_paroisse");
     $scope.ma_paroisses = true;
+    window.setTimeout(function(){google.maps.event.trigger($scope.map, 'resize')},100);
   };
   $scope.autres_paroisses = function () {
     console.log("autres_paroisses");
