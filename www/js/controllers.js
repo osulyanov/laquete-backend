@@ -896,7 +896,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
   $scope.goToChooseFav = function() {
     $scope.InFavList = false;
     $scope.query_fav = '';
-
+    window.setTimeout(function(){google.maps.event.trigger($scope.map, 'resize')},100);
   }
 
   $scope.setMainChurch = function () {
