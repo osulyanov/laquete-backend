@@ -38,12 +38,20 @@
             <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block ">Le nom est requis.</p>
         </div> -->
 
+        <!-- NAME -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+            <label class="">Prénom</label>
+            <input type="text" name="name" class="form-control " ng-model="user.name" ng-minlength="3" ng-maxlength="20">
+            <p ng-show="userForm.name.$error.minlength" class="help-block ">Le prénom est trop court.</p>
+            <p ng-show="userForm.name.$error.maxlength" class="help-block ">Le prénom est trop long.</p>
+        </div>
+
         <!-- SURNAME -->
         <div class="form-group" ng-class="{ 'has-error' : userForm.surname.$invalid && !userForm.surname.$pristine }">
-            <label class="">Nom de famille</label>
+            <label class="">Nom</label>
             <input type="text" name="surname" class="form-control " ng-model="user.surname" ng-minlength="3" ng-maxlength="20">
-            <p ng-show="userForm.surname.$error.minlength" class="help-block ">Le nom de famille est trop court.</p>
-            <p ng-show="userForm.surname.$error.maxlength" class="help-block ">Le nom de famille est trop long.</p>
+            <p ng-show="userForm.surname.$error.minlength" class="help-block ">Le nom est trop court.</p>
+            <p ng-show="userForm.surname.$error.maxlength" class="help-block ">Le nom est trop long.</p>
         </div>
 
         <!-- EMAIL -->

@@ -1794,25 +1794,33 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     $scope.currentDonation = null;
     $scope.showDateModal = false;
 
-    //$ionicModal.fromTemplateUrl('date-modal.html', {
-    //  scope: $scope,
-    //  animation: 'slide-in-up'
-    //}).then(function(modal) {
-    //  $scope.modal = modal
-    //})
-
-    $scope.openModal = function(donation) {
-      $scope.currentDonation = donation;
-      $scope.showDateModal = true;
-    }
-
-    $scope.closeModal = function() {
-      $scope.showDateModal = true;
+    $scope.openModal = function () {
+      $scope.data = {};
+      // An elaborate, custom popup
+      var myPopup = $ionicPopup.show({
+        template: '',
+        cssClass: 'my-custom-popup-after-donation',
+        title: '',
+        subTitle: '',
+        scope: $scope,
+        buttons: [
+          {
+            text: '<b>&#9746</b>',
+            type: 'button button-clear button-positive btn-primary btn-pop-Back',
+            onTap: function (e) {
+              myPopup.close();
+            }
+          }
+        ]
+      });
+      myPopup.then(function (res) {
+        console.log('Tapped!', res);
+        // $scope.selected_church_id = -1;
+      });
+      setTimeout( function() {
+        $('.btn-getInfo-Ok').hide().show(0);
+      }, 1000)
     };
-
-    //$scope.$on('$destroy', function() {
-    //  $scope.modal.remove();
-    //});
 
     $scope.donations = [];
     $scope.$on('$ionicView.enter', function (e) {
