@@ -27,7 +27,7 @@
       <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
           <label>Prénom</label>
           <input type="text" ng-disabled="mydisabled" name="name" class="form-control" ng-model="user.name" required>
-          <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Votre nom est requis.</p>
+          <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Prénom est requis.</p>
       </div>
       <div class="form-group" ng-class="{ 'has-error' : userForm.surname.$invalid && !userForm.surname.$pristine }">
         <label>Nom</label>
@@ -39,6 +39,16 @@
         <label>Adresse email</label>
         <input type="email" ng-disabled="mydisabled" name="email" class="form-control" ng-model="user.email" placeholder="Email">
           <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Adresse email.</p>
+      </div>
+      <div class="form-group" ng-class="{ 'her-error' : userForm.phone.$invalid && !userForm.phone.$pristine }">
+        <label>Numéro de téléphone (facultatif)</label>
+        <input type="number" inputmode="numeric" pattern="[0-9]*" ng-disabled="mydisabled" name="phone" class="form-control" ng-model="user.phone" placeholder="Téléphone">
+          <p ng-show="userForm.phone.$invalid && !userForm.phone.$pristine" class="help-block">Numéro de téléphone (facultatif)</p>
+      </div>
+      <div class="form-group" ng-class="{ 'her-error' : userForm.show_private.$invalid && !userForm.show_private.$pristine }">
+        <label>Partager mes informations avec le diocèse auquel je donne</label>
+        <input type="checkbox" ng-disabled="mydisabled" name="show_private" class="form-control" ng-model="user.show_private">
+          <p ng-show="userForm.show_private.$invalid && !userForm.show_private.$pristine" class="help-block"></p>
       </div>
       <button type="submit" class="btn-profile-save btn btn-default" id="profile"  ng-click="profile_btn()">{{btn_text}}</button>
     </form>

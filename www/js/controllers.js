@@ -236,6 +236,21 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       }
     );
   };
+  Helper.UpdateUserInfo = function (user, callback) {
+  // Helper.OneTimeDonateDioce = function (amount, dioce_id, callback) {
+    // var get_churches = API.get(API.url() + "rpayments/denier_charge?amount=" + amount + "&dioce_id=" + dioce_id + "&" + API.token_params());
+    var update_user = API.get(API.url() + "users/update?user_city=" + user.city + "&user_address=" + user.address + "&user_zip=" + user.zip + "&" + API.token_params());
+    update_user.then(
+      function (data) {
+        if (data) {
+          console.log("User Update Successful in Helper: " + data);
+        } else {
+          console.log("User Update UnSuccessful in Helper");
+        }
+        callback(data);
+      }
+    );
+  };
 })
 
 
@@ -375,19 +390,28 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
   $scope.platform = API.currentPlatform();
 
   $scope.user = {};
-  $scope.user.name = window.localStorage.getItem("user_name");
-  $scope.user.surname = window.localStorage.getItem("user_surname");
-  $scope.user.email = window.localStorage.getItem("user_email");
 
   $scope.mydisabled = true;
   $scope.btn_text = "Modiﬁer";
-  $scope.profile_btn = function () {
+
+  $scope.$on('$ionicView.enter', function (e) {
+    $scope.user.name = refineLocalStorageValue(window.localStorage.getItem("user_name"));
+    $scope.user.surname = refineLocalStorageValue(window.localStorage.getItem("user_surname"));
+    $scope.user.email = refineLocalStorageValue(window.localStorage.getItem("user_email"));
+    $scope.user.phone = refineLocalStorageNumber(window.localStorage.getItem("user_phone"));
+    $scope.user.show_private = refineLocalStorageBoolean(window.localStorage.getItem("user_show_private"));
+    $scope.btn_text = "Modiﬁer";
+    $scope.mydisabled = true;
+  });
+
+
+    $scope.profile_btn = function () {
     $scope.mydisabled = !$scope.mydisabled;
     if (!$scope.mydisabled) {
       $scope.btn_text = "Valider";
     } else {
       //TODO: implement user update code
-      var get_churches = API.get(API.url() + "users/update?user_name=" + $scope.user.name + "&user_surname=" + $scope.user.surname + "&" + API.token_params());
+      var get_churches = API.get(API.url() + "users/update?user_name=" + $scope.user.name + "&user_surname=" + $scope.user.surname + "&user_phone=" + $scope.user.phone + "&user_show_private=" + $scope.user.show_private + "&" + API.token_params());
       get_churches.then(
         function (data) {
           if (data["error"] == "You need to sign in or sign up before continuing.") {
@@ -401,6 +425,8 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
             window.localStorage.setItem("user_name", data.name);
             window.localStorage.setItem("user_surname", data.surname);
             window.localStorage.setItem("user_email", data.email);
+            window.localStorage.setItem("user_phone", $scope.user.phone);
+            window.localStorage.setItem("user_show_private", $scope.user.show_private);
 
             $scope.btn_text = "Modiﬁer";
           } else {
@@ -530,7 +556,18 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
 
   })
-  .controller('ReceiptCtrl', function ($scope, $location, $ionicHistory, API,$ionicPopup, $timeout) {
+  .controller('ReceiptCtrl', function ($scope, $location, $ionicHistory, API,$ionicPopup, $timeout, Helper) {
+    $scope.user = {city: '', zip: '', address: ''};
+    $scope.can_update = true;
+
+    $scope.$on('$ionicView.enter', function (e) {
+      $scope.user.city = refineLocalStorageValue(window.localStorage.getItem("user_city"));
+      $scope.user.zip = refineLocalStorageValue(window.localStorage.getItem("user_zip"));
+      $scope.user.address = refineLocalStorageValue(window.localStorage.getItem("user_address"));
+      if ($scope.user.address) {
+        $scope.can_update = false;
+      }
+    });
 
     $scope.getInfo = function() {
       var myPopup = $ionicPopup.show({
@@ -561,7 +598,13 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     };
     $scope.mydisabled = false;
     $scope.profile_btn = function () {
-      $location.path('/notification');
+      Helper.UpdateUserInfo($scope.user, function (data) {
+        $scope.can_update = false;
+        window.localStorage.setItem("user_city", $scope.user.city);
+        window.localStorage.setItem("user_zip", $scope.user.zip);
+        window.localStorage.setItem("user_address", $scope.user.address);
+        $location.path('/notification');
+      });
     };
   })
 .controller('Cur_geo', function($scope, $ionicLoading) {
@@ -612,9 +655,19 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 })
 
 
-.controller('ChurchesCtrl', function ($scope, $ionicHistory, $rootScope, API, $q, $http, $compile, Helper) {
+.controller('ChurchesCtrl', function ($scope, $ionicHistory, $rootScope, API, $q, $http, $compile, Helper, $location) {
   $scope.$on('$ionicView.enter', function (e) {
-
+    if ($location.search().default_tab == "false") {
+      $scope.InFavList = false;
+      $scope.ma_paroisses = false;
+      $scope.PostVille = false;
+      $scope.Chercher = true;
+    } else if ($location.search().default_tab == "true") {
+      $scope.main_church_added = false;
+      $scope.ma_paroisses = true;
+      $scope.PostVilleFav = false;
+      $scope.ChercherFav = true;
+    }
   });
 
   $scope.$on('mapInitialized', function(event, map) {
@@ -1067,8 +1120,15 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
   })
   .controller('jedonneCtrl', function ($scope, API, $ionicHistory, $rootScope, $location, $ionicSlideBoxDelegate, $ionicPopup, $timeout, $ionicLoading, Helper) {
 
+    $scope.plus_selected = false;
+
     $scope.addChurch = function() {
       $location.path("/main/churches");
+      if ($scope.fav_churches.length == 0) {
+        $location.url("/main/churches?default_tab=true");
+      } else {
+        $location.url("/main/churches?default_tab=false");
+      }
     }
 
     $scope.checkiOS = function iOS() {
@@ -1123,11 +1183,15 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
           console.log("selected_church_id = " + $scope.selected_church_id)
           console.log("seelcted church name  = " + $scope.fav_churches[arg]['name'])
         }
+        $scope.plus_selected = ($scope.fav_churches.length == arg ? true:false);
       }
 
       $scope.swiper.on('slideChangeStart', function () {
         if ($scope.fav_churches.length != $scope.swiper.activeIndex) {
           $scope.choseChurch($scope.swiper.activeIndex);
+        } else {
+          $scope.selected_church_id = -1;
+          $scope.plus_selected = true;
         }
         $timeout(function () {
           $scope.$digest();
@@ -2123,6 +2187,11 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
             window.localStorage.setItem("user_token", data.user_token);
             window.localStorage.setItem("user_email", data.user_email);
             window.localStorage.setItem("user_name", data.user_name);
+            window.localStorage.setItem("user_zip", data.user_zip);
+            window.localStorage.setItem("user_address", data.user_address);
+            window.localStorage.setItem("user_city", data.user_city);
+            window.localStorage.setItem("user_phone", data.user_phone);
+            window.localStorage.setItem("user_show_private", data.user_show_private);
 
             window.localStorage.setItem("main_church_address", data.main_church_address);
             window.localStorage.setItem("main_church_city", data.main_church_city);
@@ -2419,3 +2488,15 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
 
   });
+
+function refineLocalStorageValue(value) {
+  return (value !== 'null' && value !== 'undefined') ? value : '';
+}
+
+function refineLocalStorageBoolean(value) {
+  return (value === 'true');
+}
+
+function refineLocalStorageNumber(value) {
+  return (value !== 'null' && value !== 'undefined') ? Number(value) : '';
+}

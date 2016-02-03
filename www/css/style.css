@@ -1,3 +1,10 @@
+input[type=checkbox] {
+  width: 6vw;
+  height: 6vw;
+  box-shadow: inset 0 0px 0px rgba(0,0,0,0);
+  -webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,0);
+}
+
 /* ionic tabs badge start */
 #current_location{
     position:absolute;
@@ -162,7 +169,8 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 .bar.bar-stable .title {
   color: #fff;
   font-size: 3.5vh;
-  padding: 4vh 0;
+  /*padding: 4vh 0;*/
+  padding-top: 3.5vh;
   overflow: inherit;
 }
 
@@ -767,7 +775,22 @@ font-family: "Museo Sans Rounded-700" !important;
 }
 
 .bar {
-  height: 7vh;
+  height: 9vh;
+  padding-top: 0;
+}
+
+.bar .title {
+  line-height: 18px;
+}
+
+.platform-android .bar .title {
+  line-height: 18px;
+}
+
+ion-nav-bar .button.button-clear {
+  height: 100%!important;
+  padding-top: 2.5vh!important;
+  padding-left: 1vw!important;
 }
 
 .list {
@@ -775,13 +798,13 @@ font-family: "Museo Sans Rounded-700" !important;
 }
 
 .scroll-history {
-  height: 80vh !important;
-  margin-top: 7vh;
+  height: 77vh !important;
+  margin-top: 9vh;
 }
 
 .scroll-rlist {
-  height: 70vh;
-  margin-top: 7vh;
+  height: 68vh;
+  margin-top: 9vh;
 }
 
 
@@ -1072,21 +1095,21 @@ margin-top: 1.6vh;
 
 @media (max-height: 1024px) {
   .platform-ios .bar.bar-stable .title {
-    padding: 2.0vh 0;
+    /*padding: 2.0vh 0;*/
     overflow: inherit;
   }
 }
 
 @media (max-height: 736px) {
   .platform-ios .bar.bar-stable .title {
-    padding: 1.7vh 0;
+    /*padding: 1.7vh 0;*/
     overflow: inherit;
   }
 }
 
 @media (max-height: 960px) {
   .platform-android .bar.bar-stable .title {
-    padding: 1.7vh 0;
+    /*padding: 1.7vh 0;*/
     overflow: inherit;
   }
 }
@@ -1157,11 +1180,11 @@ margin-top: 1.6vh;
    font-style: italic;
 }
 :-moz-placeholder {
-   font-style: italic;  
+   font-style: italic;
 }
 ::-moz-placeholder {
-   font-style: italic;  
+   font-style: italic;
 }
-:-ms-input-placeholder {  
-   font-style: italic; 
+:-ms-input-placeholder {
+   font-style: italic;
 }
