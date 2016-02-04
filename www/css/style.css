@@ -170,7 +170,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   color: #fff;
   font-size: 3.5vh;
   /*padding: 4vh 0;*/
-  padding-top: 3.5vh;
+  /*padding-top: 3.5vh;*/
   overflow: inherit;
 }
 
@@ -771,27 +771,34 @@ font-family: "Museo Sans Rounded-700" !important;
 
 .bar-stable .button.button-clear {
   color: #fff;
-  padding:1.2vh;
+  /*padding:1.2vh;*/
+}
+
+.header-item button {
+  max-height: 58px!important;
+  margin-top: 14px;
+
 }
 
 .bar {
-  height: 9vh;
-  padding-top: 0;
+  height: 58px;
+  /*padding-top: 0;*/
 }
 
 .bar .title {
-  line-height: 18px;
+  line-height: 58px;
+  margin-top: 6px;
 }
 
 .platform-android .bar .title {
   line-height: 18px;
 }
 
-ion-nav-bar .button.button-clear {
-  height: 100%!important;
-  padding-top: 2.5vh!important;
-  padding-left: 1vw!important;
-}
+/*ion-nav-bar .button.button-clear {*/
+  /*height: 100%!important;*/
+  /*padding-top: 2.5vh!important;*/
+  /*padding-left: 1vw!important;*/
+/*}*/
 
 .list {
   /*  margin-top: 7vh;*/
@@ -799,12 +806,12 @@ ion-nav-bar .button.button-clear {
 
 .scroll-history {
   height: 77vh !important;
-  margin-top: 9vh;
+  margin-top: 58px;
 }
 
 .scroll-rlist {
   height: 68vh;
-  margin-top: 9vh;
+  margin-top: 58px;
 }
 
 

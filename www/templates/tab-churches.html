@@ -139,7 +139,7 @@
       <!--		carte selected with geo search -->
 <!--      <div id="map" data-tap-disabled="true"></div>-->
 
-      <map street-view-control="false" zoom-control="false" map-type-control="false" zoom="12" center="[48.5149019, 1.8341628]" id="map" ng-show="(ma_paroisses && !PostVille && is_map && !main_church_added) || (!ma_paroisses && !PostVilleFav && is_map_fav && !InFavList)">
+      <map street-view-control="false" zoom-control="false" map-type-control="false" zoom="12" center="[48.5149019, 1.8341628]" id="map" ng-show="(ma_paroisses && !PostVille && !main_church_added) || (!ma_paroisses && !PostVilleFav && !InFavList)">
 <!--         <map zoom="12" center="current-location" id="map">-->
           <a ng-controller = "Cur_geo" ng-click="current_location()" class="button button-icon icon  ion-android-locate" id = "current_location"></a>
         <marker ng-repeat="church in nearChurches" position="[{{church.latitude}},{{church.longitude}}]" on-click="showInfoWindow(event, map ,$index)"></marker>

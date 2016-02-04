@@ -229,7 +229,8 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   position: relative;
 }
 .donate-section {
-  padding: 1.65vh 0 0;
+  padding: 0 0 0;
+  /*padding: 1.65vh 0 0;*/
   margin-bottom: 0vh;
   font-family: "Museo Sans Rounded-300" !important;
 }
@@ -245,7 +246,6 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   text-align: center;
   font-size: 2.65vh;
   margin: 0 0 1.96vh;
-  margin-top: 8vh;
 }
 .close-box {
   color: #5ab43d;
@@ -762,4 +762,8 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
       min-height: 25px;
       z-index: 5000;
   */
+}
+
+.je-donne-bg .main-content {
+  margin-top: 62px;
 }
