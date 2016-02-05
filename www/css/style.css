@@ -774,13 +774,9 @@ font-family: "Museo Sans Rounded-700" !important;
   /*padding:1.2vh;*/
 }
 
-.header-item button {
-  max-height: 58px!important;
+.platform-android .header-item button {
+  max-height: 54px!important;
   margin-top: 14px;
-}
-
-.platform-ios .header-item button {
-  margin-top: 7px;
 }
 
 .bar {
@@ -788,13 +784,18 @@ font-family: "Museo Sans Rounded-700" !important;
   /*padding-top: 0;*/
 }
 
-.bar .title {
-  line-height: 58px;
+.platform-android .bar {
+  height: 54px;
+  /*padding-top: 0;*/
+}
+
+.platform-android .bar .title {
+  line-height: 54px;
   margin-top: 6px;
 }
 
 .platform-android .bar .title {
-  line-height: 58px;
+  line-height: 54px;
 }
 
 /*ion-nav-bar .button.button-clear {*/
@@ -815,6 +816,16 @@ font-family: "Museo Sans Rounded-700" !important;
 .scroll-rlist {
   height: 68vh;
   margin-top: 58px;
+}
+
+.platform-ios .scroll-history {
+  height: 77vh !important;
+  margin-top: 64px;
+}
+
+.platform-ios .scroll-rlist {
+  height: 68vh;
+  margin-top: 64px;
 }
 
 
@@ -1020,6 +1031,10 @@ margin-top: 1.6vh;
 .list-picto-devier {
   height: 5.5vh!important;
   width: 5.5vh!important;
+}
+
+.platform-ios .bar-header:not(.bar-subheader) > * {
+  margin-top: 20px;
 }
 
 @media (max-width: 768px) {
