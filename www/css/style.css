@@ -91,7 +91,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 
 
 .top-ios ion-header-bar{
-  top:-25px !important;
+  /*top:-25px !important;*/
 }
 
 .button.button-icon.input-button {
@@ -777,7 +777,10 @@ font-family: "Museo Sans Rounded-700" !important;
 .header-item button {
   max-height: 58px!important;
   margin-top: 14px;
+}
 
+.platform-ios .header-item button {
+  margin-top: 7px;
 }
 
 .bar {
@@ -791,7 +794,7 @@ font-family: "Museo Sans Rounded-700" !important;
 }
 
 .platform-android .bar .title {
-  line-height: 18px;
+  line-height: 58px;
 }
 
 /*ion-nav-bar .button.button-clear {*/

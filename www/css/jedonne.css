@@ -326,6 +326,11 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   font-family: "Museo Sans Rounded-300" !important;
 }
 
+.platform-android .charch-area{
+  margin-top: 5vh;
+  font-family: "Museo Sans Rounded-300" !important;
+}
+
 .type-de-dom{
   margin-top: -4vh;
 }
@@ -419,6 +424,10 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   margin-top: -5vh;
   font-family: "Museo Sans Rounded-300" !important;
 
+}
+.platform-android .type-de-don {
+  margin-top: 4vh;
+  font-family: "Museo Sans Rounded-300" !important;
 }
 .type-de-don h2 {
   margin-bottom: 2.3vh;
@@ -766,4 +775,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 
 .je-donne-bg .main-content {
   margin-top: 62px;
+}
+.platform-ios .je-donne-bg .main-content {
+  margin-top: 66px;
 }
