@@ -7,7 +7,7 @@
   </ion-nav-title>
 </ion-nav-bar>
 <ion-view class="history-bg">
-  <ion-content data-tap-disabled="false" scroll="false" >
+  <ion-content data-tap-disabled="false" scroll="true" id="body-content">
 
     <div class="padding churches-padding">
       <!--	Area for ma_paroisses selected-->
@@ -87,7 +87,7 @@
       <div ng-show="!ma_paroisses && !InFavList" >
         <div class="item item-input item-icon-right" style="background:white;">
           <span class="back-to-fav-list" id="back-to-fav-list" ng-click="backToFavList()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
-          <input type="text" name="query_fav" id="query_fav_id" ng-model="query_fav"  placeholder="Filter..." ng-focus="queryFocusFav(true, query_fav)" id="query_fav_id">
+          <input type="text" name="query_fav" id="query_fav_id" ng-model="query_fav"  placeholder="Filter..." ng-click="queryFocusFav(true, query_fav)" id="query_fav_id">
           <font size="5px"><i class="ion-ios-close-outline" ng-show="query_fav.length" style="margin-right: 5px;" ng-click="hide_keyboard_fav()"></i></font>
         </div>
       </div>
@@ -139,12 +139,49 @@
       <!--		carte selected with geo search -->
 <!--      <div id="map" data-tap-disabled="true"></div>-->
 
-      <map street-view-control="false" zoom-control="false" map-type-control="false" zoom="12" center="[48.5149019, 1.8341628]" id="map" ng-show="(ma_paroisses && !PostVille && !main_church_added) || (!ma_paroisses && !PostVilleFav && !InFavList)">
-<!--         <map zoom="12" center="current-location" id="map">-->
-          <a ng-controller = "Cur_geo" ng-click="current_location()" class="button button-icon icon  ion-android-locate" id = "current_location"></a>
-        <marker ng-repeat="church in nearChurches" position="[{{church.latitude}},{{church.longitude}}]" on-click="showInfoWindow(event, map ,$index)"></marker>
-<!--        <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>-->
-      </map>
+        <!--<ng-map street-view-control="false" zoom-control="false" map-type-control="false" zoom="12" center="[48.5149019, 1.8341628]" ng-show="!ma_paroisses && !PostVilleFav && !InFavList"></ng-map>-->
+      <!--<div map-lazy-load="https://maps.google.com/maps/api/js">-->
+        <!--<ng-map street-view-control="false" zoom-control="false" map-type-control="false" zoom="12" center="[48.5149019, 1.8341628]" ng-show="(ma_paroisses && !PostVille && !main_church_added) || (!ma_paroisses && !PostVilleFav && !InFavList)">-->
+  <!--&lt;!&ndash;         <map zoom="12" center="current-location" id="map">&ndash;&gt;-->
+            <!--<a ng-controller = "Cur_geo" ng-click="current_location()" class="button button-icon icon  ion-android-locate" id = "current_location"></a>-->
+          <!--<marker ng-repeat="church in nearChurches" position="[{{church.latitude}},{{church.longitude}}]" on-click="showInfoWindow(event, map ,$index)"></marker>-->
+  <!--&lt;!&ndash;        <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>&ndash;&gt;-->
+          <!--&lt;!&ndash;<info-window id="info-window-church">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div ng-non-bindable="">&ndash;&gt;-->
+              <!--&lt;!&ndash;id: {{vm.shop.id}}<br/>&ndash;&gt;-->
+              <!--&lt;!&ndash;name: {{vm.shop.name}}<br/>&ndash;&gt;-->
+              <!--&lt;!&ndash;Position 1: {{vm.shop.position}}<br/>&ndash;&gt;-->
+              <!--&lt;!&ndash;Position 2: {{anchor.getPosition()}}<br/>&ndash;&gt;-->
+              <!--&lt;!&ndash;Position 3: {{vm.map.markers[vm.shop.id].getPosition()}}<br/>&ndash;&gt;-->
+              <!--&lt;!&ndash;<a href="#" ng-click="test(selected_church_index)">Click Here</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;</info-window>&ndash;&gt;-->
+
+        <!--</ng-map>-->
+      <!--</div>-->
+      <!--<div map-lazy-load="https://maps.google.com/maps/api/js" data-tap-disabled="true" >-->
+        <ng-map  data-tap-disabled="true" street-view-control="false" zoom-control="false" default-style="true" map-type-control="false" zoom="12" center="[48.5149019, 1.8341628]" ng-show="(ma_paroisses && !PostVille && !main_church_added) || (!ma_paroisses && !PostVilleFav && !InFavList)">
+          <marker ng-repeat="church in nearChurches" position="[{{church.latitude}},{{church.longitude}}]" id="marker{{$index}}" on-click="markerShowInfoWindow($index)"></marker>
+          <a ng-click="current_location()" class="button button-icon icon  ion-android-locate" id = "current_location"></a>
+
+          <info-window id="info-window-church">
+            <div ng-non-bindable="">
+              <h>{{selected_church_marker.name}}</h>
+              </br>
+              <p>{{selected_church_marker.address}}</p>
+              <div ng-hide="!main_church_added && ma_paroisses">
+                <i ng-show="selected_church_marker.favorite" class="glyphicon glyphicon-heart" ng-click="test(selected_church_index_marker)"></i>
+                <i ng-show="!selected_church_marker.favorite" class="glyphicon glyphicon-heart-empty" ng-click="test(selected_church_index_marker)"></i>
+              </div>
+              <div ng-show="!main_church_added && ma_paroisses">
+                <font ng-show="main_church_id != null && main_church_id == selected_church_marker.id" color="#B39E83"><i class="glyphicon glyphicon-heart"></i></font>
+                <i ng-hide="main_church_id != null && main_church_id == selected_church_marker.id" class="glyphicon glyphicon-heart-empty" ng-click="main(selected_church_index_marker)"></i>
+              </div>
+            </div>
+          </info-window>
+        </ng-map>
+      <!--</div>-->
+
       <!--		List for geolocalisatin list of ma paroisse	-->
       <div ng-show="!PostVille && !is_map && ma_paroisses && !main_church_added" class="scroll-list" style="transform: translate3d(0px, 0px, 0px) scale(1);" scroll="true">
 

@@ -1,5 +1,5 @@
 // angular.module('starter.controllers', [])
-angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWebViewPatch', 'ionic'])
+angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch', 'ionic', 'ngMap'])
   .run(function ($rootScope, API) {
     $rootScope.churches = [];
     var user_email = window.localStorage.getItem("user_email"),
@@ -357,29 +357,29 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     content: contentString
   });
 
-  $scope.showInfoWindow = function (event, evtMap, index) {
-    map = evtMap;
-    marker = map.markers[index];
-    ind = index;
-    var contentExa = 'Hi<br/>I am an infowindow<a href="http://www.google.com" ></a>' + index;
-    // replace the following content with contentString to get example of window with url
-    infoWindow.close();
-    infoWindow = new google.maps.InfoWindow({
-      content: contentString
-    });
-    infoWindow.open(map, marker);
-  };
-  $scope.hideInfoWindow = function (event, evtMap, index) {
-    map = evtMap;
-    marker = map.markers[index];
-    ind = index;
-    var contentExa = 'Hi<br/>I am an infowindow<a href="http://www.google.com" ></a>' + index;
-    // replace the following content with contentString to get example of window with url
-    var infoWindow = new google.maps.InfoWindow({
-      content: contentString
-    });
-    infoWindow.open(map, marker);
-  };
+  //$scope.showInfoWindow = function (event, evtMap, index) {
+  //  map = evtMap;
+  //  marker = map.markers[index];
+  //  ind = index;
+  //  var contentExa = 'Hi<br/>I am an infowindow<a href="http://www.google.com" ></a>' + index;
+  //  // replace the following content with contentString to get example of window with url
+  //  infoWindow.close();
+  //  infoWindow = new google.maps.InfoWindow({
+  //    content: contentString
+  //  });
+  //  infoWindow.open(map, marker);
+  //};
+  //$scope.hideInfoWindow = function (event, evtMap, index) {
+  //  map = evtMap;
+  //  marker = map.markers[index];
+  //  ind = index;
+  //  var contentExa = 'Hi<br/>I am an infowindow<a href="http://www.google.com" ></a>' + index;
+  //  // replace the following content with contentString to get example of window with url
+  //  var infoWindow = new google.maps.InfoWindow({
+  //    content: contentString
+  //  });
+  //  infoWindow.open(map, marker);
+  //};
   $scope.positions = [[40.71, -74.21], [40.72, -74.20], [40.73, -74.19],
       [40.74, -74.18], [40.75, -74.17], [40.76, -74.16], [40.77, -74.15]];
   var ind = -1;
@@ -608,34 +608,41 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     };
   })
 .controller('Cur_geo', function($scope, $ionicLoading) {
-
-  $scope.positions = [{
-    lat: 0,
-    lng: 0
-  }];
-
-  $scope.$on('mapInitialized', function(event, map) {
-    $scope.map = map;
-  });
-
-  $scope.current_location= function(){
-  $scope.positions = [];
-
-
-    $ionicLoading.show({
-      template: 'Loading...'
-    });
-
-
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      $scope.positions.push({lat: pos.k,lng: pos.B});
-      console.log(pos);
-      $scope.map.setCenter(pos);
-      $ionicLoading.hide();
-    });
-
-  };
+  //NgMap.getMap().then(function(map) {
+  //  $scope.map = map;
+  //  console.log(map.getCenter());
+  //  console.log('markers', map.markers);
+  //  console.log('shapes', map.shapes);
+  //});
+  //
+  //$scope.positions = [{
+  //  lat: 0,
+  //  lng: 0
+  //}];
+  //
+  ////$scope.$on('mapInitialized', function(event, map) {
+  ////  $scope.map = map;
+  ////});
+  ////
+  //$scope.current_location= function(){
+  //  $scope.positions = [];
+  //
+  //
+  //  $ionicLoading.show({
+  //    template: 'Loading...'
+  //  });
+  //
+  //
+  //  navigator.geolocation.getCurrentPosition(function(position) {
+  //    var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  //    //$scope.positions.push({lat: pos.k,lng: pos.B});
+  //    $scope.positions.push({lat: pos.lat(),lng: pos.lng()});
+  //    console.log(pos);
+  //    $scope.map.setCenter(pos);
+  //    $ionicLoading.hide();
+  //  });
+  //
+  //};
 
 })
 
@@ -655,7 +662,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 })
 
 
-.controller('ChurchesCtrl', function ($scope, $ionicHistory, $rootScope, API, $q, $http, $compile, Helper, $location) {
+.controller('ChurchesCtrl', function ($scope, $ionicHistory, $rootScope, API, $q, $http, $compile, Helper, $location, NgMap, $ionicLoading) {
   $scope.$on('$ionicView.enter', function (e) {
     if ($location.search().default_tab == "false") {
       $scope.InFavList = false;
@@ -668,11 +675,37 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       $scope.PostVilleFav = false;
       $scope.ChercherFav = true;
     }
+    NgMap.getMap().then(function(map) {
+      $scope.map = map;
+      console.log(map.getCenter());
+      console.log('markers', map.markers);
+      console.log('shapes', map.shapes);
+    });
+
   });
 
-  $scope.$on('mapInitialized', function(event, map) {
-    $scope.map = map;
-  });
+    $scope.current_location= function(){
+      $scope.positions = [];
+
+
+      $ionicLoading.show({
+        template: 'Loading...'
+      });
+
+
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        //$scope.positions.push({lat: pos.k,lng: pos.B});
+        $scope.positions.push({lat: pos.lat(),lng: pos.lng()});
+        console.log(pos);
+        $scope.map.setCenter(pos);
+        $ionicLoading.hide();
+      });
+
+    };
+  //$scope.$on('mapInitialized', function(event, map) {
+  //  $scope.map = map;
+  //});
 
   $scope.ma_paroisses = false;
 
@@ -696,8 +729,8 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
 
   function successCallback(position) {
 
-    $scope.user_lat = position.coords.latitude; //48.5149019;
-    $scope.user_long = position.coords.longitude; //1.8341628;
+    $scope.user_lat = 48.5149019; //position.coords.latitude; //
+    $scope.user_long = 1.8341628; //position.coords.longitude; //
     var userLocation = $scope.user_lat + ', ' + $scope.user_long;
     console.log("You are found here: " + userLocation);
     $rootScope.showLoading("Veuillez patienter...");
@@ -727,14 +760,14 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
     console.log("Location could not be found");
   }
 
-  $scope.setCenterToCurrent = function() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        map.setCenter(initialLocation);
-      });
-    }
-  };
+  //$scope.setCenterToCurrent = function() {
+  //  if (navigator.geolocation) {
+  //    navigator.geolocation.getCurrentPosition(function (position) {
+  //      initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  //      map.setCenter(initialLocation);
+  //    });
+  //  }
+  //};
 
   var infoWindow = null;
 
@@ -779,63 +812,85 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
       cordova.plugins.Keyboard.close();
     }
   });
-  $scope.showInfoWindow = function (event, evtMap, index) {
-    if (infoWindow == null) {
-      infoWindow = new google.maps.InfoWindow({
-        content: "contentString"
-      });
-    }
+  $scope.markerShowInfoWindow = function (event, index) {
 
-    $scope.main_church_id = window.localStorage.getItem("main_church_id");
+    $scope.selected_church_marker = $scope.all_churches[index];
+    $scope.selected_church_index_marker = index;
 
-    console.log("inside showInfoWindow");
-    var map = evtMap;
-    marker = map.markers[index];
-    ind = index;
-    var contentExa = 'Hi<br/>I am an infowindow<a href="http://www.google.com" ></a>' + index;
-    // replace the following content with contentString to get example of window with url
-    var htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><i class="glyphicon glyphicon-heart-empty" ng-click="test(' + index + ')"></i>' + '</div>';
-    var compiled = $compile(htmlElement)($scope);
-    if (!$scope.main_church_added && $scope.ma_paroisses) {
-      if ($scope.main_church_id != null && $scope.main_church_id == $scope.all_churches[index]['id']) {
-        console.log("main church" + $scope.all_churches[index]['name'] + $scope.all_churches[index]['id']);
-        htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><font color="#B39E83"><i class="glyphicon glyphicon-heart"></i></font>' + '</div>';
-      } else {
-        htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><i class="glyphicon glyphicon-heart-empty" ng-click="main(' + index + ')"></i>' + '</div>';
-      }
-      compiled = $compile(htmlElement)($scope);
-    } else if ($scope.all_churches[index]['favorite']) {
-      htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><i class="glyphicon glyphicon-heart" ng-click="test(' + index + ')"></i>' + '</div>';
-      compiled = $compile(htmlElement)($scope);
-    } else {
-      htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><i class="glyphicon glyphicon-heart-empty" ng-click="test(' + index + ')"></i>' + '</div>';
-      compiled = $compile(htmlElement)($scope);
-    }
 
-    infoWindow.close();
-    infoWindow = new google.maps.InfoWindow({
-      content: compiled[0]
-    });
-    infoWindow.open(map, marker);
+
+    $scope.map.showInfoWindow('info-window-church', 'marker' + index);
+
     $scope.test = function (index) {
-      if (infoWindow != null) {
-        console.log("Inside close window" + index);
-        infoWindow.close();
-        $scope.makeFavorite($scope.all_churches[index]);
-      }
+      $scope.map.hideInfoWindow('info-window-church');
+      $scope.makeFavorite($scope.all_churches[index]);
       console.log("Inside test");
-
     };
-    $scope.main = function (index) {
-      if (infoWindow != null) {
-        console.log("Inside close window" + index);
-        infoWindow.close();
-        $scope.addMainChurch($scope.all_churches[index]);
-      }
-      console.log("Inside test");
 
+    $scope.main = function (index) {
+      $scope.map.hideInfoWindow('info-window-church');
+      $scope.addMainChurch($scope.all_churches[index]);
+      console.log("Inside test");
     };
   };
+
+  //$scope.showInfoWindow2 = function (event, evtMap, index) {
+  //  if (infoWindow == null) {
+  //    infoWindow = new google.maps.InfoWindow({
+  //      content: "contentString"
+  //    });
+  //  }
+  //
+  //  $scope.main_church_id = window.localStorage.getItem("main_church_id");
+  //
+  //  console.log("inside showInfoWindow");
+  //  var map = evtMap;
+  //  marker = map.markers[index];
+  //  ind = index;
+  //  var contentExa = 'Hi<br/>I am an infowindow<a href="http://www.google.com" ></a>' + index;
+  //  // replace the following content with contentString to get example of window with url
+  //  var htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><i class="glyphicon glyphicon-heart-empty" ng-click="test(' + index + ')"></i>' + '</div>';
+  //  var compiled = $compile(htmlElement)($scope);
+  //  if (!$scope.main_church_added && $scope.ma_paroisses) {
+  //    if ($scope.main_church_id != null && $scope.main_church_id == $scope.all_churches[index]['id']) {
+  //      console.log("main church" + $scope.all_churches[index]['name'] + $scope.all_churches[index]['id']);
+  //      htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><font color="#B39E83"><i class="glyphicon glyphicon-heart"></i></font>' + '</div>';
+  //    } else {
+  //      htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><i class="glyphicon glyphicon-heart-empty" ng-click="main(' + index + ')"></i>' + '</div>';
+  //    }
+  //    compiled = $compile(htmlElement)($scope);
+  //  } else if ($scope.all_churches[index]['favorite']) {
+  //    htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><i class="glyphicon glyphicon-heart" ng-click="test(' + index + ')"></i>' + '</div>';
+  //    compiled = $compile(htmlElement)($scope);
+  //  } else {
+  //    htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><i class="glyphicon glyphicon-heart-empty" ng-click="test(' + index + ')"></i>' + '</div>';
+  //    compiled = $compile(htmlElement)($scope);
+  //  }
+  //
+  //  infoWindow.close();
+  //  infoWindow = new google.maps.InfoWindow({
+  //    content: compiled[0]
+  //  });
+  //  infoWindow.open(map, marker);
+  //  $scope.test = function (index) {
+  //    if (infoWindow != null) {
+  //      console.log("Inside close window" + index);
+  //      infoWindow.close();
+  //      $scope.makeFavorite($scope.all_churches[index]);
+  //    }
+  //    console.log("Inside test");
+  //
+  //  };
+  //  $scope.main = function (index) {
+  //    if (infoWindow != null) {
+  //      console.log("Inside close window" + index);
+  //      infoWindow.close();
+  //      $scope.addMainChurch($scope.all_churches[index]);
+  //    }
+  //    console.log("Inside test");
+  //
+  //  };
+  //};
   $scope.positions = [[40.71, -74.21], [40.72, -74.20], [40.73, -74.19],
       [40.74, -74.18], [40.75, -74.17], [40.76, -74.16], [40.77, -74.15]];
   /* Map code ends here */
@@ -852,13 +907,14 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
   $scope.ma_paroisse = function () {
     console.log("ma_paroisse");
     $scope.ma_paroisses = true;
-    window.setTimeout(function(){google.maps.event.trigger($scope.map, 'resize')},100);
+    //window.setTimeout(function(){google.maps.event.trigger($scope.map, 'resize')},100);
+    google.maps.event.trigger($scope.map, 'resize');
   };
   $scope.autres_paroisses = function () {
     console.log("autres_paroisses");
     $scope.ma_paroisses = false;
     //NOTE:		manually refresh the google maps
-    google.maps.event.trigger(map, 'resize');
+    google.maps.event.trigger($scope.map, 'resize');
   };
 
   $scope.edit_main_church = function () {
@@ -949,7 +1005,7 @@ angular.module('starter.controllers', ['ngMap', 'ionic-datepicker', 'ngIOS9UIWeb
   $scope.goToChooseFav = function() {
     $scope.InFavList = false;
     $scope.query_fav = '';
-    window.setTimeout(function(){google.maps.event.trigger($scope.map, 'resize')},100);
+    window.setTimeout(function(){google.maps.event.trigger($scope.map, 'resize')},2000);
   }
 
   $scope.setMainChurch = function () {

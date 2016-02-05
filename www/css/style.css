@@ -212,8 +212,12 @@ input-label {
 
 /* JeDoneregular ends here*/
 
-.churches-padding {
-  margin-top: 7vh;
+.platform-android .churches-padding {
+  margin-top: 43px;
+}
+
+.platform-ios .churches-padding {
+  margin-top: 53px;
 }
 
 .arrow-icon {
@@ -1042,6 +1046,10 @@ margin-top: 1.6vh;
   margin-top: 20px;
 }
 
+#current_location {
+  z-index: 1111;
+}
+
 @media (max-width: 768px) {
   .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
     margin-top: -1.44vh;
@@ -1096,9 +1104,40 @@ margin-top: 1.6vh;
   .full-width-mob {
     padding: 0;
   }
+
 }
 
-@media (max-height: 640tabpx) and (max-width: 320px) {
+@media (max-height: 1050px) {
+  .platform-android ng-map {
+    height: 490px!important;
+  }
+
+  .platform-ios ng-map {
+    height: 490px!important;
+  }
+}
+
+@media (max-height: 670px) {
+  .platform-android ng-map {
+    height: 410px!important;
+  }
+
+  .platform-ios ng-map {
+    height: 400px!important;
+  }
+}
+
+@media (max-height: 600px) {
+  .platform-android ng-map {
+    height: 350px!important;
+  }
+
+  .platform-ios ng-map {
+    height: 350px!important;
+  }
+}
+
+@media (max-height: 640px) and (max-width: 320px) {
   .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
     margin-top: -1.3vh;
     /*background: url('../images/hover-border-400.png') no-repeat 50% 0;*/
@@ -1106,7 +1145,10 @@ margin-top: 1.6vh;
   .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active .icon {
     margin-top: 1.3vh;
   }
+
+
 }
+
 
 @media (max-height: 480px) and (max-width: 320px) {
   .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
@@ -1135,6 +1177,7 @@ margin-top: 1.6vh;
     /*padding: 1.7vh 0;*/
     overflow: inherit;
   }
+
 }
 
 @media (max-height: 960px) {
