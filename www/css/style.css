@@ -90,8 +90,13 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 }
 
 
-.top-ios ion-header-bar{
-  /*top:-25px !important;*/
+ion-header-bar{
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+
+ion-header-bar .button.button-clear {
+  max-height: 64px;
 }
 
 .button.button-icon.input-button {
@@ -779,8 +784,8 @@ font-family: "Museo Sans Rounded-700" !important;
   margin-top: 14px;
 }
 
-.bar {
-  height: 58px;
+.platform-ios .bar {
+  height: 64px;
   /*padding-top: 0;*/
 }
 
@@ -1152,6 +1157,30 @@ margin-top: 1.6vh;
   ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
     /*background: url('../images/hover-border-mob.png') no-repeat 50% 0 !important;*/
     margin-top: -1.8vh;
+  }
+
+  .scroll-history {
+    height: 74vh !important;
+    margin-top: 58px;
+  }
+
+  .scroll-rlist {
+    height: 65vh;
+    margin-top: 58px;
+  }
+
+  .platform-ios .scroll-history {
+    height: 74vh !important;
+    margin-top: 64px;
+  }
+
+  .platform-ios .scroll-rlist {
+    height: 65vh;
+    margin-top: 64px;
+  }
+
+  .platform-ios .donate-section {
+    margin-bottom: 6.5vh;
   }
 }
 
