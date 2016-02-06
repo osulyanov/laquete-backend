@@ -589,7 +589,11 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
       setTimeout( function() {
         $('.btn-getInfo-Ok').hide().show(0);
       }, 1000)
-    }
+    };
+    
+    $scope.$on('$ionicView.afterEnter', function(e) {
+      $scope.getInfo();
+    });
 
     $scope.btn_text = "Obtenir mon reçu";
     $scope.platform = API.currentPlatform();
@@ -905,8 +909,8 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
 
   $scope.ma_paroisses = false;
   $scope.ma_paroisse = function () {
-    console.log("ma_paroisse");
-    $scope.ma_paroisses = true;
+    console.log($scope.ma_paroisses);
+    $scope.ma_paroisses = !$scope.ma_paroisses;
     //window.setTimeout(function(){google.maps.event.trigger($scope.map, 'resize')},100);
     google.maps.event.trigger($scope.map, 'resize');
   };
@@ -2284,6 +2288,17 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     $scope.user.pwd = "";
     $scope.user.surname = "";
     $scope.user.name = "";
+    $scope.user.terms = false;
+    
+    $scope.termsChange = function(){
+      if($scope.user.terms){
+        if (window.cordova){
+          var ref = cordova.InAppBrowser.open("http://www.applilaquete.fr", "_blank", "location=yes");
+        }else{
+          var ref = window.open("http://www.applilaquete.fr", "_blank");
+        }
+      }
+    };
 
     $scope.submitForm = function () {
       console.log("Inside Signup");

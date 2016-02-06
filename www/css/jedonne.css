@@ -572,10 +572,16 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 }
 
 .my-custom-popup .popup {
-  background: url('../images/modal-bg.png') no-repeat;
+/*  background: url('../images/modal-bg.png') no-repeat;
+  background-size: 100% 100%;
+  width: 70vw;
+  height: 70vh;*/
+  
+    background: #f7f2dd;
   background-size: 100% 100%;
   width: 70vw;
   height: 70vh;
+  border-radius: 10px;
 }
 .my-custom-popup .popup-head {
   padding: 0px 0px;

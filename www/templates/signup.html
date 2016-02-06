@@ -73,8 +73,11 @@
             <p ng-show="userForm.conf_pwd.$invalid && !userForm.conf_pwd.$pristine" class="help-block" >Les mots de passe doivent être identiques!</p>
             <p ng-show="error_conf_pwd" class="help-block">Les mots de passe doivent être identiques!</p>
         </div>
+        <div class="form-group " ng-class="{ 'has-error' : userForm.conf_pwd.$invalid && !userForm.conf_pwd.$pristine}">
+             <ion-checkbox ng-model="user.terms" ng-change="termsChange();">Conditions Générales</ion-checkbox>
+        </div>
         <span><font color="red">{{error}}</font></span><br>
-        <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Valider</button>
+        <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid || !user.terms">Valider</button>
 
       </form>
     </div>
