@@ -802,6 +802,21 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   .platform-android .type-de-don {
     margin-top: 1vh;
   }
+  .platform-ios .charch-area h2 {
+    margin-bottom: 2.96vh;
+
+  } 
+  .platform-ios .type-de-don h2 {
+    margin-bottom: 2.46vh;
+
+  }
+
+}
+
+@media (height: 640px) {
+  .platform-android .je-donne-bg .main-content {
+    margin-top: 79px;
+  }
 }
 
 @media (min-height: 960px) {
