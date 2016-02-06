@@ -55,10 +55,11 @@
 
             <p ng-show="userForm.ccv.$error.required && !userForm.ccv.$pristine" class="help-block">Le code de sécurité est requis.</p>
             <p ng-show="userForm.ccv.$error.minlength" class="help-block">Trop court.</p>
-            <p ng-show="userForm.ccv.$error.maxlength" class="help-block">Treop long.</p>
+            <p ng-show="userForm.ccv.$error.maxlength" class="help-block">Trop long.</p>
 
           </div>
           <button type="submit" class="btn-profile-save btn btn-default" id="profile"  ng-click="profile_btn()">{{btn_text}}</button>
+          <img src="images/cards.gif" class="" style="height: 27px;">
         </form>
       </div>
     </div>
