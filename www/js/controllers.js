@@ -173,6 +173,19 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     );
   };
 
+  Helper.GetOneChurchFromServer = function (id, callback) {
+    var get_churches = API.get(API.url() + "churches/" + id + "?" + API.token_params());
+    get_churches.then(
+      function (data) {
+        if (data) {
+          data['picto_hover'] = "images/" + data['picto'] + "-hover.png";
+          data['picto'] = "images/" + data['picto'] + ".png";
+        }
+        callback(data);
+      }
+    );
+  };
+
   //  Helper.GetChurchesFromServer = function (latitude, longitude, callback) {
   //    var get_churches = API.get(API.url() + "churches/geo_location_search?latitude=" + latitude + "&longitude=" + longitude + "&" + API.token_params());
   //    get_churches.then(
@@ -589,11 +602,7 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
       setTimeout( function() {
         $('.btn-getInfo-Ok').hide().show(0);
       }, 1000)
-    };
-    
-    $scope.$on('$ionicView.afterEnter', function(e) {
-      $scope.getInfo();
-    });
+    }
 
     $scope.btn_text = "Obtenir mon reçu";
     $scope.platform = API.currentPlatform();
@@ -611,44 +620,6 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
       });
     };
   })
-.controller('Cur_geo', function($scope, $ionicLoading) {
-  //NgMap.getMap().then(function(map) {
-  //  $scope.map = map;
-  //  console.log(map.getCenter());
-  //  console.log('markers', map.markers);
-  //  console.log('shapes', map.shapes);
-  //});
-  //
-  //$scope.positions = [{
-  //  lat: 0,
-  //  lng: 0
-  //}];
-  //
-  ////$scope.$on('mapInitialized', function(event, map) {
-  ////  $scope.map = map;
-  ////});
-  ////
-  //$scope.current_location= function(){
-  //  $scope.positions = [];
-  //
-  //
-  //  $ionicLoading.show({
-  //    template: 'Loading...'
-  //  });
-  //
-  //
-  //  navigator.geolocation.getCurrentPosition(function(position) {
-  //    var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  //    //$scope.positions.push({lat: pos.k,lng: pos.B});
-  //    $scope.positions.push({lat: pos.lat(),lng: pos.lng()});
-  //    console.log(pos);
-  //    $scope.map.setCenter(pos);
-  //    $ionicLoading.hide();
-  //  });
-  //
-  //};
-
-})
 
 .controller('NotifyCtrl', function ($scope, $location, $ionicHistory, $ionicPlatform, API) {
   $scope.back = function () {
@@ -667,17 +638,24 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
 
 
 .controller('ChurchesCtrl', function ($scope, $ionicHistory, $rootScope, API, $q, $http, $compile, Helper, $location, NgMap, $ionicLoading) {
+  $scope.initialized = false;
+  var user_email = '';
+  var user_token = '';
+  var get_params = '';
+
   $scope.$on('$ionicView.enter', function (e) {
     if ($location.search().default_tab == "false") {
       $scope.InFavList = false;
       $scope.ma_paroisses = false;
       $scope.PostVille = false;
       $scope.Chercher = true;
+      resizeMap();
     } else if ($location.search().default_tab == "true") {
       $scope.main_church_added = false;
       $scope.ma_paroisses = true;
       $scope.PostVilleFav = false;
       $scope.ChercherFav = true;
+      resizeMap();
     }
     NgMap.getMap().then(function(map) {
       $scope.map = map;
@@ -686,27 +664,92 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
       console.log('shapes', map.shapes);
     });
 
+    initOnEnterView();
   });
 
-    $scope.current_location= function(){
-      $scope.positions = [];
+  $scope.$on('laquete.logout', function(e) {
+    $scope.main_church_added = false;
+    initScope();
+  });
+
+  function initScope() {
+    $scope.initialized = false;
+
+    $scope.ma_paroisses = false;
+    $scope.main_church_added = false;
+    $scope.PostVille = false;
+    $scope.PostVilleFav = false;
+    $scope.InFavList = true;
+    $scope.fav_churches = [];
+
+    user_email = '';
+    user_token = '';
+    get_params = '';
+  }
+
+  function initOnEnterView() {
+    setMainChurchFromServer();
+
+    if (!$scope.initialized) {
+      user_email = window.localStorage.getItem("user_email");
+      user_token = window.localStorage.getItem("user_token");
+      get_params = "user_token=" + user_token + "&user_email=" + user_email;
+
+      $scope.callGetChurches();
+    }
+  }
+
+  function setMainChurchFromServer() {
+    //if ($scope.main_church_id !== window.localStorage.getItem("main_church_id")) {
+      $scope.main_church_id = refineLocalStorageNumber(window.localStorage.getItem("main_church_id"));
+
+      if (hasValue($scope.main_church_id)) {
+        Helper.GetOneChurchFromServer($scope.main_church_id, function (data) {
+          window.localStorage.setItem("main_church_address", data.address);
+          window.localStorage.setItem("main_church_city", data.city);
+          window.localStorage.setItem("main_church_name", data.name);
+          window.localStorage.setItem("main_church_picto", data.picto);
+
+          $scope.main_church = data;
+          $scope.main_church_added = true;
+
+        });
+      } else {
+        $scope.main_church = null;
+        $scope.main_church_added = false;
+      }
+    //}
+  }
+
+  function setFavChurchesFromServer() {
+    Helper.GetFavChurchesFromServer(function (data) {
+      setChurches(data);
+    });
+  }
+
+  function resizeMap() {
+    window.setTimeout(function(){google.maps.event.trigger($scope.map, 'resize')},2000);
+  }
+
+  $scope.current_location= function(){
+    $scope.positions = [];
 
 
-      $ionicLoading.show({
-        template: 'Loading...'
-      });
+    $ionicLoading.show({
+      template: 'Loading...'
+    });
 
 
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        //$scope.positions.push({lat: pos.k,lng: pos.B});
-        $scope.positions.push({lat: pos.lat(),lng: pos.lng()});
-        console.log(pos);
-        $scope.map.setCenter(pos);
-        $ionicLoading.hide();
-      });
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      //$scope.positions.push({lat: pos.k,lng: pos.B});
+      $scope.positions.push({lat: pos.lat(),lng: pos.lng()});
+      console.log(pos);
+      $scope.map.setCenter(pos);
+      $ionicLoading.hide();
+    });
 
-    };
+  };
   //$scope.$on('mapInitialized', function(event, map) {
   //  $scope.map = map;
   //});
@@ -764,15 +807,6 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     console.log("Location could not be found");
   }
 
-  //$scope.setCenterToCurrent = function() {
-  //  if (navigator.geolocation) {
-  //    navigator.geolocation.getCurrentPosition(function (position) {
-  //      initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  //      map.setCenter(initialLocation);
-  //    });
-  //  }
-  //};
-
   var infoWindow = null;
 
   $scope.hide_keyboard = function () {
@@ -786,8 +820,9 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     document.getElementById('query_id').value = '';
     document.getElementById('query_id').blur();
     document.getElementById('tab-churches').focus();
+    resizeMap();
 
-  }
+  };
 
   $scope.hide_keyboard_fav = function () {
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -800,6 +835,7 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     document.getElementById('query_fav_id').value = '';
     document.getElementById('query_fav_id').blur();
     document.getElementById('tab-fav-churches').focus();
+    resizeMap();
   }
 
   window.addEventListener('native.keyboardshow', keyboardShowHandler);
@@ -816,12 +852,11 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
       cordova.plugins.Keyboard.close();
     }
   });
+
   $scope.markerShowInfoWindow = function (event, index) {
 
     $scope.selected_church_marker = $scope.all_churches[index];
     $scope.selected_church_index_marker = index;
-
-
 
     $scope.map.showInfoWindow('info-window-church', 'marker' + index);
 
@@ -838,63 +873,6 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     };
   };
 
-  //$scope.showInfoWindow2 = function (event, evtMap, index) {
-  //  if (infoWindow == null) {
-  //    infoWindow = new google.maps.InfoWindow({
-  //      content: "contentString"
-  //    });
-  //  }
-  //
-  //  $scope.main_church_id = window.localStorage.getItem("main_church_id");
-  //
-  //  console.log("inside showInfoWindow");
-  //  var map = evtMap;
-  //  marker = map.markers[index];
-  //  ind = index;
-  //  var contentExa = 'Hi<br/>I am an infowindow<a href="http://www.google.com" ></a>' + index;
-  //  // replace the following content with contentString to get example of window with url
-  //  var htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><i class="glyphicon glyphicon-heart-empty" ng-click="test(' + index + ')"></i>' + '</div>';
-  //  var compiled = $compile(htmlElement)($scope);
-  //  if (!$scope.main_church_added && $scope.ma_paroisses) {
-  //    if ($scope.main_church_id != null && $scope.main_church_id == $scope.all_churches[index]['id']) {
-  //      console.log("main church" + $scope.all_churches[index]['name'] + $scope.all_churches[index]['id']);
-  //      htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><font color="#B39E83"><i class="glyphicon glyphicon-heart"></i></font>' + '</div>';
-  //    } else {
-  //      htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><i class="glyphicon glyphicon-heart-empty" ng-click="main(' + index + ')"></i>' + '</div>';
-  //    }
-  //    compiled = $compile(htmlElement)($scope);
-  //  } else if ($scope.all_churches[index]['favorite']) {
-  //    htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><i class="glyphicon glyphicon-heart" ng-click="test(' + index + ')"></i>' + '</div>';
-  //    compiled = $compile(htmlElement)($scope);
-  //  } else {
-  //    htmlElement = '<div><h>' + $scope.all_churches[index]['name'] + '<h/>' + '</br><p>' + $scope.all_churches[index]['address'] + '</p><i class="glyphicon glyphicon-heart-empty" ng-click="test(' + index + ')"></i>' + '</div>';
-  //    compiled = $compile(htmlElement)($scope);
-  //  }
-  //
-  //  infoWindow.close();
-  //  infoWindow = new google.maps.InfoWindow({
-  //    content: compiled[0]
-  //  });
-  //  infoWindow.open(map, marker);
-  //  $scope.test = function (index) {
-  //    if (infoWindow != null) {
-  //      console.log("Inside close window" + index);
-  //      infoWindow.close();
-  //      $scope.makeFavorite($scope.all_churches[index]);
-  //    }
-  //    console.log("Inside test");
-  //
-  //  };
-  //  $scope.main = function (index) {
-  //    if (infoWindow != null) {
-  //      console.log("Inside close window" + index);
-  //      infoWindow.close();
-  //      $scope.addMainChurch($scope.all_churches[index]);
-  //    }
-  //    console.log("Inside test");
-  //
-  //  };
-  //};
   $scope.positions = [[40.71, -74.21], [40.72, -74.20], [40.73, -74.19],
       [40.74, -74.18], [40.75, -74.17], [40.76, -74.16], [40.77, -74.15]];
   /* Map code ends here */
@@ -903,26 +881,26 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
   $ionicHistory.nextViewOptions({
     disableBack: true
   });
-  var user_email = window.localStorage.getItem("user_email");
-  var user_token = window.localStorage.getItem("user_token");
-  var get_params = "user_token=" + user_token + "&user_email=" + user_email;
 
   $scope.ma_paroisses = false;
   $scope.ma_paroisse = function () {
-    console.log($scope.ma_paroisses);
-    $scope.ma_paroisses = !$scope.ma_paroisses;
+    console.log("ma_paroisse");
+    $scope.ma_paroisses = true;
     //window.setTimeout(function(){google.maps.event.trigger($scope.map, 'resize')},100);
-    google.maps.event.trigger($scope.map, 'resize');
+    resizeMap();
+    //google.maps.event.trigger($scope.map, 'resize');
   };
   $scope.autres_paroisses = function () {
     console.log("autres_paroisses");
     $scope.ma_paroisses = false;
     //NOTE:		manually refresh the google maps
-    google.maps.event.trigger($scope.map, 'resize');
+    resizeMap();
+    //google.maps.event.trigger($scope.map, 'resize');
   };
 
   $scope.edit_main_church = function () {
     $scope.main_church_added = false;
+    resizeMap();
   };
 
   $scope.back_from_edit_main_church = function () {
@@ -936,7 +914,9 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     if (value) {
       console.log("manually refresh the google maps in map_fav");
       //NOTE:		manually refresh the google maps
-      google.maps.event.trigger(map, 'resize');
+      resizeMap();
+
+      //google.maps.event.trigger(map, 'resize');
     }
 
   };
@@ -948,7 +928,9 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     if (value) {
       //NOTE:		manually refresh the google maps
       console.log("manually refresh the google maps in map_fav");
-      google.maps.event.trigger(map, 'resize');
+      resizeMap();
+
+      //google.maps.event.trigger(map, 'resize');
     }
 
   };
@@ -961,10 +943,11 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     Helper.GetAllChurchesFromServer(function (data) {
       //$rootScope.hideLoading();
       setChurches(data);
+      $scope.initialized = true;
     });
   };
 
-  $scope.callGetChurches();
+  //$scope.callGetChurches();
   $scope.searchbytown = false;
   $scope.searchbytown_fav = false;
   //  Helper.GetAllChurchesFromServer(function (data) {
@@ -1009,7 +992,7 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
   $scope.goToChooseFav = function() {
     $scope.InFavList = false;
     $scope.query_fav = '';
-    window.setTimeout(function(){google.maps.event.trigger($scope.map, 'resize')},2000);
+    resizeMap();
   }
 
   $scope.setMainChurch = function () {
@@ -1058,13 +1041,8 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
           window.localStorage.setItem("main_church_picto", data.church.picto);
 
           $scope.setMainChurch();
+          sortFavChurches();
           $scope.main_church_added = true;
-          //obj.favorite = true;
-          // $scope.apply();
-
-          // $scope.churchArray = data;
-        } else {
-
         }
       }
     );
@@ -1145,7 +1123,19 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
           $scope.fav_churches.push(temp_all_churches[i]);
         }
       }
+    }
+  }
 
+  function sortFavChurches() {
+    var temp = null;
+
+    for (var i = 0, j = 0; i < $scope.fav_churches.length; i++) {
+      if ($scope.main_church_id == $scope.fav_churches[i]['id']) {
+        temp = $scope.fav_churches[i];
+        $scope.fav_churches.splice(i, 1);
+        $scope.fav_churches.unshift(temp);
+        break;
+      }
     }
   }
 
@@ -2138,18 +2128,33 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
       // $scope.$apply();
     };
     $scope.logout = function () {
-      window.localStorage.setItem("user_token", "");
-      window.localStorage.setItem("user_email", "");
+      window.localStorage.setItem("user_token", '');
+      window.localStorage.setItem("user_email", '');
+      window.localStorage.setItem("user_name", '');
+      window.localStorage.setItem("user_zip", '');
+      window.localStorage.setItem("user_address", '');
+      window.localStorage.setItem("user_city", '');
+      window.localStorage.setItem("user_phone", '');
+      window.localStorage.setItem("user_show_private", '');
+      window.localStorage.setItem("main_church_address", '');
+      window.localStorage.setItem("main_church_city", '');
+      window.localStorage.setItem("main_church_name", '');
+      window.localStorage.setItem("main_church_picto", '');
+      window.localStorage.setItem("user_surname", '');
+      window.localStorage.setItem("main_church_id", '');
+
+      $rootScope.$broadcast('laquete.logout');
+
       $state.transitionTo($state.current, $stateParams, {
         reload: true,
         inherit: false,
         notify: true
       });
       $state.go('login');
-      //      Helper.clearCachedViewz(function () {
-      //        console.log("Inside callback clearCache");
-      //        $location.path('/home');
-      //      });
+            //Helper.clearCachedViewz(function () {
+            //  console.log("Inside callback clearCache");
+            //  $location.path('/home');
+            //});
     };
 
     $scope.nav_profile = function () {
@@ -2288,17 +2293,6 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     $scope.user.pwd = "";
     $scope.user.surname = "";
     $scope.user.name = "";
-    $scope.user.terms = false;
-    
-    $scope.termsChange = function(){
-      if($scope.user.terms){
-        if (window.cordova){
-          var ref = cordova.InAppBrowser.open("http://www.applilaquete.fr", "_blank", "location=yes");
-        }else{
-          var ref = window.open("http://www.applilaquete.fr", "_blank");
-        }
-      }
-    };
 
     $scope.submitForm = function () {
       console.log("Inside Signup");
@@ -2570,4 +2564,8 @@ function refineLocalStorageBoolean(value) {
 
 function refineLocalStorageNumber(value) {
   return (value !== 'null' && value !== 'undefined') ? Number(value) : '';
+}
+
+function hasValue(value) {
+  return (value !== 'null' && value !== 'undefined' && value !== null && value !== undefined && value !== '');
 }
