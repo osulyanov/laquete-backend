@@ -235,7 +235,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   font-family: "Museo Sans Rounded-300" !important;
 }
 .platform-ios .donate-section {
-  margin-bottom: 6vh;
+  margin-bottom: 21px;
 }
 .platform-ios .btn-donne {
   height: 7.2vh;
@@ -327,7 +327,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 }
 
 .platform-android .charch-area{
-  margin-top: 5vh;
+  margin-top: 3.4vh;
   font-family: "Museo Sans Rounded-300" !important;
 }
 
@@ -421,7 +421,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   display: none !important;
 }
 .type-de-don {
-  margin-top: -5vh;
+  margin-top: 0;
   font-family: "Museo Sans Rounded-300" !important;
 
 }
@@ -491,7 +491,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 }
 
 .don-btns-area {
-  margin: 0 auto 1.7vh;
+  margin: 0 auto 2.7vh;
 }
 
 .btn-don.active {
@@ -773,9 +773,48 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
   */
 }
 
-.je-donne-bg .main-content {
-  margin-top: 62px;
+.platform-android .je-donne-bg .main-content {
+  margin-top: 69px;
 }
 .platform-ios .je-donne-bg .main-content {
-  margin-top: 66px;
+  margin-top: 83px;
+}
+
+@media (max-height: 600px) {
+  .platform-ios .je-donne-bg .main-content {
+    margin-top: 75px;
+  }
+}
+
+@media (min-height: 650px) {
+  .montant-holder h2 {
+    margin-bottom: 3.96vh;
+  }
+  .platform-android .je-donne-bg .main-content {
+    margin-top: 80px;
+  }
+  .platform-android .type-de-don {
+    margin-top: 1vh;
+  }
+}
+
+@media (min-height: 960px) {
+  .platform-android .je-donne-bg .main-content {
+    margin-top: 113px;
+  }
+}
+
+@media (min-height: 1000px) {
+  .montant-holder h2 {
+    margin-bottom: 3.96vh;
+  }
+  .platform-android .je-donne-bg .main-content {
+    margin-top: 80px;
+  }
+  .platform-android .type-de-don {
+    margin-top: 1vh;
+  }
+  .platform-ios .je-donne-bg .main-content {
+    margin-top: 126px;
+  }
 }

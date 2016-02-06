@@ -1058,10 +1058,10 @@ margin-top: 1.6vh;
     margin-top: 1.44vh;
   }
   .platform-ios .donate-section {
-    margin-bottom: 7.5vh;
+    margin-bottom: 21px;
   }
   .platform-ios .paroisse-section {
-    margin: 0 0 5vh;
+    margin: 0 0 0;
   }
 }
 
@@ -1077,13 +1077,22 @@ margin-top: 1.6vh;
     margin-top: 1.9vh;
   }
   .platform-ios .donate-section {
-    margin-bottom: 7.5vh;
+    margin-bottom: 21px;
   }
   .platform-ios .paroisse-section {
-    margin: 0 0 5.95vh;
+    margin: 0 0 1.95vh;
   }
   .account-holder {
     width: 88%;
+  }
+}
+
+@media (max-width: 767px) and (min-height: 730px) {
+  .platform-ios .paroisse-section {
+    margin: 0 0 0.95vh;
+  }
+  .type-de-don h2 {
+    margin-bottom: 2.96vh;
   }
 }
 
@@ -1223,7 +1232,7 @@ margin-top: 1.6vh;
   }
 
   .platform-ios .donate-section {
-    margin-bottom: 6.5vh;
+    margin-bottom: 17px;
   }
 }
 
