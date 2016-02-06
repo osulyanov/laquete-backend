@@ -1132,7 +1132,7 @@ margin-top: 1.6vh;
   }
 
   .platform-ios ng-map {
-    height: 400px!important;
+    height: 433px!important;
   }
 }
 
@@ -1231,6 +1231,9 @@ margin-top: 1.6vh;
     margin-top: 64px;
   }
 
+}
+
+@media (max-height: 667px) and (max-width: 384px) {
   .platform-ios .donate-section {
     margin-bottom: 17px;
   }
