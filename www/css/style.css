@@ -235,6 +235,7 @@ input-label {
 .sign-in {
   width: 80%;
   margin: 14% auto;
+    margin-top: 72px;
   overflow: hidden;
 }
 
@@ -252,14 +253,33 @@ input-label {
   font: 14px/17px 'Arial , sans-serif';
 }
 
+.sign-in .item-checkbox {
+    padding: 7px;
+    margin: -1px;
+    font-size: 12px;
+    padding-left: 50px;
+}
+.sign-in .item-checkbox .item-content{
+    white-space: normal;
+}
+.sign-in .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+    background: #5ab43d;
+    border-color: #5ab43d;
+}
+
 .sign-in-btn {
   background: #916153 !important;
-  font-size: 4.5vw;
-  padding: 8px 10px;
+    /*font-size: 4.5vw;*/
+    /*padding: 8px 10px;*/
   line-height: 21px;
   border: none;
   border-radius: 5px;
-  margin: 30px 0 30px;
+
+    /*margin: 30px 0 30px;*/
+}
+.buttons .btn{
+    width: 100px;
+    height: 34px;
 }
 
 .sign-in-btn:focus,

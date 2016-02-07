@@ -602,7 +602,11 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
       setTimeout( function() {
         $('.btn-getInfo-Ok').hide().show(0);
       }, 1000)
-    }
+    };
+
+    $scope.$on('$ionicView.afterEnter', function(e) {
+      $scope.getInfo();
+    });
 
     $scope.btn_text = "Obtenir mon reçu";
     $scope.platform = API.currentPlatform();
@@ -649,12 +653,14 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
       $scope.ma_paroisses = false;
       $scope.PostVille = false;
       $scope.Chercher = true;
+      $scope.is_map = true;
       resizeMap();
     } else if ($location.search().default_tab == "true") {
       $scope.main_church_added = false;
       $scope.ma_paroisses = true;
       $scope.PostVilleFav = false;
       $scope.ChercherFav = true;
+      $scope.is_map_fav = true;
       resizeMap();
     }
     NgMap.getMap().then(function(map) {
@@ -679,6 +685,8 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     $scope.main_church_added = false;
     $scope.PostVille = false;
     $scope.PostVilleFav = false;
+    $scope.is_map = true;
+    $scope.is_map_fav = true;
     $scope.InFavList = true;
     $scope.fav_churches = [];
 
@@ -750,9 +758,6 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     });
 
   };
-  //$scope.$on('mapInitialized', function(event, map) {
-  //  $scope.map = map;
-  //});
 
   $scope.ma_paroisses = false;
 
@@ -814,6 +819,7 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
       cordova.plugins.Keyboard.close();
     }
 
+    $scope.is_map = true;
     $scope.query = "";
     $scope.PostVille = false;
     $scope.Chercher = true;
@@ -825,15 +831,12 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
 
   };
 
-    $scope.isfav = true;
-
   $scope.hide_keyboard_fav = function () {
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.close();
     }
 
-    $scope.isfav = false;
-
+    $scope.is_map_fav = true;
     $scope.query_fav = "";
     $scope.PostVilleFav = false;
     $scope.ChercherFav = true;
@@ -906,6 +909,7 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
 
   $scope.edit_main_church = function () {
     $scope.main_church_added = false;
+    $scope.is_map = true;
     resizeMap();
   };
 
@@ -914,32 +918,32 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
   };
 
   $scope.is_map = true;
-  $scope.list_map = function (value) {
-    console.log("is_map: " + value);
-    $scope.is_map = value;
-    if (value) {
-      console.log("manually refresh the google maps in map_fav");
-      //NOTE:		manually refresh the google maps
-      resizeMap();
-
-      //google.maps.event.trigger(map, 'resize');
-    }
-
-  };
+  //$scope.list_map = function (value) {
+  //  console.log("is_map: " + value);
+  //  $scope.is_map = value;
+  //  if (value) {
+  //    console.log("manually refresh the google maps in map_fav");
+  //    //NOTE:		manually refresh the google maps
+  //    resizeMap();
+  //
+  //    //google.maps.event.trigger(map, 'resize');
+  //  }
+  //
+  //};
 
   $scope.is_map_fav = true;
-  $scope.list_map_fav = function (value) {
-    console.log("is_map: " + value);
-    $scope.is_map_fav = value;
-    if (value) {
-      //NOTE:		manually refresh the google maps
-      console.log("manually refresh the google maps in map_fav");
-      resizeMap();
-
-      //google.maps.event.trigger(map, 'resize');
-    }
-
-  };
+  //$scope.list_map_fav = function (value) {
+  //  console.log("is_map: " + value);
+  //  $scope.is_map_fav = value;
+  //  if (value) {
+  //    //NOTE:		manually refresh the google maps
+  //    console.log("manually refresh the google maps in map_fav");
+  //    resizeMap();
+  //
+  //    //google.maps.event.trigger(map, 'resize');
+  //  }
+  //
+  //};
 
 
 
@@ -974,6 +978,7 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
 
   $scope.queryFocus = function (focused, query) {
     if (focused) {
+      $scope.is_map = false;
       $scope.PostVille = true;
       $scope.Chercher = false;
     }
@@ -986,6 +991,7 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
 
   $scope.queryFocusFav = function (focused, query) {
     if (focused) {
+      $scope.is_map_fav = false;
       $scope.PostVilleFav = true;
       $scope.ChercherFav = false;
     }
@@ -997,6 +1003,7 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
 
   $scope.goToChooseFav = function() {
     $scope.InFavList = false;
+    $scope.is_map_fav = true;
     $scope.query_fav = '';
     resizeMap();
   }
@@ -2299,6 +2306,17 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     $scope.user.pwd = "";
     $scope.user.surname = "";
     $scope.user.name = "";
+    $scope.user.terms = false;
+
+    $scope.termsChange = function(){
+      if($scope.user.terms){
+        if (window.cordova){
+          var ref = cordova.InAppBrowser.open("http://www.applilaquete.fr", "_blank", "location=yes");
+        }else{
+          var ref = window.open("http://www.applilaquete.fr", "_blank");
+        }
+      }
+    };
 
     $scope.submitForm = function () {
       console.log("Inside Signup");
