@@ -22,12 +22,12 @@
       </div>
 
       <!--		ma_paroisses selected radio buttons for postville selected search-->
-      <div ng-show="ma_paroisses && !main_church_added" >
+      <div ng-show="ma_paroisses && !main_church_added" class="filter-section" >
 <!--        <input class="form-control" name="query" type="text"  value="Search" ng-model="query" placeholder="Filter..." ng-blur="hide_keyboard()">-->
         <div class="item item-input item-icon-right" style="background:white;">
           <span class="back-to-fav-list"  id="back-to-main-list" ng-click="back_from_edit_main_church()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
           <input type="text" name="query" id="query_id" ng-model="query"  placeholder="Ville, code postal" ng-focus="queryFocus(true, query)">
-          <font size="5px"><i class="ion-ios-close-outline" ng-show="query.length" style="margin-right: 5px;" ng-click="hide_keyboard()"></i></font>
+          <font size="5px"><i class="ion-ios-close-outline" id="query-cancel" ng-show="query.length" style="margin-right: 5px;" ng-click="hide_keyboard()"></i></font>
         </div>
       </div>
 
@@ -84,11 +84,11 @@
 
       <span class="default-plus" ng-show="!ma_paroisses && InFavList && fav_churches.length" ng-click="goToChooseFav()" ><i class="glyphicon glyphicon-plus"></i></span>
 
-      <div ng-show="!ma_paroisses && !InFavList" >
+      <div ng-show="!ma_paroisses && !InFavList" class="filter-section" >
         <div class="item item-input item-icon-right" style="background:white;">
           <span class="back-to-fav-list" id="back-to-fav-list" ng-click="backToFavList()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
           <input type="text" name="query_fav" id="query_fav_id" ng-model="query_fav"  placeholder="Filter..." ng-click="queryFocusFav(true, query_fav)" id="query_fav_id">
-          <font size="5px"><i class="ion-ios-close-outline" ng-show="query_fav.length" style="margin-right: 5px;" ng-click="hide_keyboard_fav()"></i></font>
+          <font size="5px"><i class="ion-ios-close-outline" id="query-fav-cancel" ng-show="query_fav.length" style="margin-right: 5px;" ng-click="hide_keyboard_fav()"></i></font>
         </div>
       </div>
 

@@ -820,14 +820,19 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     document.getElementById('query_id').value = '';
     document.getElementById('query_id').blur();
     document.getElementById('tab-churches').focus();
+    $('#query-cancel').addClass('ng-hide');
     resizeMap();
 
   };
+
+    $scope.isfav = true;
 
   $scope.hide_keyboard_fav = function () {
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.close();
     }
+
+    $scope.isfav = false;
 
     $scope.query_fav = "";
     $scope.PostVilleFav = false;
@@ -835,6 +840,7 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     document.getElementById('query_fav_id').value = '';
     document.getElementById('query_fav_id').blur();
     document.getElementById('tab-fav-churches').focus();
+    $('#query-fav-cancel').addClass('ng-hide');
     resizeMap();
   }
 

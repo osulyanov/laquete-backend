@@ -213,11 +213,11 @@ input-label {
 /* JeDoneregular ends here*/
 
 .platform-android .churches-padding {
-  margin-top: 43px;
+  margin-top: 55px;
 }
 
 .platform-ios .churches-padding {
-  margin-top: 53px;
+  margin-top: 65px;
 }
 
 .arrow-icon {
@@ -647,18 +647,28 @@ font-family: "Museo Sans Rounded-700" !important;
 }
 
 .scroll-list {
-  height: 63vh;
+  height: 62vh;
+  margin-top: 7px;
   overflow-y: auto;
 }
 
 .scroll-list-small {
-  height: 61vh;
+  height: 57vh;
+  margin-top: 7px;
   /*overflow-y: auto;*/
 }
 
 .scroll-list-fav-churches {
   height: 60vh;
   /*overflow-y: auto;*/
+}
+
+.filter-section {
+  margin-top: 7px;
+}
+
+ng-map {
+  margin-top: 10px;
 }
 
 .item {
@@ -1118,31 +1128,31 @@ margin-top: 1.6vh;
 
 @media (max-height: 1050px) {
   .platform-android ng-map {
-    height: 490px!important;
+    height: 457px!important;
   }
 
   .platform-ios ng-map {
-    height: 490px!important;
+    height: 457px!important;
   }
 }
 
 @media (max-height: 670px) {
   .platform-android ng-map {
-    height: 410px!important;
+    height: 377px!important;
   }
 
   .platform-ios ng-map {
-    height: 433px!important;
+    height: 400px!important;
   }
 }
 
 @media (max-height: 600px) {
   .platform-android ng-map {
-    height: 350px!important;
+    height: 317px!important;
   }
 
   .platform-ios ng-map {
-    height: 350px!important;
+    height: 317px!important;
   }
 }
 
