@@ -23,11 +23,12 @@ angular.module('starter.controllers')
     var user_token = '';
     var get_params = '';
     var defaultLatLon = {lat: 48.5149019, lng: 1.8341628};
+    var currentLatLon = {lat: 0, lng: 0};
 
     /* Map code starts here */
-    navigator.geolocation.getCurrentPosition(currentLocationSuccessCallback, currentLocationErrorCallback, {
-      timeout: 10000
-    });
+    //navigator.geolocation.getCurrentPosition(currentLocationSuccessCallback, currentLocationErrorCallback, {
+    //  timeout: 10000
+    //});
 
     $ionicHistory.nextViewOptions({
       disableBack: true
@@ -40,18 +41,16 @@ angular.module('starter.controllers')
       if ($location.search().default_tab == "false") {
         $scope.in_fav_list = false;
         $scope.ma_paroisses = false;
-        resizeMap();
       } else if ($location.search().default_tab == "true") {
         $scope.main_church_added = false;
         $scope.ma_paroisses = true;
-        resizeMap();
       } else {
         $scope.in_fav_list = true;
         $scope.ma_paroisses = false;
         $scope.main_church_added = true;
       }
 
-      setMap();
+      assignMap();
       initOnEnterView();
     });
 
@@ -61,38 +60,40 @@ angular.module('starter.controllers')
     });
 
     $scope.current_location= function(){
-      $scope.positions = [];
-
-      $ionicLoading.show({
-        template: 'Loading...'
-      });
-
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        //$scope.positions.push({lat: pos.k,lng: pos.B});
-        $scope.positions.push({lat: pos.lat(),lng: pos.lng()});
-        console.log(pos);
-
-        var map = $scope.map;
-        map.setCenter(pos);
-
-        var GeoMarker = new GeolocationMarker();
-        GeoMarker.setCircleOptions({fillColor: '#808080'});
-
-        //google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
-        //  map.setCenter(this.getPosition());
-        //  map.fitBounds(this.getBounds());
-        //});
-
-        google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {
-          console.log('There was an error obtaining your position. Message: ' + e.message);
+      var map = $scope.map;
+      if (currentLatLon.lat === 0 && currentLatLon.lng === 0) {
+        $ionicLoading.show({
+          template: 'Loading...'
         });
 
-        GeoMarker.setMap(map);
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+          currentLatLon.lat = position.coords.latitude;
+          currentLatLon.lng = position.coords.longitude;
+          console.log(pos);
 
-        $ionicLoading.hide();
-      });
+          map.setCenter(pos);
 
+          var GeoMarker = new GeolocationMarker();
+          GeoMarker.setCircleOptions({fillColor: '#808080'});
+
+          //google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
+          //  map.setCenter(this.getPosition());
+          //  map.fitBounds(this.getBounds());
+          //});
+
+          google.maps.event.addListener(GeoMarker, 'geolocation_error', function (e) {
+            console.log('There was an error obtaining your position. Message: ' + e.message);
+          });
+
+          GeoMarker.setMap(map);
+
+          $ionicLoading.hide();
+        });
+      } else {
+        var pos = new google.maps.LatLng(currentLatLon.lat, currentLatLon.lng);
+        map.setCenter(pos);
+      }
     };
 
     $scope.hide_keyboard = function () {
@@ -162,7 +163,7 @@ angular.module('starter.controllers')
       $scope.main_church_added = false;
       $scope.is_map = true;
       $scope.searchParam.query = '';
-      resizeMap();
+      initMap();
     };
 
     $scope.back_from_edit_main_church = function () {
@@ -196,7 +197,7 @@ angular.module('starter.controllers')
       $scope.in_fav_list = false;
       $scope.is_map_fav = true;
       $scope.searchParam.query_fav = '';
-      resizeMap();
+      initMap();
     };
 
     $scope.setMainChurch = function () {
@@ -314,6 +315,8 @@ angular.module('starter.controllers')
       user_email = '';
       user_token = '';
       get_params = '';
+
+      currentLatLon = {lat: 0, lng: 0};
     }
 
     function initOnEnterView() {
@@ -328,12 +331,10 @@ angular.module('starter.controllers')
       }
     }
 
-    function setMap() {
+    function assignMap() {
       NgMap.getMap().then(function(map) {
         $scope.map = map;
-        if (!$scope.initialized) {
-          initMap();
-        }
+        initMap();
         console.log(map.getCenter());
         console.log('markers', map.markers);
         console.log('shapes', map.shapes);
@@ -451,8 +452,8 @@ angular.module('starter.controllers')
     }
 
     function initMap() {
-      $scope.map.setCenter(defaultLatLon);
       resizeMap();
+      $scope.current_location();
     }
 
     //window.addEventListener('native.keyboardshow', keyboardShowHandler);

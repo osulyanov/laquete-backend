@@ -157,7 +157,7 @@
       </div>
 
       <!--<div map-lazy-load="https://maps.google.com/maps/api/js" data-tap-disabled="true" >-->
-        <ng-map  ng-show="(ma_paroisses && is_map && !main_church_added) || (!ma_paroisses && is_map_fav && !in_fav_list)" data-tap-disabled="true" street-view-control="false" zoom-control="false" default-style="true" map-type-control="false" zoom="12" center="[48.5149019, 1.8341628]">
+        <ng-map  ng-show="(ma_paroisses && is_map && !main_church_added) || (!ma_paroisses && is_map_fav && !in_fav_list)" data-tap-disabled="true" street-view-control="false" zoom-control="false" default-style="true" map-type-control="false" zoom="12">
           <marker ng-repeat="church in nearChurches" position="[{{church.latitude}},{{church.longitude}}]" id="marker{{$index}}" on-click="markerShowInfoWindow($index)"></marker>
           <a ng-click="current_location()" class="button button-icon icon  ion-android-locate" id = "current_location"></a>
 
