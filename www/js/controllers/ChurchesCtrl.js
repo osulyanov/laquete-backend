@@ -237,18 +237,14 @@ angular.module('starter.controllers')
           }
           if (data.status == "200") {
             console.log("Main Favorite Successful");
-            // $location.path('/postsearch');
-            //$scope.callGetChurches();
             window.localStorage.setItem("main_church_id", obj['id']);
             $scope.main_church_id = obj['id'];
-            console.log(data.address + data.city + data.name + data.picto);
             window.localStorage.setItem("main_church_address", data.church.address);
             window.localStorage.setItem("main_church_city", data.church.city);
             window.localStorage.setItem("main_church_name", data.church.name);
             window.localStorage.setItem("main_church_picto", data.church.picto);
 
             $scope.setMainChurch();
-            //sortFavChurches();
             setChurches($scope.all_churches);
             $scope.scopeParam.main_church_added = true;
           }
@@ -284,7 +280,6 @@ angular.module('starter.controllers')
             Helper.clearCachedViews(function () {
               $location.path("/home");
             });
-
           }
           if (data) {
             console.log("Favorite Successful");
@@ -295,11 +290,8 @@ angular.module('starter.controllers')
               data[i]['picto_hover'] = "images/" + data[i]['picto'] + "-hover.png";
               data[i]['picto'] = "images/" + data[i]['picto'] + ".png";
             }
-            // $location.path('/postsearch');
             setChurches(data);
             $scope.scopeParam.in_fav_list = true;
-          } else {
-
           }
         }
       );
@@ -312,6 +304,8 @@ angular.module('starter.controllers')
         $scope.backToFavList();
       }
     }
+
+    $scope.hasValue = hasValue;
 
     //Functions
 
@@ -328,8 +322,6 @@ angular.module('starter.controllers')
       user_email = '';
       user_token = '';
       get_params = '';
-
-      $rootScope.currentLatLon = {lat: 0, lng: 0};
     }
 
     function initOnEnterView() {
