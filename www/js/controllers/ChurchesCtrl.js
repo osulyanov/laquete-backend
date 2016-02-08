@@ -22,6 +22,7 @@ angular.module('starter.controllers')
     var user_email = '';
     var user_token = '';
     var get_params = '';
+    var defaultLatLon = {lat: 48.5149019, lng: 1.8341628};
 
     /* Map code starts here */
     navigator.geolocation.getCurrentPosition(currentLocationSuccessCallback, currentLocationErrorCallback, {
@@ -49,13 +50,8 @@ angular.module('starter.controllers')
         $scope.ma_paroisses = false;
         $scope.main_church_added = true;
       }
-      NgMap.getMap().then(function(map) {
-        $scope.map = map;
-        console.log(map.getCenter());
-        console.log('markers', map.markers);
-        console.log('shapes', map.shapes);
-      });
 
+      setMap();
       initOnEnterView();
     });
 
@@ -329,6 +325,18 @@ angular.module('starter.controllers')
       }
     }
 
+    function setMap() {
+      NgMap.getMap().then(function(map) {
+        $scope.map = map;
+        if (!$scope.initialized) {
+          initMap();
+        }
+        console.log(map.getCenter());
+        console.log('markers', map.markers);
+        console.log('shapes', map.shapes);
+      });
+    }
+
     function initFavTab() {
       $scope.is_map_fav = true;
       $scope.in_fav_list = true;
@@ -408,8 +416,8 @@ angular.module('starter.controllers')
     }
 
     function currentLocationSuccessCallback(position) {
-      $scope.user_lat = 48.5149019; //position.coords.latitude; //
-      $scope.user_long = 1.8341628; //position.coords.longitude; //
+      $scope.user_lat = defaultLatLon.lat; //position.coords.latitude; //
+      $scope.user_long = defaultLatLon.lng; //position.coords.longitude; //
       var userLocation = $scope.user_lat + ', ' + $scope.user_long;
       console.log("You are found here: " + userLocation);
       $rootScope.showLoading("Veuillez patienter...");
@@ -437,6 +445,11 @@ angular.module('starter.controllers')
       $scope.has_near_churches = false;
       $scope.no_near_church_msg = "Location could not be reached";
       console.log("Location could not be found");
+    }
+
+    function initMap() {
+      $scope.map.setCenter(defaultLatLon);
+      resizeMap();
     }
 
     //window.addEventListener('native.keyboardshow', keyboardShowHandler);
