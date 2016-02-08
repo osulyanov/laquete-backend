@@ -491,6 +491,9 @@ angular.module('starter.controllers')
           $scope.selected_church_id = -1;
           $scope.selected_dioce_id = -1;
           for (var i = 0, j = 0; i < data.length; i++) {
+            if (String(data[i]['picto']).indexOf('.png') !== -1) {
+              data[i]['picto']  = String(data[i]['picto']).substr(0, data[i]['picto'].length - 4);
+            }
             data[i]['picto_hover'] = "images/" + data[i]['picto'] + "-hover.png";
             data[i]['picto'] = "images/" + data[i]['picto'] + ".png";
           }

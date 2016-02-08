@@ -123,7 +123,7 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
           //console.log(data);
           if (data) {
             var main_church_id = window.localStorage.getItem("main_church_id");
-            if (main_church_id != "null" && main_church_id != null) {
+            if (hasValue(main_church_id)) {
               var main_church_address = window.localStorage.getItem("main_church_address");
               var main_church_city = window.localStorage.getItem("main_church_city");
               var main_church_name = window.localStorage.getItem("main_church_name");
@@ -142,6 +142,9 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
               data = data.concat(mainChurchArray);
             }
             for (var i = 0, j = 0; i < data.length; i++) {
+              if (String(data[i]['picto']).indexOf('.png') !== -1) {
+                data[i]['picto']  = String(data[i]['picto']).substr(0, data[i]['picto'].length - 4);
+              }
               data[i]['picto_hover'] = "images/" + data[i]['picto'] + "-hover.png";
               data[i]['picto'] = "images/" + data[i]['picto'] + ".png";
             }
@@ -161,6 +164,9 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
           //console.log(data);
           if (data) {
             for (var i = 0, j = 0; i < data.length; i++) {
+              if (String(data[i]['picto']).indexOf('.png') !== -1) {
+                data[i]['picto']  = String(data[i]['picto']).substr(0, data[i]['picto'].length - 4);
+              }
               data[i]['picto_hover'] = "images/" + data[i]['picto'] + "-hover.png";
               data[i]['picto'] = "images/" + data[i]['picto'] + ".png";
             }
@@ -178,6 +184,9 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
       get_churches.then(
         function (data) {
           if (data) {
+            if (String(data[i]['picto']).indexOf('.png') !== -1) {
+              data[i]['picto']  = String(data[i]['picto']).substr(0, data[i]['picto'].length - 4);
+            }
             data['picto_hover'] = "images/" + data['picto'] + "-hover.png";
             data['picto'] = "images/" + data['picto'] + ".png";
           }
@@ -210,6 +219,9 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
         function (data) {
           if (data) {
             for (var i = 0, j = 0; i < data.length; i++) {
+              if (String(data[i]['picto']).indexOf('.png') !== -1) {
+                data[i]['picto']  = String(data[i]['picto']).substr(0, data[i]['picto'].length - 4);
+              }
               data[i]['picto_hover'] = "images/" + data[i]['picto'] + "-hover.png";
               data[i]['picto'] = "images/" + data[i]['picto'] + ".png";
             }

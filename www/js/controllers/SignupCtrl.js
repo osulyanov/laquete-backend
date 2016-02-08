@@ -56,11 +56,11 @@ angular.module('starter.controllers')
             window.localStorage.setItem("user_name", name);
             window.localStorage.setItem("user_surname", surname);
 
-            window.localStorage.setItem("main_church_address", "");
-            window.localStorage.setItem("main_church_city", "");
-            window.localStorage.setItem("main_church_name", "");
-            window.localStorage.setItem("main_church_picto", "");
-            window.localStorage.setItem("main_church_id", "");
+            window.localStorage.setItem("main_church_address", "null");
+            window.localStorage.setItem("main_church_city", "null");
+            window.localStorage.setItem("main_church_name", "null");
+            window.localStorage.setItem("main_church_picto", "null");
+            window.localStorage.setItem("main_church_id", "null");
 
             //TODO: save the user at session storage
             $location.path('/signup-e2');
