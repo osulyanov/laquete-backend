@@ -217,7 +217,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'main-jedonne': {
           templateUrl: 'templates/jedonne.html',
-          controller: 'jedonneCtrl'
+          controller: 'JedonneCtrl'
         }
       }
     })
