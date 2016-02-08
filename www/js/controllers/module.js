@@ -184,8 +184,8 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
       get_churches.then(
         function (data) {
           if (data) {
-            if (String(data[i]['picto']).indexOf('.png') !== -1) {
-              data[i]['picto']  = String(data[i]['picto']).substr(0, data[i]['picto'].length - 4);
+            if (String(data['picto']).indexOf('.png') !== -1) {
+              data['picto']  = String(data['picto']).substr(0, data['picto'].length - 4);
             }
             data['picto_hover'] = "images/" + data['picto'] + "-hover.png";
             data['picto'] = "images/" + data['picto'] + ".png";

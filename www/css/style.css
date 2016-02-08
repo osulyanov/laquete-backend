@@ -386,7 +386,7 @@ font-family: "Museo Sans Rounded-700" !important;
 /*page 1 */
 
 .account-holder {
-  padding: 100px 15px;
+  padding: 80px 0px;
   width: 50%;
   margin: 0 auto;
 }
@@ -1113,7 +1113,7 @@ margin-top: 1.6vh;
     margin: 0 0 1.95vh;
   }
   .account-holder {
-    width: 88%;
+    width: 100%;
   }
 }
 

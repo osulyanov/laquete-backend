@@ -95,8 +95,6 @@ angular.module('starter.services', [])
         params: params
       }).
       success(function(data, status, headers, config) {
-        console.log('success');
-        console.dir(data);
         deferred.resolve(data);
       }).
       error(function(data, status, headers, config) {

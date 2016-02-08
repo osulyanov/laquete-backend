@@ -26,9 +26,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
-        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-        cordova.plugins.Keyboard.disableScroll(false);
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
     }
+
+    $rootScope.currentLatLon = {lat: 0, lng: 0};
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      $rootScope.currentLatLon.lat = position.coords.latitude;
+      $rootScope.currentLatLon.lng = position.coords.longitude;
+      console.log(pos);
+
+    }, function(error) {
+      console.log('Geolocation Error occurred. Error code: ' + error.code);
+    },{timeout: 5000});
 
     $rootScope.iosdevice = false;
     var checkiOS = function iOS() {

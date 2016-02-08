@@ -1,6 +1,9 @@
 <ion-nav-bar class="bar-stable" ng-class="iosdevice ? 'top-ios':'' ">
-  <ion-nav-back-button>
-  </ion-nav-back-button>
+  <ion-nav-buttons side="left">
+    <button class="button button-clear" ng-click="back()" ng-show="((scopeParam.ma_paroisses && !scopeParam.main_church_added) || (!scopeParam.ma_paroisses && !scopeParam.in_fav_list))">
+      <i class="ion-ios-arrow-back"></i> Retour
+    </button>
+  </ion-nav-buttons>
 
   <ion-nav-title>
     Mes églises
@@ -10,38 +13,37 @@
   <ion-content data-tap-disabled="false" scroll="true" id="body-content">
 
     <div class="padding churches-padding">
-      <!--	Area for ma_paroisses selected-->
+      <!--	Area for scopeParam.ma_paroisses selected-->
       <div class="button-bar" data-tap-disabled="true">
         <div class="button" id="tab-churches"
-           ng-click="ma_paroisse()"
-           ng-class="{'bg-green':ma_paroisses,'bg-white':!ma_paroisses}">
+           ng-click="maParoisse()"
+           ng-class="{'bg-green':scopeParam.ma_paroisses,'bg-white':!scopeParam.ma_paroisses}">
           <font size="2">Ma Paroisse</font>
         </div>
         <div class="button" id="tab-fav-churches"
-           ng-click="autres_paroisses()"
-           ng-class="{'bg-green':!ma_paroisses,'bg-white':ma_paroisses}">
+           ng-click="autresParoisses()"
+           ng-class="{'bg-green':!scopeParam.ma_paroisses,'bg-white':scopeParam.ma_paroisses}">
           <font size="2">Mes autres églises</font>
         </div>
       </div>
-      <!--		Area for ma_paroisses unselected-->
-<!--      <div class="button-bar" ng-hide="ma_paroisses">
-        <a class="button bg-white" ng-click="ma_paroisse()"><font size="2">Ma paroisse</font></a>
-        <a class="button bg-green" id="tab-fav-churches" ng-click="ma_paroisse()"><font size="2">Mes autres églises</font></a>
+      <!--		Area for scopeParam.ma_paroisses unselected-->
+<!--      <div class="button-bar" ng-hide="scopeParam.ma_paroisses">
+        <a class="button bg-white" ng-click="maParoisse()"><font size="2">Ma paroisse</font></a>
+        <a class="button bg-green" id="tab-fav-churches" ng-click="maParoisse()"><font size="2">Mes autres églises</font></a>
       </div>-->
 
-      <!--		ma_paroisses selected radio buttons for postville selected search-->
-      <div ng-show="ma_paroisses && !main_church_added" class="filter-section" >
-<!--        <input class="form-control" name="query" type="text"  value="Search" ng-model="query" placeholder="Filter..." ng-blur="hide_keyboard()">-->
+      <!--		scopeParam.ma_paroisses selected radio buttons for postville selected search-->
+      <div ng-show="scopeParam.ma_paroisses && !scopeParam.main_church_added" class="filter-section" >
+<!--        <input class="form-control" name="query" type="text"  value="Search" ng-model="query" placeholder="Filter..." ng-blur="hideKeyboard()">-->
         <div class="item item-input item-icon-right" style="background:white;">
-          <span class="back-to-fav-list"  id="back-to-main-list" ng-click="back_from_edit_main_church()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
-          <input type="text" name="query" id="query_id" ng-model="searchParam.query"  placeholder="Ville, code postal" ng-focus="queryFocus(true, searchParam.query)">
-          <font size="5px"><i class="ion-ios-close-outline" id="query-cancel" ng-show="searchParam.query.length" style="margin-right: 5px;" ng-click="hide_keyboard()"></i></font>
+          <input type="text" name="query" id="query_id" ng-model="scopeParam.query"  placeholder="Ville, code postal" ng-focus="queryFocus(true, scopeParam.query)">
+          <font size="5px"><i class="ion-ios-close-outline" id="query-cancel" ng-show="scopeParam.query.length" style="margin-right: 5px;" ng-click="hideKeyboard()"></i></font>
         </div>
       </div>
 
-      <ion-scroll ng-show="!is_map && ma_paroisses && !main_church_added" class="scroll-list-small">
+      <ion-scroll ng-show="!is_map && scopeParam.ma_paroisses && !scopeParam.main_church_added" class="scroll-list-small">
         <ion-list class="listing">
-          <ion-item class="listing" ng-repeat="church in all_churches  | filterChurch:searchParam.query" type="item-text-wrap" >
+          <ion-item class="listing" ng-repeat="church in all_churches  | filterChurch:scopeParam.query" type="item-text-wrap" >
             <li>
               <div class="col-sm-2 col-xs-2">
                 <div class="image-holder">
@@ -65,8 +67,8 @@
         </ion-list>
       </ion-scroll>
 
-      <!--		ma_paroisses unselected radio buttons for postville selected search-->
-      <ion-scroll ng-show="!ma_paroisses && in_fav_list && fav_churches.length" class="scroll-list-small">
+      <!--		scopeParam.ma_paroisses unselected radio buttons for postville selected search-->
+      <ion-scroll ng-show="!scopeParam.ma_paroisses && scopeParam.in_fav_list && fav_churches.length" class="scroll-list-small">
         <ion-list class="listing">
           <ion-item class="listing" ng-repeat="church in fav_churches" type="item-text-wrap" >
             <li>
@@ -90,19 +92,18 @@
         </ion-list>
       </ion-scroll>
 
-      <span class="default-plus" ng-show="!ma_paroisses && in_fav_list && fav_churches.length" ng-click="goToChooseFav()" ><i class="glyphicon glyphicon-plus"></i></span>
+      <span class="default-plus" ng-show="!scopeParam.ma_paroisses && scopeParam.in_fav_list && fav_churches.length" ng-click="goToChooseFav()" ><i class="glyphicon glyphicon-plus"></i></span>
 
-      <div ng-show="!ma_paroisses && !in_fav_list" class="filter-section">
+      <div ng-show="!scopeParam.ma_paroisses && !scopeParam.in_fav_list" class="filter-section">
         <div class="item item-input item-icon-right" style="background:white;">
-          <span class="back-to-fav-list" id="back-to-fav-list" ng-click="backToFavList()"><i class="glyphicon glyphicon-share-alt icon-flipped"></i></span>
-          <input type="text" name="query_fav" id="query_fav_id" ng-model="searchParam.query_fav"  placeholder="Ville, code postal" ng-click="queryFocusFav(true, searchParam.query_fav)" id="query_fav_id">
-          <font size="5px"><i class="ion-ios-close-outline" id="query-fav-cancel" ng-show="searchParam.query_fav.length" style="margin-right: 5px;" ng-click="hide_keyboard_fav()"></i></font>
+          <input type="text" name="query_fav" id="query_fav_id" ng-model="scopeParam.query_fav"  placeholder="Ville, code postal" ng-click="queryFocusFav(true, scopeParam.query_fav)" id="query_fav_id">
+          <font size="5px"><i class="ion-ios-close-outline" id="query-fav-cancel" ng-show="scopeParam.query_fav.length" style="margin-right: 5px;" ng-click="hideKeyboardFav()"></i></font>
         </div>
       </div>
 
-      <ion-scroll ng-show="!is_map_fav && !ma_paroisses && !in_fav_list" class="scroll-list-small">
+      <ion-scroll ng-show="!is_map_fav && !scopeParam.ma_paroisses && !scopeParam.in_fav_list" class="scroll-list-small">
         <ion-list class="listing">
-          <ion-item class="listing" ng-repeat="church in all_churches | filterChurch:searchParam.query_fav" type="item-text-wrap" >
+          <ion-item class="listing" ng-repeat="church in all_churches | filterChurch:scopeParam.query_fav" type="item-text-wrap" >
             <li>
             <div class="col-sm-2 col-xs-2">
               <div class="image-holder">
@@ -128,7 +129,7 @@
       </ion-scroll>
 
       <!--		Main church div-->
-      <div ng-show="main_church_added && ma_paroisses && main_church_id" class="church-details">
+      <div ng-show="scopeParam.main_church_added && scopeParam.ma_paroisses && hasValue(main_church_id)" class="church-details">
        <h4 style="text-align:center;">{{main_church.name}}</h4>
         <div class="col-sm-3 col-xs-3">
           <div class="image-holder">
@@ -140,39 +141,39 @@
           <span class="zipcode">{{main_church.zip}}</span>
         </div>
         <div class="col-sm-12 col-xs-12 text-center">
-          <a class="church-btn-edit" ng-click="edit_main_church()">Edit</a>
+          <a class="church-btn-edit" ng-click="editMainChurch()">Edit</a>
         </div>
       </div>
 
-      <div ng-show="main_church_added && ma_paroisses && !main_church_id" class="church-details">
+      <div ng-show="scopeParam.main_church_added && scopeParam.ma_paroisses && !hasValue(main_church_id)" class="church-details">
         <div class="col-sm-12 col-xs-12 text-center">
-          <a class="church-btn-edit" ng-click="edit_main_church()" style="width: 155px">Ajouter ma paroisse</a>
+          <a class="church-btn-edit" ng-click="editMainChurch()" style="width: 155px">Ajouter ma paroisse</a>
         </div>
       </div>
 
-      <div ng-show="!ma_paroisses && in_fav_list && !fav_churches.length && initialized" class="church-details">
+      <div ng-show="!scopeParam.ma_paroisses && scopeParam.in_fav_list && !fav_churches.length && initialized" class="church-details">
         <div class="col-sm-12 col-xs-12 text-center">
           <a class="church-btn-edit" ng-click="goToChooseFav()" style="width: 155px">Ajouter mon église</a>
         </div>
       </div>
 
       <!--<div map-lazy-load="https://maps.google.com/maps/api/js" data-tap-disabled="true" >-->
-        <ng-map  ng-show="(ma_paroisses && is_map && !main_church_added) || (!ma_paroisses && is_map_fav && !in_fav_list)" data-tap-disabled="true" street-view-control="false" zoom-control="false" default-style="true" map-type-control="false" zoom="12">
+        <ng-map  ng-show="(scopeParam.ma_paroisses && is_map && !scopeParam.main_church_added) || (!scopeParam.ma_paroisses && is_map_fav && !scopeParam.in_fav_list)" data-tap-disabled="true" street-view-control="false" zoom-control="false" default-style="true" map-type-control="false" zoom="12">
           <marker ng-repeat="church in nearChurches" position="[{{church.latitude}},{{church.longitude}}]" id="marker{{$index}}" on-click="markerShowInfoWindow($index)"></marker>
-          <a ng-click="current_location()" class="button button-icon icon  ion-android-locate" id = "current_location"></a>
+          <a ng-click="current_location(true)" class="button button-icon icon  ion-android-locate" id = "current_location"></a>
 
           <info-window id="info-window-church">
             <div ng-non-bindable="">
               <h>{{selected_church_marker.name}}</h>
               </br>
               <p>{{selected_church_marker.address}}</p>
-              <div ng-hide="!main_church_added && ma_paroisses">
+              <div ng-hide="!scopeParam.main_church_added && scopeParam.ma_paroisses">
                 <i ng-show="selected_church_marker.favorite" class="glyphicon glyphicon-minus-sign" ng-click="test(selected_church_index_marker)"></i>
                 <i ng-show="!selected_church_marker.favorite" class="glyphicon glyphicon-plus-sign" ng-click="test(selected_church_index_marker)"></i>
               </div>
-              <div ng-show="!main_church_added && ma_paroisses">
-                <font ng-show="main_church_id != null && main_church_id == selected_church_marker.id" color="#B39E83"><i class="glyphicon glyphicon-minus-sign"></i></font>
-                <i ng-hide="main_church_id != null && main_church_id == selected_church_marker.id" class="glyphicon glyphicon-plus-sign" ng-click="main(selected_church_index_marker)"></i>
+              <div ng-show="!scopeParam.main_church_added && scopeParam.ma_paroisses">
+                <font ng-show="hasValue(main_church_id) && main_church_id == selected_church_marker.id" color="#B39E83"><i class="glyphicon glyphicon-minus-sign"></i></font>
+                <i ng-hide="hasValue(main_church_id) && main_church_id == selected_church_marker.id" class="glyphicon glyphicon-plus-sign" ng-click="main(selected_church_index_marker)"></i>
               </div>
             </div>
           </info-window>
@@ -180,7 +181,7 @@
       <!--</div>-->
 
       <!--		List for geolocalisatin list of ma paroisse	-->
-      <!--<div ng-show="!PostVille && !is_map && ma_paroisses && !main_church_added" class="scroll-list" style="transform: translate3d(0px, 0px, 0px) scale(1);" scroll="true">-->
+      <!--<div ng-show="!PostVille && !is_map && scopeParam.ma_paroisses && !scopeParam.main_church_added" class="scroll-list" style="transform: translate3d(0px, 0px, 0px) scale(1);" scroll="true">-->
 
         <!--<ul class="listing"  >-->
           <!--<li ng-repeat="church in nearChurches">-->
@@ -204,7 +205,7 @@
       <!--</div>-->
 
       <!--		List for geolocalisatin list of mes autres paroisses	-->
-      <!--<div ng-show="!PostVilleFav && !is_map_fav && !ma_paroisses" class="scroll-list" style="transform: translate3d(0px, 0px, 0px) scale(1);" scroll="true">-->
+      <!--<div ng-show="!PostVilleFav && !is_map_fav && !scopeParam.ma_paroisses" class="scroll-list" style="transform: translate3d(0px, 0px, 0px) scale(1);" scroll="true">-->
 
         <!--<ul class="listing"  ng-show="has_near_churches">-->
           <!--<li ng-repeat="church in nearChurches">-->
