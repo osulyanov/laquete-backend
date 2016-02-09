@@ -21,7 +21,8 @@ angular.module('starter.controllers')
     var user_token = '';
     var get_params = '';
     var defaultLatLon = {lat: 48.5149019, lng: 1.8341628};
-    //var $rootScope.currentLatLon = {lat: 0, lng: 0};
+    var currentLatLon = {lat: 0, lng: 0};
+    //var currentLatLon = {lat: 0, lng: 0};
 
     /* Map code starts here */
     //navigator.geolocation.getCurrentPosition(currentLocationSuccessCallback, currentLocationErrorCallback, {
@@ -68,8 +69,8 @@ angular.module('starter.controllers')
 
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        $rootScope.currentLatLon.lat = position.coords.latitude;
-        $rootScope.currentLatLon.lng = position.coords.longitude;
+        currentLatLon.lat = position.coords.latitude;
+        currentLatLon.lng = position.coords.longitude;
         console.log(pos);
 
         map.setCenter(pos);
@@ -87,7 +88,7 @@ angular.module('starter.controllers')
       },
       function (e) {
         console.log('ChurchesCtrl current location error: ' + e.code)
-        var pos = new google.maps.LatLng($rootScope.currentLatLon.lat, $rootScope.currentLatLon.lng);
+        var pos = new google.maps.LatLng(currentLatLon.lat, currentLatLon.lng);
         $scope.map.setCenter(pos);
         var GeoMarker = new GeolocationMarker();
         GeoMarker.setCircleOptions({fillColor: '#808080'});
@@ -98,7 +99,7 @@ angular.module('starter.controllers')
           $ionicLoading.hide();
         }
 
-      }, {timeout:1000});
+      }, {timeout:3000});
     };
 
     $scope.hideKeyboard = function () {
@@ -216,7 +217,7 @@ angular.module('starter.controllers')
     };
 
     $scope.addMainChurch = function (obj) {
-      $rootScope.showLoading("Veuillez patienter...");
+      showLoading("Veuillez patienter...");
       console.log(obj);
       var promise;
       promise = API.get(API.url() + 'users/main_church', {
@@ -227,7 +228,7 @@ angular.module('starter.controllers')
 
       promise.then(
         function (data) {
-          $rootScope.hideLoading();
+          hideLoading();
           if (data["error"] == "You need to sign in or sign up before continuing.") {
             console.log("Delete history and logout");
             Helper.clearCachedViews(function () {
@@ -253,7 +254,7 @@ angular.module('starter.controllers')
     };
 
     $scope.makeFavorite = function (obj) {
-      $rootScope.showLoading();
+      showLoading();
       console.log(obj);
       var promise;
       if (obj['favorite']) {
@@ -274,7 +275,7 @@ angular.module('starter.controllers')
 
       promise.then(
         function (data) {
-          $rootScope.hideLoading();
+          hideLoading();
           if (data["error"] == "You need to sign in or sign up before continuing.") {
             console.log("Delete history and logout");
             Helper.clearCachedViews(function () {
@@ -428,9 +429,9 @@ angular.module('starter.controllers')
       $scope.user_long = defaultLatLon.lng; //position.coords.longitude; //
       var userLocation = $scope.user_lat + ', ' + $scope.user_long;
       console.log("You are found here: " + userLocation);
-      $rootScope.showLoading("Veuillez patienter...");
+      showLoading("Veuillez patienter...");
       Helper.getNearChurches($scope.user_lat, $scope.user_long, function (data) {
-        $rootScope.hideLoading();
+        hideLoading();
         console.log("with location: " + data.length);
         if (data["error"] == "You need to sign in or sign up before continuing.") {
           console.log("Delete history and logout");
@@ -449,7 +450,7 @@ angular.module('starter.controllers')
     }
 
     function currentLocationErrorCallback() {
-      $rootScope.hideLoading();
+      hideLoading();
       $scope.has_near_churches = false;
       $scope.no_near_church_msg = "Location could not be reached";
       console.log("Location could not be found");
