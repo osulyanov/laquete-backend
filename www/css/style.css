@@ -751,11 +751,15 @@ ng-map {
 
 .default-plus {
   color: #916153;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 27px;
   float: right;
   margin-right: 2vw;
   margin-top: 6vw;
+}
+
+.default-plus i.add-favorite-church-icon {
+  font-size: 17px;
 }
 
 .back-to-fav-list {
