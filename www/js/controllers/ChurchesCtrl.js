@@ -310,6 +310,13 @@ angular.module('starter.controllers')
       }
     }
 
+    $scope.hideKeyboardWhenEnter = function() {
+      if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+        cordova.plugins.Keyboard.close();
+      }
+
+    }
+
     $scope.hasValue = hasValue;
 
     //Functions

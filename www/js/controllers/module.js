@@ -356,6 +356,20 @@ angular.module('starter.controllers', ['ionic-datepicker', 'ngIOS9UIWebViewPatch
     };
   })
 
+  .directive('ngEnter', function() {
+    return function(scope, element, attrs) {
+      element.bind("keydown keypress", function(event) {
+        if(event.which === 13) {
+          scope.$apply(function(){
+            scope.$eval(attrs.ngEnter);
+          });
+
+          event.preventDefault();
+        }
+      });
+    };
+  })
+
   .controller('MaptestCtrl', function ($scope, $location) {
     // var map, marker;
     var contentString = '<div id="content">' +
