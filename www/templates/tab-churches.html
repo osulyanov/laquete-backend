@@ -11,6 +11,7 @@
 </ion-nav-bar>
 <ion-view class="history-bg">
   <ion-content data-tap-disabled="false" scroll="true" id="body-content">
+    <form ng-submit="onSubmitChurches()">
 
     <div class="padding churches-padding">
       <!--	Area for scopeParam.ma_paroisses selected-->
@@ -36,7 +37,7 @@
       <div ng-show="scopeParam.ma_paroisses && !scopeParam.main_church_added" class="filter-section" >
 <!--        <input class="form-control" name="query" type="text"  value="Search" ng-model="query" placeholder="Filter..." ng-blur="hideKeyboard()">-->
         <div class="item item-input item-icon-right" style="background:white;">
-          <input type="text" name="query" id="query_id" ng-enter="hideKeyboardWhenEnter()" ng-model="scopeParam.query"  placeholder="Ville, code postal" ng-focus="queryFocus(true, scopeParam.query)">
+          <input type="text" name="query" id="query_id" ng-model="scopeParam.query"  placeholder="Ville, code postal" ng-focus="queryFocus(true, scopeParam.query)">
           <font size="5px"><i class="ion-ios-close-outline" id="query-cancel" ng-show="scopeParam.query.length" style="margin-right: 5px;" ng-click="hideKeyboard()"></i></font>
         </div>
       </div>
@@ -96,7 +97,7 @@
 
       <div ng-show="!scopeParam.ma_paroisses && !scopeParam.in_fav_list" class="filter-section">
         <div class="item item-input item-icon-right" style="background:white;">
-          <input type="text" name="query_fav" id="query_fav_id" ng-enter="hideKeyboardWhenEnter()" ng-model="scopeParam.query_fav"  placeholder="Ville, code postal" ng-click="queryFocusFav(true, scopeParam.query_fav)" id="query_fav_id" ng-submit="hideKeyboardWhenEnter()">
+          <input type="text" name="query_fav" id="query_fav_id" ng-model="scopeParam.query_fav"  placeholder="Ville, code postal" ng-click="queryFocusFav(true, scopeParam.query_fav)" id="query_fav_id" ng-submit="hideKeyboardWhenEnter()">
           <font size="5px"><i class="ion-ios-close-outline" id="query-fav-cancel" ng-show="scopeParam.query_fav.length" style="margin-right: 5px;" ng-click="hideKeyboardFav()"></i></font>
         </div>
       </div>
@@ -180,6 +181,8 @@
         </ng-map>
       <!--</div>-->
 
+      <button id="buttonForHideKeyboard" type="submit" ng-click="hideKeyboardWhenEnter()"></button>
+
       <!--		List for geolocalisatin list of ma paroisse	-->
       <!--<div ng-show="!PostVille && !is_map && scopeParam.ma_paroisses && !scopeParam.main_church_added" class="scroll-list" style="transform: translate3d(0px, 0px, 0px) scale(1);" scroll="true">-->
 
@@ -235,5 +238,6 @@
 
     </div>
     <div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 330px;"></div></div>
+    </form>
   </ion-content>
 </ion-view>

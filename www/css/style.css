@@ -707,6 +707,10 @@ ng-map {
   padding: 0px 0 0px 12px;
 }
 
+#buttonForHideKeyboard {
+  margin-left: -1000px;
+}
+
 .listing li {
   display: inline-block;
   vertical-align: middle;
