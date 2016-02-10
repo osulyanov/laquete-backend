@@ -177,9 +177,13 @@ angular.module('starter.controllers')
     };
 
     $scope.callGetChurches = function () {
+      $rootScope.showLoading('Loading...');
       Helper.GetAllChurchesFromServer(function (data) {
         setChurches(data);
         $scope.initialized = true;
+        $rootScope.hideLoading();
+      }, function (e) {
+        $rootScope.hideLoading();
       });
     };
 
@@ -217,7 +221,7 @@ angular.module('starter.controllers')
     };
 
     $scope.addMainChurch = function (obj) {
-      showLoading("Veuillez patienter...");
+      $rootScope.showLoading("Veuillez patienter...");
       console.log(obj);
       var promise;
       promise = API.get(API.url() + 'users/main_church', {
@@ -228,7 +232,7 @@ angular.module('starter.controllers')
 
       promise.then(
         function (data) {
-          hideLoading();
+          $rootScope.hideLoading();
           if (data["error"] == "You need to sign in or sign up before continuing.") {
             console.log("Delete history and logout");
             Helper.clearCachedViews(function () {
@@ -254,7 +258,7 @@ angular.module('starter.controllers')
     };
 
     $scope.makeFavorite = function (obj) {
-      showLoading();
+      $rootScope.showLoading();
       console.log(obj);
       var promise;
       if (obj['favorite']) {
@@ -275,7 +279,7 @@ angular.module('starter.controllers')
 
       promise.then(
         function (data) {
-          hideLoading();
+          $rootScope.hideLoading();
           if (data["error"] == "You need to sign in or sign up before continuing.") {
             console.log("Delete history and logout");
             Helper.clearCachedViews(function () {
@@ -429,9 +433,9 @@ angular.module('starter.controllers')
       $scope.user_long = defaultLatLon.lng; //position.coords.longitude; //
       var userLocation = $scope.user_lat + ', ' + $scope.user_long;
       console.log("You are found here: " + userLocation);
-      showLoading("Veuillez patienter...");
+      $rootScope.showLoading("Veuillez patienter...");
       Helper.getNearChurches($scope.user_lat, $scope.user_long, function (data) {
-        hideLoading();
+        $rootScope.hideLoading();
         console.log("with location: " + data.length);
         if (data["error"] == "You need to sign in or sign up before continuing.") {
           console.log("Delete history and logout");
@@ -450,7 +454,7 @@ angular.module('starter.controllers')
     }
 
     function currentLocationErrorCallback() {
-      hideLoading();
+      $rootScope.hideLoading();
       $scope.has_near_churches = false;
       $scope.no_near_church_msg = "Location could not be reached";
       console.log("Location could not be found");
