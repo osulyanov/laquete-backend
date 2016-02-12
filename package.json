@@ -27,7 +27,11 @@
       "id": "org.pbernasconi.progressindicator"
     },
     "org.apache.cordova.network-information",
-    "cordova-plugin-crosswalk-webview"
+    "cordova-plugin-crosswalk-webview",
+    "cordova-plugin-network-information",
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-x-toast",
+    "cordova-plugin-dialogs"
   ],
   "cordovaPlatforms": [
     "ios",
