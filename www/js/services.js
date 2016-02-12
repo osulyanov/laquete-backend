@@ -152,7 +152,6 @@ angular.module('starter.services', [])
       }).
       success(function(data, status, headers, config) {
         console.log('success');
-        console.log(data);
         deferred.resolve(data);
       }).
       error(function(data, status, headers, config) {

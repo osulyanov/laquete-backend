@@ -160,7 +160,7 @@
 
       <!--<div map-lazy-load="https://maps.google.com/maps/api/js" data-tap-disabled="true" >-->
         <ng-map  ng-show="(scopeParam.ma_paroisses && is_map && !scopeParam.main_church_added) || (!scopeParam.ma_paroisses && is_map_fav && !scopeParam.in_fav_list)" data-tap-disabled="true" street-view-control="false" zoom-control="false" default-style="true" map-type-control="false" zoom="12">
-          <marker ng-repeat="church in nearChurches" position="[{{church.latitude}},{{church.longitude}}]" id="marker{{$index}}" on-click="markerShowInfoWindow($index)"></marker>
+          <marker ng-repeat="church in near_churches" position="[{{church.latitude}},{{church.longitude}}]" id="marker{{$index}}" on-click="markerShowInfoWindow($index)"></marker>
           <a ng-click="current_location(true)" class="button button-icon icon  ion-android-locate" id = "current_location"></a>
 
           <info-window id="info-window-church">
@@ -187,7 +187,7 @@
       <!--<div ng-show="!PostVille && !is_map && scopeParam.ma_paroisses && !scopeParam.main_church_added" class="scroll-list" style="transform: translate3d(0px, 0px, 0px) scale(1);" scroll="true">-->
 
         <!--<ul class="listing"  >-->
-          <!--<li ng-repeat="church in nearChurches">-->
+          <!--<li ng-repeat="church in near_churches">-->
             <!--<div class="col-sm-2 col-xs-2">-->
               <!--<div class="image-holder">-->
                 <!--<img ng-src="{{church.picto}}" class="img-responsive" alt="image">-->
@@ -211,7 +211,7 @@
       <!--<div ng-show="!PostVilleFav && !is_map_fav && !scopeParam.ma_paroisses" class="scroll-list" style="transform: translate3d(0px, 0px, 0px) scale(1);" scroll="true">-->
 
         <!--<ul class="listing"  ng-show="has_near_churches">-->
-          <!--<li ng-repeat="church in nearChurches">-->
+          <!--<li ng-repeat="church in near_churches">-->
             <!--<div class="col-sm-2 col-xs-2">-->
               <!--<div class="image-holder">-->
                 <!--<img ng-src="{{church.picto}}" class="img-responsive" alt="image">-->
