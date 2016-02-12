@@ -19,6 +19,14 @@ angular.module('starter.services', [])
   $rootScope.hideLoading = function(){
     $ionicLoading.hide();
   };
+  // Open Inppbrower when click link(if not install inappbrowser plugin, will be open blank window)
+  $rootScope.openUrl = function(url){
+    console.log(url);
+    if (window.cordova && window.cordova.InAppBrowser)
+      var ref = cordova.InAppBrowser.open(url, '_blank', 'location=yes,hardwareback=yes,closebuttoncaption=Back');
+    else
+      var ref = window.open(url, '_blank', 'location=yes');
+  };
 
   // var get_churches =  get(url + "/churches?",get_params);
   // get_churches.then(

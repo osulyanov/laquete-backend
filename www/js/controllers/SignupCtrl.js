@@ -21,11 +21,7 @@ angular.module('starter.controllers')
 
   $scope.termsChange = function(){
     if($scope.user.terms){
-      if (window.cordova){
-        var ref = cordova.InAppBrowser.open("http://www.applilaquete.fr", "_blank", "location=yes");
-      }else{
-        var ref = window.open("http://www.applilaquete.fr", "_blank");
-      }
+      $rootScope.openUrl("http://www.applilaquete.fr");
     }
   };
 
