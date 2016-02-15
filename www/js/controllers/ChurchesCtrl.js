@@ -54,7 +54,7 @@ angular.module('starter.controllers')
       initOnEnterView();
     });
 
-    $scope.$on('laquete.logout', function(e) {
+    $rootScope.$on('laquete.logout', function(e) {
       $scope.scopeParam.main_church_added = false;
       initScope();
     });
@@ -77,6 +77,8 @@ angular.module('starter.controllers')
       });
 
       navigator.geolocation.getCurrentPosition(function(position) {
+          // TODO: remove
+        //pos = new google.maps.LatLng(defaultLatLon.lat, defaultLatLon.lng);
         pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         currentLatLon.lat = position.coords.latitude;
         currentLatLon.lng = position.coords.longitude;
@@ -99,6 +101,9 @@ angular.module('starter.controllers')
         } else {
           pos = new google.maps.LatLng(currentLatLon.lat, currentLatLon.lng);
         }
+        //TODO: remove
+        //pos = new google.maps.LatLng(defaultLatLon.lat, defaultLatLon.lng);
+
 
         $scope.map.setCenter(pos);
 
@@ -130,7 +135,7 @@ angular.module('starter.controllers')
       if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.close();
       }
-
+      
       $scope.is_map_fav = true;
       $scope.scopeParam.query_fav = "";
       document.getElementById('query_fav_id').value = '';

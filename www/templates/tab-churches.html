@@ -168,11 +168,11 @@
               <h>{{selected_church_marker.name}}</h>
               </br>
               <p>{{selected_church_marker.address}}</p>
-              <div ng-hide="!scopeParam.main_church_added && scopeParam.ma_paroisses">
+              <div ng-hide="!scopeParam.main_church_added && scopeParam.ma_paroisses" class="map-info-icon-container">
                 <i ng-show="selected_church_marker.favorite" class="glyphicon glyphicon-minus-sign" ng-click="test(selected_church_index_marker)"></i>
                 <i ng-show="!selected_church_marker.favorite" class="glyphicon glyphicon-plus-sign" ng-click="test(selected_church_index_marker)"></i>
               </div>
-              <div ng-show="!scopeParam.main_church_added && scopeParam.ma_paroisses">
+              <div ng-show="!scopeParam.main_church_added && scopeParam.ma_paroisses" class="map-info-icon-container">
                 <font ng-show="hasValue(main_church_id) && main_church_id == selected_church_marker.id" color="#B39E83"><i class="glyphicon glyphicon-minus-sign"></i></font>
                 <i ng-hide="hasValue(main_church_id) && main_church_id == selected_church_marker.id" class="glyphicon glyphicon-plus-sign" ng-click="main(selected_church_index_marker)"></i>
               </div>

@@ -49,7 +49,7 @@ angular.module('starter.controllers')
     window.localStorage.setItem("user_surname", '');
     window.localStorage.setItem("main_church_id", '');
 
-    $rootScope.$broadcast('laquete.logout');
+    $rootScope.$emit('laquete.logout');
 
     $state.transitionTo($state.current, $stateParams, {
       reload: true,

@@ -66,6 +66,27 @@ angular.module('starter.controllers')
       });
   });
 
+  $scope.getInfo = function() {
+    var myPopup = $ionicPopup.show({
+      templateUrl: 'templates/donregularInfoPopup.html',
+      cssClass: 'my-custom-popup',
+      title: '',
+      subTitle: '',
+      scope: $scope,
+      buttons: [
+        {
+          text: '<b>Ok</b>',
+          type: 'button button-clear button-positive btn-donne btn-primary btn-getInfo-Ok',
+          onTap: function (e) {
+            myPopup.close();
+          }
+        }
+      ]
+    });
+    setTimeout( function() {
+      $('.btn-getInfo-Ok').hide().show(0);
+    }, 1000)
+  };
 
   $scope.add_recurring = function (to_dioce) {
     console.log("Inside goto setup");

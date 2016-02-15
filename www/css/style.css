@@ -25,7 +25,15 @@ bottom: 8%;
 
 #btn-info {
   width: 45px;
-  height: 45px;
+  height: 30px;
+  /*margin-right:15px !important;*/
+
+}
+
+.platform-android #btn-info {
+  width: 45px;
+  height: 51px;
+  margin-top: 0;
   /*margin-right:15px !important;*/
 
 }
@@ -691,6 +699,16 @@ ng-map {
   margin-top: 10px;
 }
 
+
+.ng-map-info-window .map-info-icon-container {
+    text-align: center;
+    padding-left: 25px;
+}
+
+.ng-map-info-window .map-info-icon-container i {
+  font-size: 20px;
+}
+
 .item {
   background: none;
   /*border-bottom: 1px solid #dad5c5 !important;*/
@@ -845,6 +863,10 @@ ng-map {
   line-height: 54px;
 }
 
+/*.bar.bar-stable .title .nav-bar-title {*/
+  /*padding-left: 45px;*/
+/*}*/
+
 /*ion-nav-bar .button.button-clear {*/
   /*height: 100%!important;*/
   /*padding-top: 2.5vh!important;*/
@@ -945,32 +967,34 @@ ng-map {
 .tutorial-1-bg {
   height: 100vh;
   background: url('../images/tut_1.png') no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 
 .tutorial-2-bg {
   height: 100vh;
   background: url('../images/tut_2.png') no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 
 .tutorial-3-bg {
   height: 100vh;
   background: url('../images/tut_3.png') no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 
 .tutorial-4-bg {
   height: 100vh;
   background: url('../images/tut_4.png') no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
 }
+
 
 .tutorial-5-bg {
   height: 100vh;
   background: url('../images/tut_5.png') no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
 }
+
 
 .btn-skip.next-btn {
   top: 80vh !important;
@@ -980,8 +1004,8 @@ ng-map {
   background: #916153;
   position: absolute;
   right: 20px;
-  top: 88.4vh;
-  width: 40%;
+  top: 80vh;
+  width: 152px;
   outline: 0 !important;
   height: 43px;
   font-size: 19px;
