@@ -64,7 +64,7 @@ angular.module('starter.controllers')
         pos;
       if (showLoading) {
         $ionicLoading.show({
-          template: 'Loading...'
+          template: 'Chargement...'
         });
       }
 
@@ -186,7 +186,7 @@ angular.module('starter.controllers')
     };
 
     $scope.callGetChurches = function () {
-      $rootScope.showLoading('Loading...');
+      $rootScope.showLoading('Chargement...');
       Helper.GetAllChurchesFromServer(function (data) {
         setChurches(data);
         $scope.initialized = true;
