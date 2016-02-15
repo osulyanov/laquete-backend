@@ -944,31 +944,31 @@ ng-map {
 
 .tutorial-1-bg {
   height: 100vh;
-  background: url('../images/tut_1.jpg') no-repeat;
+  background: url('../images/tut_1.png') no-repeat;
   background-size: cover;
 }
 
 .tutorial-2-bg {
   height: 100vh;
-  background: url('../images/tut_2.jpg') no-repeat;
+  background: url('../images/tut_2.png') no-repeat;
   background-size: cover;
 }
 
 .tutorial-3-bg {
   height: 100vh;
-  background: url('../images/tut_3.jpg') no-repeat;
+  background: url('../images/tut_3.png') no-repeat;
   background-size: cover;
 }
 
 .tutorial-4-bg {
   height: 100vh;
-  background: url('../images/tut_4.jpg') no-repeat;
+  background: url('../images/tut_4.png') no-repeat;
   background-size: cover;
 }
 
 .tutorial-5-bg {
   height: 100vh;
-  background: url('../images/tut_6.jpg') no-repeat;
+  background: url('../images/tut_5.png') no-repeat;
   background-size: cover;
 }
 
