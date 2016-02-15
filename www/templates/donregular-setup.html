@@ -17,25 +17,12 @@
 
     <div class="wrapper">
       <div class="montant-holder recurring-payment">
-        <!--        <h3>Vous souhaitez programmer un don pour ne jamais manquer la quête?</h3>-->
-
         <form class="recurring-payment-form" name="userForm" ng-submit="setup_rec()" novalidate>
           <div class="form-group" ng-class="{ 'her-error' : userForm.email.$invalid && !userForm.email.$pristine }">
             <label ng-if="!to_dioce">Quête (hebdomadaire)</label>
             <label ng-if="to_dioce">Denier (mensuel)</label>
             <br>
             <label>Église</label>
-            <!--
-            <select class="item item-input item-select dropdwon_payment" ng-options="church.name for church in all_fav_churches track by church.id">
-              <option value="" selected>--Please select Church--</option>
-           <option ng-repeat="church in all_fav_churches" value="{{church.id}}" >{{church.name}}</option>
-            </select>
--->
-            <!--
-         <select name="degree" class="form-control" ng-model="selecteddegree" ng-options="degree.degree_name for degree in degrees track by degree.degree_code" >
-           <option value="" > Select Degree </option>
-          </select>
--->
             <select name="church" class="form-control" ng-model="selected_church" ng-options="church.name for church in all_fav_churches track by church.id" ng-change="select_church(selected_church)" ng-disabled="!create_setup || validated" ng-required="true" ng-if="create_setup">
               <option value="" id="0" selected> Choisissez une église </option>
             </select>
@@ -53,35 +40,18 @@
             <label>La fréquence du don</label>
             <select class="item item-input item-select dropdwon_payment" ng-model="donation.frequency" ng-change="select_freq(donation.frequency)">
               <option value="daily">Don quotidien</option>
-
               <option value="weekly">Don hebdomadaire</option>
               <option value="bimonthly">Don quinze jours</option>
-
               <option value="monthly">Don mensuel</option>
-              <!--
-              <option value="biannualy">Don semestrielle</option>
-              <option value="annualy">Don annuel</option>
--->
             </select>
           </div>
           <div class="">
-
-            <button ng-show="!modified && !create_setup" type="submit" style="width: 35vw;" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid">
+            <button ng-show="!modified && !create_setup" type="submit" style="width: 35vw;" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$pristine || userForm.$invalid">
               Modifier
             </button>
-            <button type="submit" ng-show="!modified && create_setup" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid" style="width: 100%;">
+            <button type="submit" ng-show="!modified && create_setup" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$pristine || userForm.$invalid" style="width: 100%;">
               Programmer un don régulier
             </button>
-            <button type="submit" ng-show="modified" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid || validated">
-              Valider
-            </button>
-<!--             <button ng-show="!create_setup" type="submit" style="width: 35vw;" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid">
-              Modifier
-            </button>
-            <button type="submit" ng-show="create_setup" class="pull-right btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid">
-              Créer
-            </button>
- -->
           </div>
         </form>
         <button ng-show="!create_setup" ng-click="delete_rec()" type="submit" style="width: 35vw;" class="pull-left btn-setup btn btn-primary" id="btn_donate" ng-disabled="userForm.$invalid">
