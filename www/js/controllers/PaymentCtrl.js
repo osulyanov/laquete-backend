@@ -87,7 +87,7 @@ angular.module('starter.controllers')
                 }
                 $scope.user.card_no = '';
                 $scope.user.ccv = Number(data.ccv);
-                $scope.user.cc_exp_date = new Date(data.exp_date + ' 12:00:00');
+                $scope.user.cc_exp_date = new Date(data.exp_date + 'T12:00:00');
               }
             } else {
               console.log("something went wrong");
@@ -141,7 +141,7 @@ angular.module('starter.controllers')
               }
               $scope.user.card_no = "";
               $scope.user.ccv = Number(data.ccv);
-              $scope.user.cc_exp_date = new Date(data.exp_date + ' 12:00:00');
+              $scope.user.cc_exp_date = new Date(data.exp_date + 'T12:00:00');
               //$scope.datepickerObject.inputDate = data.exp_date;
               console.log(data);
 

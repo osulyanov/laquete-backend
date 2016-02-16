@@ -1,7 +1,36 @@
 angular.module('starter.controllers')
 .controller('JedonneCtrl', function ($scope, API, $ionicHistory, $rootScope, $location, $ionicSlideBoxDelegate, $ionicPopup, $timeout, $ionicLoading, Helper) {
 
+  $scope.selected_church_id = -1;
+  $scope.donation_type = "quete";
+  $scope.amount = 0;
+
+
+  $scope.btn_donate_dis = true;
+
+  $scope.money = {
+    'one':false,
+    'two':false,
+    'five':false,
+    'ten':false,
+    'twenty':false
+  }
   $scope.plus_selected = false;
+  $scope.church_title = "Paroisse"
+  var selected_church_id = -1;
+  var church_first_index = -1;
+  var church_second_index = -1;
+  $scope.user_has_fav_churches = false;
+  // two d array
+  $scope.fav_churches = [];
+
+  $rootScope.badgeCountHistory = 0;
+  var diocese_first_index = -1;
+  var diocese_second_index = -1;
+  $scope.searched_churches = [];
+  $scope.has_searched_churches = false;
+  $scope.diocese_search = false;
+  $scope.quete_donate = true;
 
   $scope.addChurch = function() {
     $location.path("/main/churches");
@@ -131,16 +160,17 @@ angular.module('starter.controllers')
         console.log("All churches UnSuccessful in jedonneCtrl");
       }
     })
+
+    if ($scope.amount === 0) {
+      $scope.btn_donate_dis = true;
+      $scope.colorStyle = {"color" : "#916153"}
+    } else {
+      $scope.btn_donate_dis = false;
+      $scope.colorStyle = {"color" : "#5ab43d"}
+
+    }
   });
 
-  var selected_church_id = -1;
-  var church_first_index = -1;
-  var church_second_index = -1;
-  $scope.user_has_fav_churches = false;
-  // two d array
-  $scope.fav_churches = [];
-
-  $rootScope.badgeCountHistory = 0;
   $scope.one_time_donate = function () {
     console.log("church_id: " + $scope.selected_church_id);
     console.log("amount: " + $scope.amount);
@@ -331,46 +361,6 @@ angular.module('starter.controllers')
     disableBack: false
   });
 
-  $scope.selected_church_id = -1;
-  $scope.donation_type = "quete";
-  $scope.amount = 0;
-
-
-  $scope.btn_donate_dis = true;
-
-
-
-  //$scope.select_church = function (index, index_second, church_id) {
-  //  if ($scope.amount != 0 && $scope.selected_church_id == -1) {
-  //    $scope.btn_donate_dis = false;
-  //  }
-  //  $scope.selected_dioce_id = -1;
-  //  console.log("Index: " + index + " Index_second: " + index_second + " Church_id: " + church_id);
-  //  $scope.selected_church_id = church_id;
-  //  console.log("Before church_first_index: " + church_first_index + " church_second_index: " + church_second_index);
-  //  if (church_first_index != -1 && church_second_index != -1) {
-  //    $scope.fav_churches[church_first_index][church_second_index]['is_selected'] = false;
-  //  }
-  //  if (index_second != 2) {
-  //    var temp = $scope.fav_churches[index][2];
-  //    $scope.fav_churches[index][2] = $scope.fav_churches[index][index_second];
-  //    $scope.fav_churches[index][index_second] = temp;
-  //    $scope.fav_churches[index][2]['is_selected'] = true;
-  //  } else {
-  //    $scope.fav_churches[index][2]['is_selected'] = true;
-  //  }
-  //  church_first_index = index;
-  //  church_second_index = 2;
-  //  console.log("After church_first_index: " + church_first_index + " church_second_index: " + church_second_index);
-  //};
-  //
-  $scope.money = {
-    'one':false,
-    'two':false,
-    'five':false,
-    'ten':false,
-    'twenty':false
-  }
 
   $scope.makeBrownMoney = function(arg) {
     $scope.money[arg] = true;
@@ -444,7 +434,6 @@ angular.module('starter.controllers')
     $scope.colorStyle = {"color" : "#916153"}
     console.log("after clicked 0: " + $scope.amount);
   };
-  $scope.quete_donate = true;
   $scope.quete = function () {
     console.log("Img quete clicked");
 
@@ -453,7 +442,6 @@ angular.module('starter.controllers')
     $scope.church_title = "Paroisse";
     // $scope.churchStyle = {"color":"#5ab43d"};
   };
-  $scope.diocese_search = false;
   /* vairables for testing */
   // $scope.quete_donate = false;
   // $scope.diocese_search = true;
@@ -468,8 +456,6 @@ angular.module('starter.controllers')
     $scope.btn_donate_dis = true;
     $scope.church_title = "Paroisse"
   }
-  $scope.searched_churches = [];
-  $scope.has_searched_churches = false;
 
   $scope.diocese_search_btn = function (zipcode) {
     var zip = zipcode;
@@ -527,8 +513,6 @@ angular.module('starter.controllers')
       }
     );
   };
-  var diocese_first_index = -1;
-  var diocese_second_index = -1;
 
   $scope.select_diocese = function (index, index_second, selected_dioce_id) {
     if ($scope.amount != 0 && $scope.selected_dioce_id == -1) {
@@ -553,7 +537,6 @@ angular.module('starter.controllers')
     diocese_second_index = 2;
     console.log("After church_first_index: " + church_first_index + " church_second_index: " + church_second_index);
   };
-  $scope.church_title = "Paroisse"
   $scope.devier = function () {
     $scope.donation_type = "devier";
     $scope.quete_donate = false;
