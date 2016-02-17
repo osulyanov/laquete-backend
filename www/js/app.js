@@ -62,11 +62,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     checkiOS();
 
-    if (window.StatusBar && checkiOS()) {
+    if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
-      StatusBar.hide();
+      StatusBar.show();
     }
+    // if (window.StatusBar && checkiOS()) {
+    //   // org.apache.cordova.statusbar required
+    //   StatusBar.styleDefault();
+    //   StatusBar.show();
+    // }
 
     document.addEventListener("offline", onOffline, false);
 
