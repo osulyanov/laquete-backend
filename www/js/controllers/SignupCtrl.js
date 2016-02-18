@@ -21,7 +21,7 @@ angular.module('starter.controllers')
 
   $scope.termsChange = function(){
     if($scope.user.terms){
-      // $rootScope.openUrl("http://www.applilaquete.fr");
+      $rootScope.openUrl("http://appli-laquete.fr/conditions-generales-dutilisation/");
     }
   };
 
