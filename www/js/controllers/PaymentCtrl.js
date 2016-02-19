@@ -52,7 +52,11 @@ angular.module('starter.controllers')
       //      $scope.mydisabled = !$scope.mydisabled;
       if (!$scope.mydisabled) {
         $rootScope.showLoading("Veuillez patienter");
-        var date_converted = $filter('date')($scope.user.cc_exp_date, "yyyy-MM-dd");
+        //var date_converted = $filter('date')($scope.user.cc_exp_date, "yyyy-MM-dd");
+        var month = String($scope.user.cc_exp_month);
+        if (month.length == 1)
+          month = '0' + month;
+        var date_converted = String($scope.user.cc_exp_year) + '-' + month + '-' + '01';
         var get_card;
         if (hasValue($scope.user.card_no_p_h)) {
           get_card = API.get(API.url() + "rpayments/update_cardinfo?card_number=" + $scope.user.card_no + "&card_code=" + $scope.user.ccv + "&exp_date=" + date_converted + "&" + API.token_params());
@@ -88,6 +92,8 @@ angular.module('starter.controllers')
                 $scope.user.card_no = '';
                 $scope.user.ccv = Number(data.ccv);
                 $scope.user.cc_exp_date = new Date(data.exp_date + 'T12:00:00');
+                $scope.user.cc_exp_month = Number(getMonth(data.exp_date));
+                $scope.user.cc_exp_year = Number(getYear(data.exp_date));
               }
             } else {
               console.log("something went wrong");
@@ -142,6 +148,8 @@ angular.module('starter.controllers')
               $scope.user.card_no = "";
               $scope.user.ccv = Number(data.ccv);
               $scope.user.cc_exp_date = new Date(data.exp_date + 'T12:00:00');
+              $scope.user.cc_exp_month = Number(getMonth(data.exp_date));
+              $scope.user.cc_exp_year = Number(getYear(data.exp_date));
               //$scope.datepickerObject.inputDate = data.exp_date;
               console.log(data);
 
@@ -167,6 +175,22 @@ angular.module('starter.controllers')
       new Date("08-14-2015"), //Short format
       new Date(1439676000000) //UNIX format
     ];
+
+    var getMonth = function (dateVal) {
+      if (hasValue(dateVal)) {
+        return dateVal.split('-')[1];
+      } else {
+        return '';
+      }
+    }
+
+    var getYear = function (dateVal) {
+      if (hasValue(dateVal)) {
+        return dateVal.split('-')[0];
+      } else {
+        return '';
+      }
+    }
 
 
 })

@@ -32,11 +32,25 @@
               <p ng-show="userForm.cc_number.$error.minlength" class="help-block">Trop court.</p>
               <p ng-show="userForm.cc_number.$error.maxlength" class="help-block">Trop long.</p>
             </div>
-            <div class="form-group" ng-class="{ 'has-error' : userForm.cc_exp_date.$invalid && !userForm.cc_exp_date.$pristine }">
-              <label>Date d'expiration</label>
-              <input type="date" ng-disabled="mydisabled" name="cc_exp_date" class="form-control" ng-model="user.cc_exp_date" ng-required="true">
-              <!--<p ng-show="userForm.cc_exp_date.$invalid && !userForm.cc_exp_date.$pristine && !userForm.cc_exp_date.$error.required" class="help-block">Entrez une date d'expiration valide.</p>-->
-              <p class="help-block" ng-show="userForm.cc_exp_date.$error.required && !userForm.cc_exp_date.$pristine">Ce champ est requis.</p>
+            <!--<div class="form-group" ng-class="{ 'has-error' : userForm.cc_exp_date.$invalid && !userForm.cc_exp_date.$pristine }">-->
+              <!--<label>Date d'expiration</label>-->
+              <!--<input type="date" ng-disabled="mydisabled" name="cc_exp_date" class="form-control" ng-model="user.cc_exp_date" ng-required="true">-->
+              <!--&lt;!&ndash;<p ng-show="userForm.cc_exp_date.$invalid && !userForm.cc_exp_date.$pristine && !userForm.cc_exp_date.$error.required" class="help-block">Entrez une date d'expiration valide.</p>&ndash;&gt;-->
+              <!--<p class="help-block" ng-show="userForm.cc_exp_date.$error.required && !userForm.cc_exp_date.$pristine">Ce champ est requis.</p>-->
+            <!--</div>-->
+
+            <div class="form-group" ng-class="{ 'has-error' : userForm.cc_cvc.$invalid && !userForm.cc_cvc.$pristine && !userForm.cc_cvc.$error.required }">
+              <label style="display:block">Date d'expiration</label>
+              <input type="number" ng-disabled="mydisabled" name="cc_exp_month" class="form-control" ng-model="user.cc_exp_month" ng-required="true" ng-minlength="1" ng-maxlength="2" style="display:inline-block; width:20%">
+              /
+              <input type="number" ng-disabled="mydisabled" name="cc_exp_year" class="form-control" ng-model="user.cc_exp_year" ng-required="true" ng-minlength="4" ng-maxlength="4" style="display:inline-block; width:30%">
+              <!--<p ng-show="userForm.cc_cvc.$invalid && !userForm.cc_cvc.$pristine && !userForm.cc_cvc.$error.required" class="help-block">CVC incorrect.</p>-->
+              <p class="help-block" ng-show="userForm.cc_exp_month.$error.required && !userForm.cc_exp_month.$pristine">Mois est requis</p>
+              <p class="help-block" ng-show="userForm.cc_exp_year.$error.required && !userForm.cc_exp_month.$pristine">An est requis</p>
+              <p ng-show="userForm.cc_exp_month.$error.minlength" class="help-block">Mois court.</p>
+              <p ng-show="userForm.cc_exp_month.$error.maxlength" class="help-block">Mois long.</p>
+              <p ng-show="userForm.cc_exp_year.$error.minlength" class="help-block">An court.</p>
+              <p ng-show="userForm.cc_exp_year.$error.maxlength" class="help-block">An long.</p>
             </div>
 
             <div class="form-group" ng-class="{ 'has-error' : userForm.cc_cvc.$invalid && !userForm.cc_cvc.$pristine && !userForm.cc_cvc.$error.required }">
