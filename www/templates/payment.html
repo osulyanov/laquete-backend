@@ -55,7 +55,7 @@
 
             <div class="form-group" ng-class="{ 'has-error' : userForm.cc_cvc.$invalid && !userForm.cc_cvc.$pristine }">
               <label>Cryptogramme</label>
-              <input type="number" min="0" inputmode="numeric" pattern="[0-9]*" ng-disabled="mydisabled" name="cc_cvc" class="form-control" ng-model="user.ccv" ng-required="true" ng-minlength="3" ng-maxlength="3">
+              <input type="password" min="0" inputmode="numeric" pattern="[0-9]*" ng-disabled="mydisabled" name="cc_cvc" class="form-control" ng-model="user.ccv" ng-required="true" ng-minlength="3" ng-maxlength="3">
               <!--<p ng-show="userForm.cc_cvc.$invalid && !userForm.cc_cvc.$pristine && !userForm.cc_cvc.$error.required" class="help-block">CVC incorrect.</p>-->
               <p class="help-block" ng-show="userForm.cc_cvc.$error.required && !userForm.cc_cvc.$pristine">Ce champ est requis</p>
               <p ng-show="userForm.cc_cvc.$error.minlength" class="help-block">Trop court.</p>
@@ -66,7 +66,7 @@
               <p class="help-block" ng-show="error">{{error}}</p>
             </div>
 
-            <button type="submit" class="btn-profile-save btn btn-default" id="profile" ng-disabled="!mydisabled && (userForm.$pristine || userForm.$invalid)"  ng-click="profile_btn($event)">{{btn_text}}</button>
+            <button type="submit" class="btn-profile-save btn btn-default" id="profile" ng-disabled="!mydisabled && (userForm.$pristine || userForm.$invalid)"  ng-click="profile_btn($event, userForm)">{{btn_text}}</button>
             <img src="images/cards.gif" class="" style="height: 27px;">
 
             <!--<button  class="btn btn-primary col col-50 col-offset-25" ng-click="continue()">Plus tard</button>-->

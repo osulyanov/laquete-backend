@@ -48,7 +48,7 @@ angular.module('starter.controllers')
       initScope();
     });
 
-    $scope.profile_btn = function (e) {
+    $scope.profile_btn = function (e, userForm) {
       //      $scope.mydisabled = !$scope.mydisabled;
       if (!$scope.mydisabled) {
         $rootScope.showLoading("Veuillez patienter");
@@ -90,10 +90,11 @@ angular.module('starter.controllers')
                   $scope.user.card_no_p_h = "xxxxxxxxxxxx" + data.last_four;
                 }
                 $scope.user.card_no = '';
-                $scope.user.ccv = Number(data.ccv);
+                $scope.user.ccv = data.ccv;
                 $scope.user.cc_exp_date = new Date(data.exp_date + 'T12:00:00');
                 $scope.user.cc_exp_month = Number(getMonth(data.exp_date));
                 $scope.user.cc_exp_year = Number(getYear(data.exp_date));
+                userForm.$setPristine();
               }
             } else {
               console.log("something went wrong");
@@ -146,7 +147,7 @@ angular.module('starter.controllers')
                 $scope.user.card_no_p_h = "xxxxxxxxxxxx" + data.last_four;
               }
               $scope.user.card_no = "";
-              $scope.user.ccv = Number(data.ccv);
+              $scope.user.ccv = data.ccv;
               $scope.user.cc_exp_date = new Date(data.exp_date + 'T12:00:00');
               $scope.user.cc_exp_month = Number(getMonth(data.exp_date));
               $scope.user.cc_exp_year = Number(getYear(data.exp_date));
