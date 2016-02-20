@@ -58,21 +58,17 @@ angular.module('starter.controllers')
 
 
   $scope.login = function () {
+    console.log('HOME CONTROLLER*****');
+
     var user_tutorials = window.localStorage.getItem("user_tutorials");
     console.log(user_tutorials);
 
     if (user_tutorials == null) {
       window.localStorage.setItem("user_tutorials", "viewed");
       $location.path("/tutorials");
-    } else if ((window.localStorage.getItem("user_token") != '') && (window.localStorage.getItem("user_token") != 'false') && (window.localStorage.getItem("user_token") != null)) {
-      console.log("session token Available in Home");
+    } else if (hasValue(window.localStorage.getItem("user_token"))) {
       console.log(window.localStorage.getItem("user_token"));
-      if (window.localStorage.getItem("user_token") == "null" || window.localStorage.getItem("user_token") == null) {
-        $location.path("/login");
-        // $location.path( "/maptest" );
-      } else {
-        $location.path("/main/jedonne");
-      }
+      $location.path("/main/jedonne");
     } else {
       console.log("session token not Available in Home");
       $location.path("/login");
@@ -87,8 +83,3 @@ angular.module('starter.controllers')
     }, 3000);
   });
 })
-  .controller('testCtrl', function ($scope, $location) {
-    $scope.$on('$ionicView.enter', function (e) {
-      console.log("Inside testCtrl");
-    });
-  })

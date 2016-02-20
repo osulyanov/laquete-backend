@@ -9,6 +9,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function ($ionicPlatform, $rootScope, $ionicPopup) {
   $ionicPlatform.ready(function (API) {
+    console.log('DEVICE READY*****');
+    if (ionic.Platform.isIOS()){
+       setTimeout(function () {
+          navigator.splashscreen.hide();
+       }, 3000 - 1000);
+    }
+
     var body = document.getElementsByTagName("body")[0];
     body.id = "index";
     // $rootScope.callGetChurches();
