@@ -90,7 +90,11 @@ angular.module('starter.controllers')
       },
       function (e) {
         console.log('ChurchesCtrl current location error: ' + e.code)
-        //showGeolocationError(e);
+
+        if (showLoading) {
+          showGeolocationError(e);
+        }
+        
         if (currentLatLon.lat === 0) {
             if ($rootScope.currentLatLon !== undefined && $rootScope.currentLatLon.lat !== 0) {
               currentLatLon = $rootScope.currentLatLon;
@@ -138,6 +142,8 @@ angular.module('starter.controllers')
         $ionicPopup.alert({
           title: "Geolocation",
           content: err_msg
+        }).then(function (result) {
+
         });
       //}
 
