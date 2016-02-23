@@ -5,16 +5,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
 
-.run(function ($ionicPlatform, $rootScope, $ionicPopup, $timeout) {
+.run(function ($ionicPlatform, $rootScope, $ionicPopup, $timeout, $cordovaGeolocation) {
   $ionicPlatform.ready(function (API) {
     console.log('DEVICE READY*****');
-    if (ionic.Platform.isIOS()){
-       setTimeout(function () {
-          navigator.splashscreen.hide();
-       }, 3000 - 1000);
-    }
 
     var body = document.getElementsByTagName("body")[0];
     body.id = "index";
@@ -38,15 +33,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
 
     $rootScope.currentLatLon = {lat: 0, lng: 0};
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      $rootScope.currentLatLon.lat = position.coords.latitude;
-      $rootScope.currentLatLon.lng = position.coords.longitude;
-      console.log(pos);
-
-    }, function(error) {
-      console.log('Geolocation Error occurred. Error code: ' + error.code);
-    },{timeout: 5000});
+    var posOptions = {timeout: 10000, enableHighAccuracy: false};
+    $cordovaGeolocation
+      .getCurrentPosition(posOptions)
+      .then(function (position) {
+        $rootScope.currentLatLon.lat  = position.coords.latitude;
+        $rootScope.currentLatLon.lng = position.coords.longitude;
+        console.log(position);
+      }, function(err) {
+        console.log('Geolocation Error occurred. Error code: ' + err.code);
+      });
 
     $rootScope.iosdevice = false;
     var checkiOS = function iOS() {
@@ -65,7 +61,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
       $rootScope.iosdevice = false;
       return false;
-    }
+    };
 
     checkiOS();
 
