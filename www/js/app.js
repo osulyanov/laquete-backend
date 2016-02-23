@@ -79,7 +79,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
     $rootScope.checkInternetConnection = function() {
       if(window.Connection) {
-        if(navigator.connection.type !== Connection.WIFI) {
+        if(navigator.connection.type == Connection.NONE) {
           $ionicPopup.alert({
             title: "Internet Disconnected",
             template: "The Wi-Fi is disabled on your device."

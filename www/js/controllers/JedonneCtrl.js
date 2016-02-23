@@ -194,6 +194,7 @@ angular.module('starter.controllers')
           $scope.showPopup();
           $rootScope.badgeCountHistory += 1;
         } else if (data.error == "no card added") {
+
           $ionicPopup.alert({
             title: "No card found",
             content: "Please add your card info for transaction"
