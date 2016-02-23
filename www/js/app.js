@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-.run(function ($ionicPlatform, $rootScope, $ionicPopup) {
+.run(function ($ionicPlatform, $rootScope, $ionicPopup, $timeout) {
   $ionicPlatform.ready(function (API) {
     console.log('DEVICE READY*****');
     if (ionic.Platform.isIOS()){
@@ -80,17 +80,30 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     //   StatusBar.show();
     // }
 
-    if(window.Connection) {
-      if(navigator.connection.type !== Connection.WIFI) {
-        $ionicPopup.alert({
-          title: "Internet Disconnected",
-          content: "The Wi-Fi is disabled on your device."
-        })
-          .then(function(result) {
+
+    $rootScope.checkInternetConnection = function() {
+      if(window.Connection) {
+        if(navigator.connection.type !== Connection.WIFI) {
+          var connection_alert = $ionicPopup.alert({
+            title: "Internet Disconnected",
+            template: "The Wi-Fi is disabled on your device."
+          });
+
+          connection_alert.then(function(result) {
             ionic.Platform.exitApp();
           });
+
+          $timeout(function() {
+             connection_alert.close(); //close the popup after 3 seconds
+             ionic.Platform.exitApp();
+          }, 3000);
+
+        }
       }
-    }
+
+    };
+
+    $rootScope.checkInternetConnection();
 
     //document.addEventListener("offline", onOffline, false);
 

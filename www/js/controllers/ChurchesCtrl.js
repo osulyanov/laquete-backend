@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-  .controller('ChurchesCtrl', function ($scope, $ionicHistory, $rootScope, API, $q, $http, $compile, Helper, $location, NgMap, $ionicLoading, $ionicPopup) {
+  .controller('ChurchesCtrl', function ($scope, $ionicHistory, $rootScope, API, $q, $http, $compile, Helper, $location, NgMap, $ionicLoading, $ionicPopup, $timeout) {
     $scope.initialized = false;
 
     $scope.scopeParam = {query: '', query_fav: '', ma_paroisses: false, in_fav_list: true, main_church_added: false};
@@ -139,12 +139,20 @@ angular.module('starter.controllers')
             break;
         }
 
-        $ionicPopup.alert({
+        var popup_alert = $ionicPopup.alert({
           title: "Geolocation",
-          content: err_msg
-        }).then(function (result) {
-
+          template: err_msg
         });
+
+        popup_alert.then(function(res) {
+          console.log('geolocation error message closed.', res)
+        });
+
+        $timeout(function() {
+           popup_alert.close(); //close the popup after 3 seconds
+        }, 3000);
+
+
       //}
 
     };
