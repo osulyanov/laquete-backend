@@ -81,10 +81,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     // }
 
     if(window.Connection) {
-      if(navigator.connection.type == Connection.NONE) {
+      if(navigator.connection.type !== Connection.WIFI) {
         $ionicPopup.alert({
           title: "Internet Disconnected",
-          content: "The internet is disconnected on your device."
+          content: "The Wi-Fi is disabled on your device."
         })
           .then(function(result) {
             ionic.Platform.exitApp();

@@ -94,7 +94,7 @@ angular.module('starter.controllers')
         if (showLoading) {
           showGeolocationError(e);
         }
-        
+
         if (currentLatLon.lat === 0) {
             if ($rootScope.currentLatLon !== undefined && $rootScope.currentLatLon.lat !== 0) {
               currentLatLon = $rootScope.currentLatLon;
@@ -179,20 +179,20 @@ angular.module('starter.controllers')
     };
 
     $scope.markerShowInfoWindow = function (event, index) {
-      $scope.selected_church_marker = $scope.all_churches[index];
+      $scope.selected_church_marker = $scope.near_churches[index];
       $scope.selected_church_index_marker = index;
 
       $scope.map.showInfoWindow('info-window-church', 'marker' + index);
 
       $scope.test = function (index) {
         $scope.map.hideInfoWindow('info-window-church');
-        $scope.makeFavorite($scope.all_churches[index]);
+        $scope.makeFavorite($scope.near_churches[index]);
         console.log("Inside test");
       };
 
       $scope.main = function (index) {
         $scope.map.hideInfoWindow('info-window-church');
-        $scope.addMainChurch($scope.all_churches[index]);
+        $scope.addMainChurch($scope.near_churches[index]);
         console.log("Inside test");
       };
     };
