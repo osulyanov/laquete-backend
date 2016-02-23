@@ -80,20 +80,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     //   StatusBar.show();
     // }
 
-    document.addEventListener("offline", onOffline, false);
-
-    function onOffline() {
-      // Handle the offline event
-      $ionicPopup.alert({
-            title: "Internet Disconnected",
-            content: "The internet is disconnected on your device."
-          })
-          .then(function (result) {
-
+    if(window.Connection) {
+      if(navigator.connection.type == Connection.NONE) {
+        $ionicPopup.alert({
+          title: "Internet Disconnected",
+          content: "The internet is disconnected on your device."
+        })
+          .then(function(result) {
             ionic.Platform.exitApp();
-
           });
+      }
     }
+
+    //document.addEventListener("offline", onOffline, false);
+
+    //function onOffline() {
+    //  // Handle the offline event
+    //  $ionicPopup.alert({
+    //        title: "Internet Disconnected",
+    //        content: "The internet is disconnected on your device."
+    //      })
+    //      .then(function (result) {
+    //
+    //        ionic.Platform.exitApp();
+    //
+    //      });
+    //}
 
     // Working code for no internet connection
 //    if (window.Connection) {

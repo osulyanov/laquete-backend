@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-  .controller('ChurchesCtrl', function ($scope, $ionicHistory, $rootScope, API, $q, $http, $compile, Helper, $location, NgMap, $ionicLoading) {
+  .controller('ChurchesCtrl', function ($scope, $ionicHistory, $rootScope, API, $q, $http, $compile, Helper, $location, NgMap, $ionicLoading, $ionicPopup) {
     $scope.initialized = false;
 
     $scope.scopeParam = {query: '', query_fav: '', ma_paroisses: false, in_fav_list: true, main_church_added: false};
@@ -72,16 +72,14 @@ angular.module('starter.controllers')
 
       geoMarker.setCircleOptions({fillColor: '#808080'});
 
-      google.maps.event.addListener(geoMarker, 'geolocation_error', function (e) {
-        console.log('There was an error obtaining your position. Message: ' + e.message);
-      });
+      google.maps.event.addListener(geoMarker, 'geolocation_error', showGeolocationError);
 
       navigator.geolocation.getCurrentPosition(function(position) {
           // TODO: remove
-        //pos = new google.maps.LatLng(defaultLatLon.lat, defaultLatLon.lng);
-        pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         currentLatLon.lat = position.coords.latitude;
         currentLatLon.lng = position.coords.longitude;
+        pos = new google.maps.LatLng(currentLatLon.lat, currentLatLon.lng);
+          //pos = new google.maps.LatLng(defaultLatLon.lat, defaultLatLon.lng);
         console.log(pos);
 
         map.setCenter(pos);
@@ -92,20 +90,20 @@ angular.module('starter.controllers')
       },
       function (e) {
         console.log('ChurchesCtrl current location error: ' + e.code)
+        //showGeolocationError(e);
         if (currentLatLon.lat === 0) {
             if ($rootScope.currentLatLon !== undefined && $rootScope.currentLatLon.lat !== 0) {
-              pos = new google.maps.LatLng($rootScope.currentLatLon.lat, $rootScope.currentLatLon.lng);
+              currentLatLon = $rootScope.currentLatLon;
             } else {
-              pos = new google.maps.LatLng(defaultLatLon.lat, defaultLatLon.lng);
+              currentLatLon = defaultLatLon;
             }
-        } else {
-          pos = new google.maps.LatLng(currentLatLon.lat, currentLatLon.lng);
         }
+
+        pos = new google.maps.LatLng(currentLatLon.lat, currentLatLon.lng);
         //TODO: remove
         //pos = new google.maps.LatLng(defaultLatLon.lat, defaultLatLon.lng);
 
-
-        $scope.map.setCenter(pos);
+        map.setCenter(pos);
 
         geoMarker.setMap(map);
 
@@ -114,6 +112,35 @@ angular.module('starter.controllers')
         }
 
       }, {timeout:3000});
+    };
+
+    var showGeolocationError = function (error) {
+      console.log('There was an error obtaining your position. Message: ' + error.message);
+
+      //if (currentLatLon.lat !== 0) {
+        var err_msg = '';
+        switch(error.code)
+        {
+          case error.PERMISSION_DENIED:
+            err_msg="User denied the request for Geolocation."
+            break;
+          case error.POSITION_UNAVAILABLE:
+            err_msg="Location information is unavailable."
+            break;
+          case error.TIMEOUT:
+            err_msg="The request to get user location timed out."
+            break;
+          case error.UNKNOWN_ERROR:
+            err_msg="An unknown error occurred."
+            break;
+        }
+
+        $ionicPopup.alert({
+          title: "Geolocation",
+          content: err_msg
+        });
+      //}
+
     };
 
     $scope.hideKeyboard = function () {
@@ -135,7 +162,7 @@ angular.module('starter.controllers')
       if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.close();
       }
-      
+
       $scope.is_map_fav = true;
       $scope.scopeParam.query_fav = "";
       document.getElementById('query_fav_id').value = '';
