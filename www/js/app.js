@@ -80,19 +80,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     $rootScope.checkInternetConnection = function() {
       if(window.Connection) {
         if(navigator.connection.type !== Connection.WIFI) {
-          var connection_alert = $ionicPopup.alert({
+          $ionicPopup.alert({
             title: "Internet Disconnected",
             template: "The Wi-Fi is disabled on your device."
-          });
-
-          connection_alert.then(function(result) {
+          }).then(function(result) {
             ionic.Platform.exitApp();
           });
-
-          $timeout(function() {
-             connection_alert.close(); //close the popup after 3 seconds
-             ionic.Platform.exitApp();
-          }, 3000);
 
         }
       }

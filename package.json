@@ -33,7 +33,5 @@
     "cordova-plugin-dialogs",
     "cordova-plugin-statusbar"
   ],
-  "cordovaPlatforms": [
-    "ios"
-  ]
+  "cordovaPlatforms": []
 }

@@ -51,7 +51,7 @@ angular.module('starter.controllers')
   // window.localStorage['user_email'];
   // console.log("email:"+email);
 
-
+  console.log("HOME Controller enter.....");
   var user_email = window.localStorage.getItem("user_email");
   var user_token = window.localStorage.getItem("user_token");
   console.log("user_email:" + user_email + " user_token:" + user_token);

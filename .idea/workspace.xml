@@ -2,172 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="762ddcf2-e0df-4152-bba2-60f90accc66b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/Copperplate Gothic Bold.eot" afterPath="$PROJECT_DIR$/www/fonts/Copperplate Gothic Bold.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/Copperplate Gothic Bold.otf" afterPath="$PROJECT_DIR$/www/fonts/Copperplate Gothic Bold.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/Copperplate Gothic Bold.ttf" afterPath="$PROJECT_DIR$/www/fonts/Copperplate Gothic Bold.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/Copperplate Gothic Bold.woff" afterPath="$PROJECT_DIR$/www/fonts/Copperplate Gothic Bold.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/Copperplate Gothic Bold.woff2" afterPath="$PROJECT_DIR$/www/fonts/Copperplate Gothic Bold.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-300.eot" afterPath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-300.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-300.otf" afterPath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-300.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-300.ttf" afterPath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-300.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-300.woff" afterPath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-300.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-300.woff2" afterPath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-300.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-700.eot" afterPath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-700.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-700.otf" afterPath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-700.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-700.ttf" afterPath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-700.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-700.woff" afterPath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-700.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-700.woff2" afterPath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-700.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/after_donation.png" afterPath="$PROJECT_DIR$/www/images/after_donation.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/cards.gif" afterPath="$PROJECT_DIR$/www/images/cards.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/five-number-brown.png" afterPath="$PROJECT_DIR$/www/images/five-number-brown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/info.png" afterPath="$PROJECT_DIR$/www/images/info.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/loading-screen.png" afterPath="$PROJECT_DIR$/www/images/loading-screen.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/one-number-brown.png" afterPath="$PROJECT_DIR$/www/images/one-number-brown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/plus-brown.png" afterPath="$PROJECT_DIR$/www/images/plus-brown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/plus.png" afterPath="$PROJECT_DIR$/www/images/plus.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/quete-icon-hover1.png" afterPath="$PROJECT_DIR$/www/images/quete-icon-hover1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/quete-icon1.png" afterPath="$PROJECT_DIR$/www/images/quete-icon1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/ten-number-brown.png" afterPath="$PROJECT_DIR$/www/images/ten-number-brown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/tut_1.png" afterPath="$PROJECT_DIR$/www/images/tut_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/tut_2.png" afterPath="$PROJECT_DIR$/www/images/tut_2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/tut_3.png" afterPath="$PROJECT_DIR$/www/images/tut_3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/tut_4.png" afterPath="$PROJECT_DIR$/www/images/tut_4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/tut_5.png" afterPath="$PROJECT_DIR$/www/images/tut_5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/twenty-number-brown.png" afterPath="$PROJECT_DIR$/www/images/twenty-number-brown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/two-number-brown.png" afterPath="$PROJECT_DIR$/www/images/two-number-brown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.eot" afterPath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.ttf" afterPath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.woff" afterPath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/jedonne_old.css" afterPath="$PROJECT_DIR$/www/css/jedonne_old.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/Copperplate Gothic Bold.svg" afterPath="$PROJECT_DIR$/www/fonts/Copperplate Gothic Bold.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-300.svg" afterPath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-300.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-700.svg" afterPath="$PROJECT_DIR$/www/fonts/MuseoSansRounded-700.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/laquete.iml" afterPath="$PROJECT_DIR$/.idea/laquete.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/AccountCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/AccountCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/ChurchesCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/ChurchesCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/DonregularCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/DonregularCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/HistoryCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/HistoryCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/HomeCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/HomeCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/JedonneCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/JedonneCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/LoginCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/LoginCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/PaymentCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/PaymentCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/ProfileCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/ProfileCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/ReceiptCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/ReceiptCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/RecurSetupCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/RecurSetupCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/SignupCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/SignupCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/SignupE2Ctrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/SignupE2Ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/TutorialsCtrl.js" afterPath="$PROJECT_DIR$/www/js/controllers/TutorialsCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/module.js" afterPath="$PROJECT_DIR$/www/js/controllers/module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/geolocation-marker.js" afterPath="$PROJECT_DIR$/www/js/geolocation-marker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/ng-map.js" afterPath="$PROJECT_DIR$/www/js/ng-map.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/.bower.json" afterPath="$PROJECT_DIR$/www/lib/Swiper/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/CHANGELOG.md" afterPath="$PROJECT_DIR$/www/lib/Swiper/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/LICENSE" afterPath="$PROJECT_DIR$/www/lib/Swiper/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/README.md" afterPath="$PROJECT_DIR$/www/lib/Swiper/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/bower.json" afterPath="$PROJECT_DIR$/www/lib/Swiper/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/component.json" afterPath="$PROJECT_DIR$/www/lib/Swiper/component.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/dist/css/swiper.css" afterPath="$PROJECT_DIR$/www/lib/Swiper/dist/css/swiper.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/dist/css/swiper.min.css" afterPath="$PROJECT_DIR$/www/lib/Swiper/dist/css/swiper.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/dist/js/maps/swiper.jquery.min.js.map" afterPath="$PROJECT_DIR$/www/lib/Swiper/dist/js/maps/swiper.jquery.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/dist/js/maps/swiper.jquery.umd.min.js.map" afterPath="$PROJECT_DIR$/www/lib/Swiper/dist/js/maps/swiper.jquery.umd.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/dist/js/maps/swiper.min.js.map" afterPath="$PROJECT_DIR$/www/lib/Swiper/dist/js/maps/swiper.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/dist/js/swiper.jquery.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/dist/js/swiper.jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/dist/js/swiper.jquery.min.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/dist/js/swiper.jquery.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/dist/js/swiper.jquery.umd.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/dist/js/swiper.jquery.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/dist/js/swiper.jquery.umd.min.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/dist/js/swiper.jquery.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/dist/js/swiper.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/dist/js/swiper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/dist/js/swiper.min.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/dist/js/swiper.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/gulpfile.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/package.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/package.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/a11y.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/a11y.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/amd.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/amd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/controller.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/core.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/dom-plugins.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/dom-plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/dom.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/dom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/effects.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/effects.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/emitter.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/emitter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/get-dom-lib.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/get-dom-lib.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/get-jquery.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/get-jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/hashnav.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/hashnav.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/init.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/keyboard.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/keyboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/lazy-load.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/lazy-load.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/mousewheel.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/mousewheel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/parallax.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/parallax.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/plugins.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/scrollbar.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/scrollbar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/swiper-intro-f7.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/swiper-intro-f7.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/swiper-intro.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/swiper-intro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/swiper-outro.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/swiper-outro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/swiper-proto.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/swiper-proto.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/wrap-end-umd.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/wrap-end-umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/wrap-end.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/wrap-end.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/wrap-start-umd.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/wrap-start-umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/js/wrap-start.js" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/js/wrap-start.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/less/core.less" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/less/core.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/less/effects.less" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/less/effects.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/less/mixins.less" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/less/mixins.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/less/navigation-f7.less" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/less/navigation-f7.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/less/navigation.less" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/less/navigation.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/less/preloader-f7.less" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/less/preloader-f7.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/less/preloader.less" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/less/preloader.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/less/scrollbar.less" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/less/scrollbar.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/Swiper/src/less/swiper.less" afterPath="$PROJECT_DIR$/www/lib/Swiper/src/less/swiper.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/.bower.json" afterPath="$PROJECT_DIR$/www/lib/ionic/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/README.md" afterPath="$PROJECT_DIR$/www/lib/ionic/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/bower.json" afterPath="$PROJECT_DIR$/www/lib/ionic/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/css/ionic.css" afterPath="$PROJECT_DIR$/www/lib/ionic/css/ionic.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/css/ionic.min.css" afterPath="$PROJECT_DIR$/www/lib/ionic/css/ionic.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.svg" afterPath="$PROJECT_DIR$/www/lib/ionic/fonts/ionicons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.min.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.min.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic.min.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_action-sheet.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_action-sheet.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_animations.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_animations.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_backdrop.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_backdrop.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_badge.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_badge.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_bar.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_bar.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_button-bar.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_button-bar.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_button.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_button.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_checkbox.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_checkbox.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_form.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_form.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_grid.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_grid.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_items.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_items.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_list.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_list.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_loaders.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_loaders.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_loading.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_loading.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_menu.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_menu.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_mixins.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_mixins.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_modal.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_modal.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_platform.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_platform.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_popover.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_popover.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_popup.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_popup.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_progress.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_progress.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_radio.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_radio.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_range.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_range.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_refresher.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_refresher.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_scaffolding.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_scaffolding.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_select.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_select.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_slide-box.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_slide-box.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_spinner.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_spinner.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_split-pane.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_split-pane.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_tabs.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_tabs.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_toggle.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_toggle.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_transitions.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_transitions.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_type.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_type.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_util.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_util.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_variables.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/_variables.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/ionic.scss" afterPath="$PROJECT_DIR$/www/lib/ionic/scss/ionic.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/after_donation.html" afterPath="$PROJECT_DIR$/www/templates/after_donation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/donregularInfoPopup.html" afterPath="$PROJECT_DIR$/www/templates/donregularInfoPopup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/getInfoPopup.html" afterPath="$PROJECT_DIR$/www/templates/getInfoPopup.html" />
     </list>
     <ignored path="laquete.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -188,55 +29,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="maptest.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/maptest.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="72" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signup.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/signup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chat-detail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/chat-detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.0">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-50.444443">
-              <caret line="67" column="3" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
+            <state vertical-scroll-proportion="-73.0">
+              <caret line="73" column="35" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/controllers/HomeCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -245,50 +52,18 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="11.464968">
-              <caret line="200" column="38" selection-start-line="200" selection-start-column="38" selection-end-line="200" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.7346072">
+              <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jedonne.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/jedonne.html">
+      <file leaf-file-name="ChurchesCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/controllers/ChurchesCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="149" column="21" selection-start-line="149" selection-start-column="17" selection-end-line="149" selection-end-column="21" />
-              <folding>
-                <element signature="n#style#0;n#ion-nav-title#0;n#ion-nav-bar#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom-tabs.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/custom-tabs.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="donregular-setup.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/donregular-setup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="58" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getInfoPopup.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/getInfoPopup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+            <state vertical-scroll-proportion="-7.4814816">
+              <caret line="95" column="9" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -303,7 +78,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/www/css/bootstrap.min.css" />
-        <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/templates/signup-etape2.html" />
         <option value="$PROJECT_DIR$/www/templates/tab-account.html" />
         <option value="$PROJECT_DIR$/www/templates/tab-churches-backup.html" />
@@ -318,7 +92,6 @@
         <option value="$PROJECT_DIR$/www/templates/tab-history.html" />
         <option value="$PROJECT_DIR$/www/templates/getInfoPopup.html" />
         <option value="$PROJECT_DIR$/www/templates/maptest.html" />
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/templates/about_us.html" />
         <option value="$PROJECT_DIR$/www/templates/custom-tabs.html" />
         <option value="$PROJECT_DIR$/www/templates/jedonne.html" />
@@ -331,6 +104,11 @@
         <option value="$PROJECT_DIR$/www/templates/donregular-setup.html" />
         <option value="$PROJECT_DIR$/www/css/style.css" />
         <option value="$PROJECT_DIR$/www/templates/signup.html" />
+        <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/www/js/controllers/HomeCtrl.js" />
+        <option value="$PROJECT_DIR$/www/js/controllers/JedonneCtrl.js" />
+        <option value="$PROJECT_DIR$/www/js/controllers/ChurchesCtrl.js" />
+        <option value="$PROJECT_DIR$/www/js/app.js" />
       </list>
     </option>
   </component>
@@ -345,9 +123,9 @@
     </gulpfiles>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="269" />
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
+    <option name="x" value="962" />
+    <option name="y" value="273" />
+    <option name="width" value="1600" />
     <option name="height" value="833" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -375,6 +153,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -426,9 +205,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laquete" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laquete" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -450,6 +250,9 @@
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
@@ -477,6 +280,24 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -492,27 +313,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="269" y="23" width="1440" height="833" extended-state="0" />
-    <editor active="false" />
+    <frame x="962" y="273" width="1600" height="833" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22419253" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32839838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32839838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -531,37 +352,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/templates/jedonne.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="149" column="21" selection-start-line="149" selection-start-column="17" selection-end-line="149" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#ion-nav-title#0;n#ion-nav-bar#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/custom-tabs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/donregular-setup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="58" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/getInfoPopup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -790,17 +584,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="83" selection-start-line="19" selection-start-column="81" selection-end-line="19" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/jedonne.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="9.060811">
           <caret line="149" column="21" selection-start-line="149" selection-start-column="17" selection-end-line="149" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#ion-nav-title#0;n#ion-nav-bar#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -815,23 +605,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/donregular-setup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="2.4932432">
           <caret line="41" column="58" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/custom-tabs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.6689189">
           <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -853,7 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="72" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -861,7 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -869,34 +654,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/chat-detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-50.444443">
-          <caret line="67" column="3" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
+        <state vertical-scroll-proportion="-73.0">
+          <caret line="73" column="35" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/HomeCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/JedonneCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3536036">
+          <caret line="336" column="18" selection-start-line="336" selection-start-column="9" selection-end-line="336" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/ChurchesCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.4814816">
+          <caret line="95" column="9" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="11.464968">
-          <caret line="200" column="38" selection-start-line="200" selection-start-column="38" selection-end-line="200" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.7346072">
+          <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
           <folding />
         </state>
       </provider>

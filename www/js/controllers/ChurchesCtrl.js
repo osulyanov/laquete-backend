@@ -92,7 +92,7 @@ angular.module('starter.controllers')
         console.log('ChurchesCtrl current location error: ' + e.code)
 
         if (showLoading) {
-          showGeolocationError(e);
+          console.log(e);
         }
 
         if (currentLatLon.lat === 0) {
@@ -139,19 +139,12 @@ angular.module('starter.controllers')
             break;
         }
 
-        var popup_alert = $ionicPopup.alert({
+        $ionicPopup.alert({
           title: "Geolocation",
           template: err_msg
-        });
-
-        popup_alert.then(function(res) {
+        }).then(function(res) {
           console.log('geolocation error message closed.', res)
         });
-
-        $timeout(function() {
-           popup_alert.close(); //close the popup after 3 seconds
-        }, 3000);
-
 
       //}
 

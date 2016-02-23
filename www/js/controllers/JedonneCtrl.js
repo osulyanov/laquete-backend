@@ -335,11 +335,10 @@ angular.module('starter.controllers')
 
   // An alert dialog
   $scope.showAlert = function () {
-    var alertPopup = $ionicPopup.alert({
+    $ionicPopup.alert({
       title: 'Don\'t eat that!',
       template: 'It might taste good'
-    });
-    alertPopup.then(function (res) {
+    }).then(function (res) {
       console.log('Thank you for not eating my delicious ice cream cone');
     });
   };
