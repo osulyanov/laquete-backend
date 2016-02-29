@@ -115,7 +115,7 @@ angular.module('starter.controllers')
           $ionicLoading.hide();
         }
 
-      }, {timeout:3000});
+      }, {timeout:5000});
     };
 
     var showGeolocationError = function (error) {
@@ -525,6 +525,6 @@ angular.module('starter.controllers')
 
     function centerMapDoubled() {
       centerMap();
-      window.setTimeout(function () {$scope.current_location(false)}, 2000);
+      window.setTimeout(function () {$scope.current_location(false)}, 3000);
     }
   })

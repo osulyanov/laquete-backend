@@ -33,24 +33,34 @@
               <!--<input type="email" id="email" ng-disabled="mydisabled" name="email" class="form-control" ng-model="user.email" placeholder="Email">-->
               <!--<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>-->
             <!--</div>-->
-            <div class="form-group" ng-class="{ 'has-error' : userForm.cc_number.$invalid && !userForm.cc_number.$pristine && !userForm.cc_number.$error.required }">
+            <div class="form-group" ng-class="{ 'has-error' : userForm.cc_number.$invalid && !userForm.cc_number.$pristine }">
               <label>Numéro de carte</label>
-              <input type="number" name="cc_number" class="form-control" ng-model="user.cc_number" ng-required="true">
-              <p ng-show="userForm.cc_number.$invalid && !userForm.cc_number.$pristine && !userForm.cc_number.$error.required" class="help-block">Entrez un numéro valide.</p>
+              <input type="number" name="cc_number" class="form-control" ng-model="user.cc_number" ng-required="true" ng-minlength="16" ng-maxlength="16">
+              <!--<p ng-show="userForm.cc_number.$invalid && !userForm.cc_number.$pristine && !userForm.cc_number.$error.required" class="help-block">Entrez un numéro valide.</p>-->
               <p class="help-block" ng-show="userForm.cc_number.$error.required && !userForm.cc_number.$pristine">Ce champ est requis.</p>
+              <p ng-show="userForm.cc_number.$error.minlength" class="help-block">Trop court.</p>
+              <p ng-show="userForm.cc_number.$error.maxlength" class="help-block">Trop long.</p>
             </div>
-            <div class="form-group" ng-class="{ 'has-error' : userForm.cc_exp_date.$invalid && !userForm.cc_exp_date.$pristine }">
-              <label>Date d'expiration</label>
-              <input type="date" name="cc_exp_date" class="form-control" ng-model="user.cc_exp_date" ng-required="true">
-              <p ng-show="userForm.cc_exp_date.$invalid && !userForm.cc_exp_date.$pristine && !userForm.cc_exp_date.$error.required" class="help-block">Entrez une date d'expiration valide.</p>
-              <p class="help-block" ng-show="userForm.cc_exp_date.$error.required && !userForm.cc_exp_date.$pristine">Ce champ est requis.</p>
+            <div class="form-group" ng-class="{ 'has-error' : (!userForm.cc_exp_month.$pristine || !userForm.cc_exp_year.$pristine) && (userForm.cc_exp_month.$invalid || userForm.cc_exp_year.$invalid) }">
+              <label style="display:block">Date d'expiration</label>
+              <input type="number" min="0" inputmode="numeric" pattern="[0-9]*" ng-disabled="mydisabled" name="cc_exp_month" class="form-control" ng-model="user.cc_exp_month" ng-required="true" ng-minlength="1" ng-maxlength="2" style="display:inline-block; width:20%">
+              /
+              <input type="number" min="0" inputmode="numeric" pattern="[0-9]*" ng-disabled="mydisabled" name="cc_exp_year" class="form-control" ng-model="user.cc_exp_year" ng-required="true" ng-minlength="4" ng-maxlength="4" style="display:inline-block; width:30%">
+              <p class="help-block" ng-show="userForm.cc_exp_month.$error.required && !userForm.cc_exp_month.$pristine">Mois est requis</p>
+              <p class="help-block" ng-show="userForm.cc_exp_year.$error.required && !userForm.cc_exp_month.$pristine">An est requis</p>
+              <p ng-show="userForm.cc_exp_month.$error.minlength" class="help-block">Mois court.</p>
+              <p ng-show="userForm.cc_exp_month.$error.maxlength" class="help-block">Mois long.</p>
+              <p ng-show="userForm.cc_exp_year.$error.minlength" class="help-block">An court.</p>
+              <p ng-show="userForm.cc_exp_year.$error.maxlength" class="help-block">An long.</p>
             </div>
 
-            <div class="form-group" ng-class="{ 'has-error' : userForm.cc_cvc.$invalid && !userForm.cc_cvc.$pristine && !userForm.cc_cvc.$error.required }">
+            <div class="form-group" ng-class="{ 'has-error' : userForm.cc_cvc.$invalid && !userForm.cc_cvc.$pristine }">
               <label>Cryptogramme</label>
-              <input type="number" name="cc_cvc" class="form-control" ng-model="user.cc_cvc" ng-required="true">
-              <p ng-show="userForm.cc_cvc.$invalid && !userForm.cc_cvc.$pristine && !userForm.cc_cvc.$error.required" class="help-block">Cryptogramme incorrect.</p>
+              <input type="password" min="0" inputmode="numeric" pattern="[0-9]*" ng-disabled="mydisabled" name="cc_cvc" class="form-control" ng-model="user.cc_cvc" ng-required="true" ng-minlength="3" ng-maxlength="3">
+              <!--<p ng-show="userForm.cc_cvc.$invalid && !userForm.cc_cvc.$pristine && !userForm.cc_cvc.$error.required" class="help-block">CVC incorrect.</p>-->
               <p class="help-block" ng-show="userForm.cc_cvc.$error.required && !userForm.cc_cvc.$pristine">Ce champ est requis</p>
+              <p ng-show="userForm.cc_cvc.$error.minlength" class="help-block">Trop court.</p>
+              <p ng-show="userForm.cc_cvc.$error.maxlength" class="help-block">Trop long.</p>
             </div>
 
             <div class="has-error">
