@@ -16,7 +16,7 @@
   <preference name="xwalkVersion" value="14+"/>
   <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect"/>
   <preference name="xwalkMode" value="embedded"/>
-  <preference name="xwalkMultipleApk" value="true"/>
+  <preference name="xwalkMultipleApk" value="false"/>
   <author email="hi@ionicframework" href="http://ionicframework.com/">
     Ionic Framework Team
   </author>
