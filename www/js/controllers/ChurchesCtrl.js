@@ -126,7 +126,8 @@ angular.module('starter.controllers')
         switch(error.code)
         {
           case error.PERMISSION_DENIED:
-            err_msg="User denied the request for Geolocation."
+            err_msg=""
+            //err_msg="User denied the request for Geolocation."
             break;
           case error.POSITION_UNAVAILABLE:
             err_msg="Location information is unavailable."
@@ -139,12 +140,14 @@ angular.module('starter.controllers')
             break;
         }
 
-        $ionicPopup.alert({
-          title: "Geolocation",
-          template: err_msg
-        }).then(function(res) {
-          console.log('geolocation error message closed.', res)
-        });
+        if (err_msg) {
+          $ionicPopup.alert({
+            title: "Geolocation",
+            template: err_msg
+          }).then(function(res) {
+            console.log('geolocation error message closed.', res)
+          });
+        }
 
       //}
 
