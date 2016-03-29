@@ -301,6 +301,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       controller: 'LoginCtrl'
 
     })
+    .state('forgot-password', {
+      url: '/forgot-password',
+
+      templateUrl: 'templates/forgot-password.html',
+      controller: 'ForgotPasswordCtrl'
+
+    })
     .state('setup', {
       url: '/setup',
       templateUrl: 'templates/donregular-setup.html',

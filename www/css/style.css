@@ -1112,6 +1112,17 @@ margin-top: 1.6vh;
   z-index: 1111;
 }
 
+.forgot-password {
+  margin-top: 30px;
+}
+
+.forgot-password a {
+  text-decoration: underline;
+  color: black;
+  font-weight: 700;
+  font-size: 14px;
+}
+
 @media (max-width: 768px) {
   .platform-ios ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
     margin-top: -1.44vh;
