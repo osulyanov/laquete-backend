@@ -1,87 +1,130 @@
 <ion-nav-bar class="bar-stable" ng-class="iosdevice ? 'top-ios':'' ">
-  <ion-nav-title>
-    S'inscrire
-  </ion-nav-title>
+    <ion-nav-title>
+        S'inscrire
+    </ion-nav-title>
 </ion-nav-bar>
 <ion-view class="login-bg">
-<ion-content >
+    <ion-content>
 
-<div class="main">
+        <div class="main">
 
-  <div class="sign-in">
+            <div class="sign-in">
 
-    <div class="col-sm-12">
-    <div class="etape-area">
-          <span class="text-center " style=" display:block;margin-bottom:15px;">Commencez par vous inscrire en 1 minute!</span>
-           <div class="col-xs-6">
-              <span class="" style=" display:block; padding: 12px 0 0; background: none !important;">Etape 1/2</span>
+                <div class="col-sm-12">
+                    <div class="etape-area">
+                        <span class="text-center " style=" display:block;margin-bottom:15px;">Commencez par vous inscrire en 1 minute!</span>
 
-           </div>
-           <div class="col-xs-6 text-right">
-              <button type="button" class="sign-in-btn btn btn-primary " style="margin: 0px 0 15px !important;" ng-click="login()">Déjà un compte?</button>
+                        <div class="col-xs-6">
+                            <span class="" style=" display:block; padding: 12px 0 0; background: none !important;">Etape 1/2</span>
 
-           </div>
-          </div>
-    <div class="container">
-<!--
-<span class="pull-left sign-in-btn" style="background: none !important;">Etape 1/2</span>
-   <button type="button" class="pull-right sign-in-btn btn btn-primary " ng-click="login()">Sign in</button>
--->
-</div>
-  <!-- FORM ============ -->
-      <form name="userForm" ng-submit="submitForm()" novalidate>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <button type="button" class="sign-in-btn btn btn-primary "
+                                    style="margin: 0px 0 15px !important;" ng-click="login()">Déjà un compte?
+                            </button>
 
-        <!-- NAME -->
-        <!-- <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
-            <label class="">Prénom</label>
-            <input type="text" name="name" class="form-control " ng-model="user.name" required>
-            <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block ">Le nom est requis.</p>
-        </div> -->
+                        </div>
+                    </div>
+                    <div class="container">
+                        <!--
+                        <span class="pull-left sign-in-btn" style="background: none !important;">Etape 1/2</span>
+                           <button type="button" class="pull-right sign-in-btn btn btn-primary " ng-click="login()">Sign in</button>
+                        -->
+                    </div>
+                    <!-- FORM ============ -->
+                    <form name="userForm" ng-submit="submitForm()" novalidate>
 
-        <!-- NAME -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
-            <label class="">Prénom</label>
-            <input type="text" name="name" class="form-control " ng-model="user.name" ng-minlength="3" ng-maxlength="20">
-            <p ng-show="userForm.name.$error.minlength" class="help-block ">Le prénom est trop court.</p>
-            <p ng-show="userForm.name.$error.maxlength" class="help-block ">Le prénom est trop long.</p>
+                        <!-- NAME -->
+                        <!-- <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                            <label class="">Prénom</label>
+                            <input type="text" name="name" class="form-control " ng-model="user.name" required>
+                            <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block ">Le nom est requis.</p>
+                        </div> -->
+
+                        <!-- NAME -->
+                        <div class="form-group"
+                             ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                            <label class="">Prénom</label>
+                            <input type="text" name="name" class="form-control " ng-model="user.name" ng-minlength="3"
+                                   ng-maxlength="20">
+
+                            <p ng-show="userForm.name.$error.minlength" class="help-block ">Le prénom est trop
+                                court.</p>
+
+                            <p ng-show="userForm.name.$error.maxlength" class="help-block ">Le prénom est trop long.</p>
+                        </div>
+
+                        <!-- SURNAME -->
+                        <div class="form-group"
+                             ng-class="{ 'has-error' : userForm.surname.$invalid && !userForm.surname.$pristine }">
+                            <label class="">Nom</label>
+                            <input type="text" name="surname" class="form-control " ng-model="user.surname"
+                                   ng-minlength="3" ng-maxlength="20">
+
+                            <p ng-show="userForm.surname.$error.minlength" class="help-block ">Le nom est trop
+                                court.</p>
+
+                            <p ng-show="userForm.surname.$error.maxlength" class="help-block ">Le nom est trop long.</p>
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="form-group"
+                             ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                            <label class="">Email</label>
+                            <input type="email" name="email" class="form-control " ng-model="user.email">
+
+                            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block ">Entrez
+                                un email valide.</p>
+                        </div>
+                        <!-- PASSWORD -->
+                        <div class="form-group"
+                             ng-class="{ 'has-error' : userForm.pwd.$invalid && !userForm.pwd.$pristine }">
+                            <label class="">Mot de passe</label>
+                            <input type="password" name="pwd" class="form-control " ng-model="user.pwd"
+                                   ng-required="true" ng-minlength="8">
+
+                            <p ng-show="userForm.pwd.$invalid && !userForm.pwd.$pristine && userForm.pwd.$error.required"
+                               class="help-block ">Le mot de passe est requis.</p>
+
+                            <p ng-show="userForm.pwd.$error.minlength" class="help-block ">Le mot de passe doit faire au
+                                moins 8 caractères.</p>
+                        </div>
+                        <div class="form-group "
+                             ng-class="{ 'has-error' : userForm.conf_pwd.$invalid && !userForm.conf_pwd.$pristine}">
+                            <label class="">Confirmation du mot de passe</label>
+                            <input type="password" name="conf_pwd" class="form-control " ng-model="user.conf_pwd"
+                                   ng-required="true" confirm-pwd="user.pwd">
+
+                            <p ng-show="userForm.conf_pwd.$invalid && !userForm.conf_pwd.$pristine" class="help-block">
+                                Les mots de passe doivent être identiques!</p>
+
+                            <p ng-show="error_conf_pwd" class="help-block">Les mots de passe doivent être
+                                identiques!</p>
+                        </div>
+                        <div class="form-group"
+                             ng-class="{ 'her-error' : userForm.show_private.$invalid && !userForm.show_private.$pristine }">
+                            <label>Partager mes informations avec le diocèse auquel je donne</label>
+                            <input type="checkbox" ng-disabled="mydisabled" name="show_private" class="form-control"
+                                   ng-model="user.show_private">
+
+                            <p ng-show="userForm.show_private.$invalid && !userForm.show_private.$pristine"
+                               class="help-block"></p>
+                        </div>
+
+                        <div class="form-group "
+                             ng-class="{ 'has-error' : userForm.conf_pwd.$invalid && !userForm.conf_pwd.$pristine}">
+                            <ion-checkbox ng-model="user.terms" ng-change="termsChange();">Conditions Générales
+                            </ion-checkbox>
+                        </div>
+
+                        <span><font color="red">{{error}}</font></span><br>
+                        <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid || !user.terms">
+                            Valider
+                        </button>
+
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <!-- SURNAME -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.surname.$invalid && !userForm.surname.$pristine }">
-            <label class="">Nom</label>
-            <input type="text" name="surname" class="form-control " ng-model="user.surname" ng-minlength="3" ng-maxlength="20">
-            <p ng-show="userForm.surname.$error.minlength" class="help-block ">Le nom est trop court.</p>
-            <p ng-show="userForm.surname.$error.maxlength" class="help-block ">Le nom est trop long.</p>
-        </div>
-
-        <!-- EMAIL -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-            <label class="">Email</label>
-            <input type="email" name="email" class="form-control " ng-model="user.email">
-            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block ">Entrez un email valide.</p>
-        </div>
-        <!-- PASSWORD -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.pwd.$invalid && !userForm.pwd.$pristine }">
-            <label class="">Mot de passe</label>
-            <input type="password" name="pwd" class="form-control " ng-model="user.pwd" ng-required="true" ng-minlength="8">
-            <p ng-show="userForm.pwd.$invalid && !userForm.pwd.$pristine && userForm.pwd.$error.required" class="help-block ">Le mot de passe est requis.</p>
-            <p ng-show="userForm.pwd.$error.minlength" class="help-block ">Le mot de passe doit faire au moins 8 caractères.</p>
-        </div>
-        <div class="form-group " ng-class="{ 'has-error' : userForm.conf_pwd.$invalid && !userForm.conf_pwd.$pristine}">
-            <label class="">Confirmation du mot de passe</label>
-            <input type="password" name="conf_pwd" class="form-control " ng-model="user.conf_pwd"  ng-required="true" confirm-pwd="user.pwd">
-            <p ng-show="userForm.conf_pwd.$invalid && !userForm.conf_pwd.$pristine" class="help-block" >Les mots de passe doivent être identiques!</p>
-            <p ng-show="error_conf_pwd" class="help-block">Les mots de passe doivent être identiques!</p>
-        </div>
-        <div class="form-group " ng-class="{ 'has-error' : userForm.conf_pwd.$invalid && !userForm.conf_pwd.$pristine}">
-             <ion-checkbox ng-model="user.terms" ng-change="termsChange();">Conditions Générales</ion-checkbox>
-        </div>
-        <span><font color="red">{{error}}</font></span><br>
-        <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid || !user.terms">Valider</button>
-
-      </form>
-    </div>
-  </div>
-</div>
-</ion-content>
+    </ion-content>
 </ion-view>

@@ -1345,6 +1345,11 @@ margin-top: 1.6vh;
   }
 }
 
+:not(.platform-android):not(.platform-ios) input[type=checkbox] {
+  width: 30px;
+  height: 30px;
+}
+
 /* italic placeholder */
 
 ::-webkit-input-placeholder {
