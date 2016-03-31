@@ -52,6 +52,7 @@ angular.module('starter.controllers')
           // $scope.error = "inside data token: " + data.user_token;
           window.localStorage.setItem("user_token", data.user_token);
           window.localStorage.setItem("user_email", data.user_email);
+          window.localStorage.setItem("user_password", data.user_password);
           window.localStorage.setItem("user_name", data.user_name);
           window.localStorage.setItem("user_zip", data.user_zip);
           window.localStorage.setItem("user_address", data.user_address);

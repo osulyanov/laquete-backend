@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-  .controller('ForgotPasswordCtrl', function ($scope, $location, API, $rootScope, $ionicPopup) {
+  .controller('ForgotPasswordCtrl', function ($scope, $location, API, $rootScope, $ionicPopup, $ionicHistory) {
     $scope.$on('$ionicView.enter', function (e) {
       $scope.user = {
         email: ''
@@ -32,9 +32,23 @@ angular.module('starter.controllers')
 
             });
           } else {
-            $scope.error = 'Forgot password request has been failed to send';
+            if (data.error === 'Email does not exist') {
+              $ionicPopup.alert({
+                title: "Info",
+                template: "Pas d’adresse email liée à ce compte."
+              }).then(function(res) {
+                console.log('Password reset: email does not exist', res)
+              });
+            } else {
+              $scope.error = 'Forgot password request has been failed to send';
+            }
           }
         }
       );
     };
+
+    $scope.back = function () {
+      $location.path('/login')
+    };
+
   })
