@@ -54,12 +54,12 @@ angular.module('starter.controllers')
       initOnEnterView();
     });
 
-    $rootScope.$on('laquete.logout', function(e) {
+    $rootScope.$on('laquete.logout', function (e) {
       $scope.scopeParam.main_church_added = false;
       initScope();
     });
 
-    $scope.current_location= function(showLoading){
+    $scope.current_location = function (showLoading) {
       var map = $scope.map,
         pos;
       if (showLoading) {
@@ -74,80 +74,79 @@ angular.module('starter.controllers')
 
       google.maps.event.addListener(geoMarker, 'geolocation_error', showGeolocationError);
 
-      navigator.geolocation.getCurrentPosition(function(position) {
+      navigator.geolocation.getCurrentPosition(function (position) {
           // TODO: remove
-        currentLatLon.lat = position.coords.latitude;
-        currentLatLon.lng = position.coords.longitude;
-        pos = new google.maps.LatLng(currentLatLon.lat, currentLatLon.lng);
+          currentLatLon.lat = position.coords.latitude;
+          currentLatLon.lng = position.coords.longitude;
+          pos = new google.maps.LatLng(currentLatLon.lat, currentLatLon.lng);
           //pos = new google.maps.LatLng(defaultLatLon.lat, defaultLatLon.lng);
-        console.log(pos);
+          console.log(pos);
 
-        map.setCenter(pos);
+          map.setCenter(pos);
 
-        geoMarker.setMap(map);
+          geoMarker.setMap(map);
 
-        $ionicLoading.hide();
-      },
-      function (e) {
-        console.log('ChurchesCtrl current location error: ' + e.code)
+          $ionicLoading.hide();
+        },
+        function (e) {
+          console.log('ChurchesCtrl current location error: ' + e.code)
 
-        if (showLoading) {
-          console.log(e);
-        }
+          if (showLoading) {
+            console.log(e);
+          }
 
-        if (currentLatLon.lat === 0) {
+          if (currentLatLon.lat === 0) {
             if ($rootScope.currentLatLon !== undefined && $rootScope.currentLatLon.lat !== 0) {
               currentLatLon = $rootScope.currentLatLon;
             } else {
               currentLatLon = defaultLatLon;
             }
-        }
+          }
 
-        pos = new google.maps.LatLng(currentLatLon.lat, currentLatLon.lng);
-        //TODO: remove
-        //pos = new google.maps.LatLng(defaultLatLon.lat, defaultLatLon.lng);
+          pos = new google.maps.LatLng(currentLatLon.lat, currentLatLon.lng);
+          //TODO: remove
+          //pos = new google.maps.LatLng(defaultLatLon.lat, defaultLatLon.lng);
 
-        map.setCenter(pos);
+          map.setCenter(pos);
 
-        geoMarker.setMap(map);
+          geoMarker.setMap(map);
 
-        if (showLoading) {
-          $ionicLoading.hide();
-        }
+          if (showLoading) {
+            $ionicLoading.hide();
+          }
 
-      }, {timeout:5000});
+        }, {timeout: 5000});
     };
 
     var showGeolocationError = function (error) {
       console.log('There was an error obtaining your position. Message: ' + error.message);
 
       //if (currentLatLon.lat !== 0) {
-        var err_msg = '';
-        switch(error.code)
-        {
-          case error.PERMISSION_DENIED:
-            err_msg=""
-            //err_msg="User denied the request for Geolocation."
-            break;
-          case error.POSITION_UNAVAILABLE:
-            err_msg="Location information is unavailable."
-            break;
-          case error.TIMEOUT:
-            err_msg="The request to get user location timed out."
-            break;
-          case error.UNKNOWN_ERROR:
-            err_msg="An unknown error occurred."
-            break;
-        }
+      var err_msg = '';
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          err_msg = ""
+          //err_msg="User denied the request for Geolocation."
+          break;
+        case error.POSITION_UNAVAILABLE:
+          err_msg = "Location information is unavailable."
+          break;
+        case error.TIMEOUT:
+          err_msg = "The request to get user location timed out."
+          break;
+        case error.UNKNOWN_ERROR:
+          err_msg = "An unknown error occurred."
+          break;
+      }
 
-        if (err_msg) {
-          $ionicPopup.alert({
-            title: "Geolocation",
-            template: err_msg
-          }).then(function(res) {
-            console.log('geolocation error message closed.', res)
-          });
-        }
+      //if (err_msg) {
+      //  $ionicPopup.alert({
+      //    title: "Geolocation",
+      //    template: err_msg
+      //  }).then(function(res) {
+      //    console.log('geolocation error message closed.', res)
+      //  });
+      //}
 
       //}
 
@@ -250,11 +249,11 @@ angular.module('starter.controllers')
       }
     };
 
-    $scope.backToFavList = function() {
+    $scope.backToFavList = function () {
       $scope.scopeParam.in_fav_list = true;
     };
 
-    $scope.goToChooseFav = function() {
+    $scope.goToChooseFav = function () {
       $scope.scopeParam.in_fav_list = false;
       $scope.is_map_fav = true;
       $scope.scopeParam.query_fav = '';
@@ -341,7 +340,7 @@ angular.module('starter.controllers')
             console.log("Favorite Successful");
             for (var i = 0, j = 0; i < data.length; i++) {
               if (String(data[i]['picto']).indexOf('.png') !== -1) {
-                data[i]['picto']  = String(data[i]['picto']).substr(0, data[i]['picto'].length - 4);
+                data[i]['picto'] = String(data[i]['picto']).substr(0, data[i]['picto'].length - 4);
               }
               data[i]['picto_hover'] = "images/" + data[i]['picto'] + "-hover.png";
               data[i]['picto'] = "images/" + data[i]['picto'] + ".png";
@@ -353,7 +352,7 @@ angular.module('starter.controllers')
       );
     };
 
-    $scope.back = function() {
+    $scope.back = function () {
       if ($scope.scopeParam.ma_paroisses) {
         $scope.backFromEditMainChurch();
       } else {
@@ -361,13 +360,13 @@ angular.module('starter.controllers')
       }
     }
 
-    $scope.hideKeyboardWhenEnter = function() {
+    $scope.hideKeyboardWhenEnter = function () {
       if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.close();
       }
     }
 
-    $scope.onSubmitChurches = function(e) {
+    $scope.onSubmitChurches = function (e) {
     }
 
     $scope.hasValue = hasValue;
@@ -402,7 +401,7 @@ angular.module('starter.controllers')
     }
 
     function assignMap() {
-      NgMap.getMap().then(function(map) {
+      NgMap.getMap().then(function (map) {
         $scope.map = map;
 
         if (hasValue($location.search().default_tab)) {
@@ -450,7 +449,9 @@ angular.module('starter.controllers')
     }
 
     function resizeMap() {
-      window.setTimeout(function(){google.maps.event.trigger($scope.map, 'resize')},2000);
+      window.setTimeout(function () {
+        google.maps.event.trigger($scope.map, 'resize')
+      }, 2000);
     }
 
     function setChurches(data) {
@@ -461,7 +462,13 @@ angular.module('starter.controllers')
       if ($scope.main_church_id == null) {
         $scope.scopeParam.main_church_added = false;
       }
-      for (var i = 0, j = 0; i < data.length; i++) {
+
+      for (var i = 0; i < data.length; i++) {
+        if (i === 0) {
+          defaultLatLon.lat = temp_all_churches[i].latitude;
+          defaultLatLon.lng = temp_all_churches[i].longitude;
+        }
+
         if ($scope.main_church_id == temp_all_churches[i]['id']) {
           $scope.fav_churches.unshift(temp_all_churches[i]);
           $scope.all_churches.unshift(temp_all_churches[i]);
@@ -528,6 +535,8 @@ angular.module('starter.controllers')
 
     function centerMapDoubled() {
       centerMap();
-      window.setTimeout(function () {$scope.current_location(false)}, 3000);
+      window.setTimeout(function () {
+        $scope.current_location(false)
+      }, 3000);
     }
   })
