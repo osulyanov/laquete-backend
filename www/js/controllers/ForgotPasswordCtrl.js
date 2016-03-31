@@ -24,7 +24,7 @@ angular.module('starter.controllers')
           $rootScope.hideLoading();
           if (!angular.isUndefined(data) && !data.error) {
             $ionicPopup.alert({
-              title: "Success",
+              title: "Succès",
               template: "Email de reinitialisation du mot de passe envoyé"
             }).then(function(res) {
               console.log('Password reset request has been sent', res)
